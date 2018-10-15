@@ -30,8 +30,7 @@
               "src/styles.scss"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["./src", "./projects/freyja/src/lib/core/global",  "assets/scss"]
-//              "includePaths": ["projects/freyja/src/lib/core/global"]
+              "includePaths": ["./src", "./projects/freyja/src/lib/core",  "./src/assets/scss"]
             },
             "scripts": []
           },
@@ -147,7 +146,8 @@
             "tsConfig": "projects/freyja/tsconfig.lib.json",
             "project": "projects/freyja/ng-package.json",
             "stylePreprocessorOptions": {
-              "includePaths": ["./src", "./projects/freyja/src/lib/core/theming",  "assets/scss"]
+              "includePaths": ["./projects/freyja/src/lib/core",  "./src/assets/scss"]
+
             }
           }
         },
