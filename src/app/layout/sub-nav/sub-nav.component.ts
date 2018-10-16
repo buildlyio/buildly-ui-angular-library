@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'demo-sub-nav',
+  selector: 'fj-demo-sub-nav',
   templateUrl: './sub-nav.component.html',
   styleUrls: ['./sub-nav.component.scss']
 })

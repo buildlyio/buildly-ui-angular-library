@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "demo",
+      "prefix": "fj-demo",
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss"
@@ -133,7 +133,7 @@
       "root": "projects/freyja",
       "sourceRoot": "projects/freyja/src",
       "projectType": "library",
-      "prefix": "freyja",
+      "prefix": "fj",
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss"

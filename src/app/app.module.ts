@@ -6,6 +6,7 @@ import {CheckboxGridModule} from '@libs/freyja/src/lib/checkbox-grid/checkbox-gr
 import { SubNavComponent } from './layout/sub-nav/sub-nav.component';
 import { MainNavComponent } from './layout/main-nav/main-nav.component';
 import { HeaderComponent } from './layout/header/header.component';
+import {SidenavModule} from '@libs/freyja/src/lib/sidenav/sidenav.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HeaderComponent } from './layout/header/header.component';
   ],
   imports: [
     BrowserModule,
-    CheckboxGridModule
+    CheckboxGridModule,
+    SidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent],
