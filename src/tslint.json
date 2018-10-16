@@ -10,7 +10,7 @@
         "component-selector": [
             true,
             "element",
-            "demo",
+            "fj-demo",
             "kebab-case"
         ]
     }
