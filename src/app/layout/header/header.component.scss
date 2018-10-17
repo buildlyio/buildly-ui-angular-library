@@ -8,6 +8,6 @@
 
 .navbar {
   height: 64px;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.07);
+  box-shadow: $navbar-box-shadow;
   background-color: $color-blue;
 }
