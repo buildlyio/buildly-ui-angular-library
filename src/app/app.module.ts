@@ -7,6 +7,9 @@ import { SubNavComponent } from './layout/sub-nav/sub-nav.component';
 import { MainNavComponent } from './layout/main-nav/main-nav.component';
 import { HeaderComponent } from './layout/header/header.component';
 import {SidenavModule} from '@libs/freyja/src/lib/sidenav/sidenav.module';
+import {RouterModule} from '@angular/router';
+import {appRoutes} from './app.routing';
+import {ButtonModule} from './pages/button/button.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import {SidenavModule} from '@libs/freyja/src/lib/sidenav/sidenav.module';
   imports: [
     BrowserModule,
     CheckboxGridModule,
-    SidenavModule
+    SidenavModule,
+    ButtonModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent],
