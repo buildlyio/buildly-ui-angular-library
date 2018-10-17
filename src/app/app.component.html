@@ -1,5 +1,20 @@
-<div class="main">
-  <fj-demo-main-nav></fj-demo-main-nav>
-  <div class="main__container">
+<fj-demo-header></fj-demo-header>
+
+<div class="container-fluid">
+  <!-- row -->
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <fj-demo-main-nav></fj-demo-main-nav>
+    </nav>
+
+    <main role="main" class="col-md-8 ml-sm-auto col-lg-8 px-4">
+        <!-- Components Go here -->
+    </main>
+
+    <div class="col-md-2">
+      <fj-demo-sub-nav></fj-demo-sub-nav>
+    </div>
   </div>
+  <!-- /.row -->
+  
 </div>

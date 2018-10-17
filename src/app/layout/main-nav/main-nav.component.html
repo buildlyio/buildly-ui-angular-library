@@ -1,3 +1,45 @@
-<fj-sidenav-set *ngFor="let item of navItems">
+<!-- <fj-sidenav-set *ngFor="let item of navItems">
   <fj-sidenav>{{item.label}}</fj-sidenav>
-</fj-sidenav-set>
+</fj-sidenav-set> -->
+
+<!-- To be moved to side-nav bar -->
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+  <div class="sidebar-sticky">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link " href="#">
+          <strong>Components</strong>
+          <span class="float-right"><i class="caret-icon"></i></span>
+        </a>
+
+        <ul>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Accordion
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Alert
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Breadcrumb
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Buttons
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Checkbox
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
