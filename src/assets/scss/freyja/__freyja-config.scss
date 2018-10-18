@@ -1,6 +1,11 @@
-// Cutstom Freyja Variables
+//@import "_config";
 
+@include font-face("scandia", "fonts/Scandia-Regular", 400);
+@include font-face("scandia", "fonts/Scandia-Bold", 600);
+// Cutstom Freyja Variables
+$font-family-heading: scandia;
 $color-blue: #1b51a0;
 $color-primary: $color-blue;
+
 $spacer: rem-calc(24);
 $header-height: rem-calc(64) !default;
