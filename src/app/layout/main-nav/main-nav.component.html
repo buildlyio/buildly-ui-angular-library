@@ -1,9 +1,13 @@
-<!--<fj-demo-sidenav-set *ngFor="let item of navItems">-->
-  <!--<fj-demo-sidenav>{{item.label}}</fj-demo-sidenav>-->
-<!--</fj-demo-sidenav-set>-->
 <div class="main-nav">
   <h3 class="main-nav__collapse">Components</h3>
   <ul class="side-nav">
-    <li class="side-nav__item" *ngFor="let item of navItems">{{item.label}}</li>
+    <li class="side-nav__item"
+        *ngFor="let item of navItems"
+        [routerLink]="item.path"
+        [routerLinkActiveOptions]="{ exact: item.exact }"
+        routerLinkActive #rla="routerLinkActive"
+        routerLinkActive="side-nav__item--active"
+    >{{item.label}}
+    </li>
   </ul>
 </div>

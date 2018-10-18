@@ -9,6 +9,7 @@ import {RouterModule} from '@angular/router';
 import {appRoutes} from './app.routing';
 import {ButtonModule} from './pages/button/button.module';
 import {SidenavModule} from './components/side-nav/side-nav.module';
+import {AccordionModule} from './pages/accordion/accordion.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {SidenavModule} from './components/side-nav/side-nav.module';
     BrowserModule,
     CheckboxGridModule,
     ButtonModule,
+    AccordionModule,
     SidenavModule,
     RouterModule.forRoot(appRoutes)
   ],
