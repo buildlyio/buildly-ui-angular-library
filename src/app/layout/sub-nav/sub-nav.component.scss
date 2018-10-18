@@ -1,0 +1,44 @@
+@import '../../../assets/scss/freyja/_freyja-config';
+@import '../../../../node_modules/bootstrap/scss/bootstrap-grid.scss';
+
+.fd-toc {
+  @supports (position: sticky) {
+    position: sticky;
+    height: calc(100vh - 4rem);
+    overflow-y: visible;
+    padding: 0.75rem;
+    margin-top: 10rem;
+  }
+  order: 2;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.section-nav {
+  padding-left: 0;
+  border-left: 1px solid #eee;
+
+  ul {
+    padding-left: 1rem;
+
+    ul {
+      display: none;
+    }
+  }
+}
+
+.toc-entry {
+  display: block;
+
+  a {
+    display: block;
+    padding: 0.7rem 1.5rem;
+    color: $color-gray-dark;
+
+    &:hover {
+      color: $color-blue;
+      text-decoration: none;
+    }
+  }
+}
