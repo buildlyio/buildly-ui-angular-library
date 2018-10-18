@@ -1,0 +1,9 @@
+@import "_config";
+
+.header{
+  display: flex;
+  align-items: center;
+  height: $header-height;
+  background-color: $color-primary;
+  padding: $spacer;
+}
