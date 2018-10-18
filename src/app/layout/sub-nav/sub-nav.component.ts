@@ -6,6 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sub-nav.component.scss']
 })
 export class SubNavComponent implements OnInit {
+  public navItems = [
+    {
+      path: '/button',
+      label: 'Button'
+    },
+    {
+      path: '/accordion',
+      label: 'Accordion'
+    }
+  ];
 
   constructor() { }
 
