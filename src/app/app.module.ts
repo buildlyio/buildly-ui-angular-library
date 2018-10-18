@@ -10,6 +10,8 @@ import {appRoutes} from './app.routing';
 import {ButtonModule} from './pages/button/button.module';
 import {SidenavModule} from './components/side-nav/side-nav.module';
 import {AccordionModule} from './pages/accordion/accordion.module';
+import { ContentWrapComponent } from './components/content-wrap/content-wrap.component';
+import {ContentWrapModule} from './components/content-wrap/content-wrap.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import {AccordionModule} from './pages/accordion/accordion.module';
     ButtonModule,
     AccordionModule,
     SidenavModule,
+    ContentWrapModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

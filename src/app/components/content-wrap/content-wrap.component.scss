@@ -1,0 +1,15 @@
+@import "_config";
+
+.content-wrap {
+  display: flex;
+  padding-top: rem-calc(96);
+}
+
+.content{
+  flex: 1;
+  padding: rem-calc(0 26 0 128);
+}
+
+.sticky-nav{
+  flex: 0 0 rem-calc(200);
+}

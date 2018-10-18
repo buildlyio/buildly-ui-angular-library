@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'fj-demo-sub-nav',
@@ -6,17 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sub-nav.component.scss']
 })
 export class SubNavComponent implements OnInit {
-  public navItems = [
-    {
-      path: '/button',
-      label: 'Button'
-    },
-    {
-      path: '/accordion',
-      label: 'Accordion'
-    }
-  ];
 
+  @Input() navItems;
   constructor() { }
 
   ngOnInit() {
