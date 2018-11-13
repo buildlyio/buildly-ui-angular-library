@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {CheckboxGridModule} from '@libs/freyja/src/lib/checkbox-grid/checkbox-grid.module';
+import {CheckboxGridModule} from '@libs/freyja-ui/src/lib/checkbox-grid/checkbox-grid.module';
 import { MainNavComponent } from './layout/main-nav/main-nav.component';
 import { HeaderComponent } from './layout/header/header.component';
 import {RouterModule} from '@angular/router';
