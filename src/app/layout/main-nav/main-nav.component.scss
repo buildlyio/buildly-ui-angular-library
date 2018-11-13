@@ -3,3 +3,41 @@
 :host{
   flex: 0 0 rem-calc(250);
 }
+
+.main-nav{
+  padding: $spacer;
+  background-color: #fafafa;
+  min-height: calc( 100vh - 4rem);
+  &__collapse{
+    font-size: rem-calc(14);
+    padding-bottom: rem-calc(12);
+    margin: 0;
+  }
+}
+
+.side-nav{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  &__item{
+    position: relative;
+    padding: rem-calc(12 0);
+    font-size: rem-calc(13);
+    outline: none;
+    cursor: pointer;
+    &--active{
+      color: $color-primary;
+      &:before{
+        content: '';
+        position: absolute;
+        height: rem-calc(4);
+        width: rem-calc(4);
+        top: 50%;
+        left: rem-calc(-9);
+        margin-top: rem-calc(-2);
+        border: rem-calc(1) solid $color-primary;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

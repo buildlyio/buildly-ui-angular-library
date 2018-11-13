@@ -1,0 +1,31 @@
+@import "_config";
+
+:host{
+  flex: 0 0 rem-calc(250);
+}
+
+.side-nav{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  &__item{
+    position: relative;
+    padding: rem-calc(8 26);
+    border-left: rem-calc(1) solid #e5e5e5;
+    font-size: rem-calc(13);
+    color: #9b9b9b;
+    outline: none;
+    cursor: pointer;
+    &--active{
+      color: $color-primary;
+    }
+    &--l2{
+      margin-left: rem-calc(-27);
+      padding-left: rem-calc(38);
+    }
+  }
+  &__label{
+   display: block;
+    padding-bottom: rem-calc(8);
+  }
+}

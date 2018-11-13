@@ -1,3 +1,13 @@
-<fj-demo-sidenav-set *ngFor="let item of navItems">
-  <fj-demo-sidenav>{{item.label}}</fj-demo-sidenav>
-</fj-demo-sidenav-set>
+<ul class="side-nav">
+  <li class="side-nav__item"
+      *ngFor="let item of navItems"
+  ><span class="side-nav__label">{{item.label}}</span>
+    <ng-container *ngIf="item.children">
+      <ul class="side-nav side-nav--l2">
+        <li class="side-nav__item side-nav__item--l2" *ngFor="let subItem of item.children">
+          {{subItem.label}}
+        </li>
+      </ul>
+    </ng-container>
+  </li>
+</ul>

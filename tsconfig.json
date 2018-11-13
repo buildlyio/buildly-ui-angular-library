@@ -21,6 +21,9 @@
       "@libs/*": [
         "projects/*"
       ],
+      "@freyjaDemo/*": [
+        "src/*"
+      ],
       "freyja": [
         "dist/freyja"
       ],
