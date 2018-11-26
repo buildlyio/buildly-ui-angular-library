@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {TextHelper} from '../../../shared/helpers/text.helper';
+import { TextHelper } from '@freyjaDemo/app/shared/helpers/text.helper';
 
 @Component({
   selector: 'fj-demo-content',
