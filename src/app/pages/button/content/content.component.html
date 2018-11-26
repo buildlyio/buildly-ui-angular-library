@@ -1,5 +1,10 @@
-<h2>Button</h2>
+<h2>Buttons</h2>
+<fj-button>Primary</fj-button>
+<fj-button color="light">Light</fj-button>
+<fj-button icon="plus_circle">Add something</fj-button>
+
 <h3>Type</h3>
+<div>There are primary button, secondary button, disabled button and destructive button.</div>
 <fj-button>Primary</fj-button>
 <fj-button color="light">Light</fj-button>
 <fj-button [disabled]="true">Disabled</fj-button>
@@ -7,6 +12,7 @@
 <pre><code highlight [code]="codeType"></code></pre>
 
 <h3>Size</h3>
+<div>A button can have different sizes.</div>
 <fj-button size="lrg">Big</fj-button>
 <fj-button size="med">Medium</fj-button>
 <fj-button size="sm">Small</fj-button>
@@ -14,17 +20,19 @@
 <pre><code highlight [code]="codeSize"></code></pre>
 
 <h3>Shape</h3>
-
+<div>A button can have different shapes.</div>
 <fj-button>Radius</fj-button>
 <fj-button shape="square">Square</fj-button>
 <fj-button shape="rounded">Round</fj-button>
 <pre><code highlight [code]="codeShape"></code></pre>
 
 <h3>Icon</h3>
-<fj-button icon="plus">Button</fj-button>
+<div>A button can contain different icons.</div>
+<fj-button icon="plus_circle">Button</fj-button>
 <pre><code highlight [code]="codeIcon"></code></pre>
 
 <h3>Style</h3>
-<fj-button [ghost]="true" icon="plus" shapeFill="#1b51a0">Ghost</fj-button>
+<div>A button can have different styles.</div>
+<fj-button [ghost]="true" icon="plus_circle">Ghost</fj-button>
 <pre><code highlight [code]="codeStyle"></code></pre>
 
