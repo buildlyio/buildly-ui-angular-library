@@ -30,7 +30,11 @@
               "src/styles.scss"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["./src", "./projects/freyja-ui/src/lib/core",  "./src/assets/scss"]
+              "includePaths": [
+                "./src",
+                "./projects/freyja-ui/src/lib/core",
+                "./src/assets/scss"
+              ]
             },
             "scripts": []
           },
@@ -129,7 +133,7 @@
         }
       }
     },
-    "freyja": {
+    "freyja-ui": {
       "root": "projects/freyja-ui",
       "sourceRoot": "projects/freyja-ui/src",
       "projectType": "library",
@@ -144,28 +148,15 @@
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
             "tsConfig": "projects/freyja-ui/tsconfig.lib.json",
-            "project": "projects/freyja-ui/ng-package.json",
-            "stylePreprocessorOptions": {
-              "includePaths": ["./projects/freyja-ui/src/lib/core",  "./src/assets/scss"]
-
-            }
+            "project": "projects/freyja-ui/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ]
+            "main": "projects/freyja-ui/src/test.ts",
+            "tsConfig": "projects/freyja-ui/tsconfig.spec.json",
+            "karmaConfig": "projects/freyja-ui/karma.conf.js"
           }
         },
         "lint": {
