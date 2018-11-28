@@ -6,7 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./radio-button.component.scss']
 })
 export class RadioButtonComponent implements OnInit {
-
+  public navItems = [
+    {
+      path: '#overwiev',
+      label: 'Overview'
+    },
+  ];
   constructor() { }
 
   ngOnInit() {
