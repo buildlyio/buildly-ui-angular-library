@@ -4,14 +4,14 @@ import { CheckBoxComponent } from './check-box.component';
 import {SubNavModule} from '../../layout/sub-nav/sub-nav.module';
 import {ContentWrapModule} from '../../components/content-wrap/content-wrap.module';
 import { ContentComponent } from './content/content.component';
-import { FjCheckBoxModule } from '@libs/freyja-ui/src/lib/check-box/check-box.module';
+import { FjCheckboxModule } from '@libs/freyja-ui/src/lib/checkbox/checkbox.module';
 @NgModule({
   declarations: [CheckBoxComponent, ContentComponent],
   imports: [
     CommonModule,
     SubNavModule,
     ContentWrapModule,
-    FjCheckBoxModule
+    FjCheckboxModule
   ],
   exports: [
     CheckBoxComponent, ContentComponent
