@@ -10,9 +10,7 @@ pipeline:
       - echo "$${SSH_PUBLIC_KEY}\n" > /root/.ssh/id_rsa.pub
       - ssh-keyscan -t rsa github.com >> /root/.ssh/known_hosts
       - chmod 600 /root/.ssh/id_rsa*
-      - ssh-add -k /root/.ssh/id_rsa
       - npm install npm-login-cmd -g
-      - npm install gulp-cli -g
       - npm config set registry https://npm-proxy.fury.io/$${NPM_TOKEN}/humanitec/
       - npm config set always-auth
       - npx npm-login-cmd
@@ -43,18 +41,10 @@ pipeline:
     image: plugins/docker
     insecure: true
     registry: registry.tola.io
-    repo: registry.tola.io/humanitec/walhall-sample-angular-app
+    repo: registry.tola.io/humanitec/freyja-demo
     file: Dockerfile
     auto_tag: true
     secrets: [DOCKER_USERNAME, DOCKER_PASSWORD]
     when:
       event: [push, tag]
       status: [success]
-
-  notify:
-    image: plugins/slack
-    channel: drone-ci
-    username: Drone-CI
-    secrets: [SLACK_WEBHOOK]
-    when:
-      status: [failure]
