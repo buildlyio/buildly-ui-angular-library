@@ -39,3 +39,4 @@ testem.log
 Thumbs.db
 /projects/freyja
 /projects/freyja-ui
+.npmrc
