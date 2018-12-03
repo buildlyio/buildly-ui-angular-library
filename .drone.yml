@@ -10,9 +10,11 @@ pipeline:
       - echo "$${SSH_PUBLIC_KEY}\n" > /root/.ssh/id_rsa.pub
       - ssh-keyscan -t rsa github.com >> /root/.ssh/known_hosts
       - chmod 600 /root/.ssh/id_rsa*
+      - ssh-add -k /root/.ssh/id_rsa
       - npm install npm-login-cmd -g
       - npm config set registry https://npm-proxy.fury.io/$${NPM_TOKEN}/humanitec/
       - npm config set always-auth
+      - npx npm-login-cmd
       - npm install
       - npm run init
     secrets: [NPM_USER, NPM_PASS, NPM_EMAIL, NPM_TOKEN, SSH_KEY, SSH_PUBLIC_KEY]
