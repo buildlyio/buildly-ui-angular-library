@@ -16,7 +16,6 @@ pipeline:
       - npm config set always-auth
       - npx npm-login-cmd
       - npm install
-      - npm run start
     secrets: [NPM_USER, NPM_PASS, NPM_EMAIL, NPM_TOKEN, SSH_KEY, SSH_PUBLIC_KEY]
     when:
       event: [push, tag]
