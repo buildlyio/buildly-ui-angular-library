@@ -32,7 +32,6 @@
             "stylePreprocessorOptions": {
               "includePaths": [
                 "./src",
-                "./projects/freyja-ui/src/lib/core",
                 "./src/assets/scss"
               ]
             },
