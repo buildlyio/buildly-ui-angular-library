@@ -29,6 +29,12 @@
       ],
       "freyja/*": [
         "dist/freyja/*"
+      ],
+      "freyja-test": [
+        "dist/freyja-test"
+      ],
+      "freyja-test/*": [
+        "dist/freyja-test/*"
       ]
     }
   }

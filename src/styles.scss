@@ -1,2 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import '_freyja-global';
+// @import '_freyja-global';
+
+$color-blue: #1b51a0;
+$color-primary: $color-blue;
+
+$spacer: rem-calc(24);
+$header-height: rem-calc(64) !default;

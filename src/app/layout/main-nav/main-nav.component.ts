@@ -14,6 +14,14 @@ export class MainNavComponent implements OnInit {
     {
       path: '/accordion',
       label: 'Accordion'
+    },
+    {
+      path: '/radio-button',
+      label: 'Radio Button'
+    },
+    {
+      path: '/check-box',
+      label: 'Check Box'
     }
   ];
   constructor() { }
