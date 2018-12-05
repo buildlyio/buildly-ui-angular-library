@@ -19,7 +19,7 @@ export class TextHelper {
   public toClass(str) {
     // Lower cases the string
     return str.toLowerCase()
-      .replace(/\s+/g, '-')
+      .replace(/\s+/g, '-');
   }
 
   public capitalize(str) {
