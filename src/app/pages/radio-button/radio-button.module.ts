@@ -5,6 +5,8 @@ import {ContentWrapModule} from '../../components/content-wrap/content-wrap.modu
 import { RadioButtonComponent } from './radio-button.component';
 import { ContentComponent } from './content/content.component';
 import { FjRadioButtonModule } from 'freyja-ui';
+// import { FjRadioButtonModule } from '@libs/freyja-ui/src/lib/radio-button/radio-button.module';
+
 
 @NgModule({
   declarations: [RadioButtonComponent, ContentComponent],
