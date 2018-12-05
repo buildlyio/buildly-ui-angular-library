@@ -11,6 +11,10 @@ export class RadioButtonComponent implements OnInit {
       path: '#overwiev',
       label: 'Overview'
     },
+    {
+      path: '#type',
+      label: 'Type'
+    }
   ];
   constructor() { }
 

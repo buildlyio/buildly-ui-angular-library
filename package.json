@@ -20,7 +20,7 @@
     "@angular/platform-browser": "^7.1.0",
     "@angular/platform-browser-dynamic": "^7.1.0",
     "@angular/router": "^7.1.0",
-    "freyja-ui": "^0.0.5",
+    "freyja-ui": "^0.0.6",
     "classnames": "^2.2.6",
     "core-js": "^2.5.7",
     "ngx-highlightjs": "^2.1.4",
