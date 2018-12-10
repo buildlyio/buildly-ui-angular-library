@@ -22,6 +22,10 @@ export class MainNavComponent implements OnInit {
     {
       path: '/check-box',
       label: 'Check Box'
+    },
+    {
+      path: '/number-input',
+      label: 'Number Input'
     }
   ];
   constructor() { }

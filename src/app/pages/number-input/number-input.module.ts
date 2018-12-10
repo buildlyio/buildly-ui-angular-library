@@ -1,24 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CheckBoxComponent } from './check-box.component';
+import { DemoNumberInputComponent } from './number-input.component';
 import { SubNavModule } from '../../layout/sub-nav/sub-nav.module';
 import { ContentWrapModule } from '../../components/content-wrap/content-wrap.module';
-import { FjCheckboxModule } from '../../../environments/environment';
+import { ContentComponent } from './content/content.component';
+import { FjNumberInputModule } from '../../../environments/environment';
 import { TextHelper } from '../../shared/helpers/text.helper';
 import { HighlightModule } from 'ngx-highlightjs';
 
 @NgModule({
-  declarations: [CheckBoxComponent],
+  declarations: [DemoNumberInputComponent, ContentComponent],
   imports: [
     CommonModule,
     SubNavModule,
     ContentWrapModule,
-    FjCheckboxModule,
+    FjNumberInputModule,
     HighlightModule.forRoot({ theme: 'arduino-light' })
   ],
   providers: [TextHelper],
   exports: [
-    CheckBoxComponent
+    DemoNumberInputComponent, ContentComponent
   ]
 })
-export class CheckBoxModule { }
+export class NumberInputModule { }

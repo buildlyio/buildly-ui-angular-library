@@ -7,22 +7,17 @@ import { TextHelper } from '@freyjaDemo/app/shared/helpers/text.helper';
   styleUrls: ['./content.component.scss']
 })
 export class ContentComponent implements OnInit {
-  public checkedState = this.textHelper.dedent`
-  <fj-checkbox checked>Checked</fj-checkbox>
+  public numberState = this.textHelper.dedent`
+  <fj-number-input>42</fj-number-input>
   `;
 
-  public uncheckedState = this.textHelper.dedent`
-  <fj-checkbox>Checked</fj-checkbox>
-  `;
 
   public disabledState = this.textHelper.dedent`
-  <fj-checkbox disabled="true">I am disabled</fj-checkbox>
-  <fj-checkbox disabled checked>I am checked</fj-checkbox>
+  <fj-number-input>42</fj-number-input>
   `;
 
   public labelPosition = this.textHelper.dedent`
-  <fj-checkbox labelPosition="before">Label Before</fj-checkbox>
-  <fj-checkbox checked>Label After</fj-checkbox>
+  <fj-number-input>42</fj-number-input>
   `;
 
   constructor(public textHelper: TextHelper) { }
