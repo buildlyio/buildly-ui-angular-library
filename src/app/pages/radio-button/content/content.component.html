@@ -1,10 +1,24 @@
 <h2>Radio Buttons</h2>
-<div>
-  <fj-radio-button name='gender' checked="true">Radio Option 1</fj-radio-button>
-</div>
-<div>
-  <!-- <fj-radio-button name='gender' labelPosition="before">Radio Option before</fj-radio-button> -->
-</div>
-<div>
-  <fj-radio-button name='gender'>Radio Option 2</fj-radio-button>
-</div>
+<h3>Checked</h3>
+<fj-radio-button checked>Checked</fj-radio-button>
+<pre><code highlight [code]="checkedState"></code></pre>
+
+<h3>Unchecked</h3>
+<fj-radio-button>Click me !</fj-radio-button>
+<pre><code highlight [code]="uncheckedState"></code></pre>
+
+<h3>Disabled</h3>
+<fj-radio-button disabled="true">I am disabled</fj-radio-button>
+<fj-radio-button disabled checked>I am checked</fj-radio-button>
+<pre><code highlight [code]="disabledState"></code></pre>
+
+
+<h3>Label Position</h3>
+<fj-radio-button labelPosition="before">Label Before</fj-radio-button>
+<fj-radio-button checked>Label After</fj-radio-button>
+<pre><code highlight [code]="labelPosition"></code></pre>
+
+<h3>In a Group</h3>
+
+<fj-radio-button name='gender'>Male</fj-radio-button>
+<fj-radio-button checked name='gender'>Female</fj-radio-button>

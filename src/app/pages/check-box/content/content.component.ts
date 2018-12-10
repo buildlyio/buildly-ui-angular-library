@@ -25,13 +25,6 @@ export class ContentComponent implements OnInit {
   <fj-checkbox checked>Label After</fj-checkbox>
   `;
 
-  public codeIcon = this.textHelper.dedent`
-    <fj-button icon="plus">Button</fj-button>
-  `;
-
-  public codeStyle = this.textHelper.dedent`
-    <fj-button [ghost]="true" icon="plus" shapeFill="#1b51a0">Ghost</fj-button>
-  `;
   constructor(public textHelper: TextHelper) { }
 
   ngOnInit() {
