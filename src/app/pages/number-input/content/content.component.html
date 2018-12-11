@@ -1,14 +1,24 @@
 <h2>Number Inputs</h2>
-<fj-number-input>42</fj-number-input>
+<fj-number-input label="Label" value="0"></fj-number-input>
 <pre><code highlight [code]="numberState"></code></pre>
 
 
+<h3>Sizes</h3>
+<fj-number-input label="Micro" size="micro" value="99"></fj-number-input>
+<fj-number-input label="Small" size="small" value="99"></fj-number-input>
+<fj-number-input label="Medium" value="99"></fj-number-input>
+<pre><code highlight [code]="disabledState"></code></pre>
+
 <h3>Disabled</h3>
-<fj-number-input disabled="true">I am disabled</fj-number-input>
+<fj-number-input disabled label="I am disabled" value="99"></fj-number-input>
 <pre><code highlight [code]="disabledState"></code></pre>
 
 
-<h3>Label Position</h3>
-<fj-number-input labelPosition="before">Label Before</fj-number-input>
-<fj-number-input>Label After</fj-number-input>
-<pre><code highlight [code]="labelPosition"></code></pre>
+<h3>Placeholder</h3>
+<fj-number-input placeholder="Enter Value" label="Placeholder Example"></fj-number-input>
+<pre><code highlight [code]="placeholder"></code></pre>
+
+
+<h3>State</h3>
+<fj-number-input placeholder="Errored" label="Error Example" [errored]=true></fj-number-input>
+<pre><code highlight [code]="placeholder"></code></pre>

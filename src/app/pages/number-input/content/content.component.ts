@@ -8,16 +8,16 @@ import { TextHelper } from '@freyjaDemo/app/shared/helpers/text.helper';
 })
 export class ContentComponent implements OnInit {
   public numberState = this.textHelper.dedent`
-  <fj-number-input>42</fj-number-input>
+  <fj-number-input label="Label" value="0"></fj-number-input>
   `;
 
 
   public disabledState = this.textHelper.dedent`
-  <fj-number-input>42</fj-number-input>
+  <fj-number-input disabled label="I am disabled" value="99"></fj-number-input>
   `;
 
-  public labelPosition = this.textHelper.dedent`
-  <fj-number-input>42</fj-number-input>
+  public placeholder = this.textHelper.dedent`
+  <fj-number-input placeholder="Enter Value" label="Placeholder Example"></fj-number-input>
   `;
 
   constructor(public textHelper: TextHelper) { }

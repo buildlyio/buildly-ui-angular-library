@@ -1,6 +1,6 @@
 // Loading Custom Fonts
-@include font-face("open-sans", "fonts/OpenSans-Regular", 400);
-@include font-face("open-sans", "fonts/OpenSans-Bold", 600);
+@include font-face("open-sans", "/assets/fonts/OpenSans-Regular", 400);
+@include font-face("open-sans", "/assets/fonts/OpenSans-Bold", 600);
 
 // Cutstom Freyja Variables
 $font-family-heading: open-sans;
