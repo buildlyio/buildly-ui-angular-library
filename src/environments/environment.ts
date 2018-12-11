@@ -15,6 +15,7 @@ export const environment = {
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 
-export { FjCheckboxModule  } from '@libs/freyja-ui/src/lib/checkbox/checkbox.module';
+export { FjCheckboxModule } from '@libs/freyja-ui/src/lib/checkbox/checkbox.module';
 export { FjRadioButtonModule } from '@libs/freyja-ui/src/lib/radio-button/radio-button.module';
-export {FjButtonModule} from '@libs/freyja-ui/src/lib/button/button.module';
+export { FjButtonModule } from '@libs/freyja-ui/src/lib/button/button.module';
+export { FjNumberInputModule } from '@libs/freyja-ui/src/lib/number-input/number-input.module';

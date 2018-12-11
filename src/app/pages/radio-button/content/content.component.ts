@@ -7,33 +7,24 @@ import { TextHelper } from '@freyjaDemo/app/shared/helpers/text.helper';
   styleUrls: ['./content.component.scss']
 })
 export class ContentComponent implements OnInit {
-  public codeType = this.textHelper.dedent`
-    <fj-button>Primary</fj-button>
-    <fj-button color="light">Light</fj-button>
-    <fj-button [disabled]="true">Disabled</fj-button>
-    <fj-button color="danger">Destructive</fj-button>
+  public checkedState = this.textHelper.dedent`
+  <fj-radio-button checked>Checked</fj-radio-button>
   `;
 
-  public codeSize = this.textHelper.dedent`
-    <fj-button size="lrg">Big</fj-button>
-    <fj-button size="med">Medium</fj-button>
-    <fj-button size="sm">Small</fj-button>
-    <fj-button size="micro">Micro</fj-button>
+  public uncheckedState = this.textHelper.dedent`
+  <fj-radio-button>Checked</fj-radio-button>
   `;
 
-  public codeShape = this.textHelper.dedent`
-    <fj-button>Radius</fj-button>
-    <fj-button shape="square">Square</fj-button>
-    <fj-button shape="rounded">Round</fj-button>
+  public disabledState = this.textHelper.dedent`
+  <fj-radio-button disabled="true">I am disabled</fj-radio-button>
+  <fj-radio-button disabled checked>I am checked</fj-radio-button>
   `;
 
-  public codeIcon = this.textHelper.dedent`
-    <fj-button icon="plus">Button</fj-button>
+  public labelPosition = this.textHelper.dedent`
+  <fj-radio-button labelPosition="before">Label Before</fj-radio-button>
+  <fj-radio-button checked>Label After</fj-radio-button>
   `;
 
-  public codeStyle = this.textHelper.dedent`
-    <fj-button [ghost]="true" icon="plus" shapeFill="#1b51a0">Ghost</fj-button>
-  `;
   constructor(public textHelper: TextHelper) { }
 
   ngOnInit() {

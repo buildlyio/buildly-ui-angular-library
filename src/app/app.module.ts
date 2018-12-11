@@ -10,6 +10,7 @@ import { appRoutes } from './app.routing';
 import { ButtonModule } from './pages/button/button.module';
 import { RadioButtonModule } from './pages/radio-button/radio-button.module';
 import { CheckBoxModule } from './pages/check-box/check-box.module';
+import { NumberInputModule } from './pages/number-input/number-input.module';
 import { SidenavModule } from './components/side-nav/side-nav.module';
 import { AccordionModule } from './pages/accordion/accordion.module';
 import { ContentWrapComponent } from './components/content-wrap/content-wrap.component';
@@ -27,6 +28,7 @@ import { ContentWrapModule } from './components/content-wrap/content-wrap.module
     ButtonModule,
     RadioButtonModule,
     CheckBoxModule,
+    NumberInputModule,
     AccordionModule,
     SidenavModule,
     ContentWrapModule,
