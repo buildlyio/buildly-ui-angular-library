@@ -48,3 +48,18 @@ pipeline:
     when:
       event: [push, tag]
       status: [success]
+
+  auto-update-robot-tests-matrix:
+    image: quay.io/ukhomeofficedigital/drone-trigger:latest
+    verbose: true
+    drone_server: http://drone.humanitec.io
+    drone_token: $DRONE_TOKEN
+    secrets: [DRONE_TOKEN]
+    repo: Humanitec/robot-tests-freyja
+    branch: master
+    deploy_to: update-dev-env
+    params: "APP_QUERY=matrix.FREYJA_DEMO_IMAGE.0,APP_VALUE=registry.tola.io/humanitec/freyja-demo:${DRONE_COMMIT_SHA},APP_PROJECT_NAME=${DRONE_REPO_NAME},APP_COMMIT_USER=${DRONE_COMMIT_AUTHOR}"
+    when:
+      event: [push, tag]
+      branch: master
+      status: [success]
