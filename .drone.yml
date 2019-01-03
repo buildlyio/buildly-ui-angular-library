@@ -37,7 +37,7 @@ pipeline:
     #   event: [push, tag]
     #   status: [success]
 
-  build-docker-image:
+  build-docker-image-tag:
     image: plugins/docker
     insecure: true
     registry: registry.tola.io
@@ -46,7 +46,21 @@ pipeline:
     auto_tag: true
     secrets: [DOCKER_USERNAME, DOCKER_PASSWORD]
     when:
-      event: [push, tag]
+      event: [tag]
+      status: [success]
+
+  build-docker-image-push:
+    image: plugins/docker
+    insecure: true
+    registry: registry.tola.io
+    repo: registry.tola.io/humanitec/freyja-demo
+    file: Dockerfile
+    secrets: [DOCKER_USERNAME, DOCKER_PASSWORD]
+    tags:
+      - ${DRONE_COMMIT_SHA}
+    when:
+      event: [push]
+      branch: master
       status: [success]
 
   auto-update-robot-tests-matrix:
