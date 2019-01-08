@@ -9,7 +9,9 @@
 <fj-button color="light">Light</fj-button>
 <fj-button [disabled]="true">Disabled</fj-button>
 <fj-button color="danger">Destructive</fj-button>
-<pre><code highlight [code]="codeType"></code></pre>
+<fj-accordion label="Code <>" open>
+  <pre><code highlight [code]="codeType"></code></pre>
+</fj-accordion>
 
 <h3>Size</h3>
 <div>A button can have different sizes.</div>
