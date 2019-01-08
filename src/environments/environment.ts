@@ -19,3 +19,6 @@ export { FjCheckboxModule } from '@libs/freyja-ui/src/lib/checkbox/checkbox.modu
 export { FjRadioButtonModule } from '@libs/freyja-ui/src/lib/radio-button/radio-button.module';
 export { FjButtonModule } from '@libs/freyja-ui/src/lib/button/button.module';
 export { FjNumberInputModule } from '@libs/freyja-ui/src/lib/number-input/number-input.module';
+export { FjSvgIconModule } from '@libs/freyja-ui/src/lib/svg-icon/svg-icon.module';
+export { FjTextInputModule } from '@libs/freyja-ui/src/lib/text-input/text-input.module';
+export { FjAccordionModule } from '@libs/freyja-ui/src/lib/accordion/accordion.module';

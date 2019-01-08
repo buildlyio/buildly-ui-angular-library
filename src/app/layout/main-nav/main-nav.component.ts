@@ -26,6 +26,14 @@ export class MainNavComponent implements OnInit {
     {
       path: '/number-input',
       label: 'Number Input'
+    },
+    {
+      path: '/text-input',
+      label: 'Text Input'
+    },
+    {
+      path: '/svg-icon',
+      label: 'SVG Icon'
     }
   ];
   constructor() { }

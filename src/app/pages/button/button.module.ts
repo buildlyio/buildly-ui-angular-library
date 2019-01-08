@@ -4,7 +4,7 @@ import { ButtonComponent } from './button.component';
 import { ContentComponent } from './content/content.component';
 import {SubNavModule} from '../../layout/sub-nav/sub-nav.module';
 import {ContentWrapModule} from '../../components/content-wrap/content-wrap.module';
-import {FjButtonModule} from '../../../environments/environment';
+import {FjButtonModule, FjAccordionModule} from '../../../environments/environment';
 import {HighlightModule} from 'ngx-highlightjs';
 import {TextHelper} from '../../shared/helpers/text.helper';
 
@@ -14,6 +14,7 @@ import {TextHelper} from '../../shared/helpers/text.helper';
     SubNavModule,
     ContentWrapModule,
     FjButtonModule,
+    FjAccordionModule,
     HighlightModule.forRoot({ theme: 'arduino-light'})
   ],
   providers: [TextHelper],
