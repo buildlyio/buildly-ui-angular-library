@@ -1,0 +1,71 @@
+@import "../core/_config";
+
+.content-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: $font-family-base;
+  /* aestheic variants */
+  &--rounded {
+
+    .content-switcher__tab:first-child {
+      border-bottom-left-radius: 2rem;
+      border-top-left-radius: 2rem;
+    }
+    .content-switcher__tab:last-child {
+      border-bottom-right-radius: 2rem;
+      border-top-right-radius: 2rem;
+    }
+  }
+
+  &--radius {
+
+    .content-switcher__tab:first-child {
+      border-right: 0;
+      border-bottom-left-radius: 4px;
+      border-top-left-radius: 4px;
+    }
+    .content-switcher__tab:last-child {
+      border-left: 0;
+      border-bottom-right-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+  }
+  &__tab {
+    border: solid 1px $color-blue;
+    color: $color-blue;
+    cursor: pointer;
+    font-family: $font-family-base;
+    font-size: 0.875rem;
+    height: 40px;
+    min-width: 104px;
+    outline: none;
+
+    &:hover {
+      background-color: rgba(220, 232, 249, 1);
+    }
+
+    &--is-active {
+      background-color: $color-blue !important;
+      color: $color-white;
+      pointer-events: none;
+    }
+
+    .content-switcher--sm & {
+      font-size: 0.8125rem;
+      height: 32px;
+    }
+
+    .content-switcher--disabled & {
+      border-color: $color-gray;
+      color: var(--color-gray);
+      pointer-events: none;
+
+      &--is-active {
+        background-color: $color-gray;
+        border-color: transparent;
+        color: $color-white;
+      }
+    }
+  }
+}
+

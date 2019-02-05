@@ -1,0 +1,14 @@
+// Loading Custom Fonts
+$font-base-path : "/assets/fonts/";
+@include font-face("open-sans", $font-base-path + "OpenSans-Regular", 400);
+@include font-face("open-sans", $font-base-path + "OpenSans-Bold", 600);
+
+// Cutstom Freyja Variables
+$font-family-heading: open-sans;
+$font-family-base:  open-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+$color-blue: #1b51a0;
+$color-primary: $color-blue;
+
+$spacer: rem-calc(24);
+$header-height: rem-calc(64) !default;

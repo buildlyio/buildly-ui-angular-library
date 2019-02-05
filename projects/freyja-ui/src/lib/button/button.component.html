@@ -1,0 +1,21 @@
+<button [id]="id"
+        class="fj-button"
+        [ngClass]="generateClassList()"
+        [ngStyle]= "generateStyles()"
+        [disabled]="disabled"
+        [tabIndex]="tabIndex"
+        [type]="type"
+        (mouseenter)="onMouseEnter()"
+        (mouseleave)="onMouseLeave()"
+>
+  <span class="fj-button-label">
+    <ng-content></ng-content>
+  </span>
+  <fj-icon *ngIf="icon"
+           class="fj-button--icon"
+           [ngStyle]="{margin: iconMargin}"
+           [svgName]="icon"
+           [size]="size"
+           [fillColor]="iconFill">
+  </fj-icon>
+</button>

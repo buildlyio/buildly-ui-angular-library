@@ -1,0 +1,91 @@
+@import "../core/_config";
+
+//@import "../../../../../src/styles/global";
+//
+//$primary: black;
+//.card-body{
+//  padding: rem-calc(12 14);
+//
+//  &.no-padding {
+//    padding: 0;
+//  }
+//  &.no-margin {
+//    .form-check--inline {
+//      margin: 0;
+//    }
+//  }
+//  &.small-text {
+//    .custom-control-label {
+//      font-size: rem-calc(14);
+//      line-height: rem-calc(24);
+//      color: $dark-blue;
+//    }
+//  }
+//}
+//
+//.custom-control {
+//  padding-left: rem-calc(27);
+//  align-items: center;
+//
+//  &-label{
+//    font-size: rem-calc(15);
+//    font-weight: 400;
+//    color: $gray-medium-dark;
+//    user-select: none;
+//    cursor: pointer;
+//    &::after, &::before {
+//      top: rem-calc(4);
+//      height: rem-calc(16);
+//      width: rem-calc(16);
+//    }
+//    &::before {
+//      border: rem-calc(1) solid $gray-lighter;
+//      border-radius: rem-calc(2);
+//      background-color: $white;
+//    }
+//    &:hover::before {
+//      border-color: $primary;
+//    }
+//  }
+//
+//  &-input {
+//    cursor: pointer;
+//    &:checked ~ .custom-control-label {
+//      &::before {
+//        border: rem-calc(1) solid $gray-lighter;
+//        border-radius: rem-calc(2);
+//        background-color: $white;
+//      }
+//      &:hover::before {
+//        border-color: black;
+//      }
+//      &::after {
+//        background-size: 70%;
+//      }
+//    }
+//  }
+//
+//  &-input:disabled ~ .custom-control-label,
+//  &-input:checked:disabled ~ .custom-control-label,
+//  &-input:disabled ~ .custom-control-label:hover,
+//  &-input:checked:disabled ~ .custom-control-label:hover {
+//    color: $gray-lighter;
+//    &::before {
+//      border: rem-calc(1) solid $gray-lighter;
+//      background-color: $gray-very-light !important;
+//    }
+//    &::after {
+//      opacity: 0.25;
+//    }
+//  }
+//}
+//
+//.no-border {
+//  border: 0 !important;
+//}
+//
+//// make the checboxes inline
+//.form-check--inline {
+//  width: 100%;
+//  margin-bottom: rem-calc(12);
+//}

@@ -1,0 +1,38 @@
+<div class="dropzone drag-drop">
+    <div *ngIf="noFileSelected && showPlaceholder">
+        <p class="drag-drop__file-missing">No file is selected</p>
+    </div>
+    <div
+        class="dropzone-container trigger-upload"
+        [dropzone]="dropZoneconfig"
+        [disabled]="disabled"
+        (error)="onUploadError($event)"
+        (addedFile)="onFileAdded($event)"
+        (removedFile)="onFileRemoved($event)"
+    >
+        <div class="dropzone-container__placeholder trigger-upload">
+            <i class="dropzone-container__icon-upload icon-document-upload"></i>
+            <p class="dropzone-container__label-dragdrop">
+               Drag and Drop
+            </p>
+            <p class="dropzone-container__label-or">
+                or
+            </p>
+          <fj-button
+            [icon]="'plus'"
+            [iconMargin]="'0 5px 0px 0px'"
+            [margin]="'0px'"
+            [ghost]="true"
+            [size]="'med'"
+          >
+            Choose a local file
+          </fj-button>
+        </div>
+    </div>
+    <div class="drag-drop__updload-info">
+        <fj-icon svgName="attachment"
+                 fillColor="black" class="drag-drop__updload-info-icon"></fj-icon>
+        <span>Maximum file size is 20MB</span>
+    </div>
+</div>
+

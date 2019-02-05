@@ -1,0 +1,11 @@
+<div class="fj-accordion"
+     [id]="id"
+     [ngClass]="generateClassList()">
+  <div class="fj-accordion__header"
+       (click)="toggleState($event)">
+    <label>{{label}}</label>
+  </div>
+  <div class="fj-accordion__content">
+    <ng-content></ng-content>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="fj-datepicker" [ngClass]="generateClassList()"  [formGroup]="formGroup" *ngIf="formGroup">
+  <label
+    [attr.for]="id"
+    class="label--medium"
+    *ngIf="label"
+  >{{label}}</label>
+  <div class="fj-datepicker__container">
+    <input
+      class="fj-datepicker__container__input"
+      ngx-mydatepicker
+      #dp="ngx-mydatepicker"
+      [options]="myOptions"
+      [defaultMonth]="myDefaultMonth"
+      (calendarToggle)="calendarToggle($event)"
+      (dateChanged)="onDateChanged($event)"
+      (click)="toggleCalendar($event)"
+      [ngStyle]= "customStyles"
+      [disabled]="disabled"
+      [attr.name]="id"
+      [placeholder]="placeholder"
+      [attr.value]="fileCreateDate ? fileCreateDate : Date"
+    />
+    <fj-icon svgName="calendar"
+             (click)="toggleCalendar($event)"
+             *ngIf="!disabled"
+             [fillColor]="'gray-light'"
+             class="fj-datepicker__container__icon"
+    >
+    </fj-icon>
+  </div>
+</div>

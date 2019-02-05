@@ -1,0 +1,36 @@
+@import "../core/_config";
+
+.icon {
+  // fill color
+  &--fill {
+    &--black {
+      fill: $color-black;
+    }
+    &--blue {
+      fill: $color-blue;
+    }
+    &--white {
+      fill: $color-white;
+    }
+    &--blue-light {
+      fill: $color-blue-light;
+    }
+    &--gray {
+      fill: $color-gray;
+    }
+    &--gray-light {
+      fill: $color-black-20;
+    }
+  }
+  &--size {
+    &--med {
+      width: rem-calc(8);
+    }
+  }
+
+
+  // stroke color
+  &--stroke {
+
+  }
+}

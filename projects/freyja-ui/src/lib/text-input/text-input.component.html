@@ -1,0 +1,46 @@
+<div class="fj-input" [ngClass]="generateClassList()" [formGroup]="formGroup" *ngIf="formGroup">
+  <label
+    [attr.for]="id"
+    class="label--medium"
+    *ngIf="label"
+    >{{label}}</label>
+  <input
+    type="{{type}}"
+    [ngStyle]="customStyles"
+    [id]="id"
+    [tabIndex]="tabIndex"
+    [disabled]="disabled"
+    [attr.name]="name"
+    [placeholder]="placeholder"
+    formControlName="{{controlName}}"
+    [attr.value]="value"
+    (click)="onClick($event)"
+    (change)="onValueChange($event)"
+    (focus)="onFocus($event)"
+    (mouseout)="onMouseOut($event)"
+  />
+  <label class="error--label" *ngIf="error">{{error}}</label>
+</div>
+<!-- Input without reactive forms-->
+<div class="fj-input" [ngClass]="generateClassList()" *ngIf="!formGroup">
+  <label
+    [attr.for]="id"
+    class="label--medium"
+    *ngIf="label"
+  >{{label}}</label>
+  <input
+    type="{{type}}"
+    [ngStyle]= "customStyles"
+    [id]="id"
+    [tabIndex]="tabIndex"
+    [disabled]="disabled"
+    [attr.name]="name"
+    [placeholder]="placeholder"
+    [attr.value]="value"
+    (click)="onClick($event)"
+    (change)="onValueChange($event)"
+    (focus)="onFocus($event)"
+    (mouseout)="onMouseOut($event)"
+  />
+  <label class="error--label" *ngIf="error">{{error}}</label>
+</div>

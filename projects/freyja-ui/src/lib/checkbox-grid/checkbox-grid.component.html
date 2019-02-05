@@ -1,0 +1,35 @@
+<h2 class="title">Main Title</h2>
+<div class="grid-form__card-body card-body" [ngClass]="{'no-padding': noPadding, 'no-margin': noMargin, 'small-text': smallText}">
+  <div *ngIf="formGroup" [formGroup]="formGroup">
+    <div *ngFor="let checkbox of checkboxes;" class="form-check" [ngClass]="{'form-check--inline': inline}">
+      <div class="custom-control custom-checkbox">
+        <input
+          type="checkbox"
+          class="custom-control-input"
+          [value]="checkbox.value"
+          [ngModel]="checkbox.checked"
+          (ngModelChange)="updateChecked($event, checkbox)"
+          [disabled]="checkbox.disabled"
+          [attr.id]="checkbox.id"
+          [attr.name]="checkbox.id" />
+        <label class="custom-control-label" [attr.for]="checkbox.id">{{checkbox.label}}</label>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!formGroup" [ngClass]="{'no-border': noBorder}">
+    <div *ngFor="let checkbox of checkboxes; " class="form-check" [ngClass]="{'form-check--inline': inline}">
+      <div class="custom-control custom-checkbox">
+        <input
+          type="checkbox"
+          class="custom-control-input"
+          [value]="checkbox.value"
+          [ngModel]="checkbox.checked"
+          (ngModelChange)="updateChecked($event, checkbox)"
+          [disabled]="checkbox.disabled"
+          [attr.id]="checkbox.id"
+          [attr.name]="checkbox.id" />
+        <label class="custom-control-label" [attr.for]="checkbox.id">{{checkbox.label}}</label>
+      </div>
+    </div>
+  </div>
+</div>

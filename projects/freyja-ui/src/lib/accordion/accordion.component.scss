@@ -1,0 +1,56 @@
+@import "../core/_config";
+
+.fj-accordion {
+  label {
+    display: block;
+    font-weight: $font-weight--bold;
+    padding-bottom: rem-calc(11);
+    padding-top: rem-calc(11);
+    transition: .2s linear;
+    cursor: pointer;
+    &::before {
+      border-right: 1px solid;
+      border-top: 1px solid;
+      content: '';
+      display: inline-block;
+      height: 6px;
+      margin: 0 1rem 0 .25rem;
+      transform: rotate(45deg);
+      transform-origin: 80% 40%;
+      transition: .2s linear;
+      width: 6px;
+    }
+  }
+  &__header {
+    display: flex;
+    cursor: pointer;
+  }
+  &__content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: rem-calc(0 20);
+    transition: .2s linear .1s;
+    border: 1px solid $color-gray;
+  }
+  &--disabled {
+    color: rgba(0, 0, 0, .25);
+    pointer-events: none;
+  }
+  &--open {
+    .fj-accordion__content {
+      max-height: 15em;
+      opacity: 1;
+      overflow: auto;
+      padding: rem-calc(11 20);
+    }
+    label::before {
+      transform: rotate(135deg);
+    }
+  }
+  &--label-after {
+    >div {
+      justify-content: flex-end;
+    }
+  }
+}

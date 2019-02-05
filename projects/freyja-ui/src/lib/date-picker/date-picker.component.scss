@@ -1,0 +1,163 @@
+@import "../core/_config";
+:host {
+  cursor: pointer;
+}
+
+.fj-datepicker {
+  &__container {
+    &__icon {
+      float: left;
+      margin-top: rem-calc(12);
+      margin-left: rem-calc(-35);
+    }
+    &__input {
+      box-sizing: border-box;
+      border: rem-calc(1) solid $color-black-15;
+      border-radius: rem-calc(4);
+      color: $color-black;
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      height: rem-calc(40);
+      margin-top: .25em;
+      margin-right: rem-calc(5);
+      outline: none;
+      padding: rem-calc(9 12);
+      float: left;
+      transition: .2s linear;
+      &:focus {
+        border-color: $color-blue;
+      }
+      &:hover {
+        color: $color-black-60;
+      }
+      &::placeholder {
+        color: $color-black-60;
+        font-weight: 100;
+        &:hover & {
+          color: $color-black-60;
+        }
+      }
+      &:disabled {
+        background-color: $color-gray-light;
+        border-color: $color-gray-light;
+        cursor: not-allowed;
+        &::placeholder {
+          color: $color-black-20;
+        }
+      }
+      &--small {
+        height: rem-calc(32);
+        font-size: rem-calc(14);
+        padding: rem-calc(9 10);
+      }
+      &--micro {
+        height: rem-calc(24);
+        font-size: rem-calc(12);
+        padding: rem-calc(9 8);
+      }
+      &--error {
+        border-color: $color-red;
+      }
+      &--required:after{
+        content: " *";
+      }
+    }
+
+  }
+}
+
+label {
+  cursor: pointer;
+  font-size: 0.875rem;
+  &.label--medium {
+    font-size: .75rem;
+    padding-left: .5em;
+  }
+  &.label--disabled {
+    color: $color-black-20;
+  }
+}
+
+.input-error {
+  color: $color-red;
+  font-size: .75rem;
+  padding: .5em;
+}
+
+.error--label {
+  font-size: rem-calc(12);
+  padding-left: .5em;
+  color: $color-red;
+}
+
+/deep/ {
+  ngx-my-date-picker {
+    .ngxmdp{
+      position: absolute;
+    }
+    .ngxmdp {
+      .header,
+      .headerbtncell,
+      .headerbtn,
+      .headerlabelbtn,
+      .weekdaytitle,
+      .currmonth {
+        background-color: $color-white;
+      }
+
+      .weekdaytitle {
+        padding-top: rem-calc(14);
+        padding-bottom: rem-calc(14);
+        color: $color-blue;
+        font-weight: 600;
+      }
+
+      .daycell,
+      .currmonth,
+      .highlight {
+        color: $color-gray;
+        font-weight: 500;
+      }
+
+      .tablesingleday:hover,
+      .tablesinglemonth:hover,
+      .tablesingleyear:hover {
+        background-color: $color-blue;
+        border-radius: rem-calc(4);
+        .currmonth {
+          color: white;
+        }
+      }
+      .selectedday .datevalue {
+        background-color: $color-blue !important;
+        color: white;
+      }
+      .selector{
+        padding: rem-calc(5);
+        left: rem-calc(-150);
+        background: $color-white;
+        border-color: rgba($color-black, .125);
+        &:focus{
+          border-color: rgba($color-black, .125);
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+        }
+      }
+      .selectorarrow{
+        &:focus{
+          &:before{
+            border-bottom-color: rgba($color-black, .125);
+          }
+        }
+      }
+      .selectorarrow:after{
+        border-bottom-color: $color-white;
+      }
+    }
+    .markcurrday, markcurrmonth{
+      text-decoration: none;
+    }
+  }
+}
+
+

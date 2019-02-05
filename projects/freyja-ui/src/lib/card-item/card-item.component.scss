@@ -1,0 +1,204 @@
+@import "../core/_config";
+
+.card-item {
+  width: 100%;
+  background-color: transparent;
+  &--vertical {
+    display: flex;
+    margin-bottom: rem-calc(60);
+    flex-direction: row;
+  }
+  &__content {
+    box-shadow: 0 rem-calc(2) rem-calc(3) 0 rgba(0, 0, 0, 0.12);
+    background-color: white;
+    &--vertical {
+      flex-direction: column;
+      width: rem-calc(250);
+      &--expanded {
+        width: rem-calc(500);
+        -webkit-transition: all 0.1s ease-in-out;
+        -moz-transition: all 0.1s ease-in-out;
+        -o-transition: all 0.1s ease-in-out;
+        -ms-transition: all 0.1s ease-in-out;
+        transition: all 0.1s ease-in-out;
+      }
+    }
+    &--horizontal {
+      flex-direction: row;
+      &--expanded {
+        -webkit-transition: all 0.1s ease-in-out;
+        -moz-transition: all 0.1s ease-in-out;
+        -o-transition: all 0.1s ease-in-out;
+        -ms-transition: all 0.1s ease-in-out;
+        transition: all 0.1s ease-in-out;
+      }
+    }
+    &--highlight {
+      background-color: $color-gray-light;
+    }
+  }
+  &__header {
+    padding: rem-calc(15);
+    display: flex;
+    cursor: pointer;
+    &--vertical {
+      display: flex;
+      flex-direction: column ;
+    }
+    &--horizontal {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  &__body {
+    padding: rem-calc(5 5 5 15);
+    display: flex;
+    flex-direction: column ;
+    &--vertical {
+    }
+    &--horizontal {
+    }
+    &__date {
+      margin-bottom: rem-calc(15);
+    }
+    &__details {
+      display: flex;
+      margin-bottom: rem-calc(15);
+      &__item {
+        flex: 1;
+      }
+    }
+    &__description {
+      margin-bottom: rem-calc(15);
+    }
+    &__tags {
+      margin-bottom: rem-calc(15);
+      &__text {
+        color: $color-blue;
+      }
+    }
+  }
+  &__divider {
+    height: rem-calc(2);
+    background-color: $color-gray-light;
+  }
+  &__below-menu {
+    position: relative;
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+    height: rem-calc(15);
+    width: auto;
+    z-index: 2;
+    cursor: pointer;
+    &--vertical {
+      height: 100%;
+      width: rem-calc(15);
+      display: flex;
+      flex-direction: column;
+    }
+    &:hover {
+      background-color: $color-blue-lightest-alt;
+    }
+  }
+  &__picture {
+    background-color: $color-blue-light;
+    &--vertical {
+      width: 100%;
+      height: rem-calc(150);
+      margin-bottom: rem-calc(15);
+    }
+    &--horizontal {
+      width: rem-calc(100);
+      height: rem-calc(100);
+      margin-right: rem-calc(15);
+    }
+  }
+  &__title {
+    &__container {
+      flex: 3;
+      &--vertical {
+        max-width: rem-calc(300);
+      }
+      &--horizontal {
+        max-height: rem-calc(100);
+        margin-right: rem-calc(30);
+      }
+    }
+    &__heading {
+      cursor: pointer;
+      margin-top: 0;
+    }
+    &__subtext {
+      & > p {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__right {
+    &__container {
+      flex: 1;
+      margin-right: rem-calc(30);
+      display: flex;
+      flex-direction: column;
+      &--vertical {
+        min-height: 0;
+        margin-bottom: rem-calc(30);
+      }
+      &--horizontal {
+        min-height: rem-calc(100);
+      }
+    }
+    &__caption {
+      font-size: 16px;
+      color: $color-text--caption;
+    }
+    &__link {
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      color: $color-blue;
+    }
+  }
+  &__actions {
+    &__container {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__editable{
+    cursor: pointer;
+    margin: 0;
+    padding: rem-calc(5);
+    &:hover {
+      &:after {
+        content: "✎";
+        display: inline-block;
+        padding-right: 5px;
+        font-size: 13px;
+        color: $color-black;
+        font-weight: 900;
+        -moz-transform: scale(-1, 1);
+        -webkit-transform: scale(-1, 1);
+        -o-transform: scale(-1, 1);
+        -ms-transform: scale(-1, 1);
+        transform: scale(-1, 1);
+      }
+    }
+    &--no-padding {
+      padding: rem-calc(0);
+    }
+    &__input {
+      &--hidden {
+        display: none;
+      }
+    }
+  }
+
+}
+
+.caption-text {
+  color: $color-text--caption;
+  font-size: rem-calc(10);
+}

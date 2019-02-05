@@ -1,0 +1,71 @@
+@import "../core/_config";
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  &--hidden {
+    display: none;
+  }
+  /* Modal Content/Box */
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-white;
+    margin: 10% auto; /* 15% from the top and centered */
+    padding: rem-calc(25);
+    border: 1px solid #888;
+    //overflow: auto;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+    &--big {
+      max-width: 60%; /* Could be more or less, depending on screen size */
+    }
+    &--small {
+      max-width: 40%; /* Could be more or less, depending on screen size */
+    }
+    &__top {
+      display: flex;
+      align-items: center;
+      /* The Close Button */
+      &__title {
+        flex: 80%;
+        margin: 0;
+      }
+    }
+    &__body {
+      display: flex;
+      //overflow: auto;
+      flex-wrap: wrap;
+      //margin: rem-calc(15 0);
+    }
+    &__bottom {
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+    }
+    &__close {
+      position: absolute;
+      right: rem-calc(15);
+      top: rem-calc(7);
+      color: rgba(0, 0, 0, 0.45);
+      font-weight: lighter;
+      font-size: 20px;
+      &:hover,
+      &:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+
+
