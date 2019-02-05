@@ -37,6 +37,4 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-/projects/freyja
-/projects/freyja-ui
 .npmrc
