@@ -15,9 +15,9 @@ export class ContentComponent implements OnInit {
   `;
 
   public codeSize = this.textHelper.dedent`
-    <fj-button size="lrg">Big</fj-button>
-    <fj-button size="med">Medium</fj-button>
-    <fj-button size="sm">Small</fj-button>
+    <fj-button size="large">Big</fj-button>
+    <fj-button size="medium">Medium</fj-button>
+    <fj-button size="small">Small</fj-button>
     <fj-button size="micro">Micro</fj-button>
   `;
 
