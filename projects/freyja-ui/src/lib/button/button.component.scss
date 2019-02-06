@@ -103,6 +103,11 @@
       }
     }
   }
+  &--full-width.fj-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
   /* sizing variants */
   &--large {
     font-size: 1rem;
