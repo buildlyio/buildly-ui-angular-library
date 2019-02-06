@@ -34,9 +34,6 @@ export class ContentComponent implements OnInit {
   public codeStyle = this.textHelper.dedent`
     <fj-button [ghost]="true" icon="plus_circle">Ghost</fj-button>
     <fj-button [ghost]="true" icon="plus_circle" disabled>Ghost</fj-button>
-    <div style="width: 300px">
-      <fj-button [fullWidth]="true">Full width</fj-button>
-    </div>
   `;
   public codeWidth = this.textHelper.dedent`
     <div style="width: 300px">
