@@ -1,6 +1,15 @@
-# AngularAppTest
+# Freyja
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
+This project contains the source code of the freyja ui component library and it's also a showcase for the different components.
+
+## Build and publish
+
+Run `ng build freyja-ui` to build the library. The build artifacts will be stored in the `dist/` directory.
+
+To publish to npm change directory to `/dist/freyja-ui` bump the version using `npm version patch | minor | major` or by changing it directly in `package.json` and the run `npm publish`
+
+
+To build the showcase project simply run Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Development server
 
@@ -9,10 +18,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
