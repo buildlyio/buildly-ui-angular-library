@@ -35,18 +35,18 @@ export class CardItemComponent implements OnInit{
 
   /**
    * checks wether the card item is expanded
-   * @type {boolean}
+   * {boolean}
    */
   public isExpanded;
 
   /**
    * checks if a click event is a single ou double click
-   * @type {boolean}
+   * {boolean}
    */
   public isSingleClick = false;
   /**
    * checks wether the card item elements are in edit mode
-   * @type {boolean}
+   * {boolean}
    */
   public isEdit = {
     picture: false,
@@ -67,7 +67,7 @@ export class CardItemComponent implements OnInit{
   public inputFieldStyles  = { marginTop: 0, width: '100%' };
   ngOnInit() {
     // init dynamic details field isEdit value to false
-    if (this.options.details) {
+    if (this.options && this.options.details) {
       this.options.details.forEach( (detailItem, index: number) => {
         this.isEdit['detailItem' + index] = false;
       });
