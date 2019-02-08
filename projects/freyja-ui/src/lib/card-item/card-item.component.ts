@@ -99,13 +99,20 @@ export class CardItemComponent implements OnInit {
   }
 
   /**
+   * deactivates edit mode for all fields
+   */
+  public deactivateEditMode() {
+    Object.keys(this.isEdit).forEach( key => {
+      this.isEdit[key] = false;
+    });
+  }
+
+  /**
    * toggles expanded view on single click
    */
   public toggleExpanded() {
     // deactivate any active edit mode
-    Object.keys(this.isEdit).forEach( key => {
-      this.isEdit[key] = false;
-    });
+    this.deactivateEditMode();
     this.isSingleClick = true;
     setTimeout(() => {
       if (this.isSingleClick) {

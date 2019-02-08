@@ -15,23 +15,11 @@
       flex-direction: column;
       width: rem-calc(250);
       &--expanded {
-        width: 100%;
-        -webkit-transition: all 0.1s ease-in-out;
-        -moz-transition: all 0.1s ease-in-out;
-        -o-transition: all 0.1s ease-in-out;
-        -ms-transition: all 0.1s ease-in-out;
-        transition: all 0.1s ease-in-out;
+        width: 75vw;
       }
     }
     &--horizontal {
       flex-direction: row;
-      &--expanded {
-        -webkit-transition: all 0.1s ease-in-out;
-        -moz-transition: all 0.1s ease-in-out;
-        -o-transition: all 0.1s ease-in-out;
-        -ms-transition: all 0.1s ease-in-out;
-        transition: all 0.1s ease-in-out;
-      }
     }
     &--highlight {
       background-color: $color-gray-light;
@@ -105,6 +93,7 @@
   &__picture {
     background-size: cover;
     background-position-x: 50%;
+    background-position-y: 50%;
     &--vertical {
       height: rem-calc(220);
       margin: rem-calc(0 -15 15 -15);
@@ -113,6 +102,9 @@
       width: rem-calc(100);
       height: rem-calc(100);
       margin-right: rem-calc(15);
+    }
+    &:hover {
+      opacity: 0.7;
     }
   }
   &__title {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CardItemAction, CardItemOptions } from '@libs/freyja-ui/src/lib/card-item/card-item-options';
+import { CardItemOptions } from '@libs/freyja-ui/src/lib/card-item/card-item-options';
 
 @Component({
   selector: 'fj-demo-card-item',
@@ -22,8 +22,9 @@ export class CardItemComponent implements OnInit {
       status: 'this is the second subtext',
       caption: 'caption',
       link: 'link',
-      create_date: '19.02.2019',
-      edit_date: '19.02.2019',
+      description: 'this is the description',
+      create_date: '2019-01-29T13:39:20.868000Z',
+      edit_date: '2019-01-29T13:39:20.868000Z',
       file: 'image-upload.svg'
     };
     this.options = {

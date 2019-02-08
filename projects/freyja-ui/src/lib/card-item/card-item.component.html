@@ -1,4 +1,4 @@
-<div class="card-item" [ngClass]="{'card-item--vertical': layout === 'vertical', 'card-item--horizontal': layout === 'horizontal'}">
+<div class="card-item" [ngClass]="{'card-item--vertical': layout === 'vertical', 'card-item--horizontal': layout === 'horizontal'}" (clickOutside)="deactivateEditMode()">
   <div class="card-item__content" [ngClass]="{
     'card-item__content--highlight':isHighlight,
     'card-item__content--vertical--expanded': isExpanded && layout === 'vertical',
