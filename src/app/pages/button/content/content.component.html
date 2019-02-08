@@ -1,43 +1,62 @@
 <h2>Buttons</h2>
-<fj-button>Primary</fj-button>
-<fj-button color="light">Light</fj-button>
-<fj-button icon="plus">Add something</fj-button>
+<div class="button-wrapper">
+  <fj-button>Primary</fj-button>
+  <fj-button color="light">Light</fj-button>
+  <fj-button icon="plus">Add something</fj-button>
+</div>
 
 <h3>Type</h3>
 <div>There are primary button, secondary button, disabled button and destructive button.</div>
-<fj-button>Primary</fj-button>
-<fj-button color="light">Light</fj-button>
-<fj-button [disabled]="true">Disabled</fj-button>
-<fj-button color="danger">Destructive</fj-button>
+<div class="button-wrapper">
+  <fj-button>Primary</fj-button>
+  <fj-button color="light">Light</fj-button>
+  <fj-button [disabled]="true">Disabled</fj-button>
+  <fj-button color="danger">Destructive</fj-button>
+</div>
 <fj-accordion label="Code <>" open>
   <pre><code highlight [code]="codeType"></code></pre>
 </fj-accordion>
 
 <h3>Size</h3>
 <div>A button can have different sizes.</div>
-<fj-button size="large">Big</fj-button>
-<fj-button size="medium">Medium</fj-button>
-<fj-button size="small">Small</fj-button>
-<fj-button size="micro">Micro</fj-button>
+<div class="button-wrapper">
+  <fj-button size="large">Big</fj-button>
+  <fj-button size="medium">Medium</fj-button>
+  <fj-button size="small">Small</fj-button>
+  <fj-button size="micro">Micro</fj-button>
+</div>
 <pre><code highlight [code]="codeSize"></code></pre>
 
 <h3>Shape</h3>
 <div>A button can have different shapes.</div>
-<fj-button>Radius</fj-button>
-<fj-button shape="square">Square</fj-button>
-<fj-button shape="rounded">Round</fj-button>
+<div class="button-wrapper">
+  <fj-button>Radius</fj-button>
+  <fj-button shape="square">Square</fj-button>
+  <fj-button shape="rounded">Round</fj-button>
+</div>
 <pre><code highlight [code]="codeShape"></code></pre>
 
 <h3>Icon</h3>
 <div>A button can contain different icons.</div>
-<fj-button icon="plus">Icon Before</fj-button>
-<fj-button icon="plus" iconPosition="after">Icon After</fj-button>
+<div class="button-wrapper">
+  <fj-button icon="plus">Icon Before</fj-button>
+  <fj-button icon="plus" iconPosition="after">Icon After</fj-button>
+</div>
 
 <pre><code highlight [code]="codeIcon"></code></pre>
 
 <h3>Style</h3>
 <div>A button can have different styles.</div>
-<fj-button [ghost]="true" icon="plus_circle">Ghost</fj-button>
-<fj-button [ghost]="true" icon="plus_circle" disabled>Ghost</fj-button>
+<div class="button-wrapper">
+  <fj-button [ghost]="true" icon="plus_circle">Ghost</fj-button>
+  <fj-button [ghost]="true" icon="plus_circle" disabled>Ghost</fj-button>
+</div>
 <pre><code highlight [code]="codeStyle"></code></pre>
+
+<h3>Width</h3>
+<div>A button can take the full width of its parent container.</div>
+<div style="width: 300px">
+  <fj-button [fullWidth]="true">Full width</fj-button>
+</div>
+<pre><code highlight [code]="codeWidth"></code></pre>
 

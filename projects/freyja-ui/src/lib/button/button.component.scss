@@ -2,7 +2,6 @@
 .fj-button {
   /* Block modal */
   display: inline-flex;
-  margin-right: rem-calc(8);
 
    /* Typography */
   color: $color-white;
@@ -101,6 +100,11 @@
         }
       }
     }
+  }
+  &--full-width {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   /* sizing variants */
   &--large {

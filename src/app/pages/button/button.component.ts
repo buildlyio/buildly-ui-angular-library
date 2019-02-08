@@ -92,6 +92,10 @@ export class ButtonComponent implements OnInit {
       ]
     },
     {
+      path: '#width',
+      label: 'Width',
+    },
+    {
       path: '#group',
       label: 'Group',
     },
