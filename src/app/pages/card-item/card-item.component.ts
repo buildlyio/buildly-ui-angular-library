@@ -10,6 +10,7 @@ export class CardItemComponent implements OnInit {
 
   options: CardItemOptions;
   item;
+  item2
 
   constructor() { }
 
@@ -25,7 +26,19 @@ export class CardItemComponent implements OnInit {
       description: 'this is the description',
       create_date: '2019-01-29T13:39:20.868000Z',
       edit_date: '2019-01-29T13:39:20.868000Z',
-      file: 'image-upload.svg'
+      file: '/assets/img/image-example.jpg'
+    };
+    this.item2 = {
+      title: 'Title',
+      subtext: 'This is a sub text',
+      subtext2: 'this is the second subtext',
+      model: 'this is the second subtext',
+      status: 'this is the second subtext',
+      caption: 'caption',
+      link: 'link',
+      description: 'this is the description',
+      create_date: '2019-01-29T13:39:20.868000Z',
+      edit_date: '2019-01-29T13:39:20.868000Z',
     };
     this.options = {
       title: {

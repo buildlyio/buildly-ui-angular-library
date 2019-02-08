@@ -7,7 +7,10 @@
     'card-item__content--horizontal': layout === 'horizontal'
     }">
     <div class="card-item__header" (click)="toggleExpanded()" [ngClass]="{'card-item__header--vertical': layout === 'vertical', 'card-item__header--horizontal': layout === 'horizontal'}">
-      <div class="card-item__picture" (click)="file.click()" *ngIf="options?.picture" [ngStyle]="{'background-image': 'url(' + item[options.picture.prop] + ')'}" [ngClass]="{'card-item__picture--vertical': layout === 'vertical', 'card-item__picture--horizontal': layout === 'horizontal'}"></div>
+      <div class="card-item__picture" *ngIf="options?.picture && item[options?.picture?.prop]" [ngStyle]="{'background-image': 'url(' + item[options.picture.prop] + ')'}" [ngClass]="{'card-item__picture--vertical': layout === 'vertical', 'card-item__picture--horizontal': layout === 'horizontal'}"></div>
+      <div class="card-item__picture" (click)="file.click()" *ngIf="options?.picture && !item[options?.picture?.prop]" [ngClass]="{'card-item__picture--vertical': layout === 'vertical', 'card-item__picture--horizontal': layout === 'horizontal'}">
+        <fj-icon [svgName]="'upload'"></fj-icon>
+      </div>
       <input type="file" accept="image/*" hidden #file>
       <div class="card-item__title__container" *ngIf="options?.title || options?.subText || options?.subText2" [ngClass]="{'card-item__title__container--vertical': layout === 'vertical', 'card-item__title__container--horizontal': layout === 'horizontal'}">
         <h3 class="card-item__title__heading card-item__editable" (dblclick)="activateEditMode($event, 'title')" *ngIf="options?.title && isEdit.title === false">{{item[options?.title?.prop]}}</h3>

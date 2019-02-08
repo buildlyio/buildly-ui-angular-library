@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import { CardItemOptions } from "@libs/freyja-ui/src/lib/card-item/card-item-options";
+import { CardItemOptions } from '@libs/freyja-ui/src/lib/card-item/card-item-options';
 
 @Component({
   selector: 'fj-card-item',

@@ -91,6 +91,10 @@
     }
   }
   &__picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-blue-lightest;
     background-size: cover;
     background-position-x: 50%;
     background-position-y: 50%;
