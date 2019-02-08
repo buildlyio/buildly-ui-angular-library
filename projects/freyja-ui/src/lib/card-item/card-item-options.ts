@@ -17,6 +17,7 @@ export interface CardItemOptions {
   date1?: CardItemOption;
   date2?: CardItemOption;
   details?: CardItemOption[];
+  tags?: CardItemOption,
   description?: CardItemOption;
   otherActions?: CardItemAction[];
   primaryAction?: CardItemAction;
