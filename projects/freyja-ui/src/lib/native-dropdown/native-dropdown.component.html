@@ -4,7 +4,8 @@
     class="label--medium"
     *ngIf="label"
   >{{label}}</label>
-  <select class="native-dropdown"
+  <select class="fj-native-dropdown"
+          [ngClass]="generateClassList()"
           id="{{id}}"
           (click)="onDropdownClicked($event)"
           (change)="onOptionSelected($event)"
@@ -21,8 +22,9 @@
     class="label--medium"
     *ngIf="label"
   >{{label}}</label>
-  <select class="native-dropdown"
+  <select class="fj-native-dropdown"
           id="{{id}}"
+          [ngClass]="generateClassList()"
           (click)="onDropdownClicked($event)"
           (change)="onOptionSelected($event)"
           [ngStyle]="customStyles"

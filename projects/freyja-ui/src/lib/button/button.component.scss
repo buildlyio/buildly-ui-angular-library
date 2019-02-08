@@ -6,7 +6,6 @@
 
    /* Typography */
   color: $color-white;
-  text-transform: uppercase;
   white-space: nowrap;
 
    /* View */
@@ -105,24 +104,28 @@
   }
   /* sizing variants */
   &--large {
-    font-size: 1rem;
+    font-size: $font-base;
     height: rem-calc(48);
-    padding: rem-calc(12 35);
+    line-height: $font-base-line-height;
+    padding: rem-calc(14 20);
   }
   &--medium {
-    font-size: .875rem;
+    font-size: $font-small;
     height: rem-calc(40);
-    padding: rem-calc(9.5 22);
+    line-height: $font-small-line-height;
+    padding: rem-calc(11 16);
   }
   &--small {
-    font-size: .8125rem;
+    font-size: $font-extra-small;
     height: rem-calc(32);
-    padding: rem-calc(6 18)
+    line-height: $font-extra-small-line-height;
+    padding: rem-calc(8 12)
   }
   &--micro {
-    font-size: .75rem;
+    font-size: $font-label;
     height: rem-calc(24);
-    padding: rem-calc(2.5 15);
+    line-height: $font-label-line-height;
+    padding: rem-calc(6 8);
   }
   /* color variants */
   &--danger {

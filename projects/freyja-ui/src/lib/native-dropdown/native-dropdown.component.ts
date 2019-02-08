@@ -68,4 +68,15 @@ export class NativeDropdownComponent extends BaseComponent {
     evt.stopPropagation();
   }
 
+  /**
+   * @description Add css classes based on inputs like size, shape etc
+   */
+  public generateClassList() {
+    const baseCls = 'fj-native-dropdown--';
+    const classes = {
+      [baseCls + this.size]: this.size,
+    };
+    return classes;
+  }
+
 }

@@ -1,11 +1,12 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { CardItemOptions } from "@libs/freyja-ui/src/lib/card-item/card-item-options";
 
 @Component({
   selector: 'fj-card-item',
   templateUrl: './card-item.component.html',
   styleUrls: ['./card-item.component.scss']
 })
-export class CardItemComponent implements OnInit{
+export class CardItemComponent implements OnInit {
 
   /**
    * current item data
@@ -14,8 +15,7 @@ export class CardItemComponent implements OnInit{
   /**
    * current item options
    */
-  @Input() options: any;
-
+  @Input() options: CardItemOptions;
   /**
    * card layout (vertical or horizontal)
    */

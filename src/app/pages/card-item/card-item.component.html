@@ -1,6 +1,33 @@
 <fj-demo-content-wrap>
   <h2>Card Item</h2>
-  <fj-card-item
-  >
-  </fj-card-item>
+  <h3>Horizontal Layout</h3>
+  <div class="container container--horizontal">
+    <fj-card-item
+      [item]="item"
+      [layout]="'horizontal'"
+      [options]="options"
+    >
+    </fj-card-item>
+    <fj-card-item
+      [item]="item"
+      [layout]="'horizontal'"
+      [options]="options"
+    >
+    </fj-card-item>
+  </div>
+  <h3>Vertical Layout</h3>
+  <div class="container container--vertical">
+    <fj-card-item
+      [item]="item"
+      [layout]="'vertical'"
+      [options]="options"
+    >
+    </fj-card-item>
+    <fj-card-item
+      [item]="item"
+      [layout]="'vertical'"
+      [options]="options"
+    >
+    </fj-card-item>
+  </div>
 </fj-demo-content-wrap>
