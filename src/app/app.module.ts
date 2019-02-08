@@ -14,9 +14,9 @@ import { NumberInputModule } from './pages/number-input/number-input.module';
 import { TextInputModule } from './pages/text-input/text-input.module';
 import { SidenavModule } from './components/side-nav/side-nav.module';
 import { AccordionModule } from './pages/accordion/accordion.module';
-import { ContentWrapComponent } from './components/content-wrap/content-wrap.component';
 import { SvgIconModule } from './pages/svg-icon/svg-icon.module';
 import { ContentWrapModule } from './components/content-wrap/content-wrap.module';
+import { CardItemModule } from './pages/card-item/card-item.module';
 
 @NgModule({
   declarations: [
@@ -36,6 +36,7 @@ import { ContentWrapModule } from './components/content-wrap/content-wrap.module
     AccordionModule,
     SidenavModule,
     ContentWrapModule,
+    CardItemModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

@@ -6,6 +6,7 @@ import { CheckBoxComponent } from './pages/check-box/check-box.component';
 import { DemoNumberInputComponent } from './pages/number-input/number-input.component';
 import { DemoTextInputComponent } from './pages/text-input/text-input.component';
 import { DemoSvgIconComponent } from './pages/svg-icon/svg-icon.component';
+import { CardItemComponent } from './pages/card-item/card-item.component';
 
 export const appRoutes: Routes = [
   { path: '', component: ButtonComponent },
@@ -16,4 +17,5 @@ export const appRoutes: Routes = [
   { path: 'number-input', component: DemoNumberInputComponent },
   { path: 'text-input', component: DemoTextInputComponent },
   { path: 'svg-icon', component: DemoSvgIconComponent },
+  { path: 'card-item', component: CardItemComponent },
 ];

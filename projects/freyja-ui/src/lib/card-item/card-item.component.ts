@@ -1,11 +1,12 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { CardItemOptions } from '@libs/freyja-ui/src/lib/card-item/card-item-options';
 
 @Component({
   selector: 'fj-card-item',
   templateUrl: './card-item.component.html',
   styleUrls: ['./card-item.component.scss']
 })
-export class CardItemComponent implements OnInit{
+export class CardItemComponent implements OnInit {
 
   /**
    * current item data
@@ -14,8 +15,7 @@ export class CardItemComponent implements OnInit{
   /**
    * current item options
    */
-  @Input() options: any;
-
+  @Input() options: CardItemOptions;
   /**
    * card layout (vertical or horizontal)
    */
@@ -35,18 +35,18 @@ export class CardItemComponent implements OnInit{
 
   /**
    * checks wether the card item is expanded
-   * @type {boolean}
+   * {boolean}
    */
   public isExpanded;
 
   /**
    * checks if a click event is a single ou double click
-   * @type {boolean}
+   * {boolean}
    */
   public isSingleClick = false;
   /**
    * checks wether the card item elements are in edit mode
-   * @type {boolean}
+   * {boolean}
    */
   public isEdit = {
     picture: false,
@@ -67,7 +67,7 @@ export class CardItemComponent implements OnInit{
   public inputFieldStyles  = { marginTop: 0, width: '100%' };
   ngOnInit() {
     // init dynamic details field isEdit value to false
-    if (this.options.details) {
+    if (this.options && this.options.details) {
       this.options.details.forEach( (detailItem, index: number) => {
         this.isEdit['detailItem' + index] = false;
       });
@@ -99,13 +99,20 @@ export class CardItemComponent implements OnInit{
   }
 
   /**
+   * deactivates edit mode for all fields
+   */
+  public deactivateEditMode() {
+    Object.keys(this.isEdit).forEach( key => {
+      this.isEdit[key] = false;
+    });
+  }
+
+  /**
    * toggles expanded view on single click
    */
   public toggleExpanded() {
     // deactivate any active edit mode
-    Object.keys(this.isEdit).forEach( key => {
-      this.isEdit[key] = false;
-    });
+    this.deactivateEditMode();
     this.isSingleClick = true;
     setTimeout(() => {
       if (this.isSingleClick) {

@@ -50,7 +50,7 @@
   $spacer: 1rem !default; //
   // LAYOUT
   //––––––––––––––––––––––––––––––––––––––––––––––––––
-  $header-height: rem-calc(64) !default; // Fonts
+  $header-height: rem-calc(32) !default; // Fonts
   //
   //––––––––––––––––––––––––––––––––––––––––––––––––––
   // stylelint-disable value-keyword-case
@@ -79,5 +79,15 @@
   $haf: "&:hover, &:active, &:focus";
   $checkbox-width: rem-calc(18);
   $checkbox-offset: -18px;
-
+  // Font sizes
   $font-weight--bold: 700;
+  $font-base: rem-calc(16);
+  $font-small: rem-calc(14);
+  $font-extra-small: rem-calc(12);
+  $font-label: rem-calc(10);
+  // Line heights
+  $font-base-line-height: rem-calc(20);
+  $font-small-line-height: rem-calc(18);
+  $font-extra-small-line-height: rem-calc(16);
+  $font-label-line-height: rem-calc(12);
+

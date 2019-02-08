@@ -15,37 +15,26 @@
       flex-direction: column;
       width: rem-calc(250);
       &--expanded {
-        width: rem-calc(500);
-        -webkit-transition: all 0.1s ease-in-out;
-        -moz-transition: all 0.1s ease-in-out;
-        -o-transition: all 0.1s ease-in-out;
-        -ms-transition: all 0.1s ease-in-out;
-        transition: all 0.1s ease-in-out;
+        width: 75vw;
       }
     }
     &--horizontal {
       flex-direction: row;
-      &--expanded {
-        -webkit-transition: all 0.1s ease-in-out;
-        -moz-transition: all 0.1s ease-in-out;
-        -o-transition: all 0.1s ease-in-out;
-        -ms-transition: all 0.1s ease-in-out;
-        transition: all 0.1s ease-in-out;
-      }
     }
     &--highlight {
       background-color: $color-gray-light;
     }
   }
   &__header {
-    padding: rem-calc(15);
     display: flex;
     cursor: pointer;
     &--vertical {
+      padding: rem-calc(0 15 15 15);
       display: flex;
       flex-direction: column ;
     }
     &--horizontal {
+      padding: rem-calc(15);
       display: flex;
       flex-direction: row;
     }
@@ -92,7 +81,7 @@
     z-index: 2;
     cursor: pointer;
     &--vertical {
-      height: 100%;
+      height: unset;
       width: rem-calc(15);
       display: flex;
       flex-direction: column;
@@ -102,16 +91,24 @@
     }
   }
   &__picture {
-    background-color: $color-blue-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-blue-lightest;
+    background-size: cover;
+    background-position-x: 50%;
+    background-position-y: 50%;
     &--vertical {
-      width: 100%;
-      height: rem-calc(150);
-      margin-bottom: rem-calc(15);
+      height: rem-calc(220);
+      margin: rem-calc(0 -15 15 -15);
     }
     &--horizontal {
       width: rem-calc(100);
       height: rem-calc(100);
       margin-right: rem-calc(15);
+    }
+    &:hover {
+      opacity: 0.7;
     }
   }
   &__title {
@@ -165,6 +162,11 @@
     &__container {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    &__item {
+      margin-bottom: rem-calc(5);
     }
   }
   &__editable{

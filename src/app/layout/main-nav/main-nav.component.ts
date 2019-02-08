@@ -34,6 +34,10 @@ export class MainNavComponent implements OnInit {
     {
       path: '/svg-icon',
       label: 'SVG Icon'
+    },
+    {
+      path: '/card-item',
+      label: 'Card Item'
     }
   ];
   constructor() { }

@@ -1,6 +1,6 @@
 @import "../core/_config";
 
-.native-dropdown {
+.fj-native-dropdown {
   /* remove arrows for Firefox */
   -moz-appearance: none;
   /* remove arrows for for Chrome */
@@ -18,6 +18,32 @@
   }
   &:hover {
     background-color: aliceblue;
+  }
+
+  /* sizing variants */
+  &--large {
+    font-size: $font-base;
+    height: rem-calc(48);
+    line-height: $font-base-line-height;
+    padding: rem-calc(14 20);
+  }
+  &--medium {
+    font-size: $font-small;
+    height: rem-calc(40);
+    line-height: $font-small-line-height;
+    padding: rem-calc(11 16);
+  }
+  &--small {
+    font-size: $font-extra-small;
+    height: rem-calc(32);
+    line-height: $font-extra-small-line-height;
+    padding: rem-calc(8 12)
+  }
+  &--micro {
+    font-size: $font-label;
+    height: rem-calc(24);
+    line-height: $font-label-line-height;
+    padding: rem-calc(6 8);
   }
 }
 
