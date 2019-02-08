@@ -2,11 +2,9 @@
 .fj-button {
   /* Block modal */
   display: inline-flex;
-  margin-right: rem-calc(8);
 
    /* Typography */
   color: $color-white;
-  text-transform: uppercase;
   white-space: nowrap;
 
    /* View */
@@ -102,6 +100,11 @@
         }
       }
     }
+  }
+  &--full-width {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   /* sizing variants */
   &--large {

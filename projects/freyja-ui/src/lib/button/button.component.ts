@@ -63,6 +63,7 @@ export class ButtonComponent extends IconBaseComponent implements OnInit {
       [baseCls + this.color]: this.color,
       [baseCls + this.size]: this.size,
       [baseCls + this.shape]: this.shape,
+      [baseCls + 'full-width']: this.fullWidth,
       [`${baseCls}icon-before`]: this.iconPosition === 'before',
       [`${baseCls}ghost`]: this.ghost
     };

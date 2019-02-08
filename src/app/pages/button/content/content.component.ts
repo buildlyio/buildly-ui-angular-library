@@ -15,9 +15,9 @@ export class ContentComponent implements OnInit {
   `;
 
   public codeSize = this.textHelper.dedent`
-    <fj-button size="lrg">Big</fj-button>
-    <fj-button size="med">Medium</fj-button>
-    <fj-button size="sm">Small</fj-button>
+    <fj-button size="large">Big</fj-button>
+    <fj-button size="medium">Medium</fj-button>
+    <fj-button size="small">Small</fj-button>
     <fj-button size="micro">Micro</fj-button>
   `;
 
@@ -32,7 +32,13 @@ export class ContentComponent implements OnInit {
   `;
 
   public codeStyle = this.textHelper.dedent`
-    <fj-button [ghost]="true" icon="plus" shapeFill="#1b51a0">Ghost</fj-button>
+    <fj-button [ghost]="true" icon="plus_circle">Ghost</fj-button>
+    <fj-button [ghost]="true" icon="plus_circle" disabled>Ghost</fj-button>
+  `;
+  public codeWidth = this.textHelper.dedent`
+    <div style="width: 300px">
+      <fj-button [fullWidth]="true">Full width</fj-button>
+    </div>
   `;
   constructor(public textHelper: TextHelper) { }
 
