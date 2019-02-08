@@ -166,6 +166,7 @@
       flex-direction: row;
     }
     &__item {
+      margin-right: rem-calc(5);
       margin-bottom: rem-calc(5);
     }
   }
