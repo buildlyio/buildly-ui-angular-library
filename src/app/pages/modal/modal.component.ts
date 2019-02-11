@@ -10,12 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class ModalComponent implements OnInit {
   public navItems = [
     {
-      path: '#overwiev',
-      label: 'Overview'
+      path: '#custom-modal',
+      label: 'Custom Modal Content'
     },
     {
-      path: '#type',
-      label: 'Type'
+      path: '#predefined-modal',
+      label: 'Predefined Modal Content'
     }
   ];
 
@@ -40,6 +40,7 @@ export class ModalComponent implements OnInit {
   };
   constructor(public textHelper: TextHelper) { }
 
+
   public customModal = this.textHelper.dedent`
     <fj-modal #modalCustom>
       <div modal-content>
@@ -60,7 +61,7 @@ export class ModalComponent implements OnInit {
   `;
 
   public definedModalHtml = this.textHelper.dedent`
-    <fj-modal #modalDefined [modalContent]="modalContent">
+    <fj-modal #modalDefined [modalContent]="modalContent" (actionClicked)="handleAction($event)">
 
     </fj-modal>
   `;
@@ -87,10 +88,37 @@ export class ModalComponent implements OnInit {
           value: 'danger'
         }
       };
+
+      handleAction(type) {
+        switch (type) {
+          case 'primary':
+            alert('Primary was clicked!');
+            break;
+          case 'secondary':
+            alert('Secondary was clicked!');
+            break;
+          case 'danger':
+            alert('Danger was clicked!');
+            break;
+        }
+      }
     }
   `;
 
   ngOnInit() {
   }
 
+  handleAction(type) {
+    switch (type) {
+      case 'primary':
+        alert('Primary was clicked!');
+        break;
+      case 'secondary':
+        alert('Secondary was clicked!');
+        break;
+      case 'danger':
+        alert('Danger was clicked!');
+        break;
+    }
+  }
 }

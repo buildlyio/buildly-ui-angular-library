@@ -23,9 +23,11 @@
   <pre><code highlight [code]="customModal"></code></pre>
 
   <h3>Predefined Modal Content</h3>
-  <p>You can alternatively use the predefined structure by using the Input of `modalContent`</p>
+  <p>You can alternatively use the predefined structure by using the Input of `modalContent`. Using this method, 
+     you can also handle the events coming from the modal. Just pass in a fucntion, and in this function, you 
+     can decide what actions happen for certain action types.</p>
 
-  <fj-modal #modalDefined [modalContent]="modalContent">
+  <fj-modal #modalDefined [modalContent]="modalContent" (actionClicked)="handleAction($event)">
 
   </fj-modal>
   <fj-button (click)="modalDefined.showModal = true">
@@ -35,4 +37,5 @@
   <pre><code highlight [code]="definedModalHtml"></code></pre>
   <pre><code highlight [code]="definedModalJS"></code></pre>
   
+  <fj-demo-sub-nav [navItems]="navItems"></fj-demo-sub-nav>
 </fj-demo-content-wrap>
