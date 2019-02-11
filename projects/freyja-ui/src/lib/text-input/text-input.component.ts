@@ -143,7 +143,7 @@ export class TextInputComponent extends BaseComponent  implements OnChanges {
     const classes = {
       ['fj-input--' + this.size]: this.size,
       ['fj-input--required']: this.required,
-      ['fj-input--error']: this.errored,
+      ['fj-input--error']: this.errored || this.error,
     };
     return classes;
   }
