@@ -1,3 +1,6 @@
+import { ModalModule } from './pages/modal/modal.module';
+import { HighlightModule } from 'ngx-highlightjs';
+import { FjButtonModule } from './../../projects/freyja-ui/src/lib/button/button.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -37,6 +40,7 @@ import { CardItemModule } from './pages/card-item/card-item.module';
     SidenavModule,
     ContentWrapModule,
     CardItemModule,
+    ModalModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
