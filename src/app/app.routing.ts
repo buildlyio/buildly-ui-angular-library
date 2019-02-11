@@ -1,3 +1,4 @@
+import { ModalComponent } from './pages/modal/modal.component';
 import { Routes } from '@angular/router';
 import {ButtonComponent} from './pages/button/button.component';
 import {AccordionComponent} from './pages/accordion/accordion.component';
@@ -18,4 +19,5 @@ export const appRoutes: Routes = [
   { path: 'text-input', component: DemoTextInputComponent },
   { path: 'svg-icon', component: DemoSvgIconComponent },
   { path: 'card-item', component: CardItemComponent },
+  { path: 'modal', component: ModalComponent }
 ];

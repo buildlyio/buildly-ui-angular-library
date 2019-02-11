@@ -1,0 +1,38 @@
+<fj-demo-content-wrap>
+  <h2>Modal</h2>
+
+  <h3>Custom Modal Content</h3>
+  <p>You can completely modify the modal content by using 'modal-content' directive.</p>
+  <fj-modal #modalCustom>
+    <div modal-content>
+      <div class="custom-class">
+        <h1>Custom Modal Content</h1>
+        <div class="custom-class__desc">
+          You can customise the content in the modal as much as you want with <pre>modal-content</pre>
+        </div>
+        <fj-button>
+          Custom action
+        </fj-button>
+      </div>
+    </div>
+  </fj-modal>
+  <fj-button (click)="modalCustom.showModal = true">
+    Open Modal
+  </fj-button>
+
+  <pre><code highlight [code]="customModal"></code></pre>
+
+  <h3>Predefined Modal Content</h3>
+  <p>You can alternatively use the predefined structure by using the Input of `modalContent`</p>
+
+  <fj-modal #modalDefined [modalContent]="modalContent">
+
+  </fj-modal>
+  <fj-button (click)="modalDefined.showModal = true">
+    Open Modal
+  </fj-button>
+
+  <pre><code highlight [code]="definedModalHtml"></code></pre>
+  <pre><code highlight [code]="definedModalJS"></code></pre>
+  
+</fj-demo-content-wrap>

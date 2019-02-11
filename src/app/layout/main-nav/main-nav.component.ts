@@ -38,6 +38,10 @@ export class MainNavComponent implements OnInit {
     {
       path: '/card-item',
       label: 'Card Item'
+    },
+    {
+      path: '/modal',
+      label: 'Modal'
     }
   ];
   constructor() { }
