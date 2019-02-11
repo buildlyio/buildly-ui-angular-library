@@ -52,3 +52,6 @@ export * from './lib/drag-and-drop/drag-and-drop.module';
 
 export * from './lib/date-picker/date-picker.component';
 export * from './lib/date-picker/date-picker.module';
+
+export * from './lib/light-box/light-box.component';
+export * from './lib/light-box/light-box.module';
