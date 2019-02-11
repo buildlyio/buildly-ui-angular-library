@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { CardItemOptions } from './card-item-options';
+import { LightBoxComponent } from '../light-box/light-box.component';
 
 @Component({
   selector: 'fj-card-item',
@@ -33,6 +34,9 @@ export class CardItemComponent implements OnInit {
    */
   @Output() elementEdited: EventEmitter<any> = new EventEmitter();
 
+  @ViewChild(LightBoxComponent) lightBox: LightBoxComponent;
+
+
   /**
    * checks wether the card item is expanded
    * {boolean}
@@ -65,6 +69,10 @@ export class CardItemComponent implements OnInit {
   public showBelowMenu = false;
 
   public inputFieldStyles  = { marginTop: 0, width: '100%' };
+
+  public lightBoxImages;
+
+  constructor(private eRef: ElementRef) {}
   ngOnInit() {
     // init dynamic details field isEdit value to false
     if (this.options && this.options.details) {
@@ -102,9 +110,19 @@ export class CardItemComponent implements OnInit {
    * deactivates edit mode for all fields
    */
   public deactivateEditMode() {
-    Object.keys(this.isEdit).forEach( key => {
-      this.isEdit[key] = false;
-    });
+    this.isEdit = {
+      picture: false,
+      title: false,
+      subText: false,
+      subText2: false,
+      caption: false,
+      link: false,
+      date1: false,
+      date2: false,
+      details: false,
+      description: false,
+      tags: false
+    };
   }
 
   /**
@@ -112,10 +130,10 @@ export class CardItemComponent implements OnInit {
    */
   public toggleExpanded() {
     // deactivate any active edit mode
-    this.deactivateEditMode();
     this.isSingleClick = true;
     setTimeout(() => {
       if (this.isSingleClick) {
+        this.deactivateEditMode();
         this.isExpanded = !this.isExpanded;
       }
     }, 250);
@@ -135,6 +153,21 @@ export class CardItemComponent implements OnInit {
   }
 
   /**
+   * a function that is triggered when the card item picture is clicked and it sets the image in the lightbox component
+   */
+  public onPictureClicked() {
+    if (this.item[this.options.picture.prop] && this.item[this.options.title.prop]) {
+      this.lightBoxImages = [
+        {
+          src: this.item[this.options.picture.prop],
+          alt: this.item[this.options.title.prop]
+        }
+      ];
+      this.lightBox.openModal(1);
+    }
+  }
+
+  /**
    * a function that will be triggered when an item has been edited
    * @param {string} value - value of the edited element
    * @param {string} element - element that is edited
@@ -149,6 +182,4 @@ export class CardItemComponent implements OnInit {
     };
     this.elementEdited.emit(editObj);
   }
-
-
 }

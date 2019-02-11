@@ -10,7 +10,7 @@ export class CardItemComponent implements OnInit {
 
   options: CardItemOptions;
   item;
-  item2
+  item2;
 
   constructor() { }
 

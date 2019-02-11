@@ -6,6 +6,7 @@ import { FjNativeDropdownModule } from '../native-dropdown/native-dropdown.modul
 import { FjTextInputModule } from '../text-input/text-input.module';
 import { ClickOutsideModule } from 'ng4-click-outside';
 import { IconModule } from '../icon/icon.module';
+import { FjLightBoxModule } from "@libs/freyja-ui/src/lib/light-box/light-box.module";
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { IconModule } from '../icon/icon.module';
     ClickOutsideModule,
     IconModule,
     FjButtonModule,
+    FjLightBoxModule,
     FjTextInputModule,
     FjNativeDropdownModule
   ],

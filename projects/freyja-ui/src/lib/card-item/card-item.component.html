@@ -1,4 +1,4 @@
-<div class="card-item" [ngClass]="{'card-item--vertical': layout === 'vertical', 'card-item--horizontal': layout === 'horizontal'}" (clickOutside)="deactivateEditMode()">
+<div class="card-item" [ngClass]="{'card-item--vertical': layout === 'vertical', 'card-item--horizontal': layout === 'horizontal'}">
   <div class="card-item__content" [ngClass]="{
     'card-item__content--highlight':isHighlight,
     'card-item__content--vertical--expanded': isExpanded && layout === 'vertical',
@@ -7,8 +7,20 @@
     'card-item__content--horizontal': layout === 'horizontal'
     }">
     <div class="card-item__header" (click)="toggleExpanded()" [ngClass]="{'card-item__header--vertical': layout === 'vertical', 'card-item__header--horizontal': layout === 'horizontal'}">
-      <div class="card-item__picture" *ngIf="options?.picture && item[options?.picture?.prop]" [ngStyle]="{'background-image': 'url(' + item[options.picture.prop] + ')'}" [ngClass]="{'card-item__picture--vertical': layout === 'vertical', 'card-item__picture--horizontal': layout === 'horizontal'}"></div>
-      <div class="card-item__picture" (click)="file.click()" *ngIf="options?.picture && !item[options?.picture?.prop]" [ngClass]="{'card-item__picture--vertical': layout === 'vertical', 'card-item__picture--horizontal': layout === 'horizontal'}">
+      <!-- Image exists-->
+      <div class="card-item__picture"
+           *ngIf="options?.picture && item[options?.picture?.prop]"
+           [ngStyle]="{'background-image': 'url(' + item[options.picture.prop] + ')'}"
+           [ngClass]="{'card-item__picture--vertical': layout === 'vertical', 'card-item__picture--horizontal': layout === 'horizontal'}"
+           (click)="onPictureClicked()"
+      >
+      </div>
+      <!-- No Image available-->
+      <div class="card-item__picture"
+           (click)="file.click()"
+           *ngIf="options?.picture && !item[options?.picture?.prop]"
+           [ngClass]="{'card-item__picture--vertical': layout === 'vertical', 'card-item__picture--horizontal': layout === 'horizontal'}"
+      >
         <fj-icon [svgName]="'upload'"></fj-icon>
       </div>
       <input type="file" accept="image/*" hidden #file>
@@ -161,3 +173,5 @@
     <fj-native-dropdown *ngIf="showBelowMenu && options?.belowMenuOtherActions" [options]="options?.belowMenuOtherActions" [customStyles]="{'borderColor': 'rgba(27, 81, 160, 1)','width' : '50px'}" [showDefaultOnCLick]="true" (optionSelected)="onActionClicked($event)"></fj-native-dropdown>
   </div>
 </div>
+
+<fj-light-box #lightBox [slides]="lightBoxImages"></fj-light-box>

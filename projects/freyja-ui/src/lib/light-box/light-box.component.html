@@ -1,0 +1,27 @@
+<!-- The Modal/Lightbox -->
+<div class="lightbox__modal" [ngClass]="{'lightbox__modal__shown': isOpen}" *ngIf="slides">
+  <span class="lightbox__modal__close lightbox__modal__cursor" (click)="closeModal()">&times;</span>
+  <div class="lightbox__modal__content">
+
+    <div class="lightbox__slides" *ngFor="let slide of slides; let i = index"  [ngClass]="{'lightbox__slides__hidden': slide.hidden}">
+      <div class="lightbox__number">{{i + 1}} / {{slides.length}}</div>
+      <img class="lightbox__image" src="{{slide?.src}}">
+    </div>
+
+    <!-- Next/previous controls -->
+    <a class="lightbox__prev" (click)="plusSlides(-1)">&#10094;</a>
+    <a class="lightbox__next" (click)="plusSlides(1)">&#10095;</a>
+
+    <!-- Caption text -->
+    <div class="lightbox__caption-container">
+      <p id="lightbox__caption">{{slides[currentSlideIndex - 1]?.alt}}</p>
+    </div>
+
+    <!-- Thumbnail image controls -->
+    <div class="lightbox__row">
+      <div class="lightbox__column" *ngFor="let slide of slides; let j = index">
+        <img class="lightbox__thumbnail" src="{{slide?.src}}" (click)="currentSlide(j + 1)" alt="{{slide?.alt}}" [ngClass]="{'lightbox__thumbnail__active': !slide.hidden}">
+      </div>
+    </div>
+  </div>
+</div>
