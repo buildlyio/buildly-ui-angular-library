@@ -1,7 +1,7 @@
 <div class="modal" [ngClass]="{'modal--hidden': !showModal}" (click)="showModal = false">
   <!-- Modal content -->
   <div class="modal__content" (click)="modalClicked($event)" [ngClass]="{'modal__content--big': size === 'big', 'modal__content--small': size === 'small'}" [ngStyle]="customStyles" >
-    <span class="modal__content__close" (click)="onActionClicked($event, 'primary')">&times;</span>
+    <span class="modal__content__close" (click)="onActionClicked($event, 'close')">&times;</span>
     <div class="modal__content__top">
       <h3 *ngIf="modalContent.title" class="modal__content__top__title">{{modalContent.title}}</h3>
     </div>
@@ -10,9 +10,9 @@
       <ng-content select="[modal-content]"></ng-content>
     </div>
     <div class="modal__content__bottom">
-      <fj-button *ngIf="modalContent.primaryAction" (click)="onActionClicked($event, 'primary')">{{modalContent.primaryAction.label}}</fj-button>
-      <fj-button *ngIf="modalContent.dangerAction" (click)="onActionClicked($event, 'danger')" [color]="'danger'">{{modalContent.dangerAction.label}}</fj-button>
-      <fj-button *ngIf="modalContent.secondaryAction" (click)="onActionClicked($event, 'secondary')" [color]="'light'">{{modalContent.secondaryAction.label}}</fj-button>
+      <fj-button class="modal__content__button" *ngIf="modalContent.primaryAction" (click)="onActionClicked($event, 'primary')">{{modalContent.primaryAction.label}}</fj-button>
+      <fj-button class="modal__content__button" *ngIf="modalContent.dangerAction" (click)="onActionClicked($event, 'danger')" [color]="'danger'">{{modalContent.dangerAction.label}}</fj-button>
+      <fj-button class="modal__content__button" *ngIf="modalContent.secondaryAction" (click)="onActionClicked($event, 'secondary')" [color]="'light'">{{modalContent.secondaryAction.label}}</fj-button>
     </div>
   </div>
 </div>

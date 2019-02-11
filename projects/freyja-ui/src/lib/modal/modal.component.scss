@@ -63,6 +63,9 @@
         cursor: pointer;
       }
     }
+    &__button {
+      margin-right: rem-calc(5);
+    }
   }
 }
 
