@@ -2,6 +2,8 @@
   <h2>Inline Editing</h2>
   <h3>Text editor</h3>
   <fj-inline-editor
-    value="Content">
+    [value]="inputValue"
+    name="myInput"
+    (elementEdited)="onElementEdit($event)">
   </fj-inline-editor>
 </fj-demo-content-wrap>

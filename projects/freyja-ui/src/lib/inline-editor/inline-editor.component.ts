@@ -53,11 +53,11 @@ export class InlineEditorComponent implements OnInit {
    * @param element - element that is edited
    * @param index of the element in case of dynamic fields like details blocks
    */
-  public onEditElement(value: string, index?: number) {
+  public onEditElement(value: string, elementName) {
     this.isEdit = false;
     const editObj = {
       value,
-      index
+      elementName
     };
     this.elementEdited.emit(editObj);
   }

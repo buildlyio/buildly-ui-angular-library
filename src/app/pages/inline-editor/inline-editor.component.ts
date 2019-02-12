@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InlineEditorComponent implements OnInit {
 
+  inputValue = 'Initial Value';
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onElementEdit(event) {
+    this.inputValue = event.value;
   }
 
 }
