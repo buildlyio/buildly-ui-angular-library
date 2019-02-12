@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, ViewChild, Output, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'fj-inline-editor',
@@ -6,6 +6,8 @@ import { Component, OnInit, Input, EventEmitter, ViewChild, Output, ElementRef }
   styleUrls: ['./inline-editor.component.scss']
 })
 export class InlineEditorComponent implements OnInit {
+
+  documentClickListener: Function;
 
   /**
    * event triggered when an element is edited
@@ -26,7 +28,12 @@ export class InlineEditorComponent implements OnInit {
    * {boolean}
    */
   public isEdit = false;
-  constructor() {}
+
+  constructor(
+    private renderer: Renderer2,
+    private elementRef: ElementRef
+  ) {}
+
   ngOnInit() {
     this.isEdit = false;
   }
@@ -37,6 +44,7 @@ export class InlineEditorComponent implements OnInit {
   public activateEditMode() {
     this.isSingleClick = false;
     this.isEdit = true;
+    this.setDocumentListenerForCloseSelect();
   }
 
   /**
@@ -52,5 +60,29 @@ export class InlineEditorComponent implements OnInit {
       index
     };
     this.elementEdited.emit(editObj);
+  }
+
+  /**
+   * Sets a listener on the document for clicks, which will close the
+   * inline-editor currently opened.
+   */
+  private setDocumentListenerForCloseSelect() {
+    this.documentClickListener = this.renderer.listen('document', 'click', (event: MouseEvent) => {
+      const clickedInside = this.elementRef.nativeElement.contains(event.srcElement);
+      if (!clickedInside) {
+        this.close();
+      }
+    });
+  }
+
+  /**
+   * To disable edit mode and kill the documentClickListener.
+   */
+  private close() {
+    this.isEdit = false;
+
+    if (typeof this.documentClickListener === 'function') {
+      this.documentClickListener();
+    }
   }
 }
