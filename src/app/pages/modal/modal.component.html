@@ -6,7 +6,7 @@
   <fj-modal #modalCustom>
     <div modal-content>
       <div class="custom-class">
-        <h1>Custom Modal Content</h1>
+        <h3>Custom Modal Content</h3>
         <div class="custom-class__desc">
           You can customise the content in the modal as much as you want with <pre>modal-content</pre>
         </div>
@@ -23,8 +23,8 @@
   <pre><code highlight [code]="customModal"></code></pre>
 
   <h3>Predefined Modal Content</h3>
-  <p>You can alternatively use the predefined structure by using the Input of `modalContent`. Using this method, 
-     you can also handle the events coming from the modal. Just pass in a fucntion, and in this function, you 
+  <p>You can alternatively use the predefined structure by using the Input of `modalContent`. Using this method,
+     you can also handle the events coming from the modal. Just pass in a fucntion, and in this function, you
      can decide what actions happen for certain action types.</p>
 
   <fj-modal #modalDefined [modalContent]="modalContent" (actionClicked)="handleAction($event)">
@@ -36,6 +36,6 @@
 
   <pre><code highlight [code]="definedModalHtml"></code></pre>
   <pre><code highlight [code]="definedModalJS"></code></pre>
-  
+
   <fj-demo-sub-nav [navItems]="navItems"></fj-demo-sub-nav>
 </fj-demo-content-wrap>
