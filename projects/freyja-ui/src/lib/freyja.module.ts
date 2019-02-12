@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FreyjaComponent } from './freyja.component';
+import { InlineEditorComponent } from './inline-editor/inline-editor.component';
 
 @NgModule({
   declarations: [FreyjaComponent],

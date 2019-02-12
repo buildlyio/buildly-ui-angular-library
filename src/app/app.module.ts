@@ -20,6 +20,7 @@ import { AccordionModule } from './pages/accordion/accordion.module';
 import { SvgIconModule } from './pages/svg-icon/svg-icon.module';
 import { ContentWrapModule } from './components/content-wrap/content-wrap.module';
 import { CardItemModule } from './pages/card-item/card-item.module';
+import { InlineEditorModule } from './pages/inline-editor/inline-editor.module';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { CardItemModule } from './pages/card-item/card-item.module';
     ContentWrapModule,
     CardItemModule,
     ModalModule,
+    InlineEditorModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

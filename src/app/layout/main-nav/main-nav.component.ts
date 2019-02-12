@@ -42,6 +42,10 @@ export class MainNavComponent implements OnInit {
     {
       path: '/modal',
       label: 'Modal'
+    },
+    {
+      path: '/inline-editing',
+      label: 'Inline Editing'
     }
   ];
   constructor() { }

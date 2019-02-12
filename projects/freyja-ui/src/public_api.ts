@@ -55,3 +55,6 @@ export * from './lib/date-picker/date-picker.module';
 
 export * from './lib/light-box/light-box.component';
 export * from './lib/light-box/light-box.module';
+
+export * from './lib/inline-editor/inline-editor.component';
+export * from './lib/inline-editor/inline-editor.module';
