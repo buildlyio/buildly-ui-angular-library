@@ -33,7 +33,6 @@ export class CardItemComponent implements OnInit {
     this.customCardItemExample = this.textHelper.dedent`
     <fj-card-item
       [layout]="'horizontal'"
-      [options]="options"
     >
       <div card-item-header>
         <h3>Custom content</h3>
@@ -55,7 +54,8 @@ export class CardItemComponent implements OnInit {
       description: 'this is the description',
       create_date: '2019-01-29T13:39:20.868000Z',
       edit_date: '2019-01-29T13:39:20.868000Z',
-      file: '/assets/img/image-example.jpg'
+      image: '/assets/img/image-example.jpg',
+      thumbnail: '/assets/img/image-example.jpg',
     };
     this.item2 = {
       title: 'Title',
@@ -83,8 +83,8 @@ export class CardItemComponent implements OnInit {
         label: 'Subtext2'
       },
       picture: {
-        prop: 'file',
-        label: 'Image'
+        thumbnail: 'thumbnail',
+        image: 'image'
       },
       date1: {
         prop: 'create_date',

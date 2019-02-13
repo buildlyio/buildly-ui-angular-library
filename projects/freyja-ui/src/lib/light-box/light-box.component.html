@@ -5,7 +5,7 @@
 
     <div class="lightbox__slides" *ngFor="let slide of slides; let i = index"  [ngClass]="{'lightbox__slides__hidden': slide.hidden}">
       <div class="lightbox__number">{{i + 1}} / {{slides.length}}</div>
-      <img class="lightbox__image" src="{{slide?.src}}">
+      <div class="lightbox__image" [ngStyle]="{'background-image': 'url(' + slide?.src + ')'}">
     </div>
 
     <!-- Next/previous controls -->
@@ -20,7 +20,7 @@
     <!-- Thumbnail image controls -->
     <div class="lightbox__row">
       <div class="lightbox__column" *ngFor="let slide of slides; let j = index">
-        <img class="lightbox__thumbnail" src="{{slide?.src}}" (click)="currentSlide(j + 1)" alt="{{slide?.alt}}" [ngClass]="{'lightbox__thumbnail__active': !slide.hidden}">
+        <div class="lightbox__thumbnail" [ngStyle]="{'background-image': 'url(' + slide?.src + ')'}" (click)="currentSlide(j + 1)" [ngClass]="{'lightbox__thumbnail__active': !slide.hidden}">
       </div>
     </div>
   </div>

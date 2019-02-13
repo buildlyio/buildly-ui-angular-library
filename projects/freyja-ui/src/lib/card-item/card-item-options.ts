@@ -7,13 +7,18 @@ export interface CardItemAction {
   label: string;
   value: string;
 }
+
+export interface CardItemImage {
+  thumbnail: string;
+  image: string;
+}
 export interface CardItemOptions {
   title?: CardItemOption;
   subText?: CardItemOption;
   subText2?: CardItemOption;
   caption?: CardItemOption;
   link?: CardItemOption;
-  picture?: CardItemOption;
+  picture?: CardItemImage;
   date1?: CardItemOption;
   date2?: CardItemOption;
   dateHeader1?: CardItemOption;

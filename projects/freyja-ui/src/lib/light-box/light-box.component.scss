@@ -90,6 +90,7 @@
   &__image {
     height: 100%;
     width: 100%;
+    background-size: cover;
   }
   &__caption-container {
     text-align: center;
@@ -103,6 +104,7 @@
     cursor: pointer;
     width: 100%;
     height: rem-calc(150);
+    background-size: cover;
     &:hover  {
       opacity: 0.6;
     }
