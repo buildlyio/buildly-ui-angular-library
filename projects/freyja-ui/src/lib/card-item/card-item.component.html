@@ -11,8 +11,8 @@
       <ng-container *ngIf="item">
         <!-- Image exists-->
         <div class="card-item__picture"
-             *ngIf="options?.picture && item[options?.picture?.prop]"
-             [ngStyle]="{'background-image': 'url(' + item[options.picture.prop] + ')'}"
+             *ngIf="options?.picture && item[options?.picture?.thumbnail]"
+             [ngStyle]="{'background-image': 'url(' + item[options.picture.thumbnail] + ')'}"
              [ngClass]="{'card-item__picture--vertical': layout === 'vertical', 'card-item__picture--horizontal': layout === 'horizontal'}"
              (click)="onPictureClicked()"
         >
@@ -20,7 +20,7 @@
         <!-- No Image available-->
         <div class="card-item__picture"
              (click)="file.click()"
-             *ngIf="options?.picture && !item[options?.picture?.prop]"
+             *ngIf="options?.picture && !item[options?.picture?.thumbnail]"
              [ngClass]="{'card-item__picture--vertical': layout === 'vertical', 'card-item__picture--horizontal': layout === 'horizontal'}"
         >
           <fj-icon [svgName]="'upload'"></fj-icon>

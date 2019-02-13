@@ -53,7 +53,6 @@ export class CardItemComponent implements OnInit {
    * {boolean}
    */
   public isEdit = {
-    picture: false,
     title: false,
     subText: false,
     subText2: false,
@@ -113,7 +112,6 @@ export class CardItemComponent implements OnInit {
    */
   public deactivateEditMode() {
     this.isEdit = {
-      picture: false,
       title: false,
       subText: false,
       subText2: false,
@@ -160,10 +158,10 @@ export class CardItemComponent implements OnInit {
    * a function that is triggered when the card item picture is clicked and it sets the image in the lightbox component
    */
   public onPictureClicked() {
-    if (this.item[this.options.picture.prop] && this.item[this.options.title.prop]) {
+    if (this.item[this.options.picture.image] && this.item[this.options.title.prop]) {
       this.lightBoxImages = [
         {
-          src: this.item[this.options.picture.prop],
+          src: this.item[this.options.picture.image],
           alt: this.item[this.options.title.prop]
         }
       ];
