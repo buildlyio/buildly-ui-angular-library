@@ -31,5 +31,22 @@
     </fj-card-item>
   </div>
   <fj-demo-sub-nav [navItems]="navItems"></fj-demo-sub-nav>
+  <h3>Custom Content Card</h3>
+  <p>You can customise the content in the modal as much as you want with like this<p>
+
+  <pre><code highlight [code]="customCardItemExample"></code></pre>
+  <fj-card-item
+    [layout]="'horizontal'"
+    [options]="options"
+  >
+    <div card-item-header>
+      <h3>Custom content</h3>
+      <p>This is a card with custom custom content card</p>
+    </div>
+    <div card-item-body>
+      <p>You can add content to the card body aswell</p>
+    </div>
+  </fj-card-item>
+
 </fj-demo-content-wrap>
 

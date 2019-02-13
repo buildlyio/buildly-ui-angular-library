@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CardItemOptions } from '@libs/freyja-ui/src/lib/card-item/card-item-options';
+import { TextHelper } from "@freyjaDemo/app/shared/helpers/text.helper";
 
 @Component({
   selector: 'fj-demo-card-item',
@@ -22,9 +23,27 @@ export class CardItemComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  public customCardItemExample;
+
+  constructor(
+    private textHelper: TextHelper
+  ) { }
 
   ngOnInit() {
+    this.customCardItemExample = this.textHelper.dedent`
+    <fj-card-item
+      [layout]="'horizontal'"
+      [options]="options"
+    >
+      <div card-item-header>
+        <h3>Custom content</h3>
+        <p>This is a card with custom custom content card</p>
+      </div>
+      <div card-item-body>
+        <p>You can add content to the card body aswell</p>
+      </div>
+    </fj-card-item>
+  `;
     this.item = {
       title: 'Title',
       subtext: 'This is a sub text',
@@ -72,6 +91,14 @@ export class CardItemComponent implements OnInit {
         label: 'Created at'
       },
       date2: {
+        prop: 'edit_date',
+        label: 'Updated at'
+      },
+      dateHeader1: {
+        prop: 'create_date',
+        label: 'Created at'
+      },
+      dateHeader2: {
         prop: 'edit_date',
         label: 'Updated at'
       },
