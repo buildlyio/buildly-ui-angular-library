@@ -157,7 +157,11 @@
       text-decoration: none;
       color: $color-blue;
     }
+    &__date {
+      padding: rem-calc(5);
+    }
   }
+
   &__actions {
     &__container {
       display: flex;

@@ -70,6 +70,11 @@
                        [customStyles]="inputFieldStyles">
 
         </fj-text-input>
+        <div class="card-item__right__date caption-text">
+          <span *ngIf="options?.dateHeader1 && isEdit.dateHeader1 === false">{{options?.dateHeader1.label}} {{item[options?.dateHeader1?.prop] | date: 'dd.MM.yyyy' }}</span>
+          <span *ngIf="options?.dateHeader1"> | </span>
+          <span *ngIf="options?.dateHeader2 && isEdit.dateHeader2 === false">{{options?.dateHeader2.label}} {{item[options?.dateHeader1?.prop] | date: 'dd.MM.yyyy'}}</span>
+        </div>
       </div>
       <div class="card-item__actions__container" [ngClass]="{'card-item__actions__container--vertical': layout === 'vertical', 'card-item__actions__container--horizontal': layout === 'horizontal'}"
            *ngIf="options?.secondaryAction || options?.primaryAction || options?.otherActions"

@@ -75,6 +75,14 @@ export class CardItemComponent implements OnInit {
         prop: 'edit_date',
         label: 'Updated at'
       },
+      dateHeader1: {
+        prop: 'create_date',
+        label: 'Created at'
+      },
+      dateHeader2: {
+        prop: 'edit_date',
+        label: 'Updated at'
+      },
       caption: {
         prop: 'caption',
         label: 'Caption'

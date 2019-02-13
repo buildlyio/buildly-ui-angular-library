@@ -61,6 +61,8 @@ export class CardItemComponent implements OnInit {
     link: false,
     date1: false,
     date2: false,
+    dateHeader1: false,
+    dateHeader2: false,
     details: false,
     description: false,
     tags: false
