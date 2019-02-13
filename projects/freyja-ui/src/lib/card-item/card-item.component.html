@@ -27,45 +27,57 @@
         </div>
         <input type="file" accept="image/*" hidden #file>
         <div class="card-item__title__container" *ngIf="options?.title || options?.subText || options?.subText2" [ngClass]="{'card-item__title__container--vertical': layout === 'vertical', 'card-item__title__container--horizontal': layout === 'horizontal'}">
-          <fj-inline-text-editor
-            [value]="item[options?.title?.prop]"
-            displayElement="h3"
-            name="title"
-            (elementEdited)="onEditElement($event, 'title')"
-            (doubleClick)="onDoubleClick()">
-          </fj-inline-text-editor>
-          <div class="card-item__title__subtext">
+          <div class="card-item__field-wrapper">
             <fj-inline-text-editor
-              [value]="item[options?.subText?.prop]"
-              name="subText"
-              (elementEdited)="onEditElement($event, 'subText')"
-              (doubleClick)="onDoubleClick()">
-            </fj-inline-text-editor>
-            <fj-inline-text-editor
-              [value]="item[options?.subText2?.prop]"
-              name="subText2"
-              (elementEdited)="onEditElement($event, 'subText2')"
+              [value]="item[options?.title?.prop]"
+              displayElement="h3"
+              name="title"
+              (elementEdited)="onEditElement($event, 'title')"
               (doubleClick)="onDoubleClick()">
             </fj-inline-text-editor>
           </div>
+          <div class="card-item__title__subtext">
+            <div class="card-item__field-wrapper">
+              <fj-inline-text-editor
+                [value]="item[options?.subText?.prop]"
+                name="subText"
+                (elementEdited)="onEditElement($event, 'subText')"
+                (doubleClick)="onDoubleClick()">
+              </fj-inline-text-editor>
+            </div>
+            <div class="card-item__field-wrapper">
+              <fj-inline-text-editor
+                [value]="item[options?.subText2?.prop]"
+                name="subText2"
+                (elementEdited)="onEditElement($event, 'subText2')"
+                (doubleClick)="onDoubleClick()">
+              </fj-inline-text-editor>
+            </div>
+          </div>
         </div>
         <div class="card-item__right__container" *ngIf="options?.caption || options?.link" [ngClass]="{'card-item__right__container--vertical': layout === 'vertical', 'card-item__right__container--horizontal': layout === 'horizontal'}">
-          <fj-inline-text-editor
-            [value]="item[options?.caption?.prop]"
-            name="caption"
-            (elementEdited)="onEditElement($event, 'caption')"
-            (doubleClick)="onDoubleClick()"
-            [displayElementCustomStyles]="{'cursor': 'pointer', 'margin': '0', 'font-size': '16px', 'color': '#666666'}"
-            [inputCustomStyles]="inputFieldStyles">
-          </fj-inline-text-editor>
-          <fj-inline-text-editor
-            [value]="item[options?.link?.prop]"
-            name="link"
-            displayElement="a"
-            (elementEdited)="onEditElement($event, 'link')"
-            (doubleClick)="onDoubleClick()"
-            [inputCustomStyles]="inputFieldStyles">
-          </fj-inline-text-editor>
+          <div class="card-item__field-wrapper">
+            <fj-inline-text-editor
+              [value]="item[options?.caption?.prop]"
+              name="caption"
+              (elementEdited)="onEditElement($event, 'caption')"
+              (doubleClick)="onDoubleClick()"
+              [displayElementCustomStyles]="{'cursor': 'pointer', 'margin': '0', 'font-size': '16px', 'color': '#666666'}"
+              [inputCustomStyles]="inputFieldStyles">
+            </fj-inline-text-editor>
+          </div>
+
+          <div class="card-item__field-wrapper">
+            <fj-inline-text-editor
+              [value]="item[options?.link?.prop]"
+              name="link"
+              displayElement="a"
+              (elementEdited)="onEditElement($event, 'link')"
+              (doubleClick)="onDoubleClick()"
+              [inputCustomStyles]="inputFieldStyles">
+            </fj-inline-text-editor>
+          </div>
+
           <div class="card-item__right__date caption-text">
             <span *ngIf="options?.dateHeader1">{{options?.dateHeader1.label}} {{item[options?.dateHeader1?.prop] | date: 'dd.MM.yyyy' }}</span>
             <span *ngIf="options?.dateHeader1"> | </span>
@@ -112,14 +124,16 @@
               <div class="caption-text">
                 {{detailItem.label}}
               </div>
-              <fj-inline-text-editor
-                [value]="item[detailItem?.prop]"
-                name="detailItem"
-                displayElement="div"
-                (elementEdited)="onEditElement($event, 'detailItem', i)"
-                (doubleClick)="onDoubleClick()"
-                [inputCustomStyles]="inputFieldStyles">
-              </fj-inline-text-editor>
+              <div class="card-item__field-wrapper">
+                <fj-inline-text-editor
+                  [value]="item[detailItem?.prop]"
+                  name="detailItem"
+                  displayElement="div"
+                  (elementEdited)="onEditElement($event, 'detailItem', i)"
+                  (doubleClick)="onDoubleClick()"
+                  [inputCustomStyles]="inputFieldStyles">
+                </fj-inline-text-editor>
+              </div>
             </div>
           </ng-container>
         </div>
@@ -127,27 +141,31 @@
           <div class="caption-text">
             {{options?.description.label}}
           </div>
-          <fj-inline-text-editor
-            [value]="item[options?.description?.prop]"
-            name="description"
-            displayElement="div"
-            (elementEdited)="onEditElement($event, 'description')"
-            (doubleClick)="onDoubleClick()"
-            [inputCustomStyles]="inputFieldStyles">
-          </fj-inline-text-editor>
+          <div class="card-item__field-wrapper">
+            <fj-inline-text-editor
+              [value]="item[options?.description?.prop]"
+              name="description"
+              displayElement="div"
+              (elementEdited)="onEditElement($event, 'description')"
+              (doubleClick)="onDoubleClick()"
+              [inputCustomStyles]="inputFieldStyles">
+            </fj-inline-text-editor>
+          </div>
         </div>
         <div class="card-item__body__tags" *ngIf="options?.tags" (dblclick)="activateEditMode($event, 'tags')">
           <div class="caption-text">
             {{options?.tags.label}}
           </div>
-          <fj-inline-text-editor
-            [value]="item[options?.tags?.prop]"
-            name="tags"
-            displayElement="div"
-            (elementEdited)="onEditElement($event, 'tags')"
-            (doubleClick)="onDoubleClick()"
-            [inputCustomStyles]="inputFieldStyles">
-          </fj-inline-text-editor>
+          <div class="card-item__field-wrapper">
+            <fj-inline-text-editor
+              [value]="item[options?.tags?.prop]"
+              name="tags"
+              displayElement="div"
+              (elementEdited)="onEditElement($event, 'tags')"
+              (doubleClick)="onDoubleClick()"
+              [inputCustomStyles]="inputFieldStyles">
+            </fj-inline-text-editor>
+          </div>
         </div>
       </ng-container>
 

@@ -1,4 +1,3 @@
-import { FjInlineEditorModule } from './../../../../projects/freyja-ui/src/lib/inline-editor/inline-editor.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DemoTextInputComponent } from './text-input.component';
@@ -14,8 +13,7 @@ import { FjTextInputModule } from '@libs/freyja-ui/src/lib/text-input/text-input
     SubNavModule,
     ContentWrapModule,
     FjTextInputModule,
-    HighlightModule.forRoot({ theme: 'arduino-light' }),
-    FjInlineEditorModule
+    HighlightModule.forRoot({ theme: 'arduino-light' })
   ],
   providers: [TextHelper],
   exports: [
