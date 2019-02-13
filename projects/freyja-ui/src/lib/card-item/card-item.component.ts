@@ -121,6 +121,8 @@ export class CardItemComponent implements OnInit {
       link: false,
       date1: false,
       date2: false,
+      dateHeader1: false,
+      dateHeader2: false,
       details: false,
       description: false,
       tags: false
@@ -131,6 +133,7 @@ export class CardItemComponent implements OnInit {
    * toggles expanded view on single click
    */
   public toggleExpanded() {
+    console.log('clicked');
     // deactivate any active edit mode
     this.isSingleClick = true;
     setTimeout(() => {
