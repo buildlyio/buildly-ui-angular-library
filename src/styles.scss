@@ -13,7 +13,7 @@ $theme-colors: (
   'color-secondary':$color-secondary,
   'color-danger' : $color-danger,
   'color-disable': $color-disable,
-  'color-text':$color-text,
+  'color-text-input':$color-text,
 );
 
 @include freyja-theme($theme-colors);

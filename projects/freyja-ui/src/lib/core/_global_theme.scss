@@ -10,7 +10,7 @@
   $main: map-get($theme-colors, 'color-primary');
   $danger: map-get($theme-colors, 'color-danger');
   $disable: map-get($theme-colors, 'color-disable');
-  $text: map-get($theme-colors, 'color-text');
+  $text: map-get($theme-colors, 'color-text-input');
 
   $base-darker: darken($base, 10%);
   $base-brighter: lighten($base, 10%);
