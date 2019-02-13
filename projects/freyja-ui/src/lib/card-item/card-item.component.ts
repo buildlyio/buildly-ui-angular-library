@@ -133,7 +133,6 @@ export class CardItemComponent implements OnInit {
    * toggles expanded view on single click
    */
   public toggleExpanded() {
-    console.log('clicked');
     // deactivate any active edit mode
     this.isSingleClick = true;
     setTimeout(() => {
