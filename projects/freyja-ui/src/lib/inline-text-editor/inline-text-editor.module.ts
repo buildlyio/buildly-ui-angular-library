@@ -13,4 +13,4 @@ import { CommonModule } from '@angular/common';
     InlineTextEditorComponent
   ]
 })
-export class FjInlineEditorModule { }
+export class FjInlineTextEditorModule { }

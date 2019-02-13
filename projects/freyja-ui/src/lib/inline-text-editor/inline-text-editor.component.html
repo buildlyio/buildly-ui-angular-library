@@ -1,10 +1,10 @@
 <p 
   *ngIf="!isEdit"
-  class="inline-editor__editable"
+  class="inline-text-editor__editable"
   (dblclick)="activateEditMode($event)">
   {{value}}
 </p>
-<fj-text-input [ngClass]="{'inline-editor__editable__input--hidden' : !isEdit}"
+<fj-text-input [ngClass]="{'inline-text-editor__editable__input--hidden' : !isEdit}"
                [focused]="isEdit"
                (change)="onEditElement($event, name)"
                [value]="value"
