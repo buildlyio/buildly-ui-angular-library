@@ -1,40 +1,42 @@
 @import "../core/_config";
 
 .inline-text-editor {
-  &__editable {
+  cursor: pointer;
+  margin: 0;
+  padding: rem-calc(5);
+  overflow-wrap: break-word;
+
+  &:hover {
+    &:after {
+      content: "✎";
+      display: inline-block;
+      padding-right: 5px;
+      font-size: 13px;
+      color: $color-black;
+      font-weight: 900;
+      -moz-transform: scale(-1, 1);
+      -webkit-transform: scale(-1, 1);
+      -o-transform: scale(-1, 1);
+      -ms-transform: scale(-1, 1);
+      transform: scale(-1, 1);
+    }
+  }
+
+  &--no-padding {
+    padding: rem-calc(0);
+  }
+
+  &__input {
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &--link {
+    font-size: 16px;
     cursor: pointer;
-    margin: 0;
-    padding: rem-calc(5);
-    overflow-wrap: break-word;
-    &:hover {
-      &:after {
-        content: "✎";
-        display: inline-block;
-        padding-right: 5px;
-        font-size: 13px;
-        color: $color-black;
-        font-weight: 900;
-        -moz-transform: scale(-1, 1);
-        -webkit-transform: scale(-1, 1);
-        -o-transform: scale(-1, 1);
-        -ms-transform: scale(-1, 1);
-        transform: scale(-1, 1);
-      }
-    }
-    &--no-padding {
-      padding: rem-calc(0);
-    }
-    &__input {
-      &--hidden {
-        display: none;
-      }
-    }
-    &--link {
-      font-size: 16px;
-      cursor: pointer;
-      text-decoration: none;
-      color: $color-blue;
-    }
+    text-decoration: none;
+    color: $color-blue;
   }
 
 }

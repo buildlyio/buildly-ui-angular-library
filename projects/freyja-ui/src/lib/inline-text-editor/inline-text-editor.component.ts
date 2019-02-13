@@ -19,23 +19,33 @@ export class InlineTextEditorComponent implements OnInit {
    */
   @Output() doubleClick: EventEmitter<any> = new EventEmitter();
 
+  /**
+   * Value to be displayed and edited.
+   */
   @Input() value: string;
 
+  /**
+   * Name of the editor. Useful for distinguishing the element in the 'elementEdited' Output.
+   */
   @Input() name: string;
 
+  /**
+   * The HTML element which should be used for display. Defaults to 'p'.
+   */
   @Input() displayElement: 'a' | 'div' | 'p' | 'h1' | 'h2' | 'h3' = 'p';
 
+  /**
+   * Custom styles for the display element.
+   */
   @Input() displayElementCustomStyles;
+
+  /**
+   * Custom styles for the input.
+   */
   @Input() inputCustomStyles;
 
   /**
-   * checks if a click event is a single ou double click
-   * {boolean}
-   */
-  public isSingleClick = false;
-  /**
    * checks wether the card item elements are in edit mode
-   * {boolean}
    */
   public isEdit = false;
 
