@@ -1,3 +1,4 @@
+import { FjInlineTextEditorModule } from './../inline-text-editor/inline-text-editor.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardItemComponent } from './card-item.component';
@@ -14,7 +15,8 @@ import { FjLightBoxModule } from '../light-box/light-box.module';
     FjButtonModule,
     FjLightBoxModule,
     FjTextInputModule,
-    FjNativeDropdownModule
+    FjNativeDropdownModule,
+    FjInlineTextEditorModule
   ],
   exports: [
     CardItemComponent

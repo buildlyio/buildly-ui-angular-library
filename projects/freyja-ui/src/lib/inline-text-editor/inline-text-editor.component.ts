@@ -14,9 +14,19 @@ export class InlineTextEditorComponent implements OnInit {
    */
   @Output() elementEdited: EventEmitter<any> = new EventEmitter();
 
+  /**
+   * event triggered when an element is edited
+   */
+  @Output() doubleClick: EventEmitter<any> = new EventEmitter();
+
   @Input() value: string;
 
   @Input() name: string;
+
+  @Input() displayElement: 'a' | 'div' | 'p' | 'h1' | 'h2' | 'h3' = 'p';
+
+  @Input() displayElementCustomStyles;
+  @Input() inputCustomStyles;
 
   /**
    * checks if a click event is a single ou double click
@@ -42,9 +52,9 @@ export class InlineTextEditorComponent implements OnInit {
    * activates edit mode for one field
    */
   public activateEditMode() {
-    this.isSingleClick = false;
     this.isEdit = true;
     this.setDocumentListenerForCloseSelect();
+    this.doubleClick.emit();
   }
 
   /**

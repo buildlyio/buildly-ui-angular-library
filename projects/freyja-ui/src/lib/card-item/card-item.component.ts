@@ -7,7 +7,7 @@ import { LightBoxComponent } from '../light-box/light-box.component';
   templateUrl: './card-item.component.html',
   styleUrls: ['./card-item.component.scss']
 })
-export class CardItemComponent implements OnInit {
+export class CardItemComponent {
 
   /**
    * current item data
@@ -36,7 +36,6 @@ export class CardItemComponent implements OnInit {
 
   @ViewChild(LightBoxComponent) lightBox: LightBoxComponent;
 
-
   /**
    * checks wether the card item is expanded
    * {boolean}
@@ -48,25 +47,6 @@ export class CardItemComponent implements OnInit {
    * {boolean}
    */
   public isSingleClick = false;
-  /**
-   * checks wether the card item elements are in edit mode
-   * {boolean}
-   */
-  public isEdit = {
-    picture: false,
-    title: false,
-    subText: false,
-    subText2: false,
-    caption: false,
-    link: false,
-    date1: false,
-    date2: false,
-    dateHeader1: false,
-    dateHeader2: false,
-    details: false,
-    description: false,
-    tags: false
-  };
 
   public showBelowMenu = false;
 
@@ -74,15 +54,7 @@ export class CardItemComponent implements OnInit {
 
   public lightBoxImages;
 
-  constructor(private eRef: ElementRef) {}
-  ngOnInit() {
-    // init dynamic details field isEdit value to false
-    if (this.options && this.options.details) {
-      this.options.details.forEach( (detailItem, index: number) => {
-        this.isEdit['detailItem' + index] = false;
-      });
-    }
-  }
+  constructor() {}
 
   /**
    * fired when an action has been clicked
@@ -100,33 +72,9 @@ export class CardItemComponent implements OnInit {
 
   /**
    * activates edit mode for one field
-   * @param evt - click event
-   * @param field - field to be edited
    */
-  public activateEditMode(evt, field) {
+  public onDoubleClick() {
     this.isSingleClick = false;
-    this.isEdit[field] = true;
-  }
-
-  /**
-   * deactivates edit mode for all fields
-   */
-  public deactivateEditMode() {
-    this.isEdit = {
-      picture: false,
-      title: false,
-      subText: false,
-      subText2: false,
-      caption: false,
-      link: false,
-      date1: false,
-      date2: false,
-      dateHeader1: false,
-      dateHeader2: false,
-      details: false,
-      description: false,
-      tags: false
-    };
   }
 
   /**
@@ -137,23 +85,10 @@ export class CardItemComponent implements OnInit {
     this.isSingleClick = true;
     setTimeout(() => {
       if (this.isSingleClick) {
-        this.deactivateEditMode();
         this.isExpanded = !this.isExpanded;
       }
     }, 250);
 
-  }
-
-  /**
-   * a function that will be triggered when an editable input is focused and it will deactivate the edit mode for other inputs
-   * @param {string} element - element  is edited
-   */
-  public onInputFocused(element: string) {
-    Object.keys(this.isEdit).forEach( key => {
-      if (key !== element && this.isEdit[key]) {
-        this.isEdit[key] = false;
-      }
-    });
   }
 
   /**
@@ -171,19 +106,4 @@ export class CardItemComponent implements OnInit {
     }
   }
 
-  /**
-   * a function that will be triggered when an item has been edited
-   * @param {string} value - value of the edited element
-   * @param {string} element - element that is edited
-   * @param {number} index of the element in case of dynamic fields like details blocks
-   */
-  public onEditElement(value: string, element: string, index?: number) {
-    this.isEdit[element] = false;
-    const editObj = {
-      element,
-      value,
-      index
-    };
-    this.elementEdited.emit(editObj);
-  }
 }

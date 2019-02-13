@@ -1,13 +1,56 @@
 <p 
-  *ngIf="!isEdit"
+  *ngIf="!isEdit && displayElement === 'p'"
   class="inline-text-editor__editable"
+  [ngStyle]="displayElementCustomStyles"
   (dblclick)="activateEditMode($event)">
   {{value}}
 </p>
+<div 
+  *ngIf="!isEdit && displayElement === 'div'"
+  class="inline-text-editor__editable"
+  [ngStyle]="displayElementCustomStyles"
+  (dblclick)="activateEditMode($event)">
+  {{value}}
+</div>
+<span
+  *ngIf="!isEdit && displayElement === 'span'"
+  class="inline-text-editor__editable"
+  [ngStyle]="displayElementCustomStyles"
+  (dblclick)="activateEditMode($event)">
+  {{value}}
+</span>
+<h1
+  *ngIf="!isEdit && displayElement === 'h1'"
+  class="inline-text-editor__editable"
+  [ngStyle]="displayElementCustomStyles"
+  (dblclick)="activateEditMode($event)">
+  {{value}}
+</h1>
+<h2
+  *ngIf="!isEdit && displayElement === 'h2'"
+  class="inline-text-editor__editable"
+  [ngStyle]="displayElementCustomStyles"
+  (dblclick)="activateEditMode($event)">
+  {{value}}
+</h2>
+<h3
+  *ngIf="!isEdit && displayElement === 'h3'"
+  class="inline-text-editor__editable"
+  [ngStyle]="displayElementCustomStyles"
+  (dblclick)="activateEditMode($event)">
+  {{value}}
+</h3>
+<a
+  *ngIf="!isEdit && displayElement === 'a'"
+  class="inline-text-editor__editable inline-text-editor__editable--link"
+  [ngStyle]="displayElementCustomStyles"
+  (dblclick)="activateEditMode($event)">
+  {{value}}
+</a>
 <fj-text-input [ngClass]="{'inline-text-editor__editable__input--hidden' : !isEdit}"
                [focused]="isEdit"
                (change)="onEditElement($event, name)"
                [value]="value"
-               [customStyles]="inputFieldStyles">
+               [customStyles]="inputCustomStyles">
 
 </fj-text-input>
