@@ -16,6 +16,8 @@ export interface CardItemOptions {
   picture?: CardItemOption;
   date1?: CardItemOption;
   date2?: CardItemOption;
+  dateHeader1?: CardItemOption;
+  dateHeader2?: CardItemOption;
   details?: CardItemOption[];
   tags?: CardItemOption;
   description?: CardItemOption;
