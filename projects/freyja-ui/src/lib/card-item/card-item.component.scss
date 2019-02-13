@@ -10,7 +10,6 @@
   }
   &__content {
     box-shadow: 0 rem-calc(2) rem-calc(3) 0 rgba(0, 0, 0, 0.12);
-    background-color: white;
     &--vertical {
       flex-direction: column;
       width: rem-calc(250);
@@ -62,14 +61,10 @@
     }
     &__tags {
       margin-bottom: rem-calc(15);
-      &__text {
-        color: $color-blue;
-      }
     }
   }
   &__divider {
     height: rem-calc(2);
-    background-color: $color-gray-light;
   }
   &__below-menu {
     position: relative;
@@ -86,9 +81,7 @@
       display: flex;
       flex-direction: column;
     }
-    &:hover {
-      background-color: $color-blue-lightest-alt;
-    }
+
   }
   &__picture {
     display: flex;
@@ -149,13 +142,11 @@
     }
     &__caption {
       font-size: 16px;
-      color: $color-text--caption;
     }
     &__link {
       font-size: 16px;
       cursor: pointer;
       text-decoration: none;
-      color: $color-blue;
     }
     &__date {
       padding: rem-calc(5);
@@ -184,7 +175,6 @@
         display: inline-block;
         padding-right: 5px;
         font-size: 13px;
-        color: $color-black;
         font-weight: 900;
         -moz-transform: scale(-1, 1);
         -webkit-transform: scale(-1, 1);
@@ -206,6 +196,5 @@
 }
 
 .caption-text {
-  color: $color-text--caption;
   font-size: rem-calc(10);
 }

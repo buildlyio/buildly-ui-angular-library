@@ -1,5 +1,5 @@
 // Angular imports
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation, } from '@angular/core';
 
 // Internal imports
 import { IconBaseComponent } from '../shared/icon-base.component';
@@ -14,7 +14,8 @@ let nextId = 0;
 @Component({
   selector: 'fj-button',
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss']
+  styleUrls: ['./button.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ButtonComponent extends IconBaseComponent implements OnInit {
 
@@ -27,7 +28,7 @@ export class ButtonComponent extends IconBaseComponent implements OnInit {
   /**
    * Will determin look and feel of button
    */
-  @Input() color: 'danger' | 'light' | 'primary' = 'primary';
+  @Input() color: 'danger' | 'light' | 'light--danger' | 'primary' = 'primary';
 
   /**
    * Shape of button, it can be rounder, square or radius

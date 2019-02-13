@@ -2,9 +2,7 @@
 .fj-input {
   input {
     box-sizing: border-box;
-    border: rem-calc(1) solid $color-black-15;
     border-radius: rem-calc(4);
-    color: $color-black;
     display: block;
     font-size: 0.95rem;
     font-weight: 500;
@@ -13,26 +11,12 @@
     outline: none;
     padding: rem-calc(9 12);
     transition: .2s linear;
-    &:focus {
-      border-color: $color-blue;
-    }
-    &:hover {
-      color: $color-black-60;
-    }
+
     &::placeholder {
-      color: $color-black-60;
       font-weight: 100;
-      &:hover & {
-        color: $color-black-60;
-      }
     }
     &:disabled {
-      background-color: $color-gray-light;
-      border-color: $color-gray-light;
       cursor: not-allowed;
-      &::placeholder {
-        color: $color-black-20;
-      }
     }
     &--small {
       height: rem-calc(32);
@@ -44,13 +28,9 @@
       font-size: rem-calc(12);
       padding: rem-calc(9 8);
     }
+
     &--required:after{
       content: " *";
-    }
-  }
-  &--error {
-    input {
-      border-color: $color-red;
     }
   }
 }
@@ -61,13 +41,10 @@ label {
   &.label--medium {
     font-size: .75rem;
   }
-  &.label--disabled {
-    color: $color-black-20;
-  }
+
 }
 
 .input-error {
-  color: $color-red;
   font-size: .75rem;
   padding: .5em;
 }
@@ -75,5 +52,4 @@ label {
 .error--label {
   font-size: rem-calc(12);
   padding-left: .5em;
-  color: $color-red;
 }

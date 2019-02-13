@@ -1,91 +1,71 @@
 @import "../core/_config";
-.fj-checkbox {
-  display: inline-flex;
-  cursor: pointer;
-  white-space: nowrap;
-  align-items: center;
-  margin-right: rem-calc(9);
-  &__input {
-    display: inline-block;
-    appearance: none;
+ .fj-checkbox {
+    display: inline-flex;
     cursor: pointer;
-    height: $checkbox-width;
-    outline: none;
-    position: relative;
-    width: $checkbox-width;
+    white-space: nowrap;
+    align-items: center;
     margin-right: rem-calc(9);
-    &::before {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: transparent;
-      border: rem-calc(1) solid $color-blue;
-      border-radius: rem-calc(2);
-      content: '';
-      height: rem-calc(16);
-      transition: .1s linear;
-      width: rem-calc(16);
-    }
-    &::after {
-      border-bottom: rem-calc(2) solid $color-white;
-      border-radius: rem-calc(1);
-      border-right: rem-calc(2) solid $color-white;
-      content: '';
-      display: block;
-      height: rem-calc(9);
-      left: rem-calc(6);
-      opacity: 0;
-      position: absolute;
-      top: rem-calc(2);
-      transform: rotate(45deg);
-      width: rem-calc(4);
-    }
-    #{$haf} {
+    &__input {
+      display: inline-block;
+      appearance: none;
+      cursor: pointer;
+      height: $checkbox-width;
+      outline: none;
+      position: relative;
+      width: $checkbox-width;
+      margin-right: rem-calc(9);
       &::before {
-        background-color: $color-blue-opaque;
-      }
-    }
-    &:checked {
-      &::before {
-        background-color: $color-blue;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: rem-calc(2);
+        content: '';
+        height: rem-calc(16);
+        transition: .1s linear;
+        width: rem-calc(16);
       }
       &::after {
-        opacity: 1;
-      }
-      #{$haf} {
-        &::before {
-          background-color: $color-blue-light;
-        }
-      }
-    }
-    &:disabled {
-      opacity: 0.4;
-      cursor: default;
-      &::after {
-        background-color: transparent;
-        border-color: $color-black;
-      }
-      &:checked {
-        &::before {
-          background-color: $color-gray;
-        }
-      }
-    }
-    &:indeterminate {
-      &::after{
+        border-radius: rem-calc(1);
+        content: '';
+        display: block;
+        height: rem-calc(9);
+        left: rem-calc(6);
+        opacity: 0;
+        position: absolute;
+        top: rem-calc(2);
         transform: rotate(45deg);
+        width: rem-calc(4);
+      }
+
+      &:checked {
+
+        &::after {
+          opacity: 1;
+        }
+      }
+      &:disabled {
+        opacity: 0.4;
+        cursor: default;
+        &::after {
+          background-color: transparent;
+          border-color: $color-black;
+        }
+      }
+      &:indeterminate {
+        &::after{
+          transform: rotate(45deg);
+        }
       }
     }
-  }
-  &--label-before {
-    .fj-checkbox-input {
-      order: 1;
-      margin-left: rem-calc(9);
+    &--label-before {
+      .fj-checkbox-input {
+        order: 1;
+        margin-left: rem-calc(9);
+      }
     }
-  }
-  &--disabled {
-    opacity: 0.5;
-    cursor: auto;
-  }
-}
+    &--disabled {
+      opacity: 0.5;
+      cursor: auto;
+    }
+ }
