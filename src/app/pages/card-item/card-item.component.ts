@@ -33,7 +33,6 @@ export class CardItemComponent implements OnInit {
     this.customCardItemExample = this.textHelper.dedent`
     <fj-card-item
       [layout]="'horizontal'"
-      [options]="options"
     >
       <div card-item-header>
         <h3>Custom content</h3>
