@@ -9,15 +9,10 @@
   font-size: 1rem;
   height: rem-calc(40);
   padding: rem-calc(0 15);
-  background-color: $color-white;
-  color: $color-blue;
   cursor: pointer;
   /* remove arrows for IE */
   &::-ms-expand {
     display: none;
-  }
-  &:hover {
-    background-color: aliceblue;
   }
 
   /* sizing variants */

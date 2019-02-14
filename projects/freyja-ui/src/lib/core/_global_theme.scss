@@ -2,11 +2,13 @@
 @import '../card-item/card-item-theme.scss';
 @import '../checkbox/checkbox-theme.scss';
 @import '../text-input/text-input-theme.scss';
+@import  '../native-dropdown/native-dropdown-theme.scss';
+@import '../radio-button/radio-button-theme.scss';
 
 
 @mixin freyja-theme($theme-colors) {
 
-  $base: map-get($theme-colors, 'color-secondary');
+  $base: map-get($theme-colors, 'color-background');
   $main: map-get($theme-colors, 'color-primary');
   $danger: map-get($theme-colors, 'color-danger');
   $disable: map-get($theme-colors, 'color-disable');
@@ -44,4 +46,6 @@
   @include cardItemColorsTheme($themes);
   @include checkboxColorsTheme($themes);
   @include textInputColorsTheme($themes);
+  @include dropdownColorsTheme($themes);
+  @include radioButtonColorsTheme($themes);
 }
