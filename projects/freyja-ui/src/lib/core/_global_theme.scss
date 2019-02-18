@@ -1,0 +1,51 @@
+@import '../button/button-theme.scss';
+@import '../card-item/card-item-theme.scss';
+@import '../checkbox/checkbox-theme.scss';
+@import '../text-input/text-input-theme.scss';
+@import  '../native-dropdown/native-dropdown-theme.scss';
+@import '../radio-button/radio-button-theme.scss';
+
+
+@mixin freyja-theme($theme-colors) {
+
+  $base: map-get($theme-colors, 'color-background');
+  $main: map-get($theme-colors, 'color-primary');
+  $danger: map-get($theme-colors, 'color-danger');
+  $disable: map-get($theme-colors, 'color-disable');
+  $text: map-get($theme-colors, 'color-text-input');
+
+  $base-darker: darken($base, 10%);
+  $base-brighter: lighten($base, 10%);
+  $base-brightest: lighten($base-brighter, 5%);
+  $base-overlay: lighten($base-brightest, 5%);
+
+  $main-darker: darken($main, 5%);
+  $danger-darker: darken($danger, 5%);
+
+  $text-darker: darken($text, 10%);
+  $text-darkest: darken($text-darker, 32%);
+  $text-brighter: lighten($text, 10%);
+
+  $themes: (
+    'color-primary':$main,
+    'color-primary-hover':$main-darker,
+    'color-secondary': $base-brighter,
+    'color-danger' : $danger,
+    'color-danger-hover':$danger-darker,
+    'color-disable': $disable,
+    'text-header': $text,
+    'text-body' : $text-darker,
+    'text-labels': $text-darkest,
+    'text-links': $text-brighter,
+    'input':$base-darker,
+    'background': $base,
+    'card': $base-brighter,
+  );
+
+  @include buttonColorsTheme($themes);
+  @include cardItemColorsTheme($themes);
+  @include checkboxColorsTheme($themes);
+  @include textInputColorsTheme($themes);
+  @include dropdownColorsTheme($themes);
+  @include radioButtonColorsTheme($themes);
+}

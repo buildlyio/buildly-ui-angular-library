@@ -4,17 +4,11 @@
   display: inline-flex;
 
    /* Typography */
-  color: $color-white;
   white-space: nowrap;
 
    /* View */
-  background-color: $color-blue;
-  border: solid rem-calc(1) transparent;
   cursor: pointer;
   transition: all .2s linear;
-  #{$haf} {
-    background-color: $color-blue-light;
-  }
   /* aesthetic variants */
   &--rounded {
     border-radius: 2rem;
@@ -24,80 +18,32 @@
   }
   &--light {
     background-color: transparent;
-    border-color: $color-blue;
-    color: $color-blue;
-    #{$haf} {
-      background-color: $color-blue-opaque;
-    }
     &.btn--danger {
       background-color: transparent;
-      border-color: $color-red;
-      color: $color-red;
-      #{$haf} {
-        background-color: rgba(255, 233, 233, 1);
-      }
     }
     &:disabled {
-      border-color: $color-gray;
       background-color: transparent;
-      color: $color-gray;
+    }
+  }
+  &--light--danger {
+    background-color: transparent;
+    &:disabled {
+      background-color: transparent;
     }
   }
   &--ghost.fj-button {
     background-color: transparent;
-    color: $color-blue;
     transition: .1s linear;
-    #{$haf} {
-      background-color: $color-blue;
-      color: $color-white;
-    }
     &:disabled {
       background-color: transparent;
-      color: $color-gray;
-      &:disabled {
-        &::before,
-        &::after {
-          border-color: $color-gray;
-        }
-      }
     }
     &.btn--danger {
       background-color: transparent;
-      color: $color-red;
-      #{$haf} {
-        background-color: $color-red;
-        color: $color-white;
-      }
-      span {
-        background-color: $color-red;
-      }
     }
     &.btn--light {
       border-color: transparent;
-      &::before,
-      &::after {
-        border-color: $color-blue;
-      }
-      #{$haf} {
-        &::before,
-        &::after {
-          border-color: $color-white;
-        }
-      }
       span {
         background-color: transparent;
-      }
-      &.btn--danger {
-        &::before,
-        &::after {
-          border-color: $color-red;
-        }
-        #{$haf} {
-          &::before,
-          &::after {
-            border-color: $color-white;
-          }
-        }
       }
     }
   }
@@ -132,15 +78,8 @@
     padding: rem-calc(6 8);
   }
   /* color variants */
-  &--danger {
-    background-color: $color-red;
-    #{$haf} {
-      background-color: $color-red-light;
-    }
-  }
   /* state variants */
   &:disabled {
-    background-color: $color-gray;
     pointer-events: none;
   }
   fj-icon {

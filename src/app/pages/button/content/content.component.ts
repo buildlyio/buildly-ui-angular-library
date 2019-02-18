@@ -11,6 +11,7 @@ export class ContentComponent implements OnInit {
     <fj-button>Primary</fj-button>
     <fj-button color="light">Light</fj-button>
     <fj-button [disabled]="true">Disabled</fj-button>
+    <fj-button color="light--danger">light Destructive</fj-button>
     <fj-button color="danger">Destructive</fj-button>
   `;
 
