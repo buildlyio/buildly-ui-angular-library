@@ -4,15 +4,33 @@
 @import '../text-input/text-input-theme.scss';
 @import  '../native-dropdown/native-dropdown-theme.scss';
 @import '../radio-button/radio-button-theme.scss';
+@import "spacing-theme.scss";
+
+@mixin freyja-theme($theme-colors: ()) {
+
+  $base: #ffffff;
+  $main: #0674db;
+  $danger: #db0000;
+  $disable: #d9d9d9;
+  $text: #191919;
 
 
-@mixin freyja-theme($theme-colors) {
+  @if map-get($theme-colors, 'color-background') {
+    $base: map-get($theme-colors, 'color-background');
+  }
+  @if map-get($theme-colors, 'color-primary') {
+    $main: map-get($theme-colors, 'color-primary');
+  }
+  @if map-get($theme-colors, 'color-danger') {
+    $danger: map-get($theme-colors, 'color-danger');
+  }
+  @if map-get($theme-colors, 'color-disable') {
+    $disable: map-get($theme-colors, 'color-disable');
+  }
+  @if map-get($theme-colors, 'color-text-input') {
+    $text: map-get($theme-colors, 'color-text-input');
+  }
 
-  $base: map-get($theme-colors, 'color-background');
-  $main: map-get($theme-colors, 'color-primary');
-  $danger: map-get($theme-colors, 'color-danger');
-  $disable: map-get($theme-colors, 'color-disable');
-  $text: map-get($theme-colors, 'color-text-input');
 
   $base-darker: darken($base, 10%);
   $base-brighter: lighten($base, 10%);
@@ -39,7 +57,9 @@
     'text-links': $text-brighter,
     'input':$base-darker,
     'background': $base,
-    'card': $base-brighter,
+    'background-lvl2': $base-brighter,
+    'background-lvl3':$base-brightest,
+    'overlay':$base-overlay,
   );
 
   @include buttonColorsTheme($themes);
@@ -48,4 +68,17 @@
   @include textInputColorsTheme($themes);
   @include dropdownColorsTheme($themes);
   @include radioButtonColorsTheme($themes);
+  @include margin-classes;
+  @include padding-classes;
+
+  .bg-1 {
+    background-color : $base;
+  }
+  .bg-2 {
+    background-color : $base-brighter;
+  }
+  .bg-3 {
+    background-color : $base-brightest;
+  }
+
 }
