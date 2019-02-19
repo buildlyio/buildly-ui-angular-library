@@ -6,6 +6,8 @@ import { TextHelper } from '../../shared/helpers/text.helper';
 import { ContentSwitcherComponent } from './content-switcher.component';
 import { HighlightModule } from 'ngx-highlightjs';
 import {FjContentSwitcherModule} from '@libs/freyja-ui/src/lib/content-switcher/content-switcher.module';
+import { FjAccordionModule } from '@libs/freyja-ui/src/lib/accordion/accordion.module';
+
 
 @NgModule({
   declarations: [ContentSwitcherComponent],
@@ -13,6 +15,7 @@ import {FjContentSwitcherModule} from '@libs/freyja-ui/src/lib/content-switcher/
     CommonModule,
     SubNavModule,
     ContentWrapModule,
+    FjAccordionModule,
     FjContentSwitcherModule,
     HighlightModule.forRoot({ theme: 'arduino-light' })
   ],
