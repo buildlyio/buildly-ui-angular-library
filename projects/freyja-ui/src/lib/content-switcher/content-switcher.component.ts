@@ -1,11 +1,11 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'fj-content-switcher',
   templateUrl: './content-switcher.component.html',
   styleUrls: ['./content-switcher.component.scss']
 })
-export class ContentSwitcherComponent implements OnInit{
+export class ContentSwitcherComponent implements OnChanges {
 
   /**
    * content switcher options
@@ -25,7 +25,7 @@ export class ContentSwitcherComponent implements OnInit{
    */
   public activeTab = 0;
 
-  ngOnInit() {
+  ngOnChanges() {
     if (this.selectedOption) {
       this.activeTab = this.options.findIndex(option => this.selectedOption.toString() === option.value.toString());
     }
