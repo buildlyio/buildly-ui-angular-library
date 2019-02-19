@@ -1,12 +1,11 @@
 @mixin buttonColorsTheme($theme-colors) {
-  $haf: "&:hover, &:active, &:focus";
-
   .fj-button-color {
     background-color: map-get($theme-colors, 'color-primary');
   }
   .fj-button {
-    color: map-get($theme-colors, 'color-secondary');
+    color: map-get($theme-colors, 'color-button-text');
     border: solid rem-calc(1) transparent;
+
     #{$haf} {
       background-color: map-get($theme-colors, 'color-primary-hover');
     }
@@ -43,7 +42,7 @@
       color: map-get($theme-colors, 'color-primary');
       #{$haf} {
         background-color: map-get($theme-colors, 'color-primary');
-        color: map-get($theme-colors, 'color-secondary');
+        color: map-get($theme-colors, 'color-button-text');
       }
       &:disabled {
         color: map-get($theme-colors, 'color-disable');
