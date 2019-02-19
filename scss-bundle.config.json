@@ -1,0 +1,4 @@
+{
+  "entry": "projects/freyja-ui/src/lib/core/_global_theme.scss",
+  "dest": "dist/freyja-ui/theming.scss"
+}

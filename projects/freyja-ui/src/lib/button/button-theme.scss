@@ -1,0 +1,105 @@
+@mixin buttonColorsTheme($theme-colors) {
+  $haf: "&:hover, &:active, &:focus";
+
+  .fj-button-color {
+    background-color: map-get($theme-colors, 'color-primary');
+  }
+  .fj-button {
+    color: map-get($theme-colors, 'color-secondary');
+    border: solid rem-calc(1) transparent;
+    #{$haf} {
+      background-color: map-get($theme-colors, 'color-primary-hover');
+    }
+    &--light {
+      border-color: map-get($theme-colors, 'color-primary');
+      color: map-get($theme-colors, 'color-primary');
+      #{$haf} {
+        background-color: lighten(map-get($theme-colors, 'color-primary'), 50%)
+      }
+      &.btn--danger {
+        border-color: map-get($theme-colors, 'color-danger');
+        color: map-get($theme-colors, 'color-danger');
+        #{$haf} {
+          background-color: lighten(map-get($theme-colors, 'color-danger'), 50%)
+        }
+      }
+      &:disabled {
+        border-color: map-get($theme-colors, 'color-disable');
+        color: map-get($theme-colors, 'color-disable');
+      }
+    }
+    &--light--danger {
+      border-color: map-get($theme-colors, 'color-danger');
+      color: map-get($theme-colors, 'color-danger');
+      #{$haf} {
+        background-color: lighten(map-get($theme-colors, 'color-danger'), 50%)
+      }
+      &:disabled {
+        border-color: map-get($theme-colors, 'color-disable');
+        color: map-get($theme-colors, 'color-disable');
+      }
+    }
+    &--ghost.fj-button {
+      color: map-get($theme-colors, 'color-primary');
+      #{$haf} {
+        background-color: map-get($theme-colors, 'color-primary');
+        color: map-get($theme-colors, 'color-secondary');
+      }
+      &:disabled {
+        color: map-get($theme-colors, 'color-disable');
+        &:disabled {
+          &::before,
+          &::after {
+            border-color: map-get($theme-colors, 'color-disable');
+          }
+        }
+      }
+      &.btn--danger {
+        color: map-get($theme-colors, 'color-danger');
+        #{$haf} {
+          background-color: map-get($theme-colors, 'color-danger');
+          color: map-get($theme-colors, 'color-secondary');
+        }
+        span {
+          background-color: map-get($theme-colors, 'color-danger');
+        }
+      }
+      &.btn--light {
+        &::before,
+        &::after {
+          border-color: map-get($theme-colors, 'color-primary');
+        }
+        #{$haf} {
+          &::before,
+          &::after {
+            border-color: map-get($theme-colors, 'color-secondary');
+          }
+        }
+        &.btn--danger {
+          &::before,
+          &::after {
+            border-color: map-get($theme-colors, 'color-danger');
+          }
+          #{$haf} {
+            &::before,
+            &::after {
+              border-color: map-get($theme-colors, 'color-secondary');
+            }
+          }
+        }
+      }
+    }
+
+    /* color variants */
+    &--danger {
+      background-color: map-get($theme-colors, 'color-danger');
+      #{$haf} {
+        background-color: map-get($theme-colors, 'color-danger-hover');
+      }
+    }
+    /* state variants */
+    &:disabled {
+      background-color: map-get($theme-colors, 'color-disable');
+    }
+  }
+}
