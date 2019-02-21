@@ -18,7 +18,7 @@
             *ngIf="column.filtering"
             (click)="toggleFilterBox($event, column.prop)"
       >
-        <i class="icon-filters mr1" [style.color]="hasFilters && filterObj.hasOwnProperty(column.prop) ? 'black' : ''">
+        <i class="icon-filters mr1" [ngClass]="{'icon-filters--active': hasFilters && filterObj.hasOwnProperty(column.prop)}">
           <fj-icon [svgName]="'filter'"></fj-icon>
         </i>
       </span>

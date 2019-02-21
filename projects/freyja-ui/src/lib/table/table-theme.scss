@@ -19,6 +19,12 @@
     &__filters-box {
       background-color: map-get($theme-colors, 'background');
     }
+    .icon-filters {
+      fill: map-get($theme-colors, 'border');
+      &--active {
+        fill: map-get($theme-colors, 'text-header');
+      }
+    }
   }
   .column{
     color: map-get($theme-colors, 'text-links');
@@ -75,7 +81,7 @@
         color: map-get($theme-colors, 'text-body');
       }
       &--delete {
-        color: map-get($theme-colors, 'color-danger');
+        fill: map-get($theme-colors, 'color-danger');
       }
     }
   }
