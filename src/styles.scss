@@ -7,6 +7,7 @@ $color-background:#ffffff;
 $color-danger : #db0000;
 $color-disable: #d9d9d9;
 $color-text: #191919;
+$color-button-text: #ffffff;
 
 $theme-colors: (
   'color-primary': $color-primary,
@@ -14,6 +15,7 @@ $theme-colors: (
   'color-danger' : $color-danger,
   'color-disable': $color-disable,
   'color-text-input':$color-text,
+  'color-button-text':$color-button-text,
 );
 
 @include freyja-theme($theme-colors);

@@ -12,6 +12,10 @@ export class MainNavComponent implements OnInit {
       label: 'Button'
     },
     {
+      path: '/Content-switcher',
+      label: 'Content switcher'
+    },
+    {
       path: '/accordion',
       label: 'Accordion'
     },

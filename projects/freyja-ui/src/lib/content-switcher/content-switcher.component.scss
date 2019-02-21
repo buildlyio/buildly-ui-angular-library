@@ -31,8 +31,6 @@
     }
   }
   &__tab {
-    border: solid 1px $color-blue;
-    color: $color-blue;
     cursor: pointer;
     font-family: $font-family-base;
     font-size: 0.875rem;
@@ -45,8 +43,6 @@
     }
 
     &--is-active {
-      background-color: $color-blue !important;
-      color: $color-white;
       pointer-events: none;
     }
 
@@ -56,14 +52,10 @@
     }
 
     .content-switcher--disabled & {
-      border-color: $color-gray;
-      color: var(--color-gray);
       pointer-events: none;
 
       &--is-active {
-        background-color: $color-gray;
         border-color: transparent;
-        color: $color-white;
       }
     }
   }
