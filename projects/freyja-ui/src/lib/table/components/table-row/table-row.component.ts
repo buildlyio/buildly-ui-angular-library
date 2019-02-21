@@ -2,16 +2,12 @@ import { Component,
   Input,
   Output,
   EventEmitter,
-  ViewChildren,
   ViewChild,
-  QueryList,
   OnChanges,
-  ElementRef
 } from '@angular/core';
-import { FixedRow } from '@libs/midgard-angular/src/lib/components/table/components/table-row/fixed-row.model';
-import { MatSelect } from '@angular/material';
+import { FixedRow } from './fixed-row.model';
 @Component({
-  selector: 'frejya-table-row',
+  selector: 'fj-table-row',
   templateUrl: './table-row.component.html',
   styleUrls: ['./table-row.component.scss']
 })

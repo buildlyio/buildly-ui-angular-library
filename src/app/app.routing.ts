@@ -10,7 +10,7 @@ import { DemoTextInputComponent } from './pages/text-input/text-input.component'
 import { DemoSvgIconComponent } from './pages/svg-icon/svg-icon.component';
 import { CardItemComponent } from './pages/card-item/card-item.component';
 import { CardComponent } from './pages/card/card.component';
-import { TableComponent } from './pages/table/table/table.component';
+import { TableComponent } from './pages/table/table.component';
 import { ProgressBarComponent } from './pages/progress-bar/progress-bar.component';
 import { SpinnerComponent } from './pages/spinner/spinner.component';
 

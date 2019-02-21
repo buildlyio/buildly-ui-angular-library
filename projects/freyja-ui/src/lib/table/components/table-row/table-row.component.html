@@ -13,25 +13,18 @@
         <!-- Date -->
         <span *ngSwitchCase="'date'" title="{{row[column.hoverText]}}">{{row[column.prop] | date: 'dd.MM.yyyy'}}</span>
         <!-- Select -->
-        <mat-select *ngSwitchCase="'select'" placeholder="{{column.selectPlaceHolder}}" (selectionChange)="onSelectionChanged($event)">
-          <mat-option *ngFor="let option of column.selectOptions" [value]="option.value">
-            {{option.label}}
-          </mat-option>
-        </mat-select>
+        <fj-native-dropdown *ngSwitchCase="'select'" [options]="column.selectOptions" (optionSelected)="onSelectionChanged($event)"></fj-native-dropdown>
         <!-- Switcher -->
         <fj-content-switcher *ngSwitchCase="'switcher'"  (optionSelected)="onSwitcherChanged($event, row)" [selectedOption]="row[column.prop]?.toString()" [options]="column.switcherOptions"></fj-content-switcher>
-        <!--<mat-button-toggle-group *ngSwitchCase="'switcher'" (change)="onSwitcherChanged($event, row)" [value]="row[column.prop]?.toString() || column.defaultValue">-->
-          <!--<mat-button-toggle *ngFor="let option of column.switcherOptions" value="{{option.value}}">{{option.label}}</mat-button-toggle>-->
-        <!--</mat-button-toggle-group>-->
 
         <!-- Actions -->
-        <mg-actions
+        <fj-table-actions
           *ngSwitchCase="'actions'"
           [showSpinner]="row.showSpinner"
           [actions]="column.actions"
           (delete)="deleteEvent(row, i)"
           (download)="downloadEvent(row, i)"
-        ></mg-actions>
+        ></fj-table-actions>
         <div *ngSwitchCase="'activate'">
           <div class="column__text-tpl" *ngIf="row[column.prop]">
             <fj-button [color]="'danger'" [size]="'micro'" (click)="activateEvent($event, row, i)">

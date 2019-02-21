@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output, OnInit, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'frejya-table-head',
+  selector: 'fj-table-head',
   templateUrl: './table-head.component.html',
   styleUrls: ['./table-head.component.scss']
 })

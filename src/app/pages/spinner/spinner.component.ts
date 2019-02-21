@@ -8,14 +8,14 @@ import { TextHelper } from '@freyjaDemo/app/shared/helpers/text.helper';
 })
 export class SpinnerComponent implements OnInit {
 
-  public customSpinnerExample;
+  public spinnerExample;
 
   constructor(
     private textHelper: TextHelper
   ) { }
 
   ngOnInit() {
-    this.customSpinnerExample = this.textHelper.dedent`
+    this.spinnerExample = this.textHelper.dedent`
     <fj-spinner size="xsmall"></fj-spinner>
     <fj-spinner size="small"></fj-spinner>
     <fj-spinner size="large"></fj-spinner>

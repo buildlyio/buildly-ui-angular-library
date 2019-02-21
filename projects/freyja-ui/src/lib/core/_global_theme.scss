@@ -53,7 +53,6 @@ $haf: "&:hover, &:active, &:focus";
   $text-darker: darken($text, 10%);
   $text-darkest: darken($text-darker, 32%);
   $text-brighter: lighten($text, 10%);
-  $global-padding: rem-calc(12);
 
   $themes: (
     'color-primary':$main,
@@ -67,7 +66,7 @@ $haf: "&:hover, &:active, &:focus";
     'text-body' : $text-darker,
     'text-labels': $text-darkest,
     'text-links': $text-brighter,
-    'border': $text-brighter,
+    'border': $disable,
     'input':$base-darker,
     'background': $base,
     'background-lvl2': $base-brighter,

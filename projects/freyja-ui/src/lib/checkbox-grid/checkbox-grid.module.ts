@@ -14,4 +14,4 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   exports: [CheckboxGridComponent]
 })
-export class CheckboxGridModule { }
+export class FjCheckboxGridModule { }

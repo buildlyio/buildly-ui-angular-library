@@ -1,12 +1,12 @@
 <div class="table">
-  <frejya-table-head
+  <fj-table-head
     [columns]= "columns"
     [rows] = "rows"
     (filterSelected)="applyFilters($event)"
     (sortActivated)="applySort($event)"
 
-  ></frejya-table-head>
-  <frejya-table-row
+  ></fj-table-head>
+  <fj-table-row
     #tableRow
     *ngIf="rows?.length; else emptyMsg; "
     [columns]="columns"
@@ -25,17 +25,24 @@
     (selectionChanged)="onSelectionChanged($event)"
     (fixedRowSelectionChanged)="onFixedRowSelectionChanged($event)"
     (switcherChanged)="onSwitcherChanged($event)"
-  ></frejya-table-row>
+  ></fj-table-row>
   <div *ngIf="fixedRow">
     <div *ngIf="fixedRow.type === 'string'" class="table-row">
       <div class="column__text-tpl">{{fixedRow.label}}</div>
     </div>
     <div *ngIf="fixedRow.type === 'select'" class="table-row">
-      <mat-select #fixedRowSelectField class="fixedrow__select" [placeholder]="fixedRow.options.length > 1 ? fixedRow.label : fixedRow.noOptionsMessage" (selectionChange)="onFixedRowSelectionChanged($event, fixedRow.label)">
-        <mat-option *ngFor="let option of fixedRow.options" [value]="option.value" >
-          {{option.label}}
-        </mat-option>
-      </mat-select>
+      <fj-native-dropdown #fixedRowSelectField
+                          class="fixedrow__select"
+                          [options]="fixedRow.options"
+                          (optionSelected)="onFixedRowSelectionChanged($event, fixedRow.label)">
+
+      </fj-native-dropdown>
+
+      <!--<mat-select #fixedRowSelectField class="fixedrow__select" [placeholder]="fixedRow.options.length > 1 ? fixedRow.label : fixedRow.noOptionsMessage" (selectionChange)="onFixedRowSelectionChanged($event, fixedRow.label)">-->
+        <!--<mat-option *ngFor="let option of fixedRow.options" [value]="option.value" >-->
+          <!--{{option.label}}-->
+        <!--</mat-option>-->
+      <!--</mat-select>-->
     </div>
   </div>
   <ng-template #emptyMsg>

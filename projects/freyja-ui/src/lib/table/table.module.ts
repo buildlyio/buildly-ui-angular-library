@@ -8,11 +8,12 @@ import { FormsModule } from '@angular/forms';
 import { ActionsComponent } from './templates/actions/actions.component';
 import { FilterByValuesPipe } from './pipes/filter-by-values.pipe';
 import { SortByColumnPipe } from './pipes/sort-by-column.pipe';
-import {CheckboxGridModule} from '../checkbox-grid/checkbox-grid.module';
+import { FjCheckboxGridModule} from '../checkbox-grid/checkbox-grid.module';
 import { FjSpinnerModule } from '../spinner/spinner.module';
 import { IconModule } from '../icon/icon.module';
 import { FjButtonModule } from '../button/button.module';
 import { FjContentSwitcherModule } from '../content-switcher/content-switcher.module';
+import { FjNativeDropdownModule } from '@libs/freyja-ui/src/lib/native-dropdown/native-dropdown.module';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { FjContentSwitcherModule } from '../content-switcher/content-switcher.mo
     FjSpinnerModule,
     FjContentSwitcherModule,
     FjButtonModule,
-    CheckboxGridModule
+    FjNativeDropdownModule,
+    FjCheckboxGridModule
   ],
   declarations: [
     TableComponent,
@@ -35,4 +37,4 @@ import { FjContentSwitcherModule } from '../content-switcher/content-switcher.mo
   ],
   exports: [TableComponent]
 })
-export class TableModule { }
+export class FjTableModule { }

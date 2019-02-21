@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
-  selector: 'mg-actions',
+  selector: 'fj-table-actions',
   templateUrl: './actions.component.html',
   styleUrls: ['./actions.component.scss']
 })

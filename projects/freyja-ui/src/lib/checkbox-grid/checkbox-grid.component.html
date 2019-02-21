@@ -1,4 +1,4 @@
-<h2 class="title">Main Title</h2>
+<h2 class="title">{{title}}</h2>
 <div class="grid-form__card-body card-body" [ngClass]="{'no-padding': noPadding, 'no-margin': noMargin, 'small-text': smallText}">
   <div *ngIf="formGroup" [formGroup]="formGroup">
     <div *ngFor="let checkbox of checkboxes;" class="form-check" [ngClass]="{'form-check--inline': inline}">

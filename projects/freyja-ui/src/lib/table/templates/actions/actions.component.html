@@ -3,11 +3,11 @@
       <a *ngSwitchCase="'download'" class="actions__btn actions__btn--download" (click)="downloadEvent($event)">
         <fj-icon svgName="download" fillColor="color-inactive" *ngIf="!showSpinner; else spinner;"></fj-icon>
         <ng-template #spinner>
-          <mg-spinner size="xsmall" class="actions__spinner"></mg-spinner>
+          <fj-spinner size="xsmall" class="actions__spinner"></fj-spinner>
         </ng-template>
       </a>
       <a *ngSwitchCase="'delete'" class="actions__btn actions__btn--delete" (click)="deleteEvent($event)">
-        <mat-icon>delete</mat-icon>
+        <fj-icon [svgName]="'delete'" [fillColor]="'red'"></fj-icon>
       </a>
     </li>
 </ul>

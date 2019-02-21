@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CheckboxGridModule } from 'projects/freyja-ui/src/lib/checkbox-grid/checkbox-grid.module';
+import { FjCheckboxGridModule } from 'projects/freyja-ui/src/lib/checkbox-grid/checkbox-grid.module';
 import { MainNavComponent } from './layout/main-nav/main-nav.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { RouterModule } from '@angular/router';
@@ -34,7 +34,7 @@ import { TableModule } from '@freyjaDemo/app/pages/table/table.module';
   ],
   imports: [
     BrowserModule,
-    CheckboxGridModule,
+    FjCheckboxGridModule,
     ButtonModule,
     RadioButtonModule,
     CheckBoxModule,
@@ -55,6 +55,6 @@ import { TableModule } from '@freyjaDemo/app/pages/table/table.module';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [CheckboxGridModule]
+  exports: [FjCheckboxGridModule]
 })
 export class AppModule { }
