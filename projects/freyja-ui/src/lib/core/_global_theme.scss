@@ -1,9 +1,12 @@
+$haf: "&:hover, &:active, &:focus";
+
 @import '../button/button-theme.scss';
 @import '../card-item/card-item-theme.scss';
 @import '../checkbox/checkbox-theme.scss';
 @import '../text-input/text-input-theme.scss';
 @import  '../native-dropdown/native-dropdown-theme.scss';
 @import '../radio-button/radio-button-theme.scss';
+@import '../content-switcher/content-switcher-theme.scss';
 @import "spacing-theme.scss";
 
 @mixin freyja-theme($theme-colors: ()) {
@@ -13,6 +16,7 @@
   $danger: #db0000;
   $disable: #d9d9d9;
   $text: #191919;
+  $color-button-text:#ffffff;
 
 
   @if map-get($theme-colors, 'color-background') {
@@ -29,6 +33,9 @@
   }
   @if map-get($theme-colors, 'color-text-input') {
     $text: map-get($theme-colors, 'color-text-input');
+  }
+  @if map-get($theme-colors, 'color-button-text') {
+    $color-button-text: map-get($theme-colors, 'color-button-text');
   }
 
 
@@ -51,6 +58,7 @@
     'color-danger' : $danger,
     'color-danger-hover':$danger-darker,
     'color-disable': $disable,
+    'color-button-text': $color-button-text,
     'text-header': $text,
     'text-body' : $text-darker,
     'text-labels': $text-darkest,
@@ -68,6 +76,7 @@
   @include textInputColorsTheme($themes);
   @include dropdownColorsTheme($themes);
   @include radioButtonColorsTheme($themes);
+  @include contentSwitcherColorsTheme($themes);
   @include margin-classes;
   @include padding-classes;
 

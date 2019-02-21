@@ -20,6 +20,7 @@ import { AccordionModule } from './pages/accordion/accordion.module';
 import { SvgIconModule } from './pages/svg-icon/svg-icon.module';
 import { ContentWrapModule } from './components/content-wrap/content-wrap.module';
 import { CardItemModule } from './pages/card-item/card-item.module';
+import {ContentSwitcherModule} from './pages/content-switcher/content-switcher.module';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CardItemModule } from './pages/card-item/card-item.module';
     TextInputModule,
     SvgIconModule,
     AccordionModule,
+    ContentSwitcherModule,
     SidenavModule,
     ContentWrapModule,
     CardItemModule,

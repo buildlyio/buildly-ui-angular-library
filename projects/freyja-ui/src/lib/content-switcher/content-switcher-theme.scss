@@ -1,0 +1,26 @@
+@mixin contentSwitcherColorsTheme($theme-colors) {
+
+  .content-switcher {
+
+    &__tab {
+      border: solid 1px map-get($theme-colors, 'color-primary');
+      color: map-get($theme-colors, 'color-primary');
+
+      &--is-active {
+        background-color: map-get($theme-colors, 'color-primary') !important;
+        color: map-get($theme-colors, 'color-button-text');
+      }
+
+      .content-switcher--disabled & {
+        border-color: map-get($theme-colors, 'color-disable');
+        color: map-get($theme-colors, 'color-disable');
+        &--is-active {
+          background-color: map-get($theme-colors, 'color-disable');
+          border-color: transparent;
+          color: map-get($theme-colors, 'color-button-text');
+        }
+      }
+    }
+  }
+
+}
