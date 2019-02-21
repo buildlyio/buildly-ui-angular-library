@@ -9,9 +9,9 @@ export class ProgressBarComponent implements OnInit {
   @Input() currentValue: number; // current value
   @Input() plannedValue: number; // planned value
   /**
-   * color that indicates that the current value exceeds the planned value
+   * color that indicates that the current value exceeds or equal the planned value
    */
-  @Input() dangerColor: string;
+  @Input() finishColor: string;
   /**
    * color that indicates progress in the bar
    */
@@ -26,7 +26,7 @@ export class ProgressBarComponent implements OnInit {
     // change the color and the progress bar highlighted percentage
     if (this.calculatePercentage() >= 100) {
       this.percentage = `100%`;
-      this.color = this.dangerColor ; // set color to the selected danger color
+      this.color = this.finishColor ; // set color to the selected danger color
     } else {
       this.percentage = `${this.calculatePercentage().toString()}%`;
       this.color = this.progressColor ; // set color to the selected progress color

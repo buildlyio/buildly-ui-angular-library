@@ -7,10 +7,13 @@ import { TextHelper } from '@freyjaDemo/app/shared/helpers/text.helper';
   styleUrls: ['./content-switcher.component.scss']
 })
 export class ContentSwitcherComponent implements OnInit {
-  public subNavOptions = [{'label': 'all', 'value': 'all' }, {'label': 'active', 'value': 'active' }];
+  public subNavOptions = [{'label': 'All', 'value': 'all' }, {'label': 'Agit ctive', 'value': 'active' }];
 
   public codeType = this.textHelper.dedent`
-  <fj-content-switcher [options]="[{'label': 'all', 'value': 'all' }, {'label': 'active', 'value': 'active' }]"></fj-content-switcher>
+  <fj-content-switcher [options]="[
+   {'label': 'All', 'value': 'all' },
+   {'label': 'Active', 'value': 'active' }]">
+</fj-content-switcher>
   `;
   constructor(public textHelper: TextHelper) {}
 

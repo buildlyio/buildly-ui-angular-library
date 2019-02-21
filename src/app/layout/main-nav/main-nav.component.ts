@@ -12,7 +12,7 @@ export class MainNavComponent implements OnInit {
       label: 'Button'
     },
     {
-      path: '/Content-switcher',
+      path: '/content-switcher',
       label: 'Content switcher'
     },
     {
