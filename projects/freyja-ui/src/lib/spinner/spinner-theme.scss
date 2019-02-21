@@ -1,0 +1,52 @@
+@mixin spinnerTheme($theme-colors) {
+
+  @keyframes rotator {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(270deg); }
+  }
+
+  @keyframes colorsDefault {
+    0% { stroke: map-get($theme-colors, 'color'); }
+    25% { stroke: map-get($theme-colors, 'color-secondary'); }
+    50% { stroke: map-get($theme-colors, 'color-secondary'); }
+    75% { stroke: map-get($theme-colors, 'color-secondary'); }
+    100% { stroke: map-get($theme-colors, 'color-secondary'); }
+  }
+
+  @keyframes colorsWhite {
+    0% { stroke: $white; }
+    25% { stroke: $white; }
+    50% { stroke: $white; }
+    75% { stroke: $white; }
+    100% { stroke: $white; }
+  }
+
+  @keyframes dash {
+    0% { stroke-dashoffset: $offset; }
+    50% {
+      stroke-dashoffset: $offset/4;
+      transform:rotate(135deg);
+    }
+    100% {
+      stroke-dashoffset: $offset;
+      transform:rotate(450deg);
+    }
+  }
+
+
+}
+  .card-item {
+    &__content {
+      background-color: map-get($theme-colors, 'color-secondary');
+      &--highlight {
+        background-color: map-get($theme-colors, 'color-secondary');
+      }
+    }
+    &__body {
+      &__tags {
+        &__text {
+          color: map-get($theme-colors, 'color-primary');
+        }
+      }
+    }
+}

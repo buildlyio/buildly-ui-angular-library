@@ -1,0 +1,8 @@
+@import "../../../../../../../../src/styles/global";
+
+.card-header{
+  &__title{
+    font-size: rem-calc(24);
+    margin: 0;
+  }
+}

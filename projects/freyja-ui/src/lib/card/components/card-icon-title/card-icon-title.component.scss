@@ -1,0 +1,24 @@
+@import "../../../../../../../../src/styles/global";
+
+.card-header{
+  padding: 0;
+  margin: rem-calc(0 -14);
+  border-bottom: 1px solid $gray-lighter;
+  &__title{
+    margin: 0;
+    padding: rem-calc(0 16);
+    height: rem-calc(46);
+    display: flex;
+    align-items: center;
+    font-size: rem-calc(14);
+    font-weight: 400;
+  }
+  &__icon {
+    width: rem-calc(16);
+    margin-right: rem-calc(8);
+
+    fj-icon {
+      margin: auto;
+    }
+  }
+}
