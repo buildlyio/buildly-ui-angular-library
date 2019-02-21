@@ -1,0 +1,37 @@
+<div class="table-row header">
+  <div class="column"
+    *ngFor="let column of columns"
+    [ngStyle]="{'flex': (isNumber(column.flex)) ? column.flex + ' 1 0%' : '0 0 ' + column.flex}"
+    [ngClass]="{'column--b-left': column.borderLeft, 'column--b-right': column.borderRight, 'column--activeFilter': toggleFilters && activeFilter === column.prop}"
+  >
+    <div class="table-row__wrapper">
+      <div class="table-row__label" (click)="toggleSort(column)" [style.color]="activeSort.column === column.prop ? 'black' : ''">
+        <span class="text-truncate"> {{column.name | translate}}</span>
+        <span class="table-row__sort-icon"
+              *ngIf="column.sortable"
+        >
+          <i class="arrow arrow--up" [ngClass]="{'active': activeSort.direction === 'desc' && activeSort.column === column.prop}"></i>
+          <i class="arrow arrow--down" [ngClass]="{'active': activeSort.direction === 'asc' && activeSort.column === column.prop}"></i>
+        </span>
+      </div>
+      <span class="table-row__filters-icon"
+            *ngIf="column.filtering"
+            (click)="toggleFilterBox($event, column.prop)"
+      >
+        <i class="icon-filters mr-1" [style.color]="hasFilters && filterObj.hasOwnProperty(column.prop) ? 'black' : ''"><mat-icon>filter_list</mat-icon></i>
+      </span>
+    </div>
+    <div class="table-row__filters-box"
+         (click) = "preventClose($event)"
+         [ngClass]="{'table-row__filters-box--active': column.filtering && toggleFilters && activeFilter === column.prop}"
+         [ngStyle]="{'flex': (isNumber(column.flex)) ? column.flex + ' 1 0%' : '0 0 ' + column.flex}"
+         [attr.id]="column.prop"
+    >
+      <freyja-checkbox-grid
+        (checkboxClicked)="toggleFilterValues($event)"
+        [noBorder]="true"
+        [checkboxGroup]="column.filterOptions"
+      ></freyja-checkbox-grid>
+    </div>
+  </div>
+</div>

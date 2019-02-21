@@ -1,0 +1,87 @@
+@import "../../../core/_config";
+.table-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: rem-calc(58);
+  &__wrapper{
+    display: flex;
+  }
+  &__label {
+    display: flex;
+    min-width: 0;
+    cursor: pointer;
+  }
+  &__sort-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    cursor: pointer;
+    i {
+      font-size: 9px;
+      vertical-align: middle;
+    }
+  }
+  &__filters-icon {
+    margin-left: rem-calc(15);
+    margin-top: -5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .icon-filters {
+    height: 20px;
+    width: 20px;
+  }
+  &__filters-box {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    min-width: rem-calc(180);
+    max-height: rem-calc(200);
+    text-transform: none; // remove text transform from the table head parent, this is here to avoid letter capitalisation
+    margin-top: -1px;
+    margin-left: rem-calc(-28); // the value of the padding of the header of the column so that the box doesn't have padding
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.37);
+    overflow: scroll;
+    z-index: 2;
+    &--active {
+      display: block;
+    }
+  }
+}
+.column{
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  padding: rem-calc(21) 0 rem-calc(10) $global-padding;
+  font-size: rem-calc(12);
+  text-transform: uppercase;
+  &--activeFilter {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.37);
+    border-bottom: 0 !important;
+  }
+  &:last-child {
+    padding-right: $global-padding;
+  }
+}
+/* Filter arrow buttons */
+.arrow{
+  width: 0;
+  height: 0;
+  &--up{
+    margin-bottom: 2px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+  }
+  &--down{
+    margin-top: 1px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+  }
+}
+

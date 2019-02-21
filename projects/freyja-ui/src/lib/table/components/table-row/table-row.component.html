@@ -1,0 +1,51 @@
+<div
+  [ngClass]="{'no-hover': noHover}"
+  class="table-row"
+  *ngFor="let row of filteredRows | sortByColumn: sort; let i = index"
+  (click)="selectRow(row)">
+  <ng-container *ngIf="row">
+    <div class="column"
+         *ngFor="let column of columns"
+         [ngStyle]="{'flex': (isNumber(column.flex)) ? column.flex + ' 1 0%' : '0 0 ' + column.flex}"
+         [ngClass]="{'column--b-left': column.borderLeft, 'column--b-right': column.borderRight}"
+    >
+      <div [ngSwitch]="column.cellTemplate" class="column__template">
+        <!-- Date -->
+        <span *ngSwitchCase="'date'" title="{{row[column.hoverText]}}">{{row[column.prop] | date: 'dd.MM.yyyy'}}</span>
+        <!-- Select -->
+        <mat-select *ngSwitchCase="'select'" placeholder="{{column.selectPlaceHolder}}" (selectionChange)="onSelectionChanged($event)">
+          <mat-option *ngFor="let option of column.selectOptions" [value]="option.value">
+            {{option.label}}
+          </mat-option>
+        </mat-select>
+        <!-- Switcher -->
+        <fj-content-switcher *ngSwitchCase="'switcher'"  (optionSelected)="onSwitcherChanged($event, row)" [selectedOption]="row[column.prop]?.toString()" [options]="column.switcherOptions"></fj-content-switcher>
+        <!--<mat-button-toggle-group *ngSwitchCase="'switcher'" (change)="onSwitcherChanged($event, row)" [value]="row[column.prop]?.toString() || column.defaultValue">-->
+          <!--<mat-button-toggle *ngFor="let option of column.switcherOptions" value="{{option.value}}">{{option.label}}</mat-button-toggle>-->
+        <!--</mat-button-toggle-group>-->
+
+        <!-- Actions -->
+        <mg-actions
+          *ngSwitchCase="'actions'"
+          [showSpinner]="row.showSpinner"
+          [actions]="column.actions"
+          (delete)="deleteEvent(row, i)"
+          (download)="downloadEvent(row, i)"
+        ></mg-actions>
+        <div *ngSwitchCase="'activate'">
+          <div class="column__text-tpl" *ngIf="row[column.prop]">
+            <fj-button [color]="'danger'" [size]="'micro'" (click)="activateEvent($event, row, i)">
+              Deactivate
+            </fj-button>
+          </div>
+          <div class="column__text-tpl" *ngIf="!row[column.prop]">
+            <fj-button [size]="'micro'" (click)="activateEvent($event, row, i)">
+              Activate
+            </fj-button>
+          </div>
+        </div>
+        <div class="column__text-tpl" *ngSwitchDefault>{{row[column.prop]? row[column.prop] : "-"}}</div>
+      </div>
+    </div>
+  </ng-container>
+</div>

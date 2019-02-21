@@ -1,0 +1,55 @@
+@import "../../../core/_config";
+
+.table-rows-container {
+  position: relative;
+}
+.table-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: rem-calc(57);
+  &:hover:not(.no-hover) {
+    cursor: pointer;
+  }
+  &:last-child{
+    margin-bottom: -1px;
+  }
+}
+.column{
+  flex: 1;
+  padding-left: $global-padding;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  &__template{
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    width: 100%;
+    height: rem-calc(56);
+  }
+  &__text-tpl{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: rem-calc(15);
+    padding: rem-calc(10 0);
+  }
+  &:last-child {
+    padding-right: $global-padding;
+  }
+}
+/deep/ {
+  .table-row{
+    mg-select-grid {
+      width: 60%;
+      .grid-form {
+        &__card-body{
+          padding: rem-calc(12 0);
+        }
+      }
+    }
+  }
+}

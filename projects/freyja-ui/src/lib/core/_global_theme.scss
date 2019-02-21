@@ -38,7 +38,6 @@ $haf: "&:hover, &:active, &:focus";
     $color-button-text: map-get($theme-colors, 'color-button-text');
   }
 
-
   $base-darker: darken($base, 10%);
   $base-brighter: lighten($base, 10%);
   $base-brightest: lighten($base-brighter, 5%);
@@ -50,6 +49,7 @@ $haf: "&:hover, &:active, &:focus";
   $text-darker: darken($text, 10%);
   $text-darkest: darken($text-darker, 32%);
   $text-brighter: lighten($text, 10%);
+  $global-padding: rem-calc(12);
 
   $themes: (
     'color-primary':$main,
@@ -63,6 +63,7 @@ $haf: "&:hover, &:active, &:focus";
     'text-body' : $text-darker,
     'text-labels': $text-darkest,
     'text-links': $text-brighter,
+    'border': $text-brighter,
     'input':$base-darker,
     'background': $base,
     'background-lvl2': $base-brighter,
@@ -77,6 +78,9 @@ $haf: "&:hover, &:active, &:focus";
   @include dropdownColorsTheme($themes);
   @include radioButtonColorsTheme($themes);
   @include contentSwitcherColorsTheme($themes);
+  @include spinnerTheme($themes);
+  @include progressBarTheme($themes);
+  @include tableTheme($themes);
   @include margin-classes;
   @include padding-classes;
 

@@ -1,0 +1,10 @@
+@mixin progressBarTheme($theme-colors) {
+
+  .progress-bar {
+    background-color: map-get($theme-colors, 'background-lvl2');
+    &__highlight {
+      background-color: map-get($theme-colors, 'color-primary');
+    }
+  }
+}
+

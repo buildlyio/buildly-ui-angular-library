@@ -1,0 +1,11 @@
+@import "../core/_config";
+
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  margin-right: 10px;
+  &__highlight {
+    height: 100%;
+  }
+}
+
