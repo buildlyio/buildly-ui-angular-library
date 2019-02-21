@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ProgressBarComponent } from '@mg/ui-components/progress-bar/progress-bar.component';
+import { ProgressBarComponent } from './progress-bar.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -13,6 +13,6 @@ import { CommonModule } from '@angular/common';
     ProgressBarComponent
   ]
 })
-export class ProgressBarModule {
+export class FjProgressBarModule {
 }
 

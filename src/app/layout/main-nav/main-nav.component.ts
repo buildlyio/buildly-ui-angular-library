@@ -40,13 +40,25 @@ export class MainNavComponent implements OnInit {
       label: 'SVG Icon'
     },
     {
-      path: '/card-item',
-      label: 'Card Item'
-    },
-    {
       path: '/modal',
       label: 'Modal'
-    }
+    },
+    {
+      path: '/card',
+      label: 'Card'
+    },
+    {
+      path: '/spinner',
+      label: 'Spinner'
+    },
+    {
+      path: '/progress-bar',
+      label: 'Progress Bar'
+    },
+    {
+      path: '/table',
+      label: 'Table'
+    },
   ];
   constructor() { }
 

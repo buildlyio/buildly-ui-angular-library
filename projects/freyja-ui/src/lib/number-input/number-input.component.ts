@@ -64,8 +64,8 @@ export class NumberInputComponent extends BaseComponent {
    */
   public generateClassList() {
     const classes = {
-      ['fj-number-input--' + this.size]: this.size,
-      ['fj-number-input--error']: this.errored,
+      ['fj-input--' + this.size]: this.size,
+      ['fj-input--error']: this.errored,
     };
     return classes;
   }

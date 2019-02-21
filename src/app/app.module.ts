@@ -21,6 +21,10 @@ import { SvgIconModule } from './pages/svg-icon/svg-icon.module';
 import { ContentWrapModule } from './components/content-wrap/content-wrap.module';
 import { CardItemModule } from './pages/card-item/card-item.module';
 import {ContentSwitcherModule} from './pages/content-switcher/content-switcher.module';
+import { CardModule } from '@freyjaDemo/app/pages/card/card.module';
+import { SpinnerModule } from '@freyjaDemo/app/pages/spinner/spinner.module';
+import { ProgressBarModule } from '@freyjaDemo/app/pages/progress-bar/progress-bar.module';
+import { TableModule } from '@freyjaDemo/app/pages/table/table.module';
 
 @NgModule({
   declarations: [
@@ -43,6 +47,10 @@ import {ContentSwitcherModule} from './pages/content-switcher/content-switcher.m
     ContentWrapModule,
     CardItemModule,
     ModalModule,
+    CardModule,
+    SpinnerModule,
+    ProgressBarModule,
+    TableModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

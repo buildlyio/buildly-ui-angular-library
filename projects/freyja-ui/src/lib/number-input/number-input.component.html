@@ -1,13 +1,15 @@
-<label [attr.for]="id" class="label--medium">{{label}}</label>
-<input 
-  class="fj-input"
-  [ngClass]="generateClassList()"
-  type="number" 
-  [id]="id"
-  [tabIndex]="tabIndex"
-  [disabled]="disabled"
-  [attr.name]="name" 
-  [placeholder]="placeholder"
-  [attr.value]="value"
-  (change)="onValueChange($event)"
-/>
+<div class="fj-input">
+  <label [attr.for]="id" class="label--medium">{{label}}</label>
+  <input
+    class="fj-input"
+    [ngClass]="generateClassList()"
+    type="number"
+    [id]="id"
+    [tabIndex]="tabIndex"
+    [disabled]="disabled"
+    [attr.name]="name"
+    [placeholder]="placeholder"
+    [attr.value]="value"
+    (change)="onValueChange($event)"
+  />
+</div>

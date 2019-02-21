@@ -14,4 +14,4 @@ import { SpinnerComponent } from './spinner.component';
   ],
 })
 
-export class MgSpinnerModule { }
+export class FjSpinnerModule { }

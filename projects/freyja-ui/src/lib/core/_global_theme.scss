@@ -10,6 +10,7 @@ $haf: "&:hover, &:active, &:focus";
 @import '../spinner/spinner-theme';
 @import '../table/table-theme';
 @import '../progress-bar/progress-bar-theme.scss';
+@import '../card/card-theme.scss';
 @import "spacing-theme.scss";
 
 @mixin freyja-theme($theme-colors: ()) {
@@ -84,6 +85,7 @@ $haf: "&:hover, &:active, &:focus";
   @include spinnerTheme($themes);
   @include progressBarTheme($themes);
   @include tableTheme($themes);
+  @include cardColorsTheme($themes);
   @include margin-classes;
   @include padding-classes;
 

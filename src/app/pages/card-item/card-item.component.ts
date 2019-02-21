@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CardItemOptions } from '@libs/freyja-ui/src/lib/card-item/card-item-options';
-import { TextHelper } from "@freyjaDemo/app/shared/helpers/text.helper";
+import { TextHelper } from '@freyjaDemo/app/shared/helpers/text.helper';
 
 @Component({
   selector: 'fj-demo-card-item',

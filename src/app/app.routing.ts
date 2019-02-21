@@ -9,6 +9,10 @@ import { DemoNumberInputComponent } from './pages/number-input/number-input.comp
 import { DemoTextInputComponent } from './pages/text-input/text-input.component';
 import { DemoSvgIconComponent } from './pages/svg-icon/svg-icon.component';
 import { CardItemComponent } from './pages/card-item/card-item.component';
+import { CardComponent } from './pages/card/card.component';
+import { TableComponent } from './pages/table/table/table.component';
+import { ProgressBarComponent } from './pages/progress-bar/progress-bar/progress-bar.component';
+import { SpinnerComponent } from './pages/spinner/spinner.component';
 
 export const appRoutes: Routes = [
   { path: '', component: ButtonComponent },
@@ -20,6 +24,10 @@ export const appRoutes: Routes = [
   { path: 'text-input', component: DemoTextInputComponent },
   { path: 'svg-icon', component: DemoSvgIconComponent },
   { path: 'card-item', component: CardItemComponent },
-  {path: 'Content-switcher', component: ContentSwitcherComponent},
+  { path: 'content-switcher', component: ContentSwitcherComponent},
+  { path: 'card', component: CardComponent},
+  { path: 'table', component: TableComponent},
+  { path: 'spinner', component: SpinnerComponent},
+  { path: 'progress-bar', component: ProgressBarComponent},
   { path: 'modal', component: ModalComponent }
 ];
