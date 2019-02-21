@@ -7,6 +7,9 @@ $haf: "&:hover, &:active, &:focus";
 @import  '../native-dropdown/native-dropdown-theme.scss';
 @import '../radio-button/radio-button-theme.scss';
 @import '../content-switcher/content-switcher-theme.scss';
+@import '../spinner/spinner-theme';
+@import '../table/table-theme';
+@import '../progress-bar/progress-bar-theme.scss';
 @import "spacing-theme.scss";
 
 @mixin freyja-theme($theme-colors: ()) {
