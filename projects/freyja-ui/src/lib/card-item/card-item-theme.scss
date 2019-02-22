@@ -18,7 +18,7 @@
     }
     &__below-menu {
       &:hover {
-        background-color: map-get($theme-colors, 'color-primary-hover');
+        background-color: map-get($theme-colors, 'color-primary-hover-bright');
       }
     }
 

@@ -50,6 +50,7 @@ $haf: "&:hover, &:active, &:focus";
   $base-overlay: lighten($base-brightest, 5%);
 
   $main-darker: darken($main, 5%);
+  $main-brighter: lighten($main, 30%);
   $danger-darker: darken($danger, 5%);
 
   $text-darker: darken($text, 10%);
@@ -59,6 +60,7 @@ $haf: "&:hover, &:active, &:focus";
   $themes: (
     'color-primary':$main,
     'color-primary-hover':$main-darker,
+    'color-primary-hover-bright':$main-brighter,
     'color-secondary': $base-brighter,
     'color-danger' : $danger,
     'color-danger-hover':$danger-darker,
