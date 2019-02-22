@@ -13,7 +13,7 @@ import { FjSpinnerModule } from '../spinner/spinner.module';
 import { IconModule } from '../icon/icon.module';
 import { FjButtonModule } from '../button/button.module';
 import { FjContentSwitcherModule } from '../content-switcher/content-switcher.module';
-import { FjNativeDropdownModule } from '@libs/freyja-ui/src/lib/native-dropdown/native-dropdown.module';
+import { FjNativeDropdownModule } from '../native-dropdown/native-dropdown.module';
 
 @NgModule({
   imports: [
