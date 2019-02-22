@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import '../projects/freyja-ui/src/lib/core/__freyja-global.scss';
-@import '../projects/freyja-ui/src/lib/core/_global_theme.scss';
+@import 'core/_freyja-global';
+@import "../projects/freyja-ui/src/lib/core/_global_theme.scss";
 
 $color-primary: #0674db;
 $color-background:#ffffff;
