@@ -44,7 +44,8 @@ $haf: "&:hover, &:active, &:focus";
     $color-button-text: map-get($theme-colors, 'color-button-text');
   }
 
-  $base-darker: darken($base, 10%);
+  $base-darker: darken($base, 4%);
+  $base-darkest: darken($base-darker, 5%);
   $base-brighter: lighten($base, 10%);
   $base-brightest: lighten($base-brighter, 5%);
   $base-overlay: lighten($base-brightest, 5%);
@@ -73,8 +74,8 @@ $haf: "&:hover, &:active, &:focus";
     'border': $disable,
     'input':$base-darker,
     'background': $base,
-    'background-lvl2': $base-brighter,
-    'background-lvl3':$base-brightest,
+    'background-lvl2': $base-darker,
+    'background-lvl3':$base-darkest,
     'overlay':$base-overlay,
   );
 
@@ -97,10 +98,10 @@ $haf: "&:hover, &:active, &:focus";
     background-color : $base;
   }
   .bg-2 {
-    background-color : $base-brighter;
+    background-color : $base-darker;
   }
   .bg-3 {
-    background-color : $base-brightest;
+    background-color : $base-darkest;
   }
 
 }
