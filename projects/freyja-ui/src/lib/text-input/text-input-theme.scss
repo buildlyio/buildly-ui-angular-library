@@ -1,0 +1,48 @@
+@mixin textInputColorsTheme($theme-colors) {
+  .fj-input {
+    input {
+      border: rem-calc(1) solid map-get($theme-colors, 'input');
+      color: map-get($theme-colors, 'text-header');
+
+      &:focus {
+        border-color: map-get($theme-colors, 'color-primary');
+      }
+      &:hover {
+        color: map-get($theme-colors, 'text-header');
+      }
+      &::placeholder {
+        color: map-get($theme-colors, 'text');
+        &:hover & {
+          color: map-get($theme-colors, 'text');
+        }
+      }
+      &:disabled {
+        background-color: map-get($theme-colors, 'color-disable');
+        border-color: map-get($theme-colors, 'color-disable');
+        &::placeholder {
+          color: map-get($theme-colors, 'color-input');
+        }
+      }
+
+      &--error {
+        border-color: map-get($theme-colors, 'color-danger');
+      }
+
+    }
+  }
+
+  label {
+    &.label--disabled {
+      color: map-get($theme-colors, 'input');
+    }
+  }
+
+  .input-error {
+    color: map-get($theme-colors, 'color-danger');
+
+  }
+
+  .error--label {
+    color: map-get($theme-colors, 'color-danger');
+  }
+}

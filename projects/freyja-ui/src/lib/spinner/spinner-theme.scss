@@ -1,0 +1,19 @@
+@mixin spinnerTheme($theme-colors) {
+
+  @keyframes colorsDefault {
+    0% { stroke: map-get($theme-colors, 'color-primary'); }
+    25% { stroke: map-get($theme-colors, 'color-primary'); }
+    50% { stroke: map-get($theme-colors, 'color-primary'); }
+    75% { stroke: map-get($theme-colors, 'color-primary'); }
+    100% { stroke: map-get($theme-colors, 'color-primary'); }
+  }
+
+  @keyframes colorsWhite {
+    0% { stroke: map-get($theme-colors, 'background'); }
+    25% { stroke: map-get($theme-colors, 'background'); }
+    50% { stroke: map-get($theme-colors, 'background'); }
+    75% { stroke: map-get($theme-colors, 'background'); }
+    100% { stroke: map-get($theme-colors, 'background'); }
+  }
+}
+

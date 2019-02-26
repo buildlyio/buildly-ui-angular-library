@@ -1,0 +1,21 @@
+<fj-demo-content-wrap>
+  <h2>Progress Bar</h2>
+  <h3>In Progress</h3>
+  <div class="container">
+    <fj-progress-bar
+       [currentValue]="15"
+       [plannedValue]="20"
+    ></fj-progress-bar>
+  </div>
+  <pre><code highlight [code]="inProgressExample"></code></pre>
+  <h3>Finished</h3>
+  <div class="container">
+    <fj-progress-bar
+      [currentValue]="10"
+      [plannedValue]="10"
+      [finishColor]="'green'"
+    ></fj-progress-bar>
+  </div>
+  <pre><code highlight [code]="finishedExample"></code></pre>
+</fj-demo-content-wrap>
+

@@ -1,8 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'core/_freyja-global';
+@import "../projects/freyja-ui/src/lib/core/_global_theme.scss";
 
-$color-blue: #1b51a0;
-$color-primary: $color-blue;
+$color-primary: #0674db;
+$color-background:#ffffff;
+$color-danger : #db0000;
+$color-disable: #d9d9d9;
+$color-text: #191919;
+$color-button-text: #ffffff;
 
+$theme-colors: (
+  'color-primary': $color-primary,
+  'color-background':$color-background,
+  'color-danger' : $color-danger,
+  'color-disable': $color-disable,
+  'color-text-input':$color-text,
+  'color-button-text':$color-button-text,
+);
+
+@include freyja-theme($theme-colors);
 $spacer: rem-calc(24);
 $header-height: rem-calc(64) !default;
+

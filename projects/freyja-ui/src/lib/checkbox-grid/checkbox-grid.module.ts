@@ -2,16 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CheckboxGridComponent } from '../checkbox-grid/checkbox-grid.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FjCheckboxModule } from '../checkbox/checkbox.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FjCheckboxModule
   ],
   declarations: [
     CheckboxGridComponent
   ],
   exports: [CheckboxGridComponent]
 })
-export class CheckboxGridModule { }
+export class FjCheckboxGridModule { }

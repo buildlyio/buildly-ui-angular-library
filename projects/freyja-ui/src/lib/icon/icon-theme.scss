@@ -1,0 +1,19 @@
+@mixin iconColorsTheme($theme-colors) {
+   .icon {
+      // fill color
+      &--fill {
+        &--base {
+          fill: map-get($theme-colors, 'text-header');
+        }
+        &--danger {
+          fill: map-get($theme-colors, 'color-danger');
+        }
+        &--primary {
+          fill: map-get($theme-colors, 'color-primary');
+        }
+        &--white {
+          fill: map-get($theme-colors, 'background');
+        }
+      }
+    }
+  }

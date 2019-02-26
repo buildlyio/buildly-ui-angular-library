@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CheckboxGridModule } from 'projects/freyja-ui/src/lib/checkbox-grid/checkbox-grid.module';
+import { FjCheckboxGridModule } from 'projects/freyja-ui/src/lib/checkbox-grid/checkbox-grid.module';
 import { MainNavComponent } from './layout/main-nav/main-nav.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { RouterModule } from '@angular/router';
@@ -21,6 +21,11 @@ import { SvgIconModule } from './pages/svg-icon/svg-icon.module';
 import { ContentWrapModule } from './components/content-wrap/content-wrap.module';
 import { CardItemModule } from './pages/card-item/card-item.module';
 import { InlineEditorModule } from './pages/inline-editor/inline-editor.module';
+import {ContentSwitcherModule} from './pages/content-switcher/content-switcher.module';
+import { CardModule } from '@freyjaDemo/app/pages/card/card.module';
+import { SpinnerModule } from '@freyjaDemo/app/pages/spinner/spinner.module';
+import { ProgressBarModule } from '@freyjaDemo/app/pages/progress-bar/progress-bar.module';
+import { TableModule } from '@freyjaDemo/app/pages/table/table.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,7 @@ import { InlineEditorModule } from './pages/inline-editor/inline-editor.module';
   ],
   imports: [
     BrowserModule,
-    CheckboxGridModule,
+    FjCheckboxGridModule,
     ButtonModule,
     RadioButtonModule,
     CheckBoxModule,
@@ -38,15 +43,20 @@ import { InlineEditorModule } from './pages/inline-editor/inline-editor.module';
     TextInputModule,
     SvgIconModule,
     AccordionModule,
+    ContentSwitcherModule,
     SidenavModule,
     ContentWrapModule,
     CardItemModule,
     ModalModule,
     InlineEditorModule,
+    CardModule,
+    SpinnerModule,
+    ProgressBarModule,
+    TableModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [CheckboxGridModule]
+  exports: [FjCheckboxGridModule]
 })
 export class AppModule { }

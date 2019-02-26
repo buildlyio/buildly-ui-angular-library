@@ -1,0 +1,49 @@
+@mixin cardItemColorsTheme($theme-colors) {
+  .card-item {
+    &__content {
+      background-color: map-get($theme-colors, 'color-secondary');
+      &--highlight {
+        background-color: map-get($theme-colors, 'color-secondary');
+      }
+    }
+    &__body {
+      &__tags {
+        &__text {
+          color: map-get($theme-colors, 'color-primary');
+        }
+      }
+    }
+    &__divider {
+      background-color: map-get($theme-colors, 'color-secondary');;
+    }
+    &__below-menu {
+      &:hover {
+        background-color: map-get($theme-colors, 'color-primary-hover-bright');
+      }
+    }
+
+    &__right {
+      &__caption {
+        color: map-get($theme-colors, 'text-labels');
+      }
+      &__link {
+        color: map-get($theme-colors, 'color-primary');
+      }
+    }
+    &__editable{
+      &:hover {
+        &:after {
+          color: map-get($theme-colors, 'input');;
+        }
+      }
+    }
+  }
+  .card-item__dropdown {
+    .fj-native-dropdown {
+      border-color: map-get($theme-colors, 'color-primary');
+    }
+  }
+  .caption-text {
+    color: map-get($theme-colors, 'text-labels');
+  }
+}

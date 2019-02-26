@@ -58,3 +58,15 @@ export * from './lib/light-box/light-box.module';
 
 export * from './lib/inline-text-editor/inline-text-editor.component';
 export * from './lib/inline-text-editor/inline-text-editor.module';
+
+export * from './lib/spinner/spinner.component';
+export * from './lib/spinner/spinner.module';
+
+export * from './lib/table/table.component';
+export * from './lib/table/table.module';
+
+export * from './lib/progress-bar/progress-bar.component';
+export * from './lib/progress-bar/progress-bar.module';
+
+export * from './lib/card/card.component';
+export * from './lib/card/card.module';

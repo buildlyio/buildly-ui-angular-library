@@ -1,0 +1,6 @@
+@mixin cardColorsTheme($theme-colors) {
+  .fj-card{
+    color: map-get($theme-colors, 'text-header');
+    background-color: map-get($theme-colors, 'background');
+  }
+}

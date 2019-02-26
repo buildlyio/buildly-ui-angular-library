@@ -1,6 +1,6 @@
 {
   "name": "angular-app-test",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,6 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "build-freyja": "ng build freyja-ui && npm run bundle-styles",
+    "bundle-styles": "./node_modules/.bin/scss-bundle -c scss-bundle.config.json",
     "compodoc": "./node_modules/.bin/compodoc -p projects/freyja-ui/tsconfig.lib.json"
   },
   "private": true,
@@ -46,6 +48,7 @@
     "karma-jasmine-html-reporter": "^1.4.0",
     "ng-packagr": "^4.4.0",
     "protractor": "~5.4.1",
+    "scss-bundle": "^2.4.0",
     "ts-node": "~7.0.1",
     "tsickle": "^0.34.0",
     "tslib": "^1.9.3",

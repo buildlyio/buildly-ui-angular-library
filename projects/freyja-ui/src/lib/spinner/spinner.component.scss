@@ -1,0 +1,52 @@
+@import "../core/_config";
+$offset: 187;
+$duration: 1.4s;
+
+.spinner-wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.spinner {
+  &__circle{
+    position: relative;
+    animation: rotator $duration linear infinite;
+  }
+  &__circle-path{
+    stroke-dasharray: $offset;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+  }
+  &__primary{
+    .spinner__circle-path{
+      animation:
+        dash $duration ease-in-out infinite,
+        colorsDefault ($duration*4) ease-in-out infinite;
+    }
+  }
+  &__white{
+    .spinner__circle-path{
+      animation:
+        dash $duration ease-in-out infinite,
+        colorsWhite ($duration*4) ease-in-out infinite;
+    }
+  }
+
+  @keyframes dash {
+    0% { stroke-dashoffset: $offset; }
+    50% {
+      stroke-dashoffset: $offset/4;
+      transform:rotate(135deg);
+    }
+    100% {
+      stroke-dashoffset: $offset;
+      transform:rotate(450deg);
+    }
+  }
+
+  @keyframes rotator {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(270deg); }
+  }
+}

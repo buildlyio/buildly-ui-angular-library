@@ -12,10 +12,6 @@ export class MainNavComponent implements OnInit {
       label: 'Button'
     },
     {
-      path: '/accordion',
-      label: 'Accordion'
-    },
-    {
       path: '/radio-button',
       label: 'Radio Button'
     },
@@ -24,21 +20,42 @@ export class MainNavComponent implements OnInit {
       label: 'Check Box'
     },
     {
-      path: '/number-input',
-      label: 'Number Input'
+      path: '/content-switcher',
+      label: 'Content switcher'
     },
     {
       path: '/text-input',
       label: 'Text Input'
     },
     {
-      path: '/svg-icon',
-      label: 'SVG Icon'
+      path: '/number-input',
+      label: 'Number Input'
+    },
+    {
+      path: '/modal',
+      label: 'Modal'
+    },
+    {
+      path: '/spinner',
+      label: 'Spinner'
+    },
+    {
+      path: '/progress-bar',
+      label: 'Progress Bar'
+    },
+
+    {
+      path: '/table',
+      label: 'Table'
     },
     {
       path: '/card-item',
-      label: 'Card Item'
+      label: 'Card-item'
     },
+    // {
+    //   path: '/svg-icon',
+    //   label: 'SVG Icon'
+    // }, // not working properly yet, should be fixed
     {
       path: '/modal',
       label: 'Modal'
@@ -46,7 +63,15 @@ export class MainNavComponent implements OnInit {
     {
       path: '/inline-editing',
       label: 'Inline Editing'
-    }
+    },
+    {
+      path: '/card',
+      label: 'Card'
+    },
+    {
+      path: '/accordion',
+      label: 'Accordion'
+    },
   ];
   constructor() { }
 
