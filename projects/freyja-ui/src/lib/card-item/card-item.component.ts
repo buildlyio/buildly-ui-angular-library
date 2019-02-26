@@ -92,6 +92,14 @@ export class CardItemComponent {
   }
 
   /**
+   * a function that will be triggered when an item has been edited
+   * @param value - the edited element value and index
+   */
+  public onEditElement(editedElement) {
+    this.elementEdited.emit(editedElement);
+  }
+
+  /**
    * a function that is triggered when the card item picture is clicked and it sets the image in the lightbox component
    */
   public onPictureClicked() {

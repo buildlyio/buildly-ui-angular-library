@@ -32,7 +32,7 @@
               [value]="item[options?.title?.prop]"
               displayElement="h3"
               name="title"
-              (elementEdited)="onEditElement($event, 'title')"
+              (elementEdited)="onEditElement($event)"
               (doubleClick)="onDoubleClick()">
             </fj-inline-text-editor>
           </div>
@@ -41,7 +41,7 @@
               <fj-inline-text-editor
                 [value]="item[options?.subText?.prop]"
                 name="subText"
-                (elementEdited)="onEditElement($event, 'subText')"
+                (elementEdited)="onEditElement($event)"
                 (doubleClick)="onDoubleClick()">
               </fj-inline-text-editor>
             </div>
@@ -49,7 +49,7 @@
               <fj-inline-text-editor
                 [value]="item[options?.subText2?.prop]"
                 name="subText2"
-                (elementEdited)="onEditElement($event, 'subText2')"
+                (elementEdited)="onEditElement($event)"
                 (doubleClick)="onDoubleClick()">
               </fj-inline-text-editor>
             </div>
@@ -60,7 +60,7 @@
             <fj-inline-text-editor
               [value]="item[options?.caption?.prop]"
               name="caption"
-              (elementEdited)="onEditElement($event, 'caption')"
+              (elementEdited)="onEditElement($event)"
               (doubleClick)="onDoubleClick()"
               [displayElementCustomStyles]="{'cursor': 'pointer', 'margin': '0', 'font-size': '16px', 'color': '#666666'}"
               [inputCustomStyles]="inputFieldStyles">
@@ -72,7 +72,7 @@
               [value]="item[options?.link?.prop]"
               name="link"
               displayElement="a"
-              (elementEdited)="onEditElement($event, 'link')"
+              (elementEdited)="onEditElement($event)"
               (doubleClick)="onDoubleClick()"
               [inputCustomStyles]="inputFieldStyles">
             </fj-inline-text-editor>
@@ -129,7 +129,7 @@
                   [value]="item[detailItem?.prop]"
                   name="detailItem"
                   displayElement="div"
-                  (elementEdited)="onEditElement($event, 'detailItem', i)"
+                  (elementEdited)="onEditElement($event)"
                   (doubleClick)="onDoubleClick()"
                   [inputCustomStyles]="inputFieldStyles">
                 </fj-inline-text-editor>
@@ -146,13 +146,13 @@
               [value]="item[options?.description?.prop]"
               name="description"
               displayElement="div"
-              (elementEdited)="onEditElement($event, 'description')"
+              (elementEdited)="onEditElement($event)"
               (doubleClick)="onDoubleClick()"
               [inputCustomStyles]="inputFieldStyles">
             </fj-inline-text-editor>
           </div>
         </div>
-        <div class="card-item__body__tags" *ngIf="options?.tags" (dblclick)="activateEditMode($event, 'tags')">
+        <div class="card-item__body__tags" *ngIf="options?.tags">
           <div class="caption-text">
             {{options?.tags.label}}
           </div>
@@ -161,7 +161,7 @@
               [value]="item[options?.tags?.prop]"
               name="tags"
               displayElement="div"
-              (elementEdited)="onEditElement($event, 'tags')"
+              (elementEdited)="onEditElement($event)"
               (doubleClick)="onDoubleClick()"
               [inputCustomStyles]="inputFieldStyles">
             </fj-inline-text-editor>

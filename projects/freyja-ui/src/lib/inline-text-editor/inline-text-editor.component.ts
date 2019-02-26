@@ -32,7 +32,7 @@ export class InlineTextEditorComponent implements OnInit {
   /**
    * The HTML element which should be used for display. Defaults to 'p'.
    */
-  @Input() displayElement: 'a' | 'div' | 'p' | 'h1' | 'h2' | 'h3' = 'p';
+  @Input() displayElement: 'a' | 'div' | 'span' | 'p' | 'h1' | 'h2' | 'h3' = 'p';
 
   /**
    * Custom styles for the display element.
@@ -60,8 +60,9 @@ export class InlineTextEditorComponent implements OnInit {
 
   /**
    * activates edit mode for one field
+   * @param evt - mouse event
    */
-  public activateEditMode() {
+  public activateEditMode(evt) {
     this.isEdit = true;
     this.setDocumentListenerForCloseSelect();
     this.doubleClick.emit();
@@ -81,6 +82,7 @@ export class InlineTextEditorComponent implements OnInit {
     };
     this.elementEdited.emit(editObj);
   }
+
 
   /**
    * Sets a listener on the document for clicks, which will close the
