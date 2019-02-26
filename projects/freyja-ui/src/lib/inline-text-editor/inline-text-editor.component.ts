@@ -32,7 +32,7 @@ export class InlineTextEditorComponent implements OnInit {
   /**
    * The HTML element which should be used for display. Defaults to 'p'.
    */
-  @Input() displayElement: 'a' | 'div' | 'span' | 'p' | 'h1' | 'h2' | 'h3' = 'p';
+  @Input() displayElement: 'a' | 'div' | 'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' = 'p';
 
   /**
    * Custom styles for the display element.

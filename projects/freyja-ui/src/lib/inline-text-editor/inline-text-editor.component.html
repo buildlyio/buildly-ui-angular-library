@@ -1,11 +1,11 @@
-<p 
+<p
   *ngIf="!isEdit && displayElement === 'p'"
   class="inline-text-editor"
   [ngStyle]="displayElementCustomStyles"
   (dblclick)="activateEditMode($event)">
   {{value}}
 </p>
-<div 
+<div
   *ngIf="!isEdit && displayElement === 'div'"
   class="inline-text-editor"
   [ngStyle]="displayElementCustomStyles"
@@ -40,6 +40,13 @@
   (dblclick)="activateEditMode($event)">
   {{value}}
 </h3>
+<h4
+  *ngIf="!isEdit && displayElement === 'h4'"
+  class="inline-text-editor"
+  [ngStyle]="displayElementCustomStyles"
+  (dblclick)="activateEditMode($event)">
+  {{value}}
+</h4>
 <a
   *ngIf="!isEdit && displayElement === 'a'"
   class="inline-text-editor inline-text-editor--link"
