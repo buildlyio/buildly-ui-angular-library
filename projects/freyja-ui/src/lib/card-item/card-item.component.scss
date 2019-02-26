@@ -143,11 +143,6 @@
     &__caption {
       font-size: 16px;
     }
-    &__link {
-      font-size: 16px;
-      cursor: pointer;
-      text-decoration: none;
-    }
     &__date {
       padding: rem-calc(5);
     }
@@ -165,34 +160,10 @@
       margin-bottom: rem-calc(5);
     }
   }
-  &__editable{
-    cursor: pointer;
-    margin: 0;
-    padding: rem-calc(5);
-    &:hover {
-      &:after {
-        content: "✎";
-        display: inline-block;
-        padding-right: 5px;
-        font-size: 13px;
-        font-weight: 900;
-        -moz-transform: scale(-1, 1);
-        -webkit-transform: scale(-1, 1);
-        -o-transform: scale(-1, 1);
-        -ms-transform: scale(-1, 1);
-        transform: scale(-1, 1);
-      }
-    }
-    &--no-padding {
-      padding: rem-calc(0);
-    }
-    &__input {
-      &--hidden {
-        display: none;
-      }
-    }
-  }
 
+  &__field-wrapper {
+    padding: rem-calc(5);
+  }
 }
 
 .caption-text {

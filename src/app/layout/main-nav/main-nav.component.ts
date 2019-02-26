@@ -57,6 +57,14 @@ export class MainNavComponent implements OnInit {
     //   label: 'SVG Icon'
     // }, // not working properly yet, should be fixed
     {
+      path: '/modal',
+      label: 'Modal'
+    },
+    {
+      path: '/inline-editing',
+      label: 'Inline Editing'
+    },
+    {
       path: '/card',
       label: 'Card'
     },

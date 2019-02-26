@@ -27,55 +27,61 @@
         </div>
         <input type="file" accept="image/*" hidden #file>
         <div class="card-item__title__container" *ngIf="options?.title || options?.subText || options?.subText2" [ngClass]="{'card-item__title__container--vertical': layout === 'vertical', 'card-item__title__container--horizontal': layout === 'horizontal'}">
-          <h3 class="card-item__title__heading card-item__editable" (dblclick)="activateEditMode($event, 'title')" *ngIf="options?.title && isEdit.title === false">{{item[options?.title?.prop]}}</h3>
-          <fj-text-input [ngClass]="{'card-item__editable__input--hidden' : !isEdit.title }"
-                         [focused]="isEdit.title"
-                         (change)="onEditElement($event, 'title')"
-                         [value]="item[options?.title?.prop]"
-                         (focus)="onInputFocused('title')"
-                         [customStyles]="inputFieldStyles">
-          </fj-text-input>
+          <div class="card-item__field-wrapper">
+            <fj-inline-text-editor
+              [value]="item[options?.title?.prop]"
+              displayElement="h3"
+              name="title"
+              (elementEdited)="onEditElement($event, 'title')"
+              (doubleClick)="onDoubleClick()">
+            </fj-inline-text-editor>
+          </div>
           <div class="card-item__title__subtext">
-            <p *ngIf="options?.subText && isEdit.subText === false" class="card-item__editable" (dblclick)="activateEditMode($event, 'subText')">{{item[options?.subText?.prop]}}</p>
-            <fj-text-input [ngClass]="{'card-item__editable__input--hidden' : !isEdit.subText }"
-                           [focused]="isEdit.subText"
-                           (focus)="onInputFocused('subText')"
-                           (change)="onEditElement($event, 'subText')"
-                           [value]="item[options?.subText?.prop]"
-                           [customStyles]="inputFieldStyles">
-
-            </fj-text-input>
-            <p *ngIf="options?.subText2 && isEdit.subText2 === false" class="card-item__editable" (dblclick)="activateEditMode($event, 'subText2')">{{item[options?.subText2?.prop]}}</p>
-            <fj-text-input [ngClass]="{'card-item__editable__input--hidden' : !isEdit.subText2}"
-                           [focused]="isEdit.subText2"
-                           (focus)="onInputFocused('subText2')"
-                           (change)="onEditElement($event, 'subText2')"
-                           [value]="item[options?.subText2?.prop]"
-                           [customStyles]="inputFieldStyles">
-
-            </fj-text-input>
+            <div class="card-item__field-wrapper">
+              <fj-inline-text-editor
+                [value]="item[options?.subText?.prop]"
+                name="subText"
+                (elementEdited)="onEditElement($event, 'subText')"
+                (doubleClick)="onDoubleClick()">
+              </fj-inline-text-editor>
+            </div>
+            <div class="card-item__field-wrapper">
+              <fj-inline-text-editor
+                [value]="item[options?.subText2?.prop]"
+                name="subText2"
+                (elementEdited)="onEditElement($event, 'subText2')"
+                (doubleClick)="onDoubleClick()">
+              </fj-inline-text-editor>
+            </div>
           </div>
         </div>
         <div class="card-item__right__container" *ngIf="options?.caption || options?.link" [ngClass]="{'card-item__right__container--vertical': layout === 'vertical', 'card-item__right__container--horizontal': layout === 'horizontal'}">
-          <span class="card-item__right__caption card-item__editable" *ngIf="options?.caption  && isEdit.caption === false" (dblclick)="activateEditMode($event, 'caption')">{{item[options?.caption?.prop]}}</span>
-          <fj-text-input [ngClass]="{'card-item__editable__input--hidden' : !isEdit.caption}"
-                         [focused]="isEdit.caption"
-                         (change)="onEditElement($event, 'caption')"
-                         [value]="item[options?.caption?.prop]"
-                         [customStyles]="inputFieldStyles">
-          </fj-text-input>
-          <a class="card-item__right__link card-item__editable" *ngIf="options?.link && isEdit.link === false" (dblclick)="activateEditMode($event, 'link')">{{item[options?.link?.prop]}}</a>
-          <fj-text-input [ngClass]="{'card-item__editable__input--hidden' : !isEdit.link}"
-                         [focused]="isEdit.link"
-                         (change)="onEditElement($event, 'link')"
-                         [value]="item[options?.link?.prop]"
-                         [customStyles]="inputFieldStyles">
+          <div class="card-item__field-wrapper">
+            <fj-inline-text-editor
+              [value]="item[options?.caption?.prop]"
+              name="caption"
+              (elementEdited)="onEditElement($event, 'caption')"
+              (doubleClick)="onDoubleClick()"
+              [displayElementCustomStyles]="{'cursor': 'pointer', 'margin': '0', 'font-size': '16px', 'color': '#666666'}"
+              [inputCustomStyles]="inputFieldStyles">
+            </fj-inline-text-editor>
+          </div>
 
-          </fj-text-input>
+          <div class="card-item__field-wrapper">
+            <fj-inline-text-editor
+              [value]="item[options?.link?.prop]"
+              name="link"
+              displayElement="a"
+              (elementEdited)="onEditElement($event, 'link')"
+              (doubleClick)="onDoubleClick()"
+              [inputCustomStyles]="inputFieldStyles">
+            </fj-inline-text-editor>
+          </div>
+
           <div class="card-item__right__date caption-text">
-            <span *ngIf="options?.dateHeader1 && isEdit.dateHeader1 === false">{{options?.dateHeader1.label}} {{item[options?.dateHeader1?.prop] | date: 'dd.MM.yyyy' }}</span>
+            <span *ngIf="options?.dateHeader1">{{options?.dateHeader1.label}} {{item[options?.dateHeader1?.prop] | date: 'dd.MM.yyyy' }}</span>
             <span *ngIf="options?.dateHeader1"> | </span>
-            <span *ngIf="options?.dateHeader2 && isEdit.dateHeader2 === false">{{options?.dateHeader2.label}} {{item[options?.dateHeader1?.prop] | date: 'dd.MM.yyyy'}}</span>
+            <span *ngIf="options?.dateHeader2">{{options?.dateHeader2.label}} {{item[options?.dateHeader1?.prop] | date: 'dd.MM.yyyy'}}</span>
           </div>
         </div>
         <div class="card-item__actions__container" [ngClass]="{'card-item__actions__container--vertical': layout === 'vertical', 'card-item__actions__container--horizontal': layout === 'horizontal'}"
@@ -92,7 +98,7 @@
     <div *ngIf="isExpanded" class="card-item__body" [ngClass]="{'card-item__body--vertical': layout === 'vertical', 'card-item__body--horizontal': layout === 'horizontal'}">
       <ng-container *ngIf="item && (options?.date1 || options?.date2 || options?.details || options?.description || options?.tags)">
         <div class="card-item__body__date caption-text">
-          <span *ngIf="options?.date1 && isEdit.date1 === false">{{options?.date1.label}} {{item[options?.date1?.prop] | date: 'dd.MM.yyyy' }}</span>
+          <span *ngIf="options?.date1">{{options?.date1.label}} {{item[options?.date1?.prop] | date: 'dd.MM.yyyy' }}</span>
           <!-- uncomment to add editable field for date1 -->
           <!--<fj-text-input [ngClass]="{'card-item__editable__input&#45;&#45;hidden' : !isEdit.date1}"-->
           <!--[focused]="isEdit.date1"-->
@@ -102,7 +108,7 @@
 
           <!--</fj-text-input>-->
           <span *ngIf="options?.date1"> | </span>
-          <span *ngIf="options?.date2 && isEdit.date2 === false">{{options?.date2.label}} {{item[options?.date1?.prop] | date: 'dd.MM.yyyy'}}</span>
+          <span *ngIf="options?.date2">{{options?.date2.label}} {{item[options?.date1?.prop] | date: 'dd.MM.yyyy'}}</span>
           <!-- uncomment to add editable field for date2 -->
           <!--<fj-text-input [ngClass]="{'card-item__editable__input&#45;&#45;hidden' : !isEdit.date2}"-->
           <!--[focused]="isEdit.date2"-->
@@ -118,17 +124,16 @@
               <div class="caption-text">
                 {{detailItem.label}}
               </div>
-              <div class="card-item__editable card-item__editable--no-padding" *ngIf="detailItem && isEdit['detailItem'+ i] === false" (dblclick)="activateEditMode($event, 'detailItem'+i)">
-                {{item[detailItem?.prop]}}
+              <div class="card-item__field-wrapper">
+                <fj-inline-text-editor
+                  [value]="item[detailItem?.prop]"
+                  name="detailItem"
+                  displayElement="div"
+                  (elementEdited)="onEditElement($event, 'detailItem', i)"
+                  (doubleClick)="onDoubleClick()"
+                  [inputCustomStyles]="inputFieldStyles">
+                </fj-inline-text-editor>
               </div>
-              <fj-text-input [ngClass]="{'card-item__editable__input--hidden' : !isEdit['detailItem'+ i]}"
-                             [focused]="isEdit['detailItem'+ i]"
-                             (focus)="onInputFocused('detailItem'+ i)"
-                             (change)="onEditElement($event, 'details', i)"
-                             [value]="item[detailItem?.prop]"
-                             [customStyles]="inputFieldStyles">
-
-              </fj-text-input>
             </div>
           </ng-container>
         </div>
@@ -136,33 +141,31 @@
           <div class="caption-text">
             {{options?.description.label}}
           </div>
-          <div  class="card-item__editable card-item__editable--no-padding" *ngIf="options?.description && isEdit.description === false" (dblclick)="activateEditMode($event, 'description')">
-            {{item[options?.description?.prop]}}
+          <div class="card-item__field-wrapper">
+            <fj-inline-text-editor
+              [value]="item[options?.description?.prop]"
+              name="description"
+              displayElement="div"
+              (elementEdited)="onEditElement($event, 'description')"
+              (doubleClick)="onDoubleClick()"
+              [inputCustomStyles]="inputFieldStyles">
+            </fj-inline-text-editor>
           </div>
-          <fj-text-input [ngClass]="{'card-item__editable__input--hidden' : !isEdit.description}"
-                         [focused]="isEdit.description"
-                         (focus)="onInputFocused('description')"
-                         (change)="onEditElement($event, 'description')"
-                         [value]="item[options?.description?.prop]"
-                         [customStyles]="inputFieldStyles">
-
-          </fj-text-input>
         </div>
-        <div class="card-item__body__tags" *ngIf="options?.tags && isEdit.tags === false" (dblclick)="activateEditMode($event, 'tags')">
+        <div class="card-item__body__tags" *ngIf="options?.tags" (dblclick)="activateEditMode($event, 'tags')">
           <div class="caption-text">
             {{options?.tags.label}}
           </div>
-          <div class="card-item__body__tags__text card-item__editable card-item__editable--no-padding" *ngIf="options?.tags && isEdit.tags === false" (dblclick)="activateEditMode($event, 'tags')">
-            {{item[options?.tags.prop]}}
+          <div class="card-item__field-wrapper">
+            <fj-inline-text-editor
+              [value]="item[options?.tags?.prop]"
+              name="tags"
+              displayElement="div"
+              (elementEdited)="onEditElement($event, 'tags')"
+              (doubleClick)="onDoubleClick()"
+              [inputCustomStyles]="inputFieldStyles">
+            </fj-inline-text-editor>
           </div>
-          <fj-text-input [ngClass]="{'card-item__editable__input--hidden' : !isEdit.tags}"
-                         [focused]="isEdit.tags"
-                         (focus)="onInputFocused('tags')"
-                         (change)="onEditElement($event, 'tags')"
-                         [value]="item[options?.tags?.prop]"
-                         [customStyles]="inputFieldStyles">
-
-          </fj-text-input>
         </div>
       </ng-container>
 
