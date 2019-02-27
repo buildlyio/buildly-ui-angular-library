@@ -2,6 +2,7 @@
 .fj-button {
   /* Block modal */
   display: inline-flex;
+  align-items: center;
 
    /* Typography */
   white-space: nowrap;
@@ -57,33 +58,34 @@
     font-size: $font-base;
     height: rem-calc(48);
     line-height: $font-base-line-height;
-    padding: rem-calc(14 20);
+    padding: rem-calc(0 20);
   }
   &--medium {
     font-size: $font-small;
     height: rem-calc(40);
     line-height: $font-small-line-height;
-    padding: rem-calc(11 16);
+    padding: rem-calc(0 16);
   }
   &--small {
     font-size: $font-extra-small;
     height: rem-calc(32);
     line-height: $font-extra-small-line-height;
-    padding: rem-calc(8 12)
+    padding: rem-calc(0 12)
   }
   &--micro {
     font-size: $font-label;
     height: rem-calc(24);
     line-height: $font-label-line-height;
-    padding: rem-calc(6 8);
+    padding: rem-calc(0 8);
   }
   /* color variants */
   /* state variants */
   &:disabled {
     pointer-events: none;
   }
-  fj-icon {
+  &--icon {
     margin-left: rem-calc(16);
+    display: inline-flex;
   }
   &--icon-before {
     >span {

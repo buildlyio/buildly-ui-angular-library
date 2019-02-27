@@ -1,9 +1,5 @@
 @import "../core/_config";
 
-.icon {
-  &--size {
-    &--med {
-      width: rem-calc(8);
-    }
-  }
+.fj-icon {
+  display: inline-flex;
 }
