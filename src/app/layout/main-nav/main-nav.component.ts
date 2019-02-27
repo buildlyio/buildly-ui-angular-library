@@ -32,10 +32,6 @@ export class MainNavComponent implements OnInit {
       label: 'Number Input'
     },
     {
-      path: '/modal',
-      label: 'Modal'
-    },
-    {
       path: '/spinner',
       label: 'Spinner'
     },

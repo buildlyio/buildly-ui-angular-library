@@ -99,24 +99,8 @@
       <ng-container *ngIf="item && (options?.date1 || options?.date2 || options?.details || options?.description || options?.tags)">
         <div class="card-item__body__date caption-text">
           <span *ngIf="options?.date1">{{options?.date1.label}} {{item[options?.date1?.prop] | date: 'dd.MM.yyyy' }}</span>
-          <!-- uncomment to add editable field for date1 -->
-          <!--<fj-text-input [ngClass]="{'card-item__editable__input&#45;&#45;hidden' : !isEdit.date1}"-->
-          <!--[focused]="isEdit.date1"-->
-          <!--(change)="onEditElement($event, 'date1')"-->
-          <!--[value]="item[options?.date1?.prop]"-->
-          <!--[customStyles]="inputFieldStyles">-->
-
-          <!--</fj-text-input>-->
           <span *ngIf="options?.date1"> | </span>
           <span *ngIf="options?.date2">{{options?.date2.label}} {{item[options?.date1?.prop] | date: 'dd.MM.yyyy'}}</span>
-          <!-- uncomment to add editable field for date2 -->
-          <!--<fj-text-input [ngClass]="{'card-item__editable__input&#45;&#45;hidden' : !isEdit.date2}"-->
-          <!--[focused]="isEdit.date2"-->
-          <!--(change)="onEditElement($event, 'date2')"-->
-          <!--[value]="item[options?.date1?.prop]"-->
-          <!--[customStyles]="inputFieldStyles">-->
-
-          <!--</fj-text-input>-->
         </div>
         <div class="card-item__body__details" *ngIf="options?.details">
           <ng-container *ngFor="let detailItem of options?.details; let i = index">
