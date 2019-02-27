@@ -28,6 +28,10 @@ export class InlineTextEditorComponent implements OnInit {
    * Name of the editor. Useful for distinguishing the element in the 'elementEdited' Output.
    */
   @Input() name: string;
+  /**
+   * index of the element in case of dynamic fields
+   */
+  @Input() index: string;
 
   /**
    * The HTML element which should be used for display. Defaults to 'p'.
@@ -72,13 +76,13 @@ export class InlineTextEditorComponent implements OnInit {
    * a function that will be triggered when an item has been edited
    * @param value - value of the edited element
    * @param element - element that is edited
-   * @param index of the element in case of dynamic fields like details blocks
    */
   public onEditElement(value: string, elementName) {
     this.isEdit = false;
     const editObj = {
       value,
-      elementName
+      elementName,
+      index: this.index
     };
     this.elementEdited.emit(editObj);
   }
