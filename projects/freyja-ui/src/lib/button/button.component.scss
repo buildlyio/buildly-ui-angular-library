@@ -59,24 +59,52 @@
     height: rem-calc(48);
     line-height: $font-base-line-height;
     padding: rem-calc(0 20);
+
+    .fj-button {
+      /* icon sizing */
+      &--icon {
+        max-height: rem-calc(24);
+      }
+    }
   }
   &--medium {
     font-size: $font-small;
     height: rem-calc(40);
     line-height: $font-small-line-height;
     padding: rem-calc(0 16);
+
+    .fj-button {
+      /* icon sizing */
+      &--icon {
+        max-height: rem-calc(20);
+      }
+    }
   }
   &--small {
     font-size: $font-extra-small;
     height: rem-calc(32);
     line-height: $font-extra-small-line-height;
-    padding: rem-calc(0 12)
+    padding: rem-calc(0 12);
+
+    .fj-button {
+      /* icon sizing */
+      &--icon {
+        max-height: rem-calc(18);
+      }
+    }
   }
   &--micro {
     font-size: $font-label;
     height: rem-calc(24);
     line-height: $font-label-line-height;
     padding: rem-calc(0 8);
+    
+    .fj-button {
+      /* icon sizing */
+      &--icon {
+        max-height: rem-calc(15);
+      }
+    }
   }
   /* color variants */
   /* state variants */
