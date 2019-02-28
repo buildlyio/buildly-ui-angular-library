@@ -6,9 +6,12 @@
       border: solid 1px map-get($theme-colors, 'color-primary');
       color: map-get($theme-colors, 'color-primary');
 
+      &:hover {
+        background-color: map-get($theme-colors, 'color-primary-hover-bright');
+      }
+
       &--is-active {
-        background-color: map-get($theme-colors, 'color-primary') !important;
-        color: map-get($theme-colors, 'color-button-text');
+        background-color: map-get($theme-colors, 'color-primary-hover-bright');
       }
 
       .content-switcher--disabled & {

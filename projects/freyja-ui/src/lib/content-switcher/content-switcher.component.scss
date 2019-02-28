@@ -34,13 +34,9 @@
     cursor: pointer;
     font-family: $font-family-base;
     font-size: 0.875rem;
-    height: 40px;
-    min-width: 104px;
+    height: rem-calc(40);
+    min-width: rem-calc(104);
     outline: none;
-
-    &:hover {
-      background-color: rgba(220, 232, 249, 1);
-    }
 
     &--is-active {
       pointer-events: none;
@@ -48,7 +44,7 @@
 
     .content-switcher--sm & {
       font-size: 0.8125rem;
-      height: 32px;
+      height: rem-calc(32);
     }
 
     .content-switcher--disabled & {
