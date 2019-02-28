@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ToggleComponent } from '@libs/freyja-ui/src/lib/toggle/toggle.component';
+import { ToggleComponent } from './toggle.component';
 
 @NgModule({
   declarations: [ToggleComponent],
