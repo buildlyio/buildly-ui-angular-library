@@ -57,7 +57,7 @@
         padding: rem-calc(9 8);
       }
       &--error {
-        border-color: $color-red;
+        border-color: $color-danger;
       }
       &--required:after{
         content: " *";
@@ -80,7 +80,7 @@ label {
 }
 
 .input-error {
-  color: $color-red;
+  color: $color-danger;
   font-size: .75rem;
   padding: .5em;
 }
@@ -88,7 +88,7 @@ label {
 .error--label {
   font-size: rem-calc(12);
   padding-left: .5em;
-  color: $color-red;
+  color: $color-danger;
 }
 
 /deep/ {
