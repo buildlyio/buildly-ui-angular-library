@@ -14,6 +14,7 @@ import { CardComponent } from './pages/card/card.component';
 import { TableComponent } from './pages/table/table.component';
 import { ProgressBarComponent } from './pages/progress-bar/progress-bar.component';
 import { SpinnerComponent } from './pages/spinner/spinner.component';
+import { ToggleComponent } from '@freyjaDemo/app/pages/toggle/toggle.component';
 
 export const appRoutes: Routes = [
   { path: '', component: ButtonComponent },
@@ -32,5 +33,6 @@ export const appRoutes: Routes = [
   { path: 'table', component: TableComponent},
   { path: 'spinner', component: SpinnerComponent},
   { path: 'progress-bar', component: ProgressBarComponent},
-  { path: 'modal', component: ModalComponent }
+  { path: 'modal', component: ModalComponent },
+  { path: 'toggle', component: ToggleComponent }
 ];

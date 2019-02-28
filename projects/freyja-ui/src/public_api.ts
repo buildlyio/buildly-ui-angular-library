@@ -70,3 +70,6 @@ export * from './lib/progress-bar/progress-bar.module';
 
 export * from './lib/card/card.component';
 export * from './lib/card/card.module';
+
+export * from './lib/toggle/toggle.component';
+export * from './lib/toggle/toggle.module';

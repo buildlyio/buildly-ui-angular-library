@@ -16,6 +16,10 @@ export class MainNavComponent implements OnInit {
       label: 'Radio Button'
     },
     {
+      path: '/toggle',
+      label: 'Toggle'
+    },
+    {
       path: '/check-box',
       label: 'Check Box'
     },
@@ -39,15 +43,6 @@ export class MainNavComponent implements OnInit {
       path: '/progress-bar',
       label: 'Progress Bar'
     },
-
-    {
-      path: '/table',
-      label: 'Table'
-    },
-    {
-      path: '/card-item',
-      label: 'Card-item'
-    },
     // {
     //   path: '/svg-icon',
     //   label: 'SVG Icon'
@@ -65,8 +60,16 @@ export class MainNavComponent implements OnInit {
       label: 'Card'
     },
     {
+      path: '/table',
+      label: 'Table'
+    },
+    {
       path: '/accordion',
       label: 'Accordion'
+    },
+    {
+      path: '/card-item',
+      label: 'Card-item'
     },
   ];
   constructor() { }

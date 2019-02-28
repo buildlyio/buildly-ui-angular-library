@@ -12,6 +12,7 @@ $haf: "&:hover, &:active, &:focus";
 @import '../progress-bar/progress-bar-theme.scss';
 @import '../card/card-theme.scss';
 @import '../icon/icon-theme.scss';
+@import '../toggle/toggle-theme.scss';
 
 @import "spacing-theme.scss";
 
@@ -91,6 +92,7 @@ $haf: "&:hover, &:active, &:focus";
   @include tableTheme($themes);
   @include cardColorsTheme($themes);
   @include iconColorsTheme($themes);
+  @include toggleColorsTheme($themes);
   @include margin-classes;
   @include padding-classes;
 

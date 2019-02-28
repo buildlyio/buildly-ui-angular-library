@@ -1,6 +1,4 @@
 import { ModalModule } from './pages/modal/modal.module';
-import { HighlightModule } from 'ngx-highlightjs';
-import { FjButtonModule } from './../../projects/freyja-ui/src/lib/button/button.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -26,12 +24,13 @@ import { CardModule } from '@freyjaDemo/app/pages/card/card.module';
 import { SpinnerModule } from '@freyjaDemo/app/pages/spinner/spinner.module';
 import { ProgressBarModule } from '@freyjaDemo/app/pages/progress-bar/progress-bar.module';
 import { TableModule } from '@freyjaDemo/app/pages/table/table.module';
+import { ToggleModule } from '@freyjaDemo/app/pages/toggle/toggle.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +52,7 @@ import { TableModule } from '@freyjaDemo/app/pages/table/table.module';
     SpinnerModule,
     ProgressBarModule,
     TableModule,
+    ToggleModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

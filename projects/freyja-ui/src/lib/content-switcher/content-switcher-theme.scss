@@ -13,7 +13,6 @@
       &--is-active {
         background-color: map-get($theme-colors, 'color-primary-hover-bright');
       }
-
       .content-switcher--disabled & {
         border-color: map-get($theme-colors, 'color-disable');
         color: map-get($theme-colors, 'color-disable');

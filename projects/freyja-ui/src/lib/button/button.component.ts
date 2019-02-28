@@ -48,7 +48,7 @@ export class ButtonComponent extends IconBaseComponent implements OnInit {
   }
 
   /**
-   * @description Perform operations which needs to be done after component is initialized
+   * Perform operations which needs to be done after component is initialized
    */
   ngOnInit(): void {
     if (this.ghost) {
@@ -56,7 +56,7 @@ export class ButtonComponent extends IconBaseComponent implements OnInit {
     }
   }
   /**
-   * @description Add css classes based on inputs like size, shape etc
+   * Add css classes based on inputs like size, shape etc
    */
   public generateClassList() {
     const baseCls = 'fj-button--';

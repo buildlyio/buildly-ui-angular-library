@@ -1,0 +1,42 @@
+
+@mixin toggleColorsTheme($theme-colors) {
+  .fj-toggle-switch {
+    /* hover states for component */
+    #{$haf} {
+      .fj-toggle-switch__indicator {
+        background-color: map-get($theme-colors, 'color-primary-hover-bright');
+        border-color: map-get($theme-colors, 'color-primary');
+      }
+    }
+
+    &__indicator {
+      background: map-get($theme-colors, 'background');
+      border: 2px solid map-get($theme-colors, 'border');
+    }
+
+    &__slider {
+      background-color: map-get($theme-colors, 'background');
+      border-right: 1px solid map-get($theme-colors, 'border');
+    }
+
+    /* checked state */
+    &__input:checked + &__indicator {
+      background-color: map-get($theme-colors, 'color-primary');
+      border-color: map-get($theme-colors, 'color-primary');
+
+      .fj-toggle-switch__slider {
+        border-color: map-get($theme-colors, 'color-primary');
+        #{$haf} {
+          background-color: map-get($theme-colors, 'color-primary-hover-bright');
+        }
+      }
+    }
+
+    &__input[disabled] {
+      & + .fj-toggle-switch__indicator {
+        background-color: map-get($theme-colors, 'background');
+        border-color: map-get($theme-colors, 'border');
+      }
+    }
+  }
+}

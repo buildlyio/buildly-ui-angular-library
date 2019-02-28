@@ -1,5 +1,8 @@
 @mixin cardItemColorsTheme($theme-colors) {
   .card-item {
+    &__picture {
+      background-color: map-get($theme-colors, 'color-primary-hover-bright');
+    }
     &__content {
       background-color: map-get($theme-colors, 'color-secondary');
       &--highlight {
