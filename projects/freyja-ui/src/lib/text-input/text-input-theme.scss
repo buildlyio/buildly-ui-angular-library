@@ -1,7 +1,7 @@
 @mixin textInputColorsTheme($theme-colors) {
   .fj-input {
     input {
-      border: rem-calc(1) solid map-get($theme-colors, 'input');
+      border: rem-calc(1) solid map-get($theme-colors, 'border');
       color: map-get($theme-colors, 'text-header');
 
       &:focus {
