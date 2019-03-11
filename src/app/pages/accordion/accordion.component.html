@@ -4,11 +4,16 @@
   <fj-accordion label="First Line" open>
     This is accordion content
   </fj-accordion>
-  <fj-accordion label="<>"
-                labelPosition="right">
+  <fj-accordion label="<>" labelPosition="right">
     This is accordion content
   </fj-accordion>
   <fj-accordion label="First Line with disabled state" disabled>
     This is accordion content
+  </fj-accordion>
+  <ng-template #firstRow>
+    <div>Wow</div>
+  </ng-template>
+  <fj-accordion arrownDown="arrow-down" [headerContent]="firstRow" labelPosition="right">
+    This is accordion dynamic content
   </fj-accordion>
 </fj-demo-content-wrap>

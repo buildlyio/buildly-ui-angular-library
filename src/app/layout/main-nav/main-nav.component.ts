@@ -52,10 +52,10 @@ export class MainNavComponent implements OnInit {
       path: '/card-item',
       label: 'Card-item'
     },
-    // {
-    //   path: '/svg-icon',
-    //   label: 'SVG Icon'
-    // }, // not working properly yet, should be fixed
+    {
+      path: '/svg-icon',
+      label: 'SVG Icon'
+    },
     {
       path: '/card',
       label: 'Card'

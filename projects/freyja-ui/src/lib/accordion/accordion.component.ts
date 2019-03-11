@@ -1,5 +1,5 @@
 // Angular Imports
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, TemplateRef } from '@angular/core';
 
 // Internal Imports
 import { BaseComponent } from '../shared/base.component';
@@ -47,6 +47,17 @@ export class AccordionComponent extends BaseComponent {
    */
   @Output() change: EventEmitter<boolean> = new EventEmitter<boolean>(false);
 
+  /**
+   *
+   * For dynamic first row content
+   * @private
+   * @type {TemplateRef<any>}
+   * @memberof AccordionComponent
+   */
+  @Input() private headerContent: TemplateRef<any>;
+
+  @Input() arrownDown: string;
+  
   constructor() {
     super();
   }
