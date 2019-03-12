@@ -54,7 +54,7 @@ export class AccordionComponent extends BaseComponent {
    * @type {TemplateRef<any>}
    * @memberof AccordionComponent
    */
-  @Input() private headerContent: TemplateRef<any>;
+  @Input() headerContent: TemplateRef<any>;
 
   @Input() arrownDown: string;
   
