@@ -42,6 +42,8 @@ export class ButtonComponent extends IconBaseComponent implements OnInit {
    */
   @Input() id = `fj-button-${++nextId}`;
 
+  @Output() click: EventEmitter<MouseEvent> = new EventEmitter();
+
   // TODO: add generic generateClass methods
 
   constructor() {
@@ -93,6 +95,13 @@ export class ButtonComponent extends IconBaseComponent implements OnInit {
   onMouseLeave() {
     if (this.ghost) {
       this.iconFill = "blue";
+    }
+  }
+
+  onBtnClicked(event: MouseEvent){
+    event.stopPropagation();
+    if(!this._disabled){
+      this.click.emit(event);
     }
   }
 }

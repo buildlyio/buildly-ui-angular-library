@@ -10,7 +10,7 @@
 <div class="button-wrapper">
   <fj-button>Primary</fj-button>
   <fj-button color="light" (click)="disabledClick($event)">Light</fj-button>
-  <fj-button [disabled]="true" (click)="disabledClick($event)">Disabled</fj-button>
+  <fj-button [disabled]="true" (click)="disabledClick($event)">Disabled<span title="i am the title">hover me</span></fj-button>
   <fj-button color="light--danger">Light Destructive</fj-button>
   <fj-button color="danger">Destructive</fj-button>
 </div>
