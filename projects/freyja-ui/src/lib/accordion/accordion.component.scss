@@ -41,6 +41,7 @@
     transform: rotate(-90deg) translateX(15%);
     transition: .2s linear;
     height: 24px;
+    align-self: center;
   }
   &--open {
     .fj-accordion__content {
@@ -53,7 +54,7 @@
       transform: rotate(135deg);
     }
     .fj-accordion__arrow-down{
-      transform: rotate(0deg);
+      transform: rotate(0deg) translateY(-15%);
     }
   }
 

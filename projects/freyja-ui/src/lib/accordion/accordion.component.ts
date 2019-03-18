@@ -1,5 +1,5 @@
 // Angular Imports
-import { Component, Input, Output, EventEmitter, TemplateRef } from '@angular/core';
+import { Component, Input, Output, EventEmitter, TemplateRef, ViewEncapsulation } from '@angular/core';
 
 // Internal Imports
 import { BaseComponent } from '../shared/base.component';
@@ -16,7 +16,8 @@ let nextId = 0;
 @Component({
   selector: 'fj-accordion',
   templateUrl: './accordion.component.html',
-  styleUrls: ['./accordion.component.scss']
+  styleUrls: ['./accordion.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AccordionComponent extends BaseComponent {
 
@@ -50,14 +51,11 @@ export class AccordionComponent extends BaseComponent {
   /**
    *
    * For dynamic first row content
-   * @private
-   * @type {TemplateRef<any>}
-   * @memberof AccordionComponent
    */
   @Input() headerContent: TemplateRef<any>;
 
   @Input() arrownDown: string;
-  
+
   constructor() {
     super();
   }
