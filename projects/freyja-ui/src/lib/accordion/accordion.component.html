@@ -1,9 +1,8 @@
-<div class="fj-accordion"
-     [id]="id"
-     [ngClass]="generateClassList()">
-  <div class="fj-accordion__header"
-       (click)="toggleState($event)">
-    <label>{{label}}</label>
+<div class="fj-accordion" [id]="id" [ngClass]="generateClassList()">
+  <div class="fj-accordion__header" (click)="toggleState($event)">
+    <fj-svg-icon class="fj-accordion__arrow-down" [svgName]="arrownDown"></fj-svg-icon>
+    <label *ngIf="!arrownDown">{{ label }}</label>
+    <ng-template *ngTemplateOutlet="headerContent"></ng-template>
   </div>
   <div class="fj-accordion__content">
     <ng-content></ng-content>

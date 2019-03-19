@@ -43,10 +43,18 @@ export class MainNavComponent implements OnInit {
       path: '/progress-bar',
       label: 'Progress Bar'
     },
-    // {
-    //   path: '/svg-icon',
-    //   label: 'SVG Icon'
-    // }, // not working properly yet, should be fixed
+    {
+      path: '/table',
+      label: 'Table'
+    },
+    {
+      path: '/card-item',
+      label: 'Card-item'
+    },
+    {
+      path: '/svg-icon',
+      label: 'SVG Icon'
+    },
     {
       path: '/modal',
       label: 'Modal'

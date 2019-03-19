@@ -1,5 +1,5 @@
 // Angular Imports
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, TemplateRef, ViewEncapsulation } from '@angular/core';
 
 // Internal Imports
 import { BaseComponent } from '../shared/base.component';
@@ -16,7 +16,8 @@ let nextId = 0;
 @Component({
   selector: 'fj-accordion',
   templateUrl: './accordion.component.html',
-  styleUrls: ['./accordion.component.scss']
+  styleUrls: ['./accordion.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AccordionComponent extends BaseComponent {
 
@@ -46,6 +47,14 @@ export class AccordionComponent extends BaseComponent {
    * Will emit if open state get's changed on click
    */
   @Output() change: EventEmitter<boolean> = new EventEmitter<boolean>(false);
+
+  /**
+   *
+   * For dynamic first row content
+   */
+  @Input() headerContent: TemplateRef<any>;
+
+  @Input() arrownDown: string;
 
   constructor() {
     super();

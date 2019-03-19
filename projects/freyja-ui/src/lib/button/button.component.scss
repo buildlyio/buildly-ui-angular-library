@@ -10,6 +10,7 @@
    /* View */
   cursor: pointer;
   transition: all .2s linear;
+  pointer-events: auto;
   /* aesthetic variants */
   &--rounded {
     border-radius: 2rem;

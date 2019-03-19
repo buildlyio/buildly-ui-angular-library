@@ -37,6 +37,12 @@
     color: rgba(0, 0, 0, .25);
     pointer-events: none;
   }
+  &__arrow-down{
+    transform: rotate(-90deg) translateX(15%);
+    transition: .2s linear;
+    height: 24px;
+    align-self: center;
+  }
   &--open {
     .fj-accordion__content {
       max-height: 15em;
@@ -47,7 +53,11 @@
     label::before {
       transform: rotate(135deg);
     }
+    .fj-accordion__arrow-down{
+      transform: rotate(0deg) translateY(-15%);
+    }
   }
+
   &--label-after {
     >div {
       justify-content: flex-end;
