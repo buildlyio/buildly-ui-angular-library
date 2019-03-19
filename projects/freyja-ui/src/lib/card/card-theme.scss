@@ -2,8 +2,5 @@
   .fj-card{
     color: map-get($theme-colors, 'text-header');
     background-color: map-get($theme-colors, 'background');
-    display: flex;
-    flex-wrap: wrap;
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.12);
   }
 }
