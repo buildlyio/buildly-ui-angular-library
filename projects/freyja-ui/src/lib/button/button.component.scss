@@ -1,59 +1,74 @@
 @import "../core/_config";
+
 .fj-button {
   /* Block modal */
   display: inline-flex;
   align-items: center;
 
-   /* Typography */
+  /* Typography */
   white-space: nowrap;
 
-   /* View */
+  /* View */
   cursor: pointer;
   transition: all .2s linear;
   pointer-events: auto;
+
   /* aesthetic variants */
   &--rounded {
     border-radius: 2rem;
   }
+
   &--radius {
     border-radius: rem-calc(4);
   }
+
   &--light {
     background-color: transparent;
+
     &.btn--danger {
       background-color: transparent;
     }
+
     &:disabled {
       background-color: transparent;
     }
   }
+
   &--light--danger {
     background-color: transparent;
+
     &:disabled {
       background-color: transparent;
     }
   }
+
   &--ghost.fj-button {
     background-color: transparent;
     transition: .1s linear;
+
     &:disabled {
       background-color: transparent;
     }
+
     &.btn--danger {
       background-color: transparent;
     }
+
     &.btn--light {
       border-color: transparent;
+
       span {
         background-color: transparent;
       }
     }
   }
+
   &--full-width {
     width: 100%;
     display: flex;
     justify-content: center;
   }
+
   /* sizing variants */
   &--large {
     font-size: $font-base;
@@ -68,6 +83,7 @@
       }
     }
   }
+
   &--medium {
     font-size: $font-small;
     height: rem-calc(40);
@@ -81,6 +97,7 @@
       }
     }
   }
+
   &--small {
     font-size: $font-extra-small;
     height: rem-calc(32);
@@ -94,12 +111,13 @@
       }
     }
   }
+
   &--micro {
     font-size: $font-label;
     height: rem-calc(24);
     line-height: $font-label-line-height;
     padding: rem-calc(0 8);
-    
+
     .fj-button {
       /* icon sizing */
       &--icon {
@@ -107,19 +125,35 @@
       }
     }
   }
+
   /* color variants */
   /* state variants */
   &:disabled {
     pointer-events: none;
+
+    .mat-icon {
+      opacity: 0.4;
+    }
+
+    fj-svg-icon {
+      opacity: 0.4;
+    }
+
+    .fj-icon {
+      opacity: 0.4;
+    }
   }
+
   &--icon {
     margin-left: rem-calc(16);
     display: inline-flex;
   }
+
   &--icon-before {
-    >span {
+    > span {
       order: 1;
     }
+
     fj-icon {
       margin-right: rem-calc(16);
       margin-left: 0;
