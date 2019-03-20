@@ -1,9 +1,9 @@
 // Angular imports
-import { Component, Input, OnInit, ViewEncapsulation, Output, EventEmitter } from "@angular/core";
+import { Component, Input, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 
 // Internal imports
-import { IconBaseComponent } from "../shared/icon-base.component";
-import { COLORS } from "../shared/constants";
+import { IconBaseComponent } from '../shared/icon-base.component';
+import { COLORS } from '../shared/constants';
 
 /**
  * Freyja Button Component using Freyja Design specifics
@@ -12,12 +12,12 @@ import { COLORS } from "../shared/constants";
 let nextId = 0;
 
 @Component({
-  selector: "fj-button",
-  templateUrl: "./button.component.html",
-  styleUrls: ["./button.component.scss"],
+  selector: 'fj-button',
+  templateUrl: './button.component.html',
+  styleUrls: ['./button.component.scss'],
   encapsulation: ViewEncapsulation.None,
   host: {
-    "[style.pointer-events]": "disabled? 'none': 'auto'"
+    '[style.pointer-events]': 'disabled? \'none\': \'auto\''
   }
 })
 export class ButtonComponent extends IconBaseComponent implements OnInit {
@@ -26,16 +26,16 @@ export class ButtonComponent extends IconBaseComponent implements OnInit {
   /**
    * Button type, it can be button, submit or reset
    */
-  @Input() type: "button" | "submit" | "reset" = "button";
+  @Input() type: 'button' | 'submit' | 'reset' = 'button';
   /**
    * Will determin look and feel of button
    */
-  @Input() color: "danger" | "light" | "light--danger" | "primary" = "primary";
+  @Input() color: 'danger' | 'light' | 'light--danger' | 'primary' = 'primary';
 
   /**
    * Shape of button, it can be rounder, square or radius
    */
-  @Input() shape: "radius" | "square" | "rounded" = "radius";
+  @Input() shape: 'radius' | 'square' | 'rounded' = 'radius';
 
   /**
    * Provide unique to be used for button
@@ -55,20 +55,20 @@ export class ButtonComponent extends IconBaseComponent implements OnInit {
    */
   ngOnInit(): void {
     if (this.ghost) {
-      this.iconFill = "blue";
+      this.iconFill = 'blue';
     }
   }
   /**
    * Add css classes based on inputs like size, shape etc
    */
   public generateClassList() {
-    const baseCls = "fj-button--";
+    const baseCls = 'fj-button--';
     const classes = {
       [baseCls + this.color]: this.color,
       [baseCls + this.size]: this.size,
       [baseCls + this.shape]: this.shape,
-      [baseCls + "full-width"]: this.fullWidth,
-      [`${baseCls}icon-before`]: this.iconPosition === "before",
+      [baseCls + 'full-width']: this.fullWidth,
+      [`${baseCls}icon-before`]: this.iconPosition === 'before',
       [`${baseCls}ghost`]: this.ghost
     };
     return classes;
@@ -85,7 +85,7 @@ export class ButtonComponent extends IconBaseComponent implements OnInit {
    */
   onMouseEnter() {
     if (this.ghost) {
-      this.iconFill = "white";
+      this.iconFill = 'white';
     }
   }
 
@@ -94,13 +94,13 @@ export class ButtonComponent extends IconBaseComponent implements OnInit {
    */
   onMouseLeave() {
     if (this.ghost) {
-      this.iconFill = "blue";
+      this.iconFill = 'blue';
     }
   }
 
-  onBtnClicked(event: MouseEvent){
+  onBtnClicked(event: MouseEvent) {
     event.stopPropagation();
-    if(!this._disabled){
+    if (!this._disabled) {
       this.click.emit(event);
     }
   }

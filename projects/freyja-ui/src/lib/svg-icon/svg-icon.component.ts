@@ -14,6 +14,9 @@ import { BaseComponent } from '../shared/base.component';
   templateUrl: './svg-icon.component.html',
   styleUrls: ['./svg-icon.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  host: {
+    'class': 'fj-svg-icon'
+  }
 })
 export class SvgIconComponent extends BaseComponent implements OnInit, OnChanges {
 
@@ -41,8 +44,8 @@ export class SvgIconComponent extends BaseComponent implements OnInit, OnChanges
    */
   constructor(private _iconRegistryService: IconRegistryService,
     public _elementRef: ElementRef) {
-      super();
-    }
+    super();
+  }
 
   /**
    * Load Icon SCG from Service
