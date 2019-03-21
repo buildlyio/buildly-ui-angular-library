@@ -32,6 +32,10 @@ export class CheckboxComponent extends BaseComponent {
    */
   @Input() value: string;
   /**
+   * Error Message to be displayed
+   */
+  @Input() error: string;
+  /**
    * will determine indeterminate state of checkbox
    */
   @Input()

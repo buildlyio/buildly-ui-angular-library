@@ -35,6 +35,13 @@ export class CheckBoxComponent implements OnInit {
   <fj-checkbox checked>Label After</fj-checkbox>
   `;
 
+  public checkboxGroup = this.textHelper.dedent`
+  <fj-checkbox-group 
+  [label]="'Checkboxes'" 
+  [options]="[{label: 'Checkbox1', value:  'checkbox1', controlName: '1', formGroup: null }, {label: 'Checkbox2', value:  'checkbox2', controlName: '2', formGroup: null }]">
+</fj-checkbox-group>
+  `;
+
   constructor(public textHelper: TextHelper) { }
 
   ngOnInit() {

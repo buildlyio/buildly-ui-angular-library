@@ -44,7 +44,8 @@
            (change)="onChangeEvent($event)"
            (click)="onRadioButtonClicked($event)">
     <span class="fj-radio-btn__label">
-    <ng-content></ng-content>
-  </span>
+      <ng-content></ng-content>
+    </span>
+    <label class="error--label" *ngIf="error">{{error}}</label>
   </label>
 </ng-container>

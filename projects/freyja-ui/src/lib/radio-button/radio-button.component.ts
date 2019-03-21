@@ -33,6 +33,10 @@ export class RadioButtonComponent extends BaseComponent {
    * Value to be attached to radio button
    */
   @Input() value: any;
+  /**
+   * Error Message to be displayed
+   */
+  @Input() error: string;
 
 
   /**

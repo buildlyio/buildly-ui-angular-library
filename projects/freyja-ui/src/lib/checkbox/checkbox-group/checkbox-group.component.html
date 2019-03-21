@@ -1,0 +1,7 @@
+<div class="container">
+  <label *ngIf="label" class="label">{{label}}: </label>
+  <fj-checkbox *ngFor="let option of options" [value]="option.value" [controlName]="option?.controlName" [formGroup]="option?.formGroup" >
+    <span *ngIf="option.label">{{option.label}}</span>
+  </fj-checkbox>
+
+</div>
