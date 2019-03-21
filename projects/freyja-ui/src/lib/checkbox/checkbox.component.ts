@@ -28,6 +28,10 @@ export class CheckboxComponent extends BaseComponent {
    */
   @Input() id = `fj-checkbox-${++nextId}`;
   /**
+   * the checkbox value
+   */
+  @Input() value: string;
+  /**
    * will determine indeterminate state of checkbox
    */
   @Input()

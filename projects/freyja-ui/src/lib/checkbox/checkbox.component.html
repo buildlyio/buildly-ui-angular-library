@@ -13,13 +13,14 @@
            [indeterminate]="indeterminate"
            [attr.aria-label]="ariaLabel || null"
            [attr.aria-labelledby]="ariaLabelledby"
+           [attr.value]="value"
            (change)="onChangeEvent($event)"
            (click)="onCheckboxClicked($event)"
            formControlName="{{controlName}}"
     >
     <span class="fj-checkbox-label">
-    <ng-content></ng-content>
-  </span>
+      <ng-content></ng-content>
+    </span>
   </label>
 </ng-container>
 <!-- Input without reactive forms-->
@@ -38,11 +39,12 @@
            [indeterminate]="indeterminate"
            [attr.aria-label]="ariaLabel || null"
            [attr.aria-labelledby]="ariaLabelledby"
+           [attr.value]="value"
            (change)="onChangeEvent($event)"
            (click)="onCheckboxClicked($event)"
     >
     <span class="fj-checkbox-label">
-    <ng-content></ng-content>
-  </span>
+      <ng-content></ng-content>
+    </span>
   </label>
 </ng-container>
