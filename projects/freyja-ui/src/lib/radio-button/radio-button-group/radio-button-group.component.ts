@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'fj-radio-button-group',
@@ -6,6 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./radio-button-group.component.scss']
 })
 export class RadioButtonGroupComponent implements OnInit {
+
+  /**
+   * Radiogroup Options
+   */
+  @Input() options: any;
+  /**
+   * Radiogroup group label
+   */
+  @Input() label: any;
 
   constructor() { }
 
