@@ -14,6 +14,7 @@ export * from './lib/checkbox/checkbox-group/checkbox-group.component';
 export * from './lib/checkbox/checkbox.module';
 
 export * from './lib/radio-button/radio-button.component';
+export * from './lib/radio-button/radio-button-group/radio-button-group.component';
 export * from './lib/radio-button/radio-button.module';
 
 export * from './lib/checkbox-grid/checkbox-grid.component';
