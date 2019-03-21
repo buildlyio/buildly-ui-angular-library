@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'fj-checkbox-group',
@@ -15,6 +16,14 @@ export class CheckboxGroupComponent implements OnInit {
    * Checkbox group label
    */
   @Input() label: any;
+  /**
+   * reactive form control name
+   */
+  @Input() controlName: string;
+  /**
+   * reactive form group
+   */
+  @Input() formGroup: FormGroup;
 
   constructor() { }
 

@@ -38,7 +38,9 @@ export class CheckBoxComponent implements OnInit {
   public checkboxGroup = this.textHelper.dedent`
   <fj-checkbox-group 
   [label]="'Checkboxes'" 
-  [options]="[{label: 'Checkbox1', value:  'checkbox1', controlName: '1', formGroup: null }, {label: 'Checkbox2', value:  'checkbox2', controlName: '2', formGroup: null }]">
+  [formGroup]="null" 
+  [controlName]="control1" 
+  [options]="[{label: 'Checkbox1', value:  'checkbox1'}, {label: 'Checkbox2', value:  'checkbox2'}]">
 </fj-checkbox-group>
   `;
 

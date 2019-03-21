@@ -1,4 +1,4 @@
-<ng-container [formGroup]="formGroup" *ngIf="formGroup">
+<div [formGroup]="formGroup" *ngIf="formGroup">
   <label [attr.for]="id"
          class="fj-checkbox"
          [ngClass]="generateClassList()">
@@ -22,9 +22,9 @@
       <ng-content></ng-content>
     </span>
   </label>
-</ng-container>
+</div>
 <!-- Input without reactive forms-->
-<ng-container *ngIf="!formGroup">
+<div *ngIf="!formGroup">
   <label [attr.for]="id"
          class="fj-checkbox"
          [ngClass]="generateClassList()">
@@ -48,4 +48,4 @@
     </span>
     <label class="error--label" *ngIf="error">{{error}}</label>
   </label>
-</ng-container>
+</div>

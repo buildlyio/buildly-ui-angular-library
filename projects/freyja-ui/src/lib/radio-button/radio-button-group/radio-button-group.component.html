@@ -1,6 +1,6 @@
 <div class="container">
   <label *ngIf="label" class="label">{{label}}: </label>
-  <fj-radio-button *ngFor="let option of options" [value]="option.value" [controlName]="option?.controlName" [formGroup]="option?.formGroup" >
+  <fj-radio-button *ngFor="let option of options" [value]="option.value" [controlName]="controlName" [formGroup]="formGroup" >
     <span *ngIf="option.label">{{option.label}}</span>
   </fj-radio-button>
 </div>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'fj-radio-button-group',
@@ -15,6 +16,14 @@ export class RadioButtonGroupComponent implements OnInit {
    * Radiogroup group label
    */
   @Input() label: any;
+  /**
+   * reactive form control name
+   */
+  @Input() controlName: string;
+  /**
+   * reactive form group
+   */
+  @Input() formGroup: FormGroup;
 
   constructor() { }
 
