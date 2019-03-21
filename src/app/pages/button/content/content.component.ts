@@ -46,8 +46,4 @@ export class ContentComponent implements OnInit {
   ngOnInit() {
   }
 
-  disabledClick(){
-    console.log('seriously?')
-  }
-
 }

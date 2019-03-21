@@ -1,20 +1,48 @@
-<label [attr.for]="id"
-       class="fj-checkbox"
-       [ngClass]="generateClassList()">
-  <input class="fj-checkbox__input"
-         type="checkbox"
-         [id]="id"
-         [required]="required"
-         [checked]="checked"
-         [disabled]="disabled"
-         [attr.name]="name"
-         [tabIndex]="tabIndex"
-         [indeterminate]="indeterminate"
-         [attr.aria-label]="ariaLabel || null"
-         [attr.aria-labelledby]="ariaLabelledby"
-         (change)="onChangeEvent($event)"
-         (click)="onCheckboxClicked($event)">
-  <span class="fj-checkbox-label">
+<ng-container [formGroup]="formGroup" *ngIf="formGroup">
+  <label [attr.for]="id"
+         class="fj-checkbox"
+         [ngClass]="generateClassList()">
+    <input class="fj-checkbox__input"
+           type="checkbox"
+           [id]="id"
+           [required]="required"
+           [checked]="checked"
+           [disabled]="disabled"
+           [attr.name]="name"
+           [tabIndex]="tabIndex"
+           [indeterminate]="indeterminate"
+           [attr.aria-label]="ariaLabel || null"
+           [attr.aria-labelledby]="ariaLabelledby"
+           (change)="onChangeEvent($event)"
+           (click)="onCheckboxClicked($event)"
+           formControlName="{{controlName}}"
+    >
+    <span class="fj-checkbox-label">
     <ng-content></ng-content>
   </span>
-</label>
+  </label>
+</ng-container>
+<!-- Input without reactive forms-->
+<ng-container *ngIf="!formGroup">
+  <label [attr.for]="id"
+         class="fj-checkbox"
+         [ngClass]="generateClassList()">
+    <input class="fj-checkbox__input"
+           type="checkbox"
+           [id]="id"
+           [required]="required"
+           [checked]="checked"
+           [disabled]="disabled"
+           [attr.name]="name"
+           [tabIndex]="tabIndex"
+           [indeterminate]="indeterminate"
+           [attr.aria-label]="ariaLabel || null"
+           [attr.aria-labelledby]="ariaLabelledby"
+           (change)="onChangeEvent($event)"
+           (click)="onCheckboxClicked($event)"
+    >
+    <span class="fj-checkbox-label">
+    <ng-content></ng-content>
+  </span>
+  </label>
+</ng-container>

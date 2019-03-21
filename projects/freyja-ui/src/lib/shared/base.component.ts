@@ -1,5 +1,6 @@
 // Angular Imports
 import { Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 /**
  * @description Common set of inputs and methods to be used in all Freyja Components
@@ -81,6 +82,15 @@ export class BaseComponent {
    * Input attribute for Accessibility
    */
   @Input('aria-describedby') ariaDescribedby: string;
+
+  /**
+   * reactive form control name
+   */
+  @Input() controlName: string;
+  /**
+   * reactive form group
+   */
+  @Input() formGroup: FormGroup;
 
 
 

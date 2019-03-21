@@ -3,7 +3,6 @@ import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core
 
 // Internal Imports
 import { BaseComponent } from '../shared/base.component';
-import {FormGroup} from '@angular/forms';
 
 /**
  * Count for Next Id
@@ -18,7 +17,7 @@ let nextId = 0;
   templateUrl: './text-input.component.html',
   styleUrls: ['./text-input.component.scss'],
 })
-export class TextInputComponent extends BaseComponent  implements OnChanges {
+export class TextInputComponent extends BaseComponent implements OnChanges {
 
   /**
    * Represent Internal state of component
@@ -77,14 +76,6 @@ export class TextInputComponent extends BaseComponent  implements OnChanges {
    * Callback for mouseout event
    */
   @Output() mouseout: EventEmitter<any> = new EventEmitter<any>();
-  /**
-   * reactive form control name
-   */
-  @Input() controlName: string;
-  /**
-   * reactive form group
-   */
-  @Input() formGroup: FormGroup;
 
   constructor() {
     super();
