@@ -6,6 +6,7 @@ import { Input } from '@angular/core';
  */
 export class BaseComponent {
   public _disabled = false;
+  public _required = false;
 
   /**
    * custom styles object for the button
@@ -31,6 +32,18 @@ export class BaseComponent {
   set disabled(v: boolean) {
     this._disabled = this.coerceBooleanInput(v);
   }
+
+    /**
+   * If component will be required, setter/getter to support approach like below
+   * <fj-comp required></fj-comp>
+   */
+  @Input()
+  get required(): boolean {
+    return this._required;
+  }
+  set required(v: boolean) {
+    this._required = this.coerceBooleanInput(v);
+  }
   /**
    * If component will take full width of it's container
    */
@@ -55,11 +68,6 @@ export class BaseComponent {
    * Placeholder for HTML input elements
    */
   @Input() placeholder = '';
-
-  /**
-   * if component value is required in a form
-   */
-  @Input() required = false;
 
   /**
    * TabIndex of the component

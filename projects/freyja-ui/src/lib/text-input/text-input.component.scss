@@ -1,4 +1,5 @@
 @import "../core/_config";
+
 .fj-input {
   input {
     box-sizing: border-box;
@@ -16,21 +17,30 @@
     &::placeholder {
       font-weight: 100;
     }
+
     &:disabled {
       cursor: not-allowed;
     }
-    &--small {
+  }
+
+  &--small {
+    input {
       height: rem-calc(32);
       font-size: rem-calc(14);
       padding: rem-calc(9 10);
     }
-    &--micro {
+  }
+
+  &--micro {
+    input {
       height: rem-calc(24);
       font-size: rem-calc(12);
       padding: rem-calc(9 8);
     }
+  }
 
-    &--required:after{
+  &--required {
+    label:after {
       content: " *";
     }
   }
@@ -39,10 +49,10 @@
 label {
   cursor: pointer;
   font-size: 0.875rem;
+
   &.label--medium {
     font-size: .75rem;
   }
-
 }
 
 .input-error {
