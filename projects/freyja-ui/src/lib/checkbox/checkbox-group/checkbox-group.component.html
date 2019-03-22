@@ -3,4 +3,5 @@
   <fj-checkbox *ngFor="let option of options" [value]="option.value" [controlName]="controlName" [formGroup]="formGroup" [name]="controlName">
     <span *ngIf="option.label" label>{{option.label}}</span>
   </fj-checkbox>
+  <label class="error-label" *ngIf="error">{{error}}</label>
 </div>

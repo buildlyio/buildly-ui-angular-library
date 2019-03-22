@@ -3,4 +3,5 @@
   <fj-radio-button *ngFor="let option of options" [value]="option.value" [controlName]="controlName" [formGroup]="formGroup" [name]="controlName" >
     <span *ngIf="option.label" label>{{option.label}}</span>
   </fj-radio-button>
+  <label class="error-label" *ngIf="error">{{error}}</label>
 </div>

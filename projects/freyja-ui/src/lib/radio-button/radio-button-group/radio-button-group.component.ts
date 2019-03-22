@@ -17,6 +17,10 @@ export class RadioButtonGroupComponent implements OnInit {
    */
   @Input() label: any;
   /**
+   * error in the radio button group
+   */
+  @Input() error: any;
+  /**
    * reactive form control name
    */
   @Input() controlName: string;
