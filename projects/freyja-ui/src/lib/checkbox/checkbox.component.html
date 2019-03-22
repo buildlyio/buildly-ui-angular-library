@@ -17,9 +17,9 @@
            (change)="onChangeEvent($event)"
            (click)="onCheckboxClicked($event)"
            formControlName="{{controlName}}"
-    >
+    />
     <span class="fj-checkbox-label">
-      <ng-content></ng-content>
+      <ng-content select="[label]"></ng-content>
     </span>
   </label>
 </div>
@@ -42,7 +42,7 @@
            [attr.value]="value"
            (change)="onChangeEvent($event)"
            (click)="onCheckboxClicked($event)"
-    >
+    />
     <span class="fj-checkbox-label">
       <ng-content></ng-content>
     </span>

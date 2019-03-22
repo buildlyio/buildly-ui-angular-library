@@ -16,10 +16,10 @@
            (change)="onChangeEvent($event)"
            (click)="onRadioButtonClicked($event)"
            formControlName="{{controlName}}"
-    >
+    />
     <span class="fj-radio-btn__label">
-    <ng-content></ng-content>
-  </span>
+      <ng-content select="[label]"></ng-content>
+    </span>
   </label>
 </div>
 <!-- Input without reactive forms-->
@@ -39,7 +39,8 @@
            [attr.value]="value"
            [checked]="checked"
            (change)="onChangeEvent($event)"
-           (click)="onRadioButtonClicked($event)">
+           (click)="onRadioButtonClicked($event)"
+    />
     <span class="fj-radio-btn__label">
       <ng-content></ng-content>
     </span>
