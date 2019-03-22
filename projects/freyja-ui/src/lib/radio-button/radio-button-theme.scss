@@ -50,4 +50,7 @@
       }
     }
   }
+  .error-label {
+    color: map-get($theme-colors, "color-danger");
+  }
 }
