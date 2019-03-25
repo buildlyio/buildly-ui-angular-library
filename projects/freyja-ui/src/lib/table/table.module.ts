@@ -14,6 +14,7 @@ import { IconModule } from '../icon/icon.module';
 import { FjButtonModule } from '../button/button.module';
 import { FjContentSwitcherModule } from '../content-switcher/content-switcher.module';
 import { FjNativeDropdownModule } from '../native-dropdown/native-dropdown.module';
+import { MatSelectModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { FjNativeDropdownModule } from '../native-dropdown/native-dropdown.modul
     FjContentSwitcherModule,
     FjButtonModule,
     FjNativeDropdownModule,
-    FjCheckboxGridModule
+    FjCheckboxGridModule,
+    MatSelectModule
   ],
   declarations: [
     TableComponent,

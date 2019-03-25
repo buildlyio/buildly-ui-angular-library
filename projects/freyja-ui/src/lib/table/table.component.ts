@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } 
 import {TableRowComponent} from './components/table-row/table-row.component';
 import {TableEmitObject} from './table.model';
 import { FixedRow } from './components/table-row/fixed-row.model';
+import { MatSelect } from '@angular/material';
 
 @Component({
   selector: 'fj-table',
@@ -33,6 +34,7 @@ export class TableComponent implements OnChanges {
   @Output() switcherChanged = new EventEmitter(); // event when the value of the switcher is changed
 
   @ViewChild('tableRow') tableRow: TableRowComponent;
+  @ViewChild('fixedRowSelectField') fixedRowSelectField: MatSelect;
 
   public sort; // applied sort for the column
   public filters; // applied filters from the column filter box;
@@ -98,7 +100,7 @@ export class TableComponent implements OnChanges {
   }
 
   /**
-   * @description called when the value of the dropdown changes
+   * called when the value of the dropdown changes
    * @param value
    */
   onSelectionChanged(value) {
@@ -106,7 +108,7 @@ export class TableComponent implements OnChanges {
   }
 
   /**
-   * @description called when the value of the switcher changes
+   * called when the value of the switcher changes
    * @param value
    */
   onSwitcherChanged(value) {
@@ -114,10 +116,11 @@ export class TableComponent implements OnChanges {
   }
 
   /**
-   * @description called when the value of the fixed row dropdown changes
+   * called when the value of the fixed row dropdown changes
    * @param value
    */
   onFixedRowSelectionChanged(value) {
+    this.fixedRowSelectField.value = this.fixedRow.label;
     this.fixedRowSelectionChanged.emit(value);
   }
 }

@@ -22,7 +22,16 @@ export class TableComponent implements OnInit {
       {name: 'Address', prop: 'address', flex: 2, sortable: true, filtering: true},
       {name: 'Phone', prop: 'phone', flex: 2, sortable: true, filtering: true},
       {name: '', flex: 1, cellTemplate: 'actions', actions: ['delete']},
-    ]
+    ],
+    fixedRow: {
+      label : 'Just a fixed row with a select',
+      noOptionsMessage: 'No Data',
+      type: 'select',
+      options: [
+        {value: 'test1', label: 'Test Item'},
+        {value: 'test2', label: 'Test Item 2'},
+      ]
+    }
   };
 
   constructor(
@@ -43,7 +52,16 @@ export class TableComponent implements OnInit {
         {name: 'Address', prop: 'address', flex: 2, sortable: true, filtering: true},
         {name: 'Phone', prop: 'phone', flex: 2, sortable: true, filtering: true},
         {name: '', flex: 1, cellTemplate: 'actions', actions: ['delete']},
-      ]
+      ],
+      fixedRow: {
+        label : 'Just a fixed row with a select',
+        noOptionsMessage: 'No Data',
+        type: 'select',
+        options: [
+          {value: 'test1', label: 'Test Item'},
+          {value: 'test2', label: 'Test Item 2'},
+        ]
+      }
     };
   `;
     this.tableExampleHTML = this.textHelper.dedent`

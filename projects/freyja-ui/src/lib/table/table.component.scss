@@ -11,6 +11,7 @@
 
 .fixedrow {
   &__select {
-    padding: 15px 30px;
+    padding: rem-calc(15 30);
+    box-sizing: border-box;
   }
 }

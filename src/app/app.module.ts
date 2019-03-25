@@ -25,6 +25,7 @@ import { SpinnerModule } from '@freyjaDemo/app/pages/spinner/spinner.module';
 import { ProgressBarModule } from '@freyjaDemo/app/pages/progress-bar/progress-bar.module';
 import { TableModule } from '@freyjaDemo/app/pages/table/table.module';
 import { ToggleModule } from '@freyjaDemo/app/pages/toggle/toggle.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ToggleModule } from '@freyjaDemo/app/pages/toggle/toggle.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FjCheckboxGridModule,
     ButtonModule,
     RadioButtonModule,
