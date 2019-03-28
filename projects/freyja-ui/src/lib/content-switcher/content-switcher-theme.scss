@@ -1,6 +1,17 @@
 @mixin contentSwitcherColorsTheme($theme-colors) {
 
   .content-switcher {
+    &--rounded {
+      .content-switcher__tab:nth-child(2) {
+        border-left: 1px solid map-get($theme-colors, 'color-primary') !important;
+      }
+    }
+
+    &--radius {
+      .content-switcher__tab:nth-child(2) {
+        border-left: 1px solid map-get($theme-colors, 'color-primary') !important;
+      }
+    }
 
     &__tab {
       border: solid 1px map-get($theme-colors, 'color-primary');
