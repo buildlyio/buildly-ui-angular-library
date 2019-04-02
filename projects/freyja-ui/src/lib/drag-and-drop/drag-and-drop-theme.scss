@@ -10,7 +10,7 @@
   }
 
   .dropzone-container {
-    background-color: map-get($theme-colors, "background-lvl3");
+    background-color: map-get($theme-colors, "background-lvl2");
     border: rem-calc(1) dashed map-get($theme-colors, "border");
     &__icon-upload{
       color: map-get($theme-colors, "text");
