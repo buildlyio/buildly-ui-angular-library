@@ -5,11 +5,14 @@
   -moz-appearance: none;
   /* remove arrows for for Chrome */
   -webkit-appearance: none;
+  appearance: none;
   font-family: OpenSans, sans-serif;
   font-size: 1rem;
   height: rem-calc(40);
   padding: rem-calc(0 15);
   cursor: pointer;
+  border: rem-calc(1) solid $color-blue;
+  border-radius: rem-calc(4);
   /* remove arrows for IE */
   &::-ms-expand {
     display: none;
