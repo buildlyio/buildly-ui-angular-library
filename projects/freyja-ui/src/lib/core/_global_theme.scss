@@ -13,6 +13,9 @@ $haf: "&:hover, &:active, &:focus";
 @import '../card/card-theme.scss';
 @import '../icon/icon-theme.scss';
 @import '../toggle/toggle-theme.scss';
+@import '../inline-text-editor/inline-text-editor-theme';
+@import '../modal/modal-theme';
+@import '../accordion/accordion-theme';
 
 @import "spacing-theme.scss";
 
@@ -68,6 +71,7 @@ $haf: "&:hover, &:active, &:focus";
     'color-danger-hover':$danger-darker,
     'color-disable': $disable,
     'color-button-text': $color-button-text,
+    'text': $text,
     'text-header': $text,
     'text-body' : $text-darker,
     'text-labels': $text-darkest,
@@ -93,6 +97,9 @@ $haf: "&:hover, &:active, &:focus";
   @include cardColorsTheme($themes);
   @include iconColorsTheme($themes);
   @include toggleColorsTheme($themes);
+  @include inlineTextEditorColorsTheme($themes);
+  @include modalColorsTheme($themes);
+  @include accordionColorsTheme($themes);
   @include margin-classes;
   @include padding-classes;
 

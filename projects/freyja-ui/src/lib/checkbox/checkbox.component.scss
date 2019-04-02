@@ -49,7 +49,6 @@
         cursor: default;
         &::after {
           background-color: transparent;
-          border-color: $color-black;
         }
       }
       &:indeterminate {

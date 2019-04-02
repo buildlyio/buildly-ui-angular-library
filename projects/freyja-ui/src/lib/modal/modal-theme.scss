@@ -1,0 +1,12 @@
+@mixin modalColorsTheme($theme-colors) {
+  /* The Modal (background) */
+  .modal {
+    /* Modal Content/Box */
+    &__content {
+      background-color: map-get($theme-colors, 'background');
+    }
+  }
+}
+
+
+

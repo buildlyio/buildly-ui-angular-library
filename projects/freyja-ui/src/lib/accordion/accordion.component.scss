@@ -31,7 +31,6 @@
     overflow: hidden;
     padding: rem-calc(0 20);
     transition: .2s linear .1s;
-    border: 1px solid $color-gray;
   }
   &--disabled {
     color: rgba(0, 0, 0, .25);

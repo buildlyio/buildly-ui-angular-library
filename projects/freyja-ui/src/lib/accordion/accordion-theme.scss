@@ -1,0 +1,7 @@
+@mixin accordionColorsTheme($theme-colors) {
+  .fj-accordion {
+    &__content {
+      border: 1px solid map-get($theme-colors, 'border');
+    }
+  }
+}

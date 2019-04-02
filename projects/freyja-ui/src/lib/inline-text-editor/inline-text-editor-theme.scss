@@ -1,0 +1,12 @@
+@mixin inlineTextEditorColorsTheme($theme-colors) {
+  .inline-text-editor {
+    &:hover {
+      &:after {
+        color: map-get($theme-colors, 'text');
+      }
+      &--link {
+        color: map-get($theme-colors, 'color-primary');
+      }
+    }
+  }
+}

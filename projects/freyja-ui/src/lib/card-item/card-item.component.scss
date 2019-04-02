@@ -20,9 +20,6 @@
     &--horizontal {
       flex-direction: row;
     }
-    &--highlight {
-      background-color: $color-gray-light;
-    }
   }
   &__header {
     display: flex;
