@@ -26,6 +26,7 @@ import { ProgressBarModule } from '@freyjaDemo/app/pages/progress-bar/progress-b
 import { TableModule } from '@freyjaDemo/app/pages/table/table.module';
 import { ToggleModule } from '@freyjaDemo/app/pages/toggle/toggle.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NativeDropdownModule} from '@freyjaDemo/app/pages/native-dropdown/native-dropdown.module';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProgressBarModule,
     TableModule,
     ToggleModule,
+    NativeDropdownModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

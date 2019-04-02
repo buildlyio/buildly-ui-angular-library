@@ -79,6 +79,10 @@ export class MainNavComponent implements OnInit {
       path: '/card-item',
       label: 'Card-item'
     },
+    {
+      path: '/native-dropdown',
+      label: 'Native dropdown'
+    }
   ];
   constructor() { }
 
