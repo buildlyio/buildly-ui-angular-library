@@ -1,0 +1,41 @@
+@mixin dragAndDropColorsTheme($theme-colors) {
+  .drag-drop {
+    background-color: map-get($theme-colors, "background-lvl2");
+    &__file-missing {
+      color: map-get($theme-colors, "color-danger");;
+    }
+    &__updload-info {
+      color: map-get($theme-colors, "text");
+    }
+  }
+
+  .dropzone-container {
+    background-color: map-get($theme-colors, "background-lvl3");
+    border: rem-calc(1) dashed map-get($theme-colors, "border");
+    &__icon-upload{
+      color: map-get($theme-colors, "text");
+    }
+    &__label-dragdrop {
+      color: map-get($theme-colors, "text-body");
+    }
+    &__label-or {
+      color: map-get($theme-colors, "text-body");
+    }
+    &:hover{
+      border: rem-calc(1) dashed  map-get($theme-colors, "color-primary");
+      background-color:  map-get($theme-colors, "color-primary-hover-bright");
+      .dropzone-container__icon-upload{
+        color: map-get($theme-colors, "color-primary");
+      }
+    }
+
+    &.dz-drag-hover{
+      border: rem-calc(1) solid map-get($theme-colors, "color-primary");
+      background-color: map-get($theme-colors, "color-primary-hover-bright");
+      i{
+        color: map-get($theme-colors, "color-primary");
+      }
+    }
+  }
+
+}

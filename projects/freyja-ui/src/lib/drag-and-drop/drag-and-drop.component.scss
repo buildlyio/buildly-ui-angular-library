@@ -2,7 +2,6 @@
 .drag-drop {
   display: flex;
   flex-direction: column;
-  background-color: $color-gray-light;
   height: 100%;
   width: 100%;
   padding: rem-calc(28);
@@ -13,15 +12,11 @@
       cursor: pointer;
     }
   }
-  &__file-missing {
-    color: $color-danger;
-  }
   &__updload-info {
     display: inline-flex;
     align-items: center;
     margin-top: rem-calc(25);
     font-size: rem-calc(14);
-    color: rgba($color-black, 0.45);
     &-icon{
       margin-right: rem-calc(7);
     }
@@ -37,10 +32,7 @@
   position: relative;
   width: 100%;
   cursor: pointer;
-  background-color: rgba($color-black, 0.02);
-  border: rem-calc(1) dashed rgba($color-black, 0.15);
   border-radius: rem-calc(4);
-  border: rem-calc(1) dashed $color-gray-light;
   box-sizing: border-box;
   padding: rem-calc(5);
   text-align: center;
@@ -51,7 +43,6 @@
   }
   &__icon-upload{
     font-size: rem-calc(40);
-    color: $color-gray-light;
   }
   &__placeholder {
     display: block;
@@ -59,30 +50,14 @@
   }
   &__label-dragdrop {
     margin-top: rem-calc(25);
-    color: $color-black-60;
-  }
-  &__label-or {
-    color: $color-black-60;
   }
   &__btn-icon {
     margin-right: rem-calc(8);
   }
-  &:hover{
-    border: rem-calc(1) dashed $color-blue;
-    background-color: $color-blue-lightest;
-    .dropzone-container__icon-upload{
-      color: $color-blue;
-    }
-  }
 
   &.dz-drag-hover{
-    border: rem-calc(1) solid $color-blue;
-    background-color: $color-blue-lightest;
     .dropzone-container__placeholder{
       transform: scale(0.95);
-    }
-    i{
-      color: $color-blue;
     }
   }
 }

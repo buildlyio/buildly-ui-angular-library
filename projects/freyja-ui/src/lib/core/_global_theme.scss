@@ -16,6 +16,8 @@ $haf: "&:hover, &:active, &:focus";
 @import '../inline-text-editor/inline-text-editor-theme';
 @import '../modal/modal-theme';
 @import '../accordion/accordion-theme';
+@import '../date-picker/date-picker-theme';
+@import '../drag-and-drop/drag-and-drop-theme';
 
 @import "spacing-theme.scss";
 
@@ -100,6 +102,8 @@ $haf: "&:hover, &:active, &:focus";
   @include inlineTextEditorColorsTheme($themes);
   @include modalColorsTheme($themes);
   @include accordionColorsTheme($themes);
+  @include datePickerColorsTheme($themes);
+  @include dragAndDropColorsTheme($themes);
   @include margin-classes;
   @include padding-classes;
 

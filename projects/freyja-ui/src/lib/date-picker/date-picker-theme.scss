@@ -1,0 +1,108 @@
+@mixin datePickerColorsTheme($theme-colors) {
+  .fj-datepicker {
+    &__container {
+      input {
+        border: rem-calc(1) solid map-get($theme-colors, "border");
+        color: map-get($theme-colors, "text-header");
+
+        &:focus {
+          border-color: map-get($theme-colors, "color-primary");
+        }
+
+        &:hover {
+          color: map-get($theme-colors, "text-header");
+        }
+
+        &::placeholder {
+          color: map-get($theme-colors, "text");
+
+          &:hover & {
+            color: map-get($theme-colors, "text");
+          }
+        }
+
+        &:disabled {
+          background-color: map-get($theme-colors, "color-disable");
+          border-color: map-get($theme-colors, "color-disable");
+
+          &::placeholder {
+            color: map-get($theme-colors, "color-input");
+          }
+        }
+      }
+
+    }
+  }
+
+  label {
+    &.label--disabled {
+      color: map-get($theme-colors, "input");
+    }
+  }
+
+  .input-error {
+    border-color: map-get($theme-colors, "color-danger");
+  }
+
+  .error--label {
+    border-color: map-get($theme-colors, "color-danger");
+  }
+
+  /deep/ {
+    ngx-my-date-picker {
+      .ngxmdp {
+        position: absolute;
+      }
+      .ngxmdp {
+        .header,
+        .headerbtncell,
+        .headerbtn,
+        .headerlabelbtn,
+        .weekdaytitle,
+        .currmonth {
+          background-color: map-get($theme-colors, "background");
+        }
+
+        .weekdaytitle {
+          color: map-get($theme-colors, "color-primary");
+        }
+
+        .daycell,
+        .currmonth,
+        .highlight {
+          color: map-get($theme-colors, "background-lvl2");
+        }
+
+        .tablesingleday:hover,
+        .tablesinglemonth:hover,
+        .tablesingleyear:hover {
+          background-color: map-get($theme-colors, "color-primary");
+          .currmonth {
+            color: white;
+          }
+        }
+        .selectedday .datevalue {
+          background-color: map-get($theme-colors, "color-primary") !important;
+          color: white;
+        }
+        .selector {
+          background: map-get($theme-colors, "background");
+          border-color: map-get($theme-colors, "border");
+          &:focus {
+            border-color: map-get($theme-colors, "border");
+          }
+        }
+        .selectorarrow {
+          &:focus {
+            &:before {
+              border-bottom-color: map-get($theme-colors, "border");
+            }
+          }
+        }
+        .selectorarrow:after {
+          border-bottom-color: map-get($theme-colors, "background");
+        }
+      }
+    }
+  }
+}
