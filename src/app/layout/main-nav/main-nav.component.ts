@@ -82,6 +82,10 @@ export class MainNavComponent implements OnInit {
     {
       path: '/native-dropdown',
       label: 'Native dropdown'
+    },
+    {
+      path: '/custom-dropdown',
+      label: 'Custom dropdown'
     }
   ];
   constructor() { }

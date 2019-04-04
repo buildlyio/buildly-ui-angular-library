@@ -15,7 +15,8 @@ import { TableComponent } from './pages/table/table.component';
 import { ProgressBarComponent } from './pages/progress-bar/progress-bar.component';
 import { SpinnerComponent } from './pages/spinner/spinner.component';
 import { ToggleComponent } from '@freyjaDemo/app/pages/toggle/toggle.component';
-import {NativeDropdownComponent} from './pages/native-dropdown/native-dropdown.component';
+import { DemoNativeDropdownComponent } from './pages/native-dropdown/native-dropdown.component';
+import { DemoCustomDropdownComponent } from '@freyjaDemo/app/pages/custom-dropdown/custom-dropdown.component';
 
 export const appRoutes: Routes = [
   { path: '', component: ButtonComponent },
@@ -36,5 +37,6 @@ export const appRoutes: Routes = [
   { path: 'progress-bar', component: ProgressBarComponent},
   { path: 'modal', component: ModalComponent },
   { path: 'toggle', component: ToggleComponent },
-  { path: 'native-dropdown', component: NativeDropdownComponent}
+  { path: 'native-dropdown', component: DemoNativeDropdownComponent },
+  { path: 'custom-dropdown', component: DemoCustomDropdownComponent }
 ];

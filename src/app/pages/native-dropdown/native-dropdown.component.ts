@@ -6,7 +6,7 @@ import {TextHelper} from '@freyjaDemo/app/shared/helpers/text.helper';
   templateUrl: './native-dropdown.component.html',
   styleUrls: ['./native-dropdown.component.scss']
 })
-export class NativeDropdownComponent implements OnInit {
+export class DemoNativeDropdownComponent implements OnInit {
   public options = [
     {
       label: 'Option 1',
