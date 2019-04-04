@@ -1,5 +1,13 @@
----
 pipeline:
+
+  install:
+    image: node:9.9.0
+    commands:
+      - npm install
+    secrets: [NPM_TOKEN]
+    when:
+      event: [push, tag]
+
   build:
     image: node:9.9.0
     commands:
@@ -8,41 +16,22 @@ pipeline:
       event: [push, tag]
       status: [success]
 
-#   test:
-#     image: registry.tola.io/humanitec/docker-nodejs-and-chrome:0.0.1-8.12.0-latest
-#     commands:
-#       - npm rebuild node-sass
-#       - npm run test
-#     when:
-#       event: [push, tag]
-#       status: [success]
-
-  build-docker-image-tag:
+  build-docker-image:
     image: plugins/docker
     insecure: true
     registry: registry.tola.io
     repo: registry.tola.io/humanitec/freyja-demo
     file: Dockerfile
     auto_tag: true
-    tags:
-      - ${DRONE_COMMIT_SHA}
     secrets: [DOCKER_USERNAME, DOCKER_PASSWORD]
     when:
       event: [push, tag]
-      branch: [master]
       status: [success]
 
-  auto-update-robot-tests-matrix:
-    image: quay.io/ukhomeofficedigital/drone-trigger:latest
-    verbose: true
-    drone_server: http://drone.humanitec.io
-    drone_token: $DRONE_TOKEN
-    secrets: [DRONE_TOKEN]
-    repo: Humanitec/robot-tests-freyja
-    branch: master
-    deploy_to: update-dev-env
-    params: "APP_QUERY=matrix.FREYJA_DEMO_IMAGE.0,APP_VALUE=registry.tola.io/humanitec/freyja-demo:${DRONE_COMMIT_SHA},APP_PROJECT_NAME=${DRONE_REPO_NAME},APP_COMMIT_USER=${DRONE_COMMIT_AUTHOR}"
+  notify:
+    image: plugins/slack
+    channel: drone-ci
+    username: Drone-CI
+    secrets: [SLACK_WEBHOOK]
     when:
-      event: [push, tag]
-      branch: master
-      status: [success]
+      status: [failure]
