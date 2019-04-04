@@ -105,7 +105,7 @@ $haf: "&:hover, &:active, &:focus";
   @include accordionColorsTheme($themes);
   @include datePickerColorsTheme($themes);
   @include dragAndDropColorsTheme($themes);
-  @include customDropdownColorsTheme($themes);
+  //@include customDropdownColorsTheme($themes);
   @include margin-classes;
   @include padding-classes;
 

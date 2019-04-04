@@ -1,5 +1,38 @@
 <fj-demo-content-wrap>
   <h2>Native Dropdown</h2>
-  <fj-native-dropdown [options]="options" (optionSelected)="onOptionSelected($event)"></fj-native-dropdown>
-  <pre><code highlight [code]="nativeDropdown"></code></pre>
+  <h3>Basic native dropdown</h3>
+  <div class="dropdown-wrapper">
+    <fj-native-dropdown [options]="options"></fj-native-dropdown>
+  </div>
+  <h3>Native dropdown with label</h3>
+  <fj-native-dropdown [options]="options" label="Label"></fj-native-dropdown>
+  <fj-native-dropdown [options]="options" label="Label" [required]="true"></fj-native-dropdown>
+
+  <h3>Size</h3>
+  <div>A native dropdown can have different sizes.</div>
+  <div class="dropdown-wrapper">
+    <fj-native-dropdown [options]="options" size="large" label="Large"></fj-native-dropdown>
+    <fj-native-dropdown [options]="options" size="medium" label="Medium"></fj-native-dropdown>
+    <fj-native-dropdown [options]="options" size="small" label="Small"></fj-native-dropdown>
+    <fj-native-dropdown [options]="options" size="micro" label="Micro"></fj-native-dropdown>
+  </div>
+  <h3>Full width</h3>
+  <fj-native-dropdown [options]="options" [fullWidth]="true"></fj-native-dropdown>
+  <h3>Disabled</h3>
+  <fj-native-dropdown [options]="options" disabled></fj-native-dropdown>
+  <h3>State</h3>
+  <fj-native-dropdown [options]="options" label="Error Example" error="Example error message"></fj-native-dropdown>
+  <h3>Placeholder</h3>
+  <fj-native-dropdown [options]="options" label="Placeholder" placeholder="placeholder Example"></fj-native-dropdown>
+  <h3>Focused by default</h3>
+  <fj-native-dropdown [options]="options" label="Focused" [focused]="true"></fj-native-dropdown>
+  <h3>Reactive Forms</h3>
+  <fj-native-dropdown [options]="options"
+                      label="Test FormGroup"
+                      placeholder="Choose option"
+                      [formGroup]="testFormGroup"
+                      formControlName="selectValue"
+                      (optionSelected)="onOptionSelected($event)"
+  ></fj-native-dropdown>
+  <h6>Selected Value: {{testFormGroup?.value?.selectValue}}</h6>
 </fj-demo-content-wrap>
