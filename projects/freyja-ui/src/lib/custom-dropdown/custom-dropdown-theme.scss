@@ -1,0 +1,71 @@
+@mixin customDropdownColorsTheme($theme-colors) {
+  .fj-custom-dropdown {
+    input {
+      border: rem-calc(1) solid map-get($theme-colors, "border");
+      color: map-get($theme-colors, "text-header");
+
+      &:focus {
+        border-color: map-get($theme-colors, "color-primary");
+      }
+
+      &:hover {
+        color: map-get($theme-colors, "text-header");
+      }
+
+      &::placeholder {
+        color: map-get($theme-colors, "text");
+
+        &:hover & {
+          color: map-get($theme-colors, "text");
+        }
+      }
+
+      &:disabled {
+        background-color: map-get($theme-colors, "color-disable");
+        border-color: map-get($theme-colors, "color-disable");
+
+        &::placeholder {
+          color: map-get($theme-colors, "color-input");
+        }
+      }
+    }
+
+    &__panel {
+      background-color: map-get($theme-colors, "background");
+      border: rem-calc(1) solid map-get($theme-colors, "border");
+      border-top: none;
+      color: map-get($theme-colors, "text-header");
+    }
+
+    &__list-item {
+      &:hover {
+        background-color: map-get($theme-colors, 'border');
+      }
+
+      &--selected {
+        background-color: map-get($theme-colors, 'border');
+      }
+    }
+
+    &--error {
+      input {
+        border-color: map-get($theme-colors, "color-danger");
+      }
+    }
+  }
+
+  label {
+    &.label--disabled {
+      color: map-get($theme-colors, "input");
+    }
+  }
+
+  .input-error {
+    color: map-get($theme-colors, "color-danger");
+    border-color: map-get($theme-colors, "color-danger");
+  }
+
+  .error--label {
+    color: map-get($theme-colors, "color-danger");
+  }
+}
