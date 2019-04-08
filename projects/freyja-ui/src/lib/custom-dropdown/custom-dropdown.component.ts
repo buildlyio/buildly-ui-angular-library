@@ -1,19 +1,19 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild } from '@angular/core';
+import {FormGroup } from '@angular/forms';
 
 import { BaseComponent } from '@libs/freyja-ui/src/lib/shared/base.component';
 
 /**
- * Count for next id
+ * Count for next Id
  */
 let nextId = 0;
 
 @Component({
-  selector: 'fj-native-dropdown',
-  templateUrl: './native-dropdown.component.html',
-  styleUrls: ['./native-dropdown.component.scss']
+  selector: 'fj-custom-dropdown',
+  templateUrl: './custom-dropdown.component.html',
+  styleUrls: ['./custom-dropdown.component.scss'],
 })
-export class NativeDropdownComponent extends BaseComponent implements AfterViewInit, OnChanges {
+export class CustomDropdownComponent extends BaseComponent implements AfterViewInit {
   /**
    * Dropdown options
    * Each option be an object with properties label and value
@@ -22,9 +22,14 @@ export class NativeDropdownComponent extends BaseComponent implements AfterViewI
   @Input() options = [];
 
   /**
+   * whether dropdown panel is open or not
+   */
+  @Input() isOpen = false;
+
+  /**
    * dropdown id
    */
-  @Input() id = `fj-native-dropdown-${++nextId}`;
+  @Input() id = `fj-custom-dropdown-${++nextId}`;
 
   /**
    * dropdown with
@@ -71,6 +76,8 @@ export class NativeDropdownComponent extends BaseComponent implements AfterViewI
    */
   @Input() showDefaultOnClick = false;
 
+  @Input() clearable = false;
+
   /**
    * event that is triggered when an option is selected
    * called with value of dropdown
@@ -92,61 +99,77 @@ export class NativeDropdownComponent extends BaseComponent implements AfterViewI
    */
   @Output() click: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor() {
+  @Output() blur: EventEmitter<any> = new EventEmitter<any>();
+
+  selectedOption: any = {};
+
+  @ViewChild('headerInput') headerInput: ElementRef;
+
+  constructor(private elementRef: ElementRef) {
     super();
   }
 
-  ngOnChanges() {
-    const dropdownElement = document.getElementById(this.id);
-    if (this.focused && dropdownElement) {
-      dropdownElement.focus();
-    }
-  }
-
   ngAfterViewInit(): void {
-    const dropdownElement = document.getElementById(this.id);
-    if (this.focused && dropdownElement) {
-      dropdownElement.focus();
+    if (this.focused && this.headerInput) {
+      this.headerInput.nativeElement.focus();
     }
   }
 
-  onOptionSelected(event: Event) {
-    event.stopPropagation();
-    const dropdownElement: any = document.getElementById(this.id);
-    this.optionSelected.emit(dropdownElement.value);
+  @HostListener('document:click', ['$event', '$event.target'])
+  handleClickOutside(event: MouseEvent, targetElement: HTMLElement): void {
+    if (!targetElement) {
+      return;
+    }
+    const clickedInside = this.elementRef.nativeElement.contains(targetElement);
+    if (!clickedInside && this.isOpen) {
+      this.isOpen = false; // close panel
+    }
+  }
+
+  selectOption(option) {
+    this.selectedOption = option;
+    if (this.formGroup && this.formControlName) {
+      this.formGroup.get(this.formControlName).setValue(option.value);
+    }
+    this.optionSelected.emit(option.value);
+    this.closePanel();
+    if (!this.error && !this.errored) {
+      this.headerInput.nativeElement.focus();
+    }
 
     if (this.showDefaultOnClick) {
-      dropdownElement.value = this.options[0].label;
+      this.headerInput.nativeElement.value = this.options[0].label;
     }
   }
 
-  /**
-   * triggers click event
-   * @param event HTML click event
-   */
   onClick(event: Event) {
-    event.stopPropagation();
+    this.headerInput.nativeElement.blur();
+    this.isOpen = !this.isOpen;
     this.click.emit(event);
   }
 
-  /**
-   * triggers focus event
-   * @param event HTML focus event
-   */
   onFocus(event: Event) {
     this.focus.emit(event);
+  }
+
+  onBlur(event: Event) {
+    this.blur.emit(event);
+  }
+
+  closePanel() {
+    this.isOpen = false;
   }
 
   /**
    * @description Add css classes based on inputs like size, shape etc
    */
   public generateClassList() {
-    const baseCls = 'fj-native-dropdown--';
+    const baseCls = 'fj-custom-dropdown--';
     const classes = {
+      [baseCls + 'open']: this.isOpen,
       [baseCls + this.size]: this.size,
       [baseCls + 'required']: this.required,
       [baseCls + 'error']: this.errored || this.error,
-      [baseCls + 'full-width']: this.fullWidth
     };
     return classes;
   }

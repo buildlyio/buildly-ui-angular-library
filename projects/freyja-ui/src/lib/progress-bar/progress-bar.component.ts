@@ -19,6 +19,7 @@ export class ProgressBarComponent implements OnInit {
 
   public percentage; // percentage of the progressBar
   public color; // color of the progressBar
+  public dangerColor;
 
   constructor() { }
 

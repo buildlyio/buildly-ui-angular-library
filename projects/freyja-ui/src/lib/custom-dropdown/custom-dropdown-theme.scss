@@ -1,6 +1,6 @@
-@mixin dropdownColorsTheme($theme-colors) {
-  .fj-native-dropdown {
-    select {
+@mixin customDropdownColorsTheme($theme-colors) {
+  .fj-custom-dropdown {
+    input {
       border: rem-calc(1) solid map-get($theme-colors, "border");
       color: map-get($theme-colors, "text-header");
 
@@ -10,6 +10,14 @@
 
       &:hover {
         color: map-get($theme-colors, "text-header");
+      }
+
+      &::placeholder {
+        color: map-get($theme-colors, "text");
+
+        &:hover & {
+          color: map-get($theme-colors, "text");
+        }
       }
 
       &:disabled {
@@ -22,8 +30,25 @@
       }
     }
 
+    &__panel {
+      background-color: map-get($theme-colors, "background");
+      border: rem-calc(1) solid map-get($theme-colors, "border");
+      border-top: none;
+      color: map-get($theme-colors, "text-header");
+    }
+
+    &__list-item {
+      &:hover {
+        background-color: map-get($theme-colors, 'border');
+      }
+
+      &--selected {
+        background-color: map-get($theme-colors, 'border');
+      }
+    }
+
     &--error {
-      select {
+      input {
         border-color: map-get($theme-colors, "color-danger");
       }
     }

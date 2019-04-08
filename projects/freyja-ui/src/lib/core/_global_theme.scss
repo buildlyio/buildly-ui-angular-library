@@ -18,6 +18,7 @@ $haf: "&:hover, &:active, &:focus";
 @import '../accordion/accordion-theme';
 @import '../date-picker/date-picker-theme';
 @import '../drag-and-drop/drag-and-drop-theme';
+@import '../custom-dropdown/custom-dropdown-theme';
 
 @import "spacing-theme.scss";
 
@@ -104,6 +105,7 @@ $haf: "&:hover, &:active, &:focus";
   @include accordionColorsTheme($themes);
   @include datePickerColorsTheme($themes);
   @include dragAndDropColorsTheme($themes);
+  @include customDropdownColorsTheme($themes);
   @include margin-classes;
   @include padding-classes;
 

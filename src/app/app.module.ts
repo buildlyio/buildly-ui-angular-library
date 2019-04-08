@@ -27,6 +27,7 @@ import { TableModule } from '@freyjaDemo/app/pages/table/table.module';
 import { ToggleModule } from '@freyjaDemo/app/pages/toggle/toggle.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NativeDropdownModule} from '@freyjaDemo/app/pages/native-dropdown/native-dropdown.module';
+import { CustomDropdownModule } from '@freyjaDemo/app/pages/custom-dropdown/custom-dropdown.module';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import {NativeDropdownModule} from '@freyjaDemo/app/pages/native-dropdown/native
     TableModule,
     ToggleModule,
     NativeDropdownModule,
+    CustomDropdownModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

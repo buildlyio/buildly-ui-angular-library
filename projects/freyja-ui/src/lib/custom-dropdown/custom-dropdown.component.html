@@ -1,0 +1,72 @@
+<div class="fj-custom-dropdown" [ngClass]="generateClassList()" *ngIf="formGroup" [formGroup]="formGroup">
+  <label [attr.for]="id" class="label--medium" *ngIf="label">{{label}}</label>
+  <input
+    #headerInput
+    type="text"
+    [attr.id]="id"
+    [attr.tabindex]="tabIndex"
+    [placeholder]="placeholder"
+    [readOnly]="true"
+    [disabled]="disabled"
+    [value]="selectedOption.label ? selectedOption.label : ''"
+    (focus)="onFocus($event)"
+    (blur)="onBlur($event)"
+    (change)="$event.stopPropagation()"
+    (click)="onClick($event)"
+    (mousedown)="$event.preventDefault()"
+    role="combobox"
+    [attr.aria-expanded]="isOpen"
+    formControlName="{{formControlName}}"
+  />
+  <div class="fj-custom-dropdown__panel" *ngIf="isOpen">
+    <ul class="fj-custom-dropdown__list">
+      <li
+        class="fj-custom-dropdown__list-item"
+        *ngFor="let option of options"
+        [ngClass]="{
+          'fj-custom-dropdown__list-item--selected': selectedOption.value === option?.value
+        }"
+        (click)="selectOption(option)"
+      >
+        {{option.label}}
+      </li>
+    </ul>
+  </div>
+  <label class="error--label" *ngIf="error">{{error}}</label>
+</div>
+
+<div class="fj-custom-dropdown" [ngClass]="generateClassList()" *ngIf="!formGroup">
+  <label [attr.for]="id" class="label--medium" *ngIf="label">{{label}}</label>
+  <input
+    #headerInput
+    type="text"
+    [attr.id]="id"
+    [attr.tabindex]="tabIndex"
+    [placeholder]="placeholder"
+    [readOnly]="true"
+    [disabled]="disabled"
+    [value]="selectedOption.label ? selectedOption.label : ''"
+    (focus)="onFocus($event)"
+    (blur)="onBlur($event)"
+    (change)="$event.stopPropagation()"
+    (click)="onClick($event)"
+    (mousedown)="$event.preventDefault()"
+    role="combobox"
+    [attr.aria-expanded]="isOpen"
+  />
+  <div class="fj-custom-dropdown__panel" *ngIf="isOpen">
+    <ul class="fj-custom-dropdown__list">
+      <li
+        class="fj-custom-dropdown__list-item"
+        *ngFor="let option of options"
+        [ngClass]="{
+          'fj-custom-dropdown__list-item--selected': selectedOption?.value === option?.value
+        }"
+        (click)="selectOption(option)"
+      >
+        {{option.label}}
+      </li>
+    </ul>
+  </div>
+  <label class="error--label" *ngIf="error">{{error}}</label>
+</div>
