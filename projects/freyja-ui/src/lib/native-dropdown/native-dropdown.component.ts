@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
-import { BaseComponent } from '@libs/freyja-ui/src/lib/shared/base.component';
+import { BaseComponent } from '../shared/base.component';
 
 /**
  * Count for next id
