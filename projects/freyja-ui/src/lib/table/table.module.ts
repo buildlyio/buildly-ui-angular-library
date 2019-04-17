@@ -15,10 +15,12 @@ import { FjButtonModule } from '../button/button.module';
 import { FjContentSwitcherModule } from '../content-switcher/content-switcher.module';
 import { FjNativeDropdownModule } from '../native-dropdown/native-dropdown.module';
 import { MatSelectModule } from '@angular/material';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   imports: [
     CommonModule,
+    ScrollingModule,
     TableRoutingModule,
     FormsModule,
     IconModule,

@@ -9,6 +9,9 @@
   flex-wrap: nowrap;
   width: 100%;
   height: rem-calc(57);
+  &__viewport {
+    height: rem-calc(400);
+  }
   &:hover:not(.no-hover) {
     cursor: pointer;
   }
