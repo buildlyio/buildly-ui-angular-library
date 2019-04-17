@@ -6,6 +6,7 @@
     -moz-appearance: none;
     -webkit-appearance: none;
     align-items: center;
+    cursor: pointer;
     vertical-align: middle;
     outline: none;
     height: rem-calc(40);
@@ -13,11 +14,12 @@
     font-size: .95em;
     box-sizing: border-box;
     border-radius: rem-calc(4);
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAADFBMVEUzMzMzMzMzMzMzMzMKAG/3AAAAA3RSTlMAf4C/aSLHAAAAPElEQVR42q3NMQ4AIAgEQTn//2cLdRKppSGzBYwzVXvznNWs8C58CiussPJj8h6NwgorrKRdTvuV9v16Afn0AYFOB7aYAAAAAElFTkSuQmCC");
-    background-size: rem-calc(8 10);
-    background-repeat: no-repeat;
-    background-position: right rem-calc(9) center;
-    background-image: none \9; // IE 7, 8, & 9
+    width: 100%;
+    //background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAADFBMVEUzMzMzMzMzMzMzMzMKAG/3AAAAA3RSTlMAf4C/aSLHAAAAPElEQVR42q3NMQ4AIAgEQTn//2cLdRKppSGzBYwzVXvznNWs8C58CiussPJj8h6NwgorrKRdTvuV9v16Afn0AYFOB7aYAAAAAElFTkSuQmCC");
+    //background-size: rem-calc(8 10);
+    //background-repeat: no-repeat;
+    //background-position: right rem-calc(9) center;
+    //background-image: none \9; // IE 7, 8, & 9
     transition: .2s linear;
 
     // remove arrows for IE
