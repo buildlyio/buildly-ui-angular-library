@@ -18,6 +18,10 @@ export class TableRowComponent implements OnChanges {
   @Input() filters; // selected filters
   @Input() sort; // activated sort
   @Input() noHover: boolean;
+  /**
+   * virtual scrolling view port
+   */
+  @Input() viewPort: string;
   @Output() protected updateUsersRow = new EventEmitter();
   @Output() protected submitTime = new EventEmitter();
   @Output() protected selectItem = new EventEmitter();

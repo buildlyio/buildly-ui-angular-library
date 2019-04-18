@@ -98,6 +98,7 @@ export class TableComponent implements OnInit {
     <fj-table
       [rows]= "rows"
       [columns]="tableOptions.columns"
+      [viewPort]="'350px'"
     ></fj-table>
   `;
   }

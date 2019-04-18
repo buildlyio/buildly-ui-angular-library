@@ -20,8 +20,10 @@ export class TableComponent implements OnChanges {
    * @type {boolean}
    */
   @Input() noDataMessage = 'No Data Available';
-
-
+  /**
+   * virtual scrolling view port
+   */
+  @Input() viewPort: string;
   @Output() protected updateUsersRow = new EventEmitter();
   @Output() protected selectItem = new EventEmitter();
   @Output() protected submitTime = new EventEmitter();
