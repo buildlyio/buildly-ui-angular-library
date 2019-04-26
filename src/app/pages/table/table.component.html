@@ -1,13 +1,23 @@
 <fj-demo-content-wrap>
   <h2>Table</h2>
   <p>This table implement angular CDK virtual scrolls to handle large data sets</p>
+  <p>This table has the functionality to add custom columns with your own cell template</p>
   <div class="container">
     <fj-table
       [rows]= "rows"
       [columns]="tableOptions.columns"
       [fixedRow]="tableOptions.fixedRow"
       [viewPort]="'350px'"
-    ></fj-table>
+    >
+      <fj-table-custom-column name="Custom" sortable="true" index="4">
+        <ng-template fj-table-header-template>
+          <b>Custom:</b>
+        </ng-template>
+        <ng-template let-row="row" fj-table-cell-template>
+          <b>{{row['first_name']}}</b>
+        </ng-template>
+      </fj-table-custom-column>
+    </fj-table>
   </div>
   <pre><code highlight [code]="tableExampleTS"></code></pre>
   <pre><code highlight [code]="tableExampleHTML"></code></pre>

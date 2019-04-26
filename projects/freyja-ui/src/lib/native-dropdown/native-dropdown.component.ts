@@ -56,10 +56,6 @@ export class NativeDropdownComponent extends BaseComponent implements AfterViewI
    */
   @Input() focused = false;
   /**
-   * wether or not to show default value after selecting an option
-   */
-  @Input() showDefaultOnCLick = false;
-  /**
    * Size can be micro, small, medium or large
    */
   @Input() size: 'micro' | 'small' | 'medium' | 'large' = 'medium';

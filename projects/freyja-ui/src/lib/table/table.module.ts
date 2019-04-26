@@ -16,6 +16,9 @@ import { FjContentSwitcherModule } from '../content-switcher/content-switcher.mo
 import { FjNativeDropdownModule } from '../native-dropdown/native-dropdown.module';
 import { MatSelectModule } from '@angular/material';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { TableCustomColumnDirective } from './directives/table-custom-column.directive';
+import { TableCellTemplateDirective } from './directives/table-cell-template.directive';
+import { TableHeaderTemplateDirective } from '@libs/freyja-ui/src/lib/table/directives/table-header-template.directive';
 
 @NgModule({
   imports: [
@@ -38,7 +41,15 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     ActionsComponent,
     FilterByValuesPipe,
     SortByColumnPipe,
+    TableCustomColumnDirective,
+    TableCellTemplateDirective,
+    TableHeaderTemplateDirective
   ],
-  exports: [TableComponent]
+  exports: [
+    TableComponent,
+    TableCustomColumnDirective,
+    TableCellTemplateDirective,
+    TableHeaderTemplateDirective
+  ]
 })
 export class FjTableModule { }

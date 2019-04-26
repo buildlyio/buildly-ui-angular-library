@@ -8,7 +8,8 @@
   flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
-  height: rem-calc(57);
+  box-shadow: 2px 2px 6px -3px #afafaf;
+  margin-bottom: 7px;
   &:hover:not(.no-hover) {
     cursor: pointer;
   }

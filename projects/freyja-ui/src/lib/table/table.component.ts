@@ -1,8 +1,12 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } from '@angular/core';
+import {
+  Component, ContentChildren, EventEmitter, Input, OnChanges, OnInit, Output, QueryList,
+  ViewChild
+} from '@angular/core';
 import {TableRowComponent} from './components/table-row/table-row.component';
 import {TableEmitObject} from './table.model';
 import { FixedRow } from './components/table-row/fixed-row.model';
 import { MatSelect } from '@angular/material';
+import { TableCustomColumnDirective } from '@libs/freyja-ui/src/lib/table/directives/table-custom-column.directive';
 
 @Component({
   selector: 'fj-table',
@@ -38,6 +42,18 @@ export class TableComponent implements OnChanges {
   @ViewChild('tableRow') tableRow: TableRowComponent;
   @ViewChild('fixedRowSelectField') fixedRowSelectField: MatSelect;
 
+  private _customColumns;
+
+  /**
+   * Column templates gathered from `ContentChildren`
+   * if described in your markup.
+   */
+  @ContentChildren(TableCustomColumnDirective)
+  set customColumns(val: QueryList<TableCustomColumnDirective>) {
+    this._customColumns = val;
+    this.appendCustomColumns(val);
+  }
+
   public sort; // applied sort for the column
   public filters; // applied filters from the column filter box;
 
@@ -48,7 +64,21 @@ export class TableComponent implements OnChanges {
   }
 
   /**
-   * @description defines the filter options of each column
+   * append custom columns to columns array
+   * @param customColumns - custom columns added by the user
+   */
+  appendCustomColumns(customColumns: any) {
+    if (customColumns) {
+      const customColumnsArr = customColumns.toArray();
+      customColumnsArr.forEach(customColumn => {
+        customColumn.cellTemplate = 'custom';
+        this.columns.splice(customColumn.index, 0 , customColumn);
+      });
+    }
+  }
+
+  /**
+   * defines the filter options of each column
    */
   defineFilterOptions() {
     if (this.rows.length) {

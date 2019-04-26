@@ -1,9 +1,10 @@
-import { Component,
+import {
+  Component,
   Input,
   Output,
   EventEmitter,
   ViewChild,
-  OnChanges,
+  OnChanges, OnInit,
 } from '@angular/core';
 import { FixedRow } from './fixed-row.model';
 @Component({

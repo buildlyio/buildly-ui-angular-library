@@ -6,7 +6,12 @@
   >
     <div class="table-row__wrapper">
       <div class="table-row__label" (click)="toggleSort(column)" [style.color]="activeSort.column === column.prop ? 'black' : ''">
-        <span class="text-truncate"> {{column.name}}</span>
+        <span class="text-truncate" *ngIf="!column.headerTemplateRef"> {{column.name}}</span>
+        <ng-template
+          *ngIf="column.headerTemplateRef"
+          [ngTemplateOutlet]="column.headerTemplateRef"
+        >
+        </ng-template>
         <span class="table-row__sort-icon"
               *ngIf="column.sortable"
         >

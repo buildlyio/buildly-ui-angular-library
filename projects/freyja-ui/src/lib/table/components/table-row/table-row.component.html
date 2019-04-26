@@ -11,13 +11,19 @@
            [ngClass]="{'column--b-left': column.borderLeft, 'column--b-right': column.borderRight}"
       >
         <div [ngSwitch]="column.cellTemplate" class="column__template">
+          <!-- use provided custom template-->
+          <ng-container *ngSwitchCase="'custom'">
+            <ng-template
+               [ngTemplateOutlet]="column.cellTemplateRef"
+               [ngTemplateOutletContext]="{row: row, column: column}">
+            </ng-template>
+          </ng-container>
           <!-- Date -->
           <span *ngSwitchCase="'date'" title="{{row[column.hoverText]}}">{{row[column.prop] | date: 'dd.MM.yyyy'}}</span>
           <!-- Select -->
           <fj-native-dropdown *ngSwitchCase="'select'" [options]="column.selectOptions" (optionSelected)="onSelectionChanged($event)"></fj-native-dropdown>
           <!-- Switcher -->
           <fj-content-switcher *ngSwitchCase="'switcher'"  (optionSelected)="onSwitcherChanged($event, row)" [selectedOption]="row[column.prop]?.toString()" [options]="column.switcherOptions"></fj-content-switcher>
-
           <!-- Actions -->
           <fj-table-actions
             *ngSwitchCase="'actions'"
@@ -26,6 +32,7 @@
             (delete)="deleteEvent(row, i)"
             (download)="downloadEvent(row, i)"
           ></fj-table-actions>
+          <!-- Activate -->
           <div *ngSwitchCase="'activate'">
             <div class="column__text-tpl" *ngIf="row[column.prop]">
               <fj-button [color]="'danger'" [size]="'micro'" (click)="activateEvent($event, row, i)">

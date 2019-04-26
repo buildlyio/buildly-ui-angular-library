@@ -1,7 +1,6 @@
 @mixin tableTheme($theme-colors) {
 
   .table{
-    background-color: map-get($theme-colors, 'background');;
     &__empty-msg{
       color: map-get($theme-colors, 'input');
     }
@@ -16,19 +15,21 @@
 
 
   .table-row {
-    border-bottom: 1px solid map-get($theme-colors, 'border');
+    &:not(.header){
+      background-color: map-get($theme-colors, 'background');
+    }
     &__filters-box {
       background-color: map-get($theme-colors, 'background');
     }
     .icon-filters {
-      fill: map-get($theme-colors, 'border');
+      fill: map-get($theme-colors, 'text-labels');
       &--active {
-        fill: map-get($theme-colors, 'text-header');
+        fill: map-get($theme-colors, 'text');
       }
     }
   }
   .column{
-    color: map-get($theme-colors, 'text-links');
+    color: map-get($theme-colors, 'text-labels');
     &--b-right{
       border-right: 1px solid map-get($theme-colors, 'border');
     }
@@ -42,24 +43,20 @@
     &--up{
       border-bottom: 4px solid map-get($theme-colors, 'border');
       &.active{
-        border-bottom-color: map-get($theme-colors, 'text-header');
+        border-bottom-color: map-get($theme-colors, 'text-labels');
       }
     }
     &--down{
       border-top: 4px solid map-get($theme-colors, 'border');
       &.active{
-        border-top-color: map-get($theme-colors, 'text-header');
+        border-top-color: map-get($theme-colors, 'text-labels');
       }
     }
   }
 
   .table-row {
-    border-bottom: 1px solid map-get($theme-colors, 'border');
     &:hover:not(.header) {
-      background-color: map-get($theme-colors, 'border');
-    }
-    &:last-child{
-      border-bottom: 1px solid map-get($theme-colors, 'border');
+      background-color: map-get($theme-colors, 'background-lvl2');
     }
   }
   .column{
@@ -75,7 +72,6 @@
   }
 
   .actions {
-    border-left: 1px solid map-get($theme-colors, 'border');
     &__btn {
       &:hover {
         background-color: map-get($theme-colors, 'border');

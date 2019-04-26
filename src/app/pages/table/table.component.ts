@@ -99,7 +99,13 @@ export class TableComponent implements OnInit {
       [rows]= "rows"
       [columns]="tableOptions.columns"
       [viewPort]="'350px'"
-    ></fj-table>
+    >
+      <fj-table-custom-column name="Custom" [sortable]="true">
+        <ng-template let-row="row" fj-table-cell-template>
+          {{row['first_name']}}
+        </ng-template>
+      </fj-table-custom-column>
+    </fj-table>
   `;
   }
 
