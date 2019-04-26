@@ -41,11 +41,11 @@ export class TableComponent implements OnInit {
   ];
   tableOptions = {
     columns: [
-      {name: 'First Name', prop: 'first_name', flex: 2, sortable: true, filtering: true},
-      {name: 'Last Name', prop: 'last_name', flex: 2, sortable: true, filtering: true},
-      {name: 'Address', prop: 'address', flex: 2, sortable: true, filtering: true},
-      {name: 'Phone', prop: 'phone', flex: 2, sortable: true, filtering: true},
-      {name: '', flex: 1, cellTemplate: 'actions', actions: ['delete']},
+      {name: 'First Name', prop: 'first_name', flex: 1, sortable: true, filtering: true},
+      {name: 'Last Name', prop: 'last_name', flex: 1, sortable: true, filtering: true},
+      {name: 'Address', prop: 'address', flex: 1, sortable: true, filtering: true},
+      {name: 'Permission', cellTemplate: 'switcher', switcherOptions: [{label: 'Admin', value: 'admin'}, {label: 'User', value: 'user'}], flex: 1},
+      {name: '', flex: 1, cellTemplate: 'actions', flex: 1, actions: ['delete']},
     ],
     fixedRow: {
       label : 'Just a fixed row with a select',
@@ -77,11 +77,11 @@ export class TableComponent implements OnInit {
     ];
     tableOptions = {
       columns: [
-        {name: 'First Name', prop: 'first_name', flex: 2, sortable: true, filtering: true},
-        {name: 'Last Name', prop: 'last_name', flex: 2, sortable: true, filtering: true},
-        {name: 'Address', prop: 'address', flex: 2, sortable: true, filtering: true},
-        {name: 'Phone', prop: 'phone', flex: 2, sortable: true, filtering: true},
-        {name: '', flex: 1, cellTemplate: 'actions', actions: ['delete']},
+        {name: 'First Name', prop: 'first_name', flex: 1, sortable: true, filtering: true},
+        {name: 'Last Name', prop: 'last_name', flex: 1, sortable: true, filtering: true},
+        {name: 'Address', prop: 'address', flex: 1, sortable: true, filtering: true},
+        {name: 'Permission', cellTemplate: 'switcher', switcherOptions: [{label: 'Admin', value: 'admin'}, {label: 'User', value: 'user'}], flex: 1},
+        {name: '', flex: 1, cellTemplate: 'actions', flex: 1, actions: ['delete']},
       ],
       fixedRow: {
         label : 'Just a fixed row with a select',
@@ -95,14 +95,19 @@ export class TableComponent implements OnInit {
     };
   `;
     this.tableExampleHTML = this.textHelper.dedent`
+  <div class="container">
     <fj-table
       [rows]= "rows"
       [columns]="tableOptions.columns"
+      [fixedRow]="tableOptions.fixedRow"
       [viewPort]="'350px'"
     >
-      <fj-table-custom-column name="Custom" [sortable]="true">
+      <fj-table-custom-column name="Custom" sortable="true" index="4" prop="first_name">
+        <ng-template fj-table-header-template>
+          <b>Custom:</b>
+        </ng-template>
         <ng-template let-row="row" fj-table-cell-template>
-          {{row['first_name']}}
+          <b>{{row['first_name']}}</b>
         </ng-template>
       </fj-table-custom-column>
     </fj-table>

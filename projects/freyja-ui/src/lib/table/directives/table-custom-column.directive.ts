@@ -18,6 +18,10 @@ export class TableCustomColumnDirective {
    */
   @Input() index: number;
   /**
+   * property name for filtering
+   */
+  @Input() prop: string;
+  /**
    * wether the column is sortable or not
    */
   @Input() sortable: boolean;

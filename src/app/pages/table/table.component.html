@@ -9,12 +9,12 @@
       [fixedRow]="tableOptions.fixedRow"
       [viewPort]="'350px'"
     >
-      <fj-table-custom-column name="Custom" sortable="true" index="4">
+      <fj-table-custom-column name="Custom" sortable="true" index="4" flex="1" prop="first_name">
         <ng-template fj-table-header-template>
           <b>Custom:</b>
         </ng-template>
         <ng-template let-row="row" fj-table-cell-template>
-          <b>{{row['first_name']}}</b>
+          <b><i>Bold Italic Text</i></b>
         </ng-template>
       </fj-table-custom-column>
     </fj-table>
