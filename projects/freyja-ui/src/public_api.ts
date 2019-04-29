@@ -65,6 +65,9 @@ export * from './lib/spinner/spinner.component';
 export * from './lib/spinner/spinner.module';
 
 export * from './lib/table/table.component';
+export * from './lib/table/directives/table-custom-column.directive';
+export * from './lib/table/directives/table-cell-template.directive';
+export * from './lib/table/directives/table-header-template.directive';
 export * from './lib/table/table.module';
 
 export * from './lib/progress-bar/progress-bar.component';

@@ -45,7 +45,7 @@ export class TableComponent implements OnInit {
       {name: 'Last Name', prop: 'last_name', flex: 1, sortable: true, filtering: true},
       {name: 'Address', prop: 'address', flex: 1, sortable: true, filtering: true},
       {name: 'Permission', cellTemplate: 'switcher', switcherOptions: [{label: 'Admin', value: 'admin'}, {label: 'User', value: 'user'}], flex: 1},
-      {name: '', flex: 1, cellTemplate: 'actions', flex: 1, actions: ['delete']},
+      {name: '', flex: 1, cellTemplate: 'actions', actions: ['delete']},
     ],
     fixedRow: {
       label : 'Just a fixed row with a select',

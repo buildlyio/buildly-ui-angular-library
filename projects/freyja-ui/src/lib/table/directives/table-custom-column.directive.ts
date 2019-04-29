@@ -1,6 +1,6 @@
 import { ContentChild, Directive, Input, TemplateRef } from '@angular/core';
-import { TableCellTemplateDirective } from '@libs/freyja-ui/src/lib/table/directives/table-cell-template.directive';
-import { TableHeaderTemplateDirective } from '@libs/freyja-ui/src/lib/table/directives/table-header-template.directive';
+import { TableCellTemplateDirective } from '../directives/table-cell-template.directive';
+import { TableHeaderTemplateDirective } from '../directives/table-header-template.directive';
 
 @Directive({ selector: 'fj-table-custom-column' })
 export class TableCustomColumnDirective {

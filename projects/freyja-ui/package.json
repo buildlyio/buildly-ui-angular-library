@@ -1,6 +1,6 @@
 {
   "name": "freyja-ui",
-  "version": "0.4.3",
+  "version": "0.4.6",
   "peerDependencies": {
     "@angular/common": "^7.1.0",
     "@angular/core": "^7.1.0",
