@@ -1,7 +1,7 @@
 <div class="table-row header">
   <div class="column"
     *ngFor="let column of columns"
-    [ngStyle]="{'flex': (isNumber(column.flex)) ? column.flex + ' 1 0%' : '0 0 ' + column.flex}"
+    [ngStyle]="{'flex': column.flex ? column.flex : 1}"
     [ngClass]="{'column--b-left': column.borderLeft, 'column--b-right': column.borderRight, 'column--activeFilter': toggleFilters && activeFilter === column.prop}"
   >
     <div class="table-row__wrapper">
