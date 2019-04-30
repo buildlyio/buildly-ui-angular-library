@@ -7,7 +7,7 @@
     <ng-container *ngIf="row">
       <div class="column"
            *ngFor="let column of columns"
-           [ngStyle]="{'flex': (isNumber(column.flex)) ? column.flex + ' 1 0%' : '0 0 ' + column.flex}"
+           [ngStyle]="{'flex': column.flex ? column.flex : 1}"
            [ngClass]="{'column--b-left': column.borderLeft, 'column--b-right': column.borderRight}"
       >
         <div [ngSwitch]="column.cellTemplate" class="column__template">
@@ -23,7 +23,7 @@
           <!-- Select -->
           <fj-native-dropdown *ngSwitchCase="'select'" [options]="column.selectOptions" (optionSelected)="onSelectionChanged($event)"></fj-native-dropdown>
           <!-- Switcher -->
-          <fj-content-switcher *ngSwitchCase="'switcher'" size  (optionSelected)="onSwitcherChanged($event, row)" [selectedOption]="row[column.prop]?.toString()" [options]="column.switcherOptions"></fj-content-switcher>
+          <fj-content-switcher *ngSwitchCase="'switcher'" (optionSelected)="onSwitcherChanged($event, row)" [selectedOption]="row[column.prop]?.toString()" [options]="column.switcherOptions"></fj-content-switcher>
           <!-- Actions -->
           <fj-table-actions
             *ngSwitchCase="'actions'"
