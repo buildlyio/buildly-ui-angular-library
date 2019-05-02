@@ -5,6 +5,15 @@
   margin: 0;
   overflow-wrap: break-word;
 
+  &--disabled {
+    cursor: default;
+    &:hover {
+      &:after {
+        content: "" !important;
+      }
+    }
+  }
+
   &:hover {
     &:after {
       content: "✎";

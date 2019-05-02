@@ -4,6 +4,7 @@
   <fj-inline-text-editor
     [value]="inputValue"
     name="myInput"
+    [disabled]="true"
     (elementEdited)="onElementEdit($event)">
   </fj-inline-text-editor>
   <pre><code highlight [code]="inlineTextEditorExampleHtml"></code></pre>

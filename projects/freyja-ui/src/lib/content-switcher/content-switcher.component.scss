@@ -44,6 +44,10 @@
     min-width: rem-calc(70);
     outline: none;
 
+    &--disabled {
+      cursor: default;
+    }
+
     &--is-active {
       pointer-events: none;
     }

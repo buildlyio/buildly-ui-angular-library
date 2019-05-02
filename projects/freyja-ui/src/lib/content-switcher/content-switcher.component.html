@@ -1,7 +1,8 @@
 <div class="content-switcher content-switcher--radius">
   <button *ngFor="let option of options; let i = index"
           class="content-switcher__tab"
-          [ngClass]="{'content-switcher__tab--is-active': activeTab === i}"
+          [disabled]="disabled"
+          [ngClass]="{'content-switcher__tab--is-active': activeTab === i && !disabled, 'content-switcher__tab--disabled': disabled}"
           (click)="selectOption(i, option.value)">
     {{option.label}}
   </button>

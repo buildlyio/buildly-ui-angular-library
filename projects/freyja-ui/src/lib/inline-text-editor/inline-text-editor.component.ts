@@ -49,6 +49,11 @@ export class InlineTextEditorComponent implements OnInit {
   @Input() inputCustomStyles;
 
   /**
+   * a boolean that is used to indicate if the inline editing should be disabled
+   */
+  @Input() disabled;
+
+  /**
    * checks wether the card item elements are in edit mode
    */
   public isEdit = false;
@@ -67,9 +72,12 @@ export class InlineTextEditorComponent implements OnInit {
    * @param evt - mouse event
    */
   public activateEditMode(evt) {
-    this.isEdit = true;
-    this.setDocumentListenerForCloseSelect();
-    this.doubleClick.emit();
+    if (!this.disabled) {
+      this.isEdit = true;
+      this.setDocumentListenerForCloseSelect();
+      this.doubleClick.emit();
+    }
+
   }
 
   /**

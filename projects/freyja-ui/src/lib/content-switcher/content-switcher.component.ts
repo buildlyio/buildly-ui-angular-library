@@ -12,6 +12,10 @@ export class ContentSwitcherComponent implements OnChanges {
    */
   @Input() options = [];
   /**
+   * indicate if the content switcher is disabled
+   */
+  @Input() disabled: boolean;
+  /**
    * the selected value of the content switcher
    */
   @Input() selectedOption;

@@ -24,13 +24,16 @@
       &--is-active {
         background-color: map-get($theme-colors, 'color-primary-hover-bright');
       }
-      .content-switcher--disabled & {
+      &--disabled {
         border-color: map-get($theme-colors, 'color-disable');
         color: map-get($theme-colors, 'color-disable');
         &--is-active {
           background-color: map-get($theme-colors, 'color-disable');
           border-color: transparent;
           color: map-get($theme-colors, 'color-button-text');
+        }
+        &:hover {
+          background-color: map-get($theme-colors, 'background');
         }
       }
     }

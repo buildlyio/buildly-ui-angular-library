@@ -1,5 +1,8 @@
 @mixin inlineTextEditorColorsTheme($theme-colors) {
   .inline-text-editor {
+    &--disabled {
+      color: map-get($theme-colors, 'color-disable');
+    }
     &:hover {
       &:after {
         color: map-get($theme-colors, 'text');
