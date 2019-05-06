@@ -1,34 +1,34 @@
 @import "../core/_config";
 
+.container {
+  display: flex;
+  align-items: center;
+}
 .inline-text-editor {
   cursor: pointer;
   margin: 0;
   overflow-wrap: break-word;
 
+  &__edit-icon {
+    content: "✎";
+    display: inline-block;
+    cursor: pointer;
+    padding-right: rem-calc(10);
+    font-size: rem-calc(16);
+    font-weight: 900;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    &--hidden {
+      display: none;
+    }
+  }
+
   &--disabled {
     cursor: default;
-    &:hover {
-      &:after {
-        content: "" !important;
-      }
-    }
   }
-
-  &:hover {
-    &:after {
-      content: "✎";
-      display: inline-block;
-      padding-right: 5px;
-      font-size: 13px;
-      font-weight: 900;
-      -moz-transform: scale(-1, 1);
-      -webkit-transform: scale(-1, 1);
-      -o-transform: scale(-1, 1);
-      -ms-transform: scale(-1, 1);
-      transform: scale(-1, 1);
-    }
-  }
-
   &--no-padding {
     padding: rem-calc(0);
   }

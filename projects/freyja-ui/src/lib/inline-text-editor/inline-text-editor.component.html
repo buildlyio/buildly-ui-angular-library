@@ -1,11 +1,17 @@
-<p
-  *ngIf="!isEdit && displayElement === 'p'"
-  class="inline-text-editor"
-  [ngClass]="{'inline-text-editor--disabled': disabled}"
-  [ngStyle]="displayElementCustomStyles"
-  (dblclick)="activateEditMode($event)">
-  {{value}}
-</p>
+<div
+  (mouseenter)="showPencil = true"
+  (mouseleave)="showPencil = false"
+  class="container">
+  <p
+    *ngIf="!isEdit && displayElement === 'p'"
+    class="inline-text-editor"
+    [ngClass]="{'inline-text-editor--disabled': disabled}"
+    [ngStyle]="displayElementCustomStyles"
+    (dblclick)="activateEditMode($event)">
+    {{value}}
+  </p>
+  <span class="inline-text-editor__edit-icon" [ngClass]="{'inline-text-editor__edit-icon--hidden': !showPencil}" (click)="activateEditMode($event)">✎</span>
+</div>
 <div
   *ngIf="!isEdit && displayElement === 'div'"
   class="inline-text-editor"

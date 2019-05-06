@@ -1,5 +1,8 @@
 @mixin inlineTextEditorColorsTheme($theme-colors) {
   .inline-text-editor {
+    &__edit-icon {
+      color: map-get($theme-colors, 'color-primary');
+    }
     &--disabled {
       color: map-get($theme-colors, 'color-disable');
     }

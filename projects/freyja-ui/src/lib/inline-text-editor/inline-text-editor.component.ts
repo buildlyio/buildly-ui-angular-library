@@ -57,6 +57,10 @@ export class InlineTextEditorComponent implements OnInit {
    * checks wether the card item elements are in edit mode
    */
   public isEdit = false;
+  /**
+   * boolean to show the edit pencil icon
+   */
+  protected showPencil = false;
 
   constructor(
     private renderer: Renderer2,
@@ -76,8 +80,8 @@ export class InlineTextEditorComponent implements OnInit {
       this.isEdit = true;
       this.setDocumentListenerForCloseSelect();
       this.doubleClick.emit();
+      this.showPencil = false;
     }
-
   }
 
   /**
