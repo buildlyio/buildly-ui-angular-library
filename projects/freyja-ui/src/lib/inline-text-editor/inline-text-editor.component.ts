@@ -80,11 +80,11 @@ export class InlineTextEditorComponent implements OnInit {
    * @param evt - mouse event
    */
   public activateEditMode(evt) {
+    this.showPencil = false;
     if (!this.disabled) {
       this.isEdit = true;
       this.setDocumentListenerForCloseSelect();
       this.doubleClick.emit();
-      this.showPencil = false;
     }
   }
 

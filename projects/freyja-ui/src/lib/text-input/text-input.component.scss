@@ -1,6 +1,7 @@
 @import "../core/_config";
 
 .fj-input {
+  display: flex;
   &--full-width {
     input {
       width: 100%;
