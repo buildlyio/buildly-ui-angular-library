@@ -23,6 +23,10 @@ export class InlineTextEditorComponent implements OnInit {
    * Value to be displayed and edited.
    */
   @Input() value: string;
+  /**
+   * Value to be displayed if there is no value set
+   */
+  @Input() defaultValue: string;
 
   /**
    * Name of the editor. Useful for distinguishing the element in the 'elementEdited' Output.
