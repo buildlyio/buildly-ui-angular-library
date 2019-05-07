@@ -1,6 +1,11 @@
 @import "../core/_config";
 
 .fj-input {
+  &--full-width {
+    input {
+      width: 100%;
+    }
+  }
   input {
     box-sizing: border-box;
     border-radius: rem-calc(4);
@@ -12,6 +17,8 @@
     outline: none;
     padding: rem-calc(9 12);
     transition: .2s linear;
+
+
 
     &::placeholder {
       font-weight: 100;
