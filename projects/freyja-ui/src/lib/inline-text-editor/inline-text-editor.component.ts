@@ -64,7 +64,7 @@ export class InlineTextEditorComponent implements OnInit {
   /**
    * boolean to show the edit pencil icon
    */
-  protected showPencil = false;
+  public showPencil = false;
 
   constructor(
     private renderer: Renderer2,
