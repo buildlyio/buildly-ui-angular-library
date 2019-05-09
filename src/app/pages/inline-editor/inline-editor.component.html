@@ -6,6 +6,12 @@
     name="myInput"
     (elementEdited)="onElementEdit($event)">
   </fj-inline-text-editor>
+  <fj-inline-text-editor
+    [value]="inputValue"
+    [displayElement]="'h3'"
+    name="myInput"
+    (elementEdited)="onElementEdit($event)">
+  </fj-inline-text-editor>
   <pre><code highlight [code]="inlineTextEditorExampleHtml"></code></pre>
   <pre><code highlight [code]="inlineTextEditorExampleJS"></code></pre>
 </fj-demo-content-wrap>

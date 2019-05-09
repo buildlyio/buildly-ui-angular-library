@@ -12,64 +12,64 @@
     <span *ngIf="!value || value === '' && defaultValue ">{{defaultValue}}</span>
     <span *ngIf="!value || value === '' && !defaultValue ">Double click to edit</span>
   </p>
-  <span class="inline-text-editor__edit-icon" [ngClass]="{'inline-text-editor__edit-icon--hidden': !showPencil}" (click)="activateEditMode($event)">✎</span>
-</div>
-<div
-  *ngIf="!isEdit && displayElement === 'div'"
-  class="inline-text-editor"
-  [ngClass]="{'inline-text-editor--disabled': disabled}"
-  [ngStyle]="displayElementCustomStyles"
-  (dblclick)="activateEditMode($event)">
-  {{value}}
-</div>
-<span
-  *ngIf="!isEdit && displayElement === 'span'"
-  class="inline-text-editor"
-  [ngClass]="{'inline-text-editor--disabled': disabled}"
-  [ngStyle]="displayElementCustomStyles"
-  (dblclick)="activateEditMode($event)">
+  <div
+    *ngIf="!isEdit && displayElement === 'div'"
+    class="inline-text-editor"
+    [ngClass]="{'inline-text-editor--disabled': disabled}"
+    [ngStyle]="displayElementCustomStyles"
+    (dblclick)="activateEditMode($event)">
+    {{value}}
+  </div>
+  <span
+    *ngIf="!isEdit && displayElement === 'span'"
+    class="inline-text-editor"
+    [ngClass]="{'inline-text-editor--disabled': disabled}"
+    [ngStyle]="displayElementCustomStyles"
+    (dblclick)="activateEditMode($event)">
   {{value}}
 </span>
-<h1
-  *ngIf="!isEdit && displayElement === 'h1'"
-  class="inline-text-editor"
-  [ngClass]="{'inline-text-editor--disabled': disabled}"
-  [ngStyle]="displayElementCustomStyles"
-  (dblclick)="activateEditMode($event)">
-  {{value}}
-</h1>
-<h2
-  *ngIf="!isEdit && displayElement === 'h2'"
-  class="inline-text-editor"
-  [ngClass]="{'inline-text-editor--disabled': disabled}"
-  [ngStyle]="displayElementCustomStyles"
-  (dblclick)="activateEditMode($event)">
-  {{value}}
-</h2>
-<h3
-  *ngIf="!isEdit && displayElement === 'h3'"
-  class="inline-text-editor"
-  [ngClass]="{'inline-text-editor--disabled': disabled}"
-  [ngStyle]="displayElementCustomStyles"
-  (dblclick)="activateEditMode($event)">
-  {{value}}
-</h3>
-<h4
-  *ngIf="!isEdit && displayElement === 'h4'"
-  class="inline-text-editor"
-  [ngClass]="{'inline-text-editor--disabled': disabled}"
-  [ngStyle]="displayElementCustomStyles"
-  (dblclick)="activateEditMode($event)">
-  {{value}}
-</h4>
-<a
-  *ngIf="!isEdit && displayElement === 'a'"
-  class="inline-text-editor inline-text-editor--link"
-  [ngClass]="{'inline-text-editor--disabled': disabled}"
-  [ngStyle]="displayElementCustomStyles"
-  (dblclick)="activateEditMode($event)">
-  {{value}}
-</a>
+  <h1
+    *ngIf="!isEdit && displayElement === 'h1'"
+    class="inline-text-editor"
+    [ngClass]="{'inline-text-editor--disabled': disabled}"
+    [ngStyle]="displayElementCustomStyles"
+    (dblclick)="activateEditMode($event)">
+    {{value}}
+  </h1>
+  <h2
+    *ngIf="!isEdit && displayElement === 'h2'"
+    class="inline-text-editor"
+    [ngClass]="{'inline-text-editor--disabled': disabled}"
+    [ngStyle]="displayElementCustomStyles"
+    (dblclick)="activateEditMode($event)">
+    {{value}}
+  </h2>
+  <h3
+    *ngIf="!isEdit && displayElement === 'h3'"
+    class="inline-text-editor"
+    [ngClass]="{'inline-text-editor--disabled': disabled}"
+    [ngStyle]="displayElementCustomStyles"
+    (dblclick)="activateEditMode($event)">
+    {{value}}
+  </h3>
+  <h4
+    *ngIf="!isEdit && displayElement === 'h4'"
+    class="inline-text-editor"
+    [ngClass]="{'inline-text-editor--disabled': disabled}"
+    [ngStyle]="displayElementCustomStyles"
+    (dblclick)="activateEditMode($event)">
+    {{value}}
+  </h4>
+  <a
+    *ngIf="!isEdit && displayElement === 'a'"
+    class="inline-text-editor inline-text-editor--link"
+    [ngClass]="{'inline-text-editor--disabled': disabled}"
+    [ngStyle]="displayElementCustomStyles"
+    (dblclick)="activateEditMode($event)">
+    {{value}}
+  </a>
+  <span class="inline-text-editor__edit-icon" [ngClass]="{'inline-text-editor__edit-icon--hidden': !showPencil}" (click)="activateEditMode($event)">✎</span>
+</div>
 <fj-text-input
   *ngIf="!disabled"
   [ngClass]="{'inline-text-editor__input--hidden' : !isEdit}"

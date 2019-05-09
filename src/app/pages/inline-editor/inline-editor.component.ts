@@ -16,6 +16,8 @@ export class InlineEditorComponent {
       name="myInput"
       (elementEdited)="onElementEdit($event)">
     </fj-inline-text-editor>
+    <fj-inline-text-editor
+    </fj-inline-text-editor>
   `;
 
   inlineTextEditorExampleJS = this.textHelper.dedent`
