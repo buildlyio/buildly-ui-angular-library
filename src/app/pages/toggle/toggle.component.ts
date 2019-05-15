@@ -12,9 +12,13 @@ export class ToggleComponent implements OnInit {
   constructor(private textHelper: TextHelper) {
   }
 
+  elementToggled(checked) {
+    console.log(checked);
+  }
+
   ngOnInit() {
     this.toggleExampleHTML = this.textHelper.dedent`
-    <fj-toggle [size]="'micro'"></fj-toggle>
+    <fj-toggle [size]="'micro'" class="item" [checked]="true" (toggleClicked)="elementToggled($event)"></fj-toggle>
     <fj-toggle [size]="'small'"></fj-toggle>
     <fj-toggle [size]="'medium'"></fj-toggle>
     <fj-toggle [size]="'large'"></fj-toggle>

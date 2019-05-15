@@ -1,6 +1,44 @@
-<div class="fj-toggle-switch" [ngClass]="generateClassList()">
+<div class="fj-toggle-switch" [ngClass]="generateClassList()" [formGroup]="formGroup" *ngIf="formGroup">
   <label>
-    <input id="toggle0" class="fj-toggle-switch__input" type="checkbox" value="yes" checked="checked">
+    <input
+      *ngIf="checked"
+      class="fj-toggle-switch__input"
+      type="checkbox"
+      value="{{value}}"
+      formControlName="{{controlName}}"
+      (click)="onToggleClicked(checked)"
+      checked
+    >
+    <input
+      *ngIf="!checked"
+      class="fj-toggle-switch__input"
+      type="checkbox"
+      value="{{value}}"
+      formControlName="{{controlName}}"
+      (click)="onToggleClicked(checked)"
+    >
+    <div class="fj-toggle-switch__indicator">
+      <div class="fj-toggle-switch__slider"></div>
+    </div>
+  </label>
+</div>
+<div class="fj-toggle-switch" [ngClass]="generateClassList()" *ngIf="!formGroup">
+  <label>
+    <input
+      *ngIf="checked"
+      class="fj-toggle-switch__input"
+      type="checkbox"
+      value="{{value}}"
+      (click)="onToggleClicked(checked)"
+      checked
+    >
+    <input
+      *ngIf="!checked"
+      class="fj-toggle-switch__input"
+      type="checkbox"
+      value="{{value}}"
+      (click)="onToggleClicked(checked)"
+    >
     <div class="fj-toggle-switch__indicator">
       <div class="fj-toggle-switch__slider"></div>
     </div>

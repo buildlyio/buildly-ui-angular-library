@@ -1,7 +1,7 @@
 <fj-demo-content-wrap>
   <h2>Toggle</h2>
   <div class="container">
-    <fj-toggle [size]="'micro'" class="item"></fj-toggle>
+    <fj-toggle [size]="'micro'" class="item" [checked]="true" (toggleClicked)="elementToggled($event)"></fj-toggle>
     <fj-toggle [size]="'small'" class="item"></fj-toggle>
     <fj-toggle [size]="'medium'" class="item"></fj-toggle>
     <fj-toggle [size]="'large'" class="item"></fj-toggle>
