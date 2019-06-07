@@ -19,7 +19,7 @@
             </ng-template>
           </ng-container>
           <!-- Date -->
-          <span *ngSwitchCase="'date'" title="{{row[column.hoverText]}}">m</span>
+          <span *ngSwitchCase="'date'" title="{{row[column.hoverText]}}">{{row[column.prop] | date: 'dd.MM.yyyy'}}</span>
           <!-- Select -->
           <fj-native-dropdown *ngSwitchCase="'select'" [options]="column.selectOptions" (optionSelected)="onSelectionChanged($event)"></fj-native-dropdown>
           <!-- Switcher -->
