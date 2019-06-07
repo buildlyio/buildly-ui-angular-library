@@ -1,9 +1,15 @@
 @import '../../../styles.scss';
 
+.logo {
+  img {
+    width: rem-calc(150);
+  }
+}
+
 .header{
   display: flex;
   align-items: center;
   height: $header-height;
-  background-color: $color-primary;
-  padding: $spacer;
+  border: 1px solid $color-disable;
+  padding: rem-calc(10 20);
 }

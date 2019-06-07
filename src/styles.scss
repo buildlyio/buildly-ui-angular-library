@@ -21,6 +21,6 @@ $theme-colors: (
 );
 
 @include freyja-theme($theme-colors);
-$spacer: rem-calc(24);
+$spacer: rem-calc(22);
 $header-height: rem-calc(64) !default;
 
