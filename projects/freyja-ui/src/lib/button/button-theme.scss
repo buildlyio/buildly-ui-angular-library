@@ -1,6 +1,9 @@
-@mixin buttonColorsTheme($theme-colors) {
+@mixin buttonColorsTheme($theme-colors, $theme-name) {
   .fj-button-color {
     background-color: map-get($theme-colors, 'color-primary');
+    &--#{$theme-name} {
+      background-color: map-get($theme-colors, 'color-primary');
+    }
   }
   .fj-button {
     color: map-get($theme-colors, 'color-button-text');

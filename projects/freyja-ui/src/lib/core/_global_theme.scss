@@ -22,7 +22,7 @@ $haf: "&:hover, &:active, &:focus";
 
 @import "spacing-theme.scss";
 
-@mixin freyja-theme($theme-colors: ()) {
+@mixin freyja-theme($themes: ()) {
 
   $base: #ffffff;
   $main: #0674db;
@@ -31,82 +31,109 @@ $haf: "&:hover, &:active, &:focus";
   $text: #191919;
   $color-button-text:#ffffff;
 
-
-  @if map-get($theme-colors, 'color-background') {
-    $base: map-get($theme-colors, 'color-background');
-  }
-  @if map-get($theme-colors, 'color-primary') {
-    $main: map-get($theme-colors, 'color-primary');
-  }
-  @if map-get($theme-colors, 'color-danger') {
-    $danger: map-get($theme-colors, 'color-danger');
-  }
-  @if map-get($theme-colors, 'color-disable') {
-    $disable: map-get($theme-colors, 'color-disable');
-  }
-  @if map-get($theme-colors, 'color-text-input') {
-    $text: map-get($theme-colors, 'color-text-input');
-  }
-  @if map-get($theme-colors, 'color-button-text') {
-    $color-button-text: map-get($theme-colors, 'color-button-text');
-  }
-
-  $base-darker: darken($base, 4%);
-  $base-darkest: darken($base-darker, 5%);
-  $base-brighter: lighten($base, 10%);
-  $base-brightest: lighten($base-brighter, 5%);
-  $base-overlay: lighten($base-brightest, 5%);
-
-  $main-darker: darken($main, 5%);
-  $main-brighter: lighten($main, 45%);
-  $danger-darker: darken($danger, 5%);
-
-  $text-brighter: lighten($text, 50%);
-
   $themes: (
-    'color-primary':$main,
-    'color-primary-hover':$main-darker,
-    'color-primary-hover-bright':$main-brighter,
-    'color-secondary': $base-brighter,
-    'color-danger' : $danger,
-    'color-danger-hover':$danger-darker,
-    'color-disable': $disable,
-    'color-button-text': $color-button-text,
-    'text': $text,
-    'text-header': $text,
-    'text-body' : $text,
-    'text-labels': $text-brighter,
-    'text-links': $text-brighter,
-    'border': $disable,
-    'input':$base-darker,
-    'background': $base,
-    'background-lvl2': $base-darker,
-    'background-lvl3':$base-darkest,
-    'overlay':$base-overlay,
+    'bright-theme': (
+      'color-primary': $primary-color,
+      'color-danger' : $danger-color,
+      'color-background': $white,
+      'color-disable': $gray-lighter,
+      'color-text-input': $text-primary-color,
+      'color-button-text': $white,
+    ),
+    'dark-theme': (
+      'color-primary': $primary-color,
+      'color-danger' : $danger-color,
+      'color-background': $white,
+      'color-disable': $gray-lighter,
+      'color-text-input': $text-primary-color,
+      'color-button-text': $white,
+    )
   );
 
-  @include buttonColorsTheme($themes);
-  @include cardItemColorsTheme($themes);
-  @include checkboxColorsTheme($themes);
-  @include textInputColorsTheme($themes);
-  @include dropdownColorsTheme($themes);
-  @include radioButtonColorsTheme($themes);
-  @include contentSwitcherColorsTheme($themes);
-  @include spinnerTheme($themes);
-  @include progressBarTheme($themes);
-  @include tableTheme($themes);
-  @include cardColorsTheme($themes);
-  @include iconColorsTheme($themes);
-  @include toggleColorsTheme($themes);
-  @include inlineTextEditorColorsTheme($themes);
-  @include modalColorsTheme($themes);
-  @include accordionColorsTheme($themes);
-  @include datePickerColorsTheme($themes);
-  @include dragAndDropColorsTheme($themes);
-  @include customDropdownColorsTheme($themes);
-  @include margin-classes;
-  @include padding-classes;
+  @each $theme-name, $theme-colors in $themes {
 
+    @if map-get($theme-colors, 'color-background') {
+      $base: map-get($theme-colors, 'color-background');
+    }
+    @if map-get($theme-colors, 'color-primary') {
+      $main: map-get($theme-colors, 'color-primary');
+    }
+    @if map-get($theme-colors, 'color-danger') {
+      $danger: map-get($theme-colors, 'color-danger');
+    }
+    @if map-get($theme-colors, 'color-disable') {
+      $disable: map-get($theme-colors, 'color-disable');
+    }
+    @if map-get($theme-colors, 'color-text-input') {
+      $text: map-get($theme-colors, 'color-text-input');
+    }
+    @if map-get($theme-colors, 'color-button-text') {
+      $color-button-text: map-get($theme-colors, 'color-button-text');
+    }
+
+    $base-darker: darken($base, 4%);
+    $base-darkest: darken($base-darker, 5%);
+    $base-brighter: lighten($base, 10%);
+    $base-brightest: lighten($base-brighter, 5%);
+    $base-overlay: lighten($base-brightest, 5%);
+
+    $main-darker: darken($main, 5%);
+    $main-brighter: lighten($main, 45%);
+    $danger-darker: darken($danger, 5%);
+
+    $text-brighter: lighten($text, 50%);
+
+    $generated-theme-colors: (
+      'color-primary':$main,
+      'color-primary-hover':$main-darker,
+      'color-primary-hover-bright':$main-brighter,
+      'color-secondary': $base-brighter,
+      'color-danger' : $danger,
+      'color-danger-hover':$danger-darker,
+      'color-disable': $disable,
+      'color-button-text': $color-button-text,
+      'text': $text,
+      'text-header': $text,
+      'text-body' : $text,
+      'text-labels': $text-brighter,
+      'text-links': $text-brighter,
+      'border': $disable,
+      'input':$base-darker,
+      'background': $base,
+      'background-lvl2': $base-darker,
+      'background-lvl3':$base-darkest,
+      'overlay':$base-overlay,
+    );
+
+    @include buttonColorsTheme($generated-theme-colors, $theme-name);
+    @include cardItemColorsTheme($generated-theme-colors, $theme-name);
+    @include checkboxColorsTheme($generated-theme-colors, $theme-name);
+    @include textInputColorsTheme($generated-theme-colors, $theme-name);
+    @include dropdownColorsTheme($generated-theme-colors, $theme-name);
+    @include radioButtonColorsTheme($generated-theme-colors, $theme-name);
+    @include contentSwitcherColorsTheme($generated-theme-colors, $theme-name);
+    @include spinnerTheme($generated-theme-colors, $theme-name);
+    @include progressBarTheme($generated-theme-colors, $theme-name);
+    @include tableTheme($generated-theme-colors, $theme-name);
+    @include cardColorsTheme($generated-theme-colors, $theme-name);
+    @include iconColorsTheme($generated-theme-colors, $theme-name);
+    @include toggleColorsTheme($generated-theme-colors, $theme-name);
+    @include inlineTextEditorColorsTheme($generated-theme-colors, $theme-name);
+    @include modalColorsTheme($generated-theme-colors, $theme-name);
+    @include accordionColorsTheme($generated-theme-colors, $theme-name);
+    @include datePickerColorsTheme($generated-theme-colors, $theme-name);
+    @include dragAndDropColorsTheme($generated-theme-colors, $theme-name);
+    @include customDropdownColorsTheme($generated-theme-colors, $theme-name);
+    .bg-1--#{$theme-name} {
+      background-color : $base;
+    }
+    .bg-2--#{$theme-name} {
+      background-color : $base-darker;
+    }
+    .bg-3--#{$theme-name} {
+      background-color : $base-darkest;
+    }
+  }
   .bg-1 {
     background-color : $base;
   }
@@ -116,5 +143,6 @@ $haf: "&:hover, &:active, &:focus";
   .bg-3 {
     background-color : $base-darkest;
   }
-
+  @include margin-classes;
+  @include padding-classes;
 }
