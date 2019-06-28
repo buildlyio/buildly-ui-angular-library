@@ -64,6 +64,7 @@ export class ButtonComponent extends IconBaseComponent implements OnInit {
   public generateClassList() {
     const baseCls = 'fj-button--';
     const classes = {
+      ['fj-button-color--' + this.theme]: this.theme,
       [baseCls + this.theme]: this.theme,
       [baseCls + this.color]: this.color,
       [baseCls + this.size]: this.size,
