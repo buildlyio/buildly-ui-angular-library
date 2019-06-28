@@ -24,14 +24,15 @@ $haf: "&:hover, &:active, &:focus";
 
 @mixin freyja-theme($themes: ()) {
 
-  $base: #ffffff;
-  $main: #0674db;
-  $danger: #db0000;
-  $disable: #d9d9d9;
-  $text: #191919;
-  $color-button-text:#ffffff;
-
   @if $themes {
+
+    $base: #ffffff;
+    $main: #0674db;
+    $danger: #db0000;
+    $disable: #d9d9d9;
+    $text: #191919;
+    $color-button-text:#ffffff;
+
     @each $theme-name, $theme-colors in $themes {
 
       @if map-get($theme-colors, 'color-background') {
@@ -119,6 +120,12 @@ $haf: "&:hover, &:active, &:focus";
     }
   }
 
+  $base: #ffffff;
+  $main: #0674db;
+  $danger: #db0000;
+  $disable: #d9d9d9;
+  $text: #191919;
+  $color-button-text:#ffffff;
 
   $base-darker: darken($base, 4%);
   $base-darkest: darken($base-darker, 5%);
