@@ -14,6 +14,10 @@ export class BaseComponent {
    */
   @Input() customStyles;
   /**
+   * freyja them to use in the component
+   */
+  @Input() theme;
+  /**
    * Name input, commonly used to identify form value
    */
   @Input() name: string;
