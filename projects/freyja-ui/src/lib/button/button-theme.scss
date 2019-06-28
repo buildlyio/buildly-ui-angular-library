@@ -5,8 +5,10 @@
         background-color: map-get($theme-colors, 'color-primary');
       }
     } // no theme
+    @else {
       .fj-button-color {
         background-color: map-get($theme-colors, 'color-primary');
+      }
     }
   // with theme
   @if $theme-name {
@@ -110,6 +112,7 @@
     }
   }
   // default theme
+  @if $theme-name == default {
     .fj-button {
       color: map-get($theme-colors, 'color-button-text');
       border: solid rem-calc(1) transparent;
@@ -208,4 +211,5 @@
         background-color: map-get($theme-colors, 'color-disable');
       }
     }
+  }
 }
