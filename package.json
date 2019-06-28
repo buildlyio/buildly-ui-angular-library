@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-freyja": "ng build freyja-ui && npm run bundle-styles && cp .npmrc ./dist/freyja-ui/",
+    "build-freyja": "ng build freyja-ui && npm run bundle-styles",
     "bundle-styles": "./node_modules/.bin/scss-bundle -c scss-bundle.config.json",
     "compodoc": "./node_modules/.bin/compodoc -p projects/freyja-ui/tsconfig.lib.json"
   },
