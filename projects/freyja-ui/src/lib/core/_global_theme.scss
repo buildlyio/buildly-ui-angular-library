@@ -24,14 +24,15 @@ $haf: "&:hover, &:active, &:focus";
 
 @mixin freyja-theme($themes: null) {
 
+  $base: #ffffff;
+  $main: #0674db;
+  $danger: #db0000;
+  $disable: #d9d9d9;
+  $text: #191919;
+  $color-button-text:#ffffff;
+
   @if $themes {
 
-    $base: #ffffff;
-    $main: #0674db;
-    $danger: #db0000;
-    $disable: #d9d9d9;
-    $text: #191919;
-    $color-button-text:#ffffff;
     // if there is one theme provided than use this theme as default
     @if nth(nth($themes, 1), 2) {
       $first-theme-colors: nth(nth($themes, 1), 2);
