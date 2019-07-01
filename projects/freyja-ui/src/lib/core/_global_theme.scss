@@ -22,9 +22,9 @@ $haf: "&:hover, &:active, &:focus";
 
 @import "spacing-theme.scss";
 
-@mixin freyja-theme($themes: ()) {
+@mixin freyja-theme($themes: null) {
 
-  @if $themes != null {
+  @if $themes {
 
     $base: #ffffff;
     $main: #0674db;
