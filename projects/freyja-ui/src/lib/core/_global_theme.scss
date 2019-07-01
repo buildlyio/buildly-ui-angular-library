@@ -89,25 +89,25 @@ $haf: "&:hover, &:active, &:focus";
         'background-lvl3':$base-darkest,
         'overlay':$base-overlay,
       );
-      @include buttonColorsTheme($generated-theme-colors, 'default');
-      //@include cardItemColorsTheme($generated-theme-colors, $theme-name);
-      //@include checkboxColorsTheme($generated-theme-colors, $theme-name);
-      //@include textInputColorsTheme($generated-theme-colors, $theme-name);
-      //@include dropdownColorsTheme($generated-theme-colors, $theme-name);
-      //@include radioButtonColorsTheme($generated-theme-colors, $theme-name);
-      //@include contentSwitcherColorsTheme($generated-theme-colors, $theme-name);
-      //@include spinnerTheme($generated-theme-colors, $theme-name);
-      //@include progressBarTheme($generated-theme-colors, $theme-name);
-      //@include tableTheme($generated-theme-colors, $theme-name);
-      //@include cardColorsTheme($generated-theme-colors, $theme-name);
-      //@include iconColorsTheme($generated-theme-colors, $theme-name);
-      //@include toggleColorsTheme($generated-theme-colors, $theme-name);
-      //@include inlineTextEditorColorsTheme($generated-theme-colors, $theme-name);
-      //@include modalColorsTheme($generated-theme-colors, $theme-name);
-      //@include accordionColorsTheme($generated-theme-colors, $theme-name);
-      //@include datePickerColorsTheme($generated-theme-colors, $theme-name);
-      //@include dragAndDropColorsTheme($generated-theme-colors, $theme-name);
-      //@include customDropdownColorsTheme($generated-theme-colors, $theme-name);
+      @include buttonColorsTheme($generated-theme-colors);
+      @include cardItemColorsTheme($generated-theme-colors);
+      @include checkboxColorsTheme($generated-theme-colors);
+      //@include textInputColorsTheme($generated-theme-colors);
+      //@include dropdownColorsTheme($generated-theme-colors);
+      //@include radioButtonColorsTheme($generated-theme-colors);
+      //@include contentSwitcherColorsTheme($generated-theme-colors);
+      //@include spinnerTheme($generated-theme-colors);
+      //@include progressBarTheme($generated-theme-colors);
+      //@include tableTheme($generated-theme-colors);
+      //@include cardColorsTheme($generated-theme-colors);
+      //@include iconColorsTheme($generated-theme-colors);
+      //@include toggleColorsTheme($generated-theme-colors);
+      //@include inlineTextEditorColorsTheme($generated-theme-colors);
+      //@include modalColorsTheme($generated-theme-colors);
+      //@include accordionColorsTheme($generated-theme-colors);
+      //@include datePickerColorsTheme($generated-theme-colors);
+      //@include dragAndDropColorsTheme($generated-theme-colors);
+      //@include customDropdownColorsTheme($generated-theme-colors);
       .bg-1 {
         background-color: $base;
       }
@@ -175,9 +175,9 @@ $haf: "&:hover, &:active, &:focus";
       );
       @if $theme-name {
         @include buttonColorsTheme($generated-theme-colors, $theme-name);
-        //@include cardItemColorsTheme($generated-theme-colors, $theme-name);
-        //@include checkboxColorsTheme($generated-theme-colors, $theme-name);
-        //@include textInputColorsTheme($generated-theme-colors, $theme-name);
+        @include cardItemColorsTheme($generated-theme-colors, $theme-name);
+        @include checkboxColorsTheme($generated-theme-colors, $theme-name);
+        @include textInputColorsTheme($generated-theme-colors, $theme-name);
         //@include dropdownColorsTheme($generated-theme-colors, $theme-name);
         //@include radioButtonColorsTheme($generated-theme-colors, $theme-name);
         //@include contentSwitcherColorsTheme($generated-theme-colors, $theme-name);
@@ -240,9 +240,9 @@ $haf: "&:hover, &:active, &:focus";
       'overlay':$base-overlay,
     );
 
-    @include buttonColorsTheme($generated-theme-colors, 'default');
-    //@include cardItemColorsTheme($generated-theme-colors);
-    //@include checkboxColorsTheme($generated-theme-colors);
+    @include buttonColorsTheme($generated-theme-colors);
+    @include cardItemColorsTheme($generated-theme-colors);
+    @include checkboxColorsTheme($generated-theme-colors);
     //@include textInputColorsTheme($generated-theme-colors);
     //@include dropdownColorsTheme($generated-theme-colors);
     //@include radioButtonColorsTheme($generated-theme-colors);

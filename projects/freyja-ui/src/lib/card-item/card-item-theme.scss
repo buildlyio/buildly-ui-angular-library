@@ -1,4 +1,4 @@
-@mixin cardItemColorsTheme($theme-colors) {
+@mixin cardItemColorsTheme($theme-colors, $theme-name: null) {
   .card-item {
     &__picture {
       background-color: map-get($theme-colors, 'color-primary-hover-bright');

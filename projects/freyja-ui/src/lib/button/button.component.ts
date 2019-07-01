@@ -62,10 +62,10 @@ export class ButtonComponent extends IconBaseComponent implements OnInit {
    * Add css classes based on inputs like size, shape etc
    */
   public generateClassList() {
-    const baseCls = 'fj-button--';
+    let baseCls;
+    this.theme ? baseCls = `fj-button--${this.theme}` : baseCls = `fj-button--`;
     const classes = {
       ['fj-button-color--' + this.theme]: this.theme,
-      [baseCls + this.theme]: this.theme,
       [baseCls + this.color]: this.color,
       [baseCls + this.size]: this.size,
       [baseCls + this.shape]: this.shape,

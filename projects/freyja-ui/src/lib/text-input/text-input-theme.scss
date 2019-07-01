@@ -1,4 +1,4 @@
-@mixin textInputColorsTheme($theme-colors) {
+@mixin textInputColorsTheme($theme-colors, $theme-name: null) {
   .fj-input {
     input {
       border: rem-calc(1) solid map-get($theme-colors, "border");

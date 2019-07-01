@@ -11,16 +11,18 @@ $color-disable: #d9d9d9;
 $color-text: #191919;
 $color-button-text: #ffffff;
 
-$theme-colors: (
-  'color-primary': $color-primary,
-  'color-background':$color-background,
-  'color-danger' : $color-danger,
-  'color-disable': $color-disable,
-  'color-text-input':$color-text,
-  'color-button-text':$color-button-text,
+$themes: (
+  'bright-theme': (
+    'color-primary': $color-primary,
+    'color-danger' : $color-danger,
+    'color-background': $color-background,
+    'color-disable': $color-disable,
+    'color-text-input': $color-text,
+    'color-button-text': $color-button-text,
+  )
 );
 
-@include freyja-theme($theme-colors);
+@include freyja-theme($themes);
 $spacer: rem-calc(22);
 $header-height: rem-calc(64) !default;
 

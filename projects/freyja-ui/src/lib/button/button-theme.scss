@@ -1,11 +1,10 @@
-@mixin buttonColorsTheme($theme-colors, $theme-name) {
+@mixin buttonColorsTheme($theme-colors, $theme-name: null) {
     // with theme
     @if $theme-name {
       .fj-button-color--#{$theme-name} {
         background-color: map-get($theme-colors, 'color-primary');
       }
-    } // no theme
-    @if $theme-name == 'default' {
+    } @else { // if there is no theme defined
       .fj-button-color {
         background-color: map-get($theme-colors, 'color-primary');
       }
@@ -110,9 +109,7 @@
         background-color: map-get($theme-colors, 'color-disable');
       }
     }
-  }
-  // default theme
-  @if $theme-name == 'default' {
+  } @else {
     .fj-button {
       color: map-get($theme-colors, 'color-button-text');
       border: solid rem-calc(1) transparent;

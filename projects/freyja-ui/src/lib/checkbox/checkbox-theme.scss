@@ -1,43 +1,85 @@
 
-@mixin checkboxColorsTheme($theme-colors) {
-  .fj-checkbox {
-    &__input {
-      &::before {
-        background-color: transparent;
-        border: rem-calc(1) solid map-get($theme-colors, 'color-primary');
-      }
-      &::after {
-        border-bottom: rem-calc(2) solid map-get($theme-colors, 'color-secondary');
-        border-right: rem-calc(2) solid map-get($theme-colors, 'color-secondary');;
-      }
-      #{$haf} {
+@mixin checkboxColorsTheme($theme-colors, $theme-name: null) {
+  @if $theme-name {
+    .fj-checkbox--#{$theme-name} {
+      &__input {
         &::before {
-          background-color: lighten(map-get($theme-colors, 'color-primary'), 50%)
+          background-color: transparent;
+          border: rem-calc(1) solid map-get($theme-colors, 'color-primary');
         }
-      }
-      &:checked {
-        &::before {
-          background-color: map-get($theme-colors, 'color-primary');
+        &::after {
+          border-bottom: rem-calc(2) solid map-get($theme-colors, 'color-secondary');
+          border-right: rem-calc(2) solid map-get($theme-colors, 'color-secondary');;
         }
         #{$haf} {
           &::before {
-            background-color: map-get($theme-colors, 'color-primary-hover');
+            background-color: lighten(map-get($theme-colors, 'color-primary'), 50%)
           }
-        }
-      }
-      &:disabled {
-        &::after {
-          background-color: transparent;
         }
         &:checked {
           &::before {
-            background-color: map-get($theme-colors, 'color-disable');
+            background-color: map-get($theme-colors, 'color-primary');
+          }
+          #{$haf} {
+            &::before {
+              background-color: map-get($theme-colors, 'color-primary-hover');
+            }
           }
         }
-      }
+        &:disabled {
+          &::after {
+            background-color: transparent;
+          }
+          &:checked {
+            &::before {
+              background-color: map-get($theme-colors, 'color-disable');
+            }
+          }
+        }
 
+      }
+    }
+  } @else {
+    .fj-checkbox {
+      &__input {
+        &::before {
+          background-color: transparent;
+          border: rem-calc(1) solid map-get($theme-colors, 'color-primary');
+        }
+        &::after {
+          border-bottom: rem-calc(2) solid map-get($theme-colors, 'color-secondary');
+          border-right: rem-calc(2) solid map-get($theme-colors, 'color-secondary');;
+        }
+        #{$haf} {
+          &::before {
+            background-color: lighten(map-get($theme-colors, 'color-primary'), 50%)
+          }
+        }
+        &:checked {
+          &::before {
+            background-color: map-get($theme-colors, 'color-primary');
+          }
+          #{$haf} {
+            &::before {
+              background-color: map-get($theme-colors, 'color-primary-hover');
+            }
+          }
+        }
+        &:disabled {
+          &::after {
+            background-color: transparent;
+          }
+          &:checked {
+            &::before {
+              background-color: map-get($theme-colors, 'color-disable');
+            }
+          }
+        }
+
+      }
     }
   }
+
   .error-label {
     color: map-get($theme-colors, "color-danger");
   }
