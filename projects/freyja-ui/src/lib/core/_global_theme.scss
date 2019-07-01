@@ -24,7 +24,7 @@ $haf: "&:hover, &:active, &:focus";
 
 @mixin freyja-theme($themes: ()) {
 
-  @if variable_exists(themes) {
+  @if $themes != null {
 
     $base: #ffffff;
     $main: #0674db;
