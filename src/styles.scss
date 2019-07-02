@@ -12,17 +12,25 @@ $color-text: #191919;
 $color-button-text: #ffffff;
 
 $themes: (
-  'bright-theme': (
+  'bright': (
     'color-primary': $color-primary,
     'color-danger' : $color-danger,
     'color-background': $color-background,
     'color-disable': $color-disable,
     'color-text-input': $color-text,
     'color-button-text': $color-button-text,
+  ),
+  'dark': (
+    'color-primary': $color-primary,
+    'color-danger' : $color-danger,
+    'color-background': #27292b,
+    'color-disable': #313335,
+    'color-text-input': #fff,
+    'color-button-text': $color-button-text,
   )
 );
 
-@include freyja-theme($themes);
+@include freyja-theme();
 $spacer: rem-calc(22);
 $header-height: rem-calc(64) !default;
 

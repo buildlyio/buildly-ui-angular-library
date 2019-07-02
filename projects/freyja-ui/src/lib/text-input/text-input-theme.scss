@@ -1,54 +1,111 @@
 @mixin textInputColorsTheme($theme-colors, $theme-name: null) {
-  .fj-input {
-    input {
-      border: rem-calc(1) solid map-get($theme-colors, "border");
-      color: map-get($theme-colors, "text-header");
-
-      &:focus {
-        border-color: map-get($theme-colors, "color-primary");
-      }
-
-      &:hover {
+  @if $theme-name {
+    .fj-input--#{$theme-name}.fj-input {
+      input {
+        background-color: map-get($theme-colors, "background");
+        border: rem-calc(1) solid map-get($theme-colors, "border");
         color: map-get($theme-colors, "text-header");
-      }
 
-      &::placeholder {
-        color: map-get($theme-colors, "text");
-
-        &:hover & {
-          color: map-get($theme-colors, "text");
+        &:focus {
+          border-color: map-get($theme-colors, "color-primary");
         }
-      }
 
-      &:disabled {
-        background-color: map-get($theme-colors, "color-disable");
-        border-color: map-get($theme-colors, "color-disable");
+        &:hover {
+          color: map-get($theme-colors, "text-header");
+        }
 
         &::placeholder {
-          color: map-get($theme-colors, "color-input");
+          color: map-get($theme-colors, "text");
+
+          &:hover & {
+            color: map-get($theme-colors, "text");
+          }
+        }
+
+        &:disabled {
+          background-color: map-get($theme-colors, "color-disable");
+          border-color: map-get($theme-colors, "color-disable");
+
+          &::placeholder {
+            color: map-get($theme-colors, "color-input");
+          }
         }
       }
-    }
 
-    &--error {
-      input {
+      &--error {
+        input {
+          border-color: map-get($theme-colors, "color-danger");
+        }
+      }
+
+      label {
+        &.label--disabled {
+          color: map-get($theme-colors, "input");
+        }
+      }
+
+      .input-error {
+        color: map-get($theme-colors, "color-danger");
         border-color: map-get($theme-colors, "color-danger");
       }
+
+      .error--label {
+        color: map-get($theme-colors, "color-danger");
+      }
     }
-  }
+  } @else {
+    .fj-input {
+      input {
+        background-color: map-get($theme-colors, "background");
+        border: rem-calc(1) solid map-get($theme-colors, "border");
+        color: map-get($theme-colors, "text-header");
 
-  label {
-    &.label--disabled {
-      color: map-get($theme-colors, "input");
+        &:focus {
+          border-color: map-get($theme-colors, "color-primary");
+        }
+
+        &:hover {
+          color: map-get($theme-colors, "text-header");
+        }
+
+        &::placeholder {
+          color: map-get($theme-colors, "text");
+
+          &:hover & {
+            color: map-get($theme-colors, "text");
+          }
+        }
+
+        &:disabled {
+          background-color: map-get($theme-colors, "color-disable");
+          border-color: map-get($theme-colors, "color-disable");
+
+          &::placeholder {
+            color: map-get($theme-colors, "color-input");
+          }
+        }
+      }
+
+      &--error {
+        input {
+          border-color: map-get($theme-colors, "color-danger");
+        }
+      }
+
+      label {
+        &.label--disabled {
+          color: map-get($theme-colors, "input");
+        }
+      }
+
+      .input-error {
+        color: map-get($theme-colors, "color-danger");
+        border-color: map-get($theme-colors, "color-danger");
+      }
+
+      .error--label {
+        color: map-get($theme-colors, "color-danger");
+      }
     }
-  }
-
-  .input-error {
-    color: map-get($theme-colors, "color-danger");
-    border-color: map-get($theme-colors, "color-danger");
-  }
-
-  .error--label {
-    color: map-get($theme-colors, "color-danger");
   }
 }
