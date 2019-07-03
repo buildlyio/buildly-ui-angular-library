@@ -56,10 +56,10 @@ $haf: "&:hover, &:active, &:focus";
         $color-button-text: map-get($first-theme-colors, 'color-button-text');
       }
 
-      $base-darker: darken($base, 4%);
-      $base-darkest: darken($base-darker, 5%);
-      $base-brighter: lighten($base, 10%);
-      $base-brightest: lighten($base-brighter, 5%);
+      $base-darker: darken($base, 5%);
+      $base-darkest: darken($base, 16%);
+      $base-brighter: lighten($base, 5%);
+      $base-brightest: lighten($base, 16%);
       $base-overlay: lighten($base-brightest, 5%);
 
       $main-darker: darken($main, 5%);
@@ -142,7 +142,7 @@ $haf: "&:hover, &:active, &:focus";
       }
 
       $base-darker: darken($base, 5%);
-      $base-darkest: darken($baser, 16%);
+      $base-darkest: darken($base, 16%);
       $base-brighter: lighten($base, 5%);
       $base-brightest: lighten($base, 16%);
       $base-overlay: lighten($base-brightest, 5%);
@@ -209,10 +209,10 @@ $haf: "&:hover, &:active, &:focus";
     }
   }
   @else { // else if there is no themes provided use freyja default theme
-    $base-darker: darken($base, 4%);
-    $base-darkest: darken($base-darker, 5%);
-    $base-brighter: lighten($base, 10%);
-    $base-brightest: lighten($base-brighter, 5%);
+    $base-darker: darken($base, 5%);
+    $base-darkest: darken($base, 16%);
+    $base-brighter: lighten($base, 5%);
+    $base-brightest: lighten($base, 16%);
     $base-overlay: lighten($base-brightest, 5%);
 
     $main-darker: darken($main, 5%);
