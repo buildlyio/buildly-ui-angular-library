@@ -40,7 +40,7 @@
 
       label {
         &.label--disabled {
-          color: map-get($theme-colors, "input");
+          color: map-get($theme-colors, "text");
         }
       }
 

@@ -106,6 +106,7 @@
       }
       /* state variants */
       &:disabled {
+        color: map-get($theme-colors, 'color-text');
         background-color: map-get($theme-colors, 'color-disable');
       }
     }
