@@ -1,6 +1,15 @@
-@mixin cardColorsTheme($theme-colors) {
-  .fj-card{
-    color: map-get($theme-colors, 'text-header');
-    background-color: map-get($theme-colors, 'background');
+@mixin cardColorsTheme($theme-colors, $theme-name: null) {
+  // with theme
+  @if $theme-name {
+    .fj-card.fj-card--#{$theme-name}{
+      color: map-get($theme-colors, 'text-header');
+      background-color: map-get($theme-colors, 'background-lvl2');
+    }
+  } @else { // if there is no theme defined
+    .fj-card{
+      color: map-get($theme-colors, 'text-header');
+      background-color: map-get($theme-colors, 'background-lvl2');
+    }
   }
+
 }

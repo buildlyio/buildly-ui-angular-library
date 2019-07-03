@@ -84,7 +84,7 @@ $haf: "&:hover, &:active, &:focus";
         'text-labels': $text-brighter,
         'text-links': $text-brighter,
         'border': $disable,
-        'input':$base-brighter,
+        'input':$base-brightest,
         'background': $base,
         'background-lvl2': $base-brighter,
         'background-lvl3':$base-brightest,
@@ -98,9 +98,9 @@ $haf: "&:hover, &:active, &:focus";
       @include radioButtonColorsTheme($generated-theme-colors);
       @include contentSwitcherColorsTheme($generated-theme-colors);
       @include spinnerTheme($generated-theme-colors);
+      @include cardColorsTheme($generated-theme-colors);
       //@include progressBarTheme($generated-theme-colors);
       //@include tableTheme($generated-theme-colors);
-      //@include cardColorsTheme($generated-theme-colors);
       //@include iconColorsTheme($generated-theme-colors);
       //@include toggleColorsTheme($generated-theme-colors);
       //@include inlineTextEditorColorsTheme($generated-theme-colors);
@@ -168,7 +168,7 @@ $haf: "&:hover, &:active, &:focus";
         'text-labels': $text-brighter,
         'text-links': $text-brighter,
         'border': $disable,
-        'input':$base-brighter,
+        'input':$base-brightest,
         'background': $base,
         'background-lvl2': $base-brighter,
         'background-lvl3':$base-brightest,
@@ -183,10 +183,10 @@ $haf: "&:hover, &:active, &:focus";
         @include radioButtonColorsTheme($generated-theme-colors, $theme-name);
         @include contentSwitcherColorsTheme($generated-theme-colors, $theme-name);
         @include spinnerTheme($generated-theme-colors, $theme-name);
+        @include cardColorsTheme($generated-theme-colors, $theme-name);
         // components not supporting multiple themes
         //@include progressBarTheme($generated-theme-colors);
         //@include tableTheme($generated-theme-colors);
-        //@include cardColorsTheme($generated-theme-colors);
         //@include iconColorsTheme($generated-theme-colors);
         //@include toggleColorsTheme($generated-theme-colors);
         //@include inlineTextEditorColorsTheme($generated-theme-colors);
@@ -236,7 +236,7 @@ $haf: "&:hover, &:active, &:focus";
       'text-labels': $text-brighter,
       'text-links': $text-brighter,
       'border': $disable,
-      'input':$base-brighter,
+      'input':$base-brightest,
       'background': $base,
       'background-lvl2': $base-brighter,
       'background-lvl3': $base-brightest,
