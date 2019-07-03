@@ -21,7 +21,7 @@ $themes: (
     'color-button-text': $color-button-text,
   ),
   'dark': (
-    'color-primary': green,
+    'color-primary': $color-primary,
     'color-danger' : $color-danger,
     'color-background': #27292b,
     'color-disable': #313335,

@@ -182,6 +182,7 @@ $haf: "&:hover, &:active, &:focus";
         @include radioButtonColorsTheme($generated-theme-colors, $theme-name);
         @include contentSwitcherColorsTheme($generated-theme-colors, $theme-name);
         @include spinnerTheme($generated-theme-colors, $theme-name);
+        // components not supporting multiple themes
         @include progressBarTheme($generated-theme-colors);
         @include tableTheme($generated-theme-colors);
         @include cardColorsTheme($generated-theme-colors);
@@ -193,6 +194,7 @@ $haf: "&:hover, &:active, &:focus";
         @include datePickerColorsTheme($generated-theme-colors);
         @include dragAndDropColorsTheme($generated-theme-colors);
         @include customDropdownColorsTheme($generated-theme-colors);
+        // components not supporting multiple themes
         .bg-1--#{$theme-name} {
           background-color : $base;
         }
