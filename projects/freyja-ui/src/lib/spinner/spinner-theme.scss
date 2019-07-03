@@ -1,19 +1,90 @@
-@mixin spinnerTheme($theme-colors) {
-
-  @keyframes colorsDefault {
-    0% { stroke: map-get($theme-colors, 'color-primary'); }
-    25% { stroke: map-get($theme-colors, 'color-primary'); }
-    50% { stroke: map-get($theme-colors, 'color-primary'); }
-    75% { stroke: map-get($theme-colors, 'color-primary'); }
-    100% { stroke: map-get($theme-colors, 'color-primary'); }
-  }
-
+$duration: 1.4s;
+@mixin spinnerTheme($theme-colors, $theme-name: null) {
   @keyframes colorsWhite {
-    0% { stroke: map-get($theme-colors, 'background'); }
-    25% { stroke: map-get($theme-colors, 'background'); }
-    50% { stroke: map-get($theme-colors, 'background'); }
-    75% { stroke: map-get($theme-colors, 'background'); }
-    100% { stroke: map-get($theme-colors, 'background'); }
+    0% {
+      stroke: map-get($theme-colors, 'background');
+    }
+    25% {
+      stroke: map-get($theme-colors, 'background');
+    }
+    50% {
+      stroke: map-get($theme-colors, 'background');
+    }
+    75% {
+      stroke: map-get($theme-colors, 'background');
+    }
+    100% {
+      stroke: map-get($theme-colors, 'background');
+    }
   }
-}
 
+  @if $theme-name {
+    @keyframes colorsTheme{
+      0% {
+        stroke: map-get($theme-colors, 'color-primary');
+      }
+      25% {
+        stroke: map-get($theme-colors, 'color-primary');
+      }
+      50% {
+        stroke: map-get($theme-colors, 'color-primary');
+      }
+      75% {
+        stroke: map-get($theme-colors, 'color-primary');
+      }
+      100% {
+        stroke: map-get($theme-colors, 'color-primary');
+      }
+    }
+    .spinner.spinner--#{$theme-name} {
+      &.spinner__primary{
+        .spinner__circle-path{
+          animation:
+            dash $duration ease-in-out infinite,
+            colorsTheme ($duration*4) ease-in-out infinite;
+        }
+      }
+      &.spinner__white{
+        .spinner__circle-path{
+          animation:
+            dash $duration ease-in-out infinite,
+            colorsWhite ($duration*4) ease-in-out infinite;
+        }
+      }
+    }
+  } @else {
+      @keyframes colorsDefault{
+        0% {
+          stroke: map-get($theme-colors, 'color-primary');
+        }
+        25% {
+          stroke: map-get($theme-colors, 'color-primary');
+        }
+        50% {
+          stroke: map-get($theme-colors, 'color-primary');
+        }
+        75% {
+          stroke: map-get($theme-colors, 'color-primary');
+        }
+        100% {
+          stroke: map-get($theme-colors, 'color-primary');
+        }
+      }
+      .spinner {
+        &__primary{
+          .spinner__circle-path{
+            animation:
+              dash $duration ease-in-out infinite,
+              colorsDefault ($duration*4) ease-in-out infinite;
+          }
+        }
+        &__white{
+          .spinner__circle-path{
+            animation:
+              dash $duration ease-in-out infinite,
+              colorsWhite ($duration*4) ease-in-out infinite;
+          }
+        }
+      }
+    }
+  }

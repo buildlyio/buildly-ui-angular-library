@@ -1,15 +1,15 @@
 
 @mixin checkboxColorsTheme($theme-colors, $theme-name: null) {
   @if $theme-name {
-    .fj-checkbox--#{$theme-name} {
-      &__input {
+    .fj-checkbox.fj-checkbox--#{$theme-name} {
+      .fj-checkbox__input {
         &::before {
           background-color: transparent;
           border: rem-calc(1) solid map-get($theme-colors, 'color-primary');
         }
         &::after {
-          border-bottom: rem-calc(2) solid map-get($theme-colors, 'color-secondary');
-          border-right: rem-calc(2) solid map-get($theme-colors, 'color-secondary');;
+          border-bottom: rem-calc(2) solid map-get($theme-colors, 'color-button-text');
+          border-right: rem-calc(2) solid map-get($theme-colors, 'color-button-text');;
         }
         #{$haf} {
           &::before {
@@ -47,8 +47,8 @@
           border: rem-calc(1) solid map-get($theme-colors, 'color-primary');
         }
         &::after {
-          border-bottom: rem-calc(2) solid map-get($theme-colors, 'color-secondary');
-          border-right: rem-calc(2) solid map-get($theme-colors, 'color-secondary');;
+          border-bottom: rem-calc(2) solid map-get($theme-colors, 'color-button-text');
+          border-right: rem-calc(2) solid map-get($theme-colors, 'color-button-text');
         }
         #{$haf} {
           &::before {

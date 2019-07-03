@@ -1,39 +1,80 @@
-@mixin contentSwitcherColorsTheme($theme-colors) {
+@mixin contentSwitcherColorsTheme($theme-colors, $theme-name: null) {
 
-  .content-switcher {
-    &--rounded {
-      .content-switcher__tab:nth-child(2) {
-        border-left: 1px solid map-get($theme-colors, 'color-primary') !important;
-      }
-    }
-
-    &--radius {
-      .content-switcher__tab:nth-child(2) {
-        border-left: 1px solid map-get($theme-colors, 'color-primary') !important;
-      }
-    }
-
-    &__tab {
-      border: solid 1px map-get($theme-colors, 'color-primary');
-      color: map-get($theme-colors, 'color-primary');
-
-      &:hover {
-        background-color: map-get($theme-colors, 'color-primary-hover-bright');
-      }
-
-      &--is-active {
-        background-color: map-get($theme-colors, 'color-primary-hover-bright');
-      }
-      &--disabled {
-        border-color: map-get($theme-colors, 'color-disable');
-        color: map-get($theme-colors, 'color-disable');
-        &--is-active {
-          background-color: map-get($theme-colors, 'color-disable');
-          border-color: transparent;
-          color: map-get($theme-colors, 'color-button-text');
+  @if $theme-name {
+    .content-switcher {
+      &--rounded {
+        .content-switcher__tab:nth-child(2) {
+          border-left: 1px solid map-get($theme-colors, 'color-primary') !important;
         }
+      }
+
+      &--radius {
+        .content-switcher__tab:nth-child(2) {
+          border-left: 1px solid map-get($theme-colors, 'color-primary') !important;
+        }
+      }
+
+      &__tab.content-switcher__tab--#{$theme-name} {
+        border: solid 1px map-get($theme-colors, 'color-primary');
+        color: map-get($theme-colors, 'color-primary');
+
         &:hover {
-          background-color: map-get($theme-colors, 'background');
+          background-color: map-get($theme-colors, 'color-primary-hover-bright');
+        }
+
+        &.content-switcher__tab--is-active {
+          background-color: map-get($theme-colors, 'color-primary-hover-bright');
+        }
+        &.content-switcher__tab--disabled {
+          border-color: map-get($theme-colors, 'color-disable');
+          color: map-get($theme-colors, 'color-disable');
+          &--is-active {
+            background-color: map-get($theme-colors, 'color-disable');
+            border-color: transparent;
+            color: map-get($theme-colors, 'color-button-text');
+          }
+          &:hover {
+            background-color: map-get($theme-colors, 'background');
+          }
+        }
+      }
+    }
+  } @else {
+    .content-switcher {
+      &--rounded {
+        .content-switcher__tab:nth-child(2) {
+          border-left: 1px solid map-get($theme-colors, 'color-primary') !important;
+        }
+      }
+
+      &--radius {
+        .content-switcher__tab:nth-child(2) {
+          border-left: 1px solid map-get($theme-colors, 'color-primary') !important;
+        }
+      }
+
+      &__tab {
+        border: solid 1px map-get($theme-colors, 'color-primary');
+        color: map-get($theme-colors, 'color-primary');
+
+        &:hover {
+          background-color: map-get($theme-colors, 'color-primary-hover-bright');
+        }
+
+        &--is-active {
+          background-color: map-get($theme-colors, 'color-primary-hover-bright');
+        }
+        &--disabled {
+          border-color: map-get($theme-colors, 'color-disable');
+          color: map-get($theme-colors, 'color-disable');
+          &--is-active {
+            background-color: map-get($theme-colors, 'color-disable');
+            border-color: transparent;
+            color: map-get($theme-colors, 'color-button-text');
+          }
+          &:hover {
+            background-color: map-get($theme-colors, 'background');
+          }
         }
       }
     }

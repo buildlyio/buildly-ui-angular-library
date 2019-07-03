@@ -68,6 +68,7 @@ export class RadioButtonComponent extends BaseComponent {
   public generateClassList() {
     const base = 'fj-radio-btn--';
     const classes = {
+      [`${base}${this.theme}`]: this.theme,
       [`${base}label-before`]: this.labelPosition === 'before',
       [`${base}disabled`]: this.disabled
     };

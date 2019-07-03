@@ -1,56 +1,112 @@
-@mixin radioButtonColorsTheme($theme-colors) {
+@mixin radioButtonColorsTheme($theme-colors, $theme-name: null) {
 
-  .fj-radio-btn {
+  @if $theme-name {
+    .fj-radio-btn.radio-btn--#{$theme-name} {
+      &__input {
 
-    &__input {
-
-      &::before {
-        background-color: transparent;
-        border: rem-calc(1) solid map-get($theme-colors, 'color-primary');
-
-      }
-      &::after {
-        border-bottom: rem-calc(2) map-get($theme-colors, 'color-secondary');
-        border-right: rem-calc(2) solid map-get($theme-colors, 'color-secondary');
-
-        border: rem-calc(1) solid map-get($theme-colors, 'color-primary');
-        background-color: map-get($theme-colors, 'color-primary');
-
-      }
-      #{$haf} {
-        &::before {
-          background-color: lighten(map-get($theme-colors, 'color-primary'), 50%)
-        }
-      }
-      &:checked {
-        &::before {
-          background-color: map-get($theme-colors, 'color-primary')
-        }
         &::before {
           background-color: transparent;
+          border: rem-calc(1) solid map-get($theme-colors, 'color-primary');
+
+        }
+        &::after {
+          border-bottom: rem-calc(2) map-get($theme-colors, 'color-secondary');
+          border-right: rem-calc(2) solid map-get($theme-colors, 'color-secondary');
+
+          border: rem-calc(1) solid map-get($theme-colors, 'color-primary');
+          background-color: map-get($theme-colors, 'color-primary');
+
         }
         #{$haf} {
           &::before {
-            background-color: lighten(map-get($theme-colors, 'color-primary'), 50%);
+            background-color: lighten(map-get($theme-colors, 'color-primary'), 50%)
           }
         }
-      }
-      &:disabled {
-        &::after {
-          background-color: map-get($theme-colors, 'color-disable');
-        }
-        #{$haf} {
-          &::after {
-            background-color: map-get($theme-colors, 'color-disable');
+        &:checked {
+          &::before {
+            background-color: map-get($theme-colors, 'color-primary')
           }
           &::before {
             background-color: transparent;
           }
+          #{$haf} {
+            &::before {
+              background-color: lighten(map-get($theme-colors, 'color-primary'), 50%);
+            }
+          }
+        }
+        &:disabled {
+          &::after {
+            background-color: map-get($theme-colors, 'color-disable');
+          }
+          #{$haf} {
+            &::after {
+              background-color: map-get($theme-colors, 'color-disable');
+            }
+            &::before {
+              background-color: transparent;
+            }
+          }
         }
       }
     }
+    .error-label {
+      color: map-get($theme-colors, "color-danger");
+    }
+  } @else {
+    .fj-radio-btn {
+
+      &__input {
+
+        &::before {
+          background-color: transparent;
+          border: rem-calc(1) solid map-get($theme-colors, 'color-primary');
+
+        }
+        &::after {
+          border-bottom: rem-calc(2) map-get($theme-colors, 'color-secondary');
+          border-right: rem-calc(2) solid map-get($theme-colors, 'color-secondary');
+
+          border: rem-calc(1) solid map-get($theme-colors, 'color-primary');
+          background-color: map-get($theme-colors, 'color-primary');
+
+        }
+        #{$haf} {
+          &::before {
+            background-color: lighten(map-get($theme-colors, 'color-primary'), 50%)
+          }
+        }
+        &:checked {
+          &::before {
+            background-color: map-get($theme-colors, 'color-primary')
+          }
+          &::before {
+            background-color: transparent;
+          }
+          #{$haf} {
+            &::before {
+              background-color: lighten(map-get($theme-colors, 'color-primary'), 50%);
+            }
+          }
+        }
+        &:disabled {
+          &::after {
+            background-color: map-get($theme-colors, 'color-disable');
+          }
+          #{$haf} {
+            &::after {
+              background-color: map-get($theme-colors, 'color-disable');
+            }
+            &::before {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+    .error-label {
+      color: map-get($theme-colors, "color-danger");
+    }
   }
-  .error-label {
-    color: map-get($theme-colors, "color-danger");
-  }
+
 }

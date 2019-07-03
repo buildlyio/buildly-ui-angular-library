@@ -142,6 +142,7 @@ export class NativeDropdownComponent extends BaseComponent implements AfterViewI
   public generateClassList() {
     const baseCls = 'fj-native-dropdown--';
     const classes = {
+      [baseCls + this.theme]: this.theme,
       [baseCls + this.size]: this.size,
       [baseCls + 'required']: this.required,
       [baseCls + 'error']: this.errored || this.error,

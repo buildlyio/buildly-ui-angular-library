@@ -11,7 +11,7 @@
     }
   // with theme
   @if $theme-name {
-    .fj-button--#{$theme-name} {
+    .fj-button.fj-button--#{$theme-name} {
       color: map-get($theme-colors, 'color-button-text');
       border: solid rem-calc(1) transparent;
       #{$haf} {
@@ -98,7 +98,7 @@
       }
 
       /* color variants */
-      &.fj-button--danger {
+      fj-button--danger {
         background-color: map-get($theme-colors, 'color-danger');
         #{$haf} {
           background-color: map-get($theme-colors, 'color-danger-hover');

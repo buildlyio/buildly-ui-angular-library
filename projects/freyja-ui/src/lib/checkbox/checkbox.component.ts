@@ -88,9 +88,9 @@ export class CheckboxComponent extends BaseComponent {
    * Generate classes using BEM appraoch and bind to ngClass
    */
   public generateClassList() {
-    let baseCls;
-    this.theme ? baseCls = `fj-checkbox--${this.theme}` : baseCls = `fj-checkbox--`;
+    const baseCls = `fj-checkbox--`;
     const classes = {
+      [`${baseCls}${this.theme}`]: this.theme,
       [`${baseCls}label-before`]: this.labelPosition === 'before',
       [`${baseCls}disabled`]: this.disabled,
       [`${baseCls}indeterminate`]: this.indeterminate

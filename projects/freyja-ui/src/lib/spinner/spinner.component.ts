@@ -1,24 +1,25 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BaseComponent } from '@libs/freyja-ui/src/lib/shared/base.component';
 
 @Component({
   selector: 'fj-spinner',
   templateUrl: './spinner.component.html',
   styleUrls: ['./spinner.component.scss']
 })
-export class SpinnerComponent implements OnInit {
+export class SpinnerComponent extends BaseComponent implements OnInit {
   @Input() public height;
-  @Input() public size = 'medium';
   @Input() public color = 'default';
   @Input() public inline = false;
   @Input() public fullHeight = false;
   public colorClass: string;
   public dimensions: number;
   public heightDimensions: string;
-  constructor() {}
-
+  constructor() {
+    super();
+  }
   ngOnInit() {
     switch (this.size) {
-      case 'xsmall':
+      case 'micro':
         this.dimensions = 20;
         break;
       case 'small':
@@ -58,5 +59,16 @@ export class SpinnerComponent implements OnInit {
       el = el.offsetParent;
     }
     return {top: y, left: x};
+  }
+
+  /**
+   * Generate classes using BEM appraoch and bind to ngClass
+   */
+  public generateClassList() {
+    const baseCls = `spinner--`;
+    const classes = {
+      [`${baseCls}${this.theme}`]: this.theme,
+    };
+    return classes;
   }
 }
