@@ -271,7 +271,7 @@ $haf: "&:hover, &:active, &:focus";
     .bg-3 {
       background-color : $base-darkest;
     }
-    @include margin-classes;
-    @include padding-classes;
   }
+  @include margin-classes;
+  @include padding-classes;
 }
