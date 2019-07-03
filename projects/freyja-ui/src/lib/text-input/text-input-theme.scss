@@ -39,8 +39,11 @@
       }
 
       label {
-        &.label--disabled {
+        &.label--medium {
           color: map-get($theme-colors, "text");
+        }
+        &.label--disabled {
+          color: map-get($theme-colors, "input");
         }
       }
 
@@ -93,6 +96,9 @@
       }
 
       label {
+        &.label--medium {
+          color: map-get($theme-colors, "text");
+        }
         &.label--disabled {
           color: map-get($theme-colors, "input");
         }

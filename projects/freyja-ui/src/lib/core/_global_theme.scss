@@ -83,10 +83,10 @@ $haf: "&:hover, &:active, &:focus";
         'text-labels': $text-brighter,
         'text-links': $text-brighter,
         'border': $disable,
-        'input':$base-darker,
+        'input':$text-darker,
         'background': $base,
-        'background-lvl2': $base-darker,
-        'background-lvl3':$base-darkest,
+        'background-lvl2': $base-brighter,
+        'background-lvl3':$base-brightest,
         'overlay':$base-overlay,
       );
       @include buttonColorsTheme($generated-theme-colors);
@@ -112,10 +112,10 @@ $haf: "&:hover, &:active, &:focus";
         background-color: $base;
       }
       .bg-2 {
-        background-color: $base-darker;
+        background-color: $base-brighter;
       }
       .bg-3 {
-        background-color: $base-darkest;
+        background-color: $base-brightest;
       }
     }
     // adding specific styles for each theme
@@ -167,10 +167,10 @@ $haf: "&:hover, &:active, &:focus";
         'text-labels': $text-brighter,
         'text-links': $text-brighter,
         'border': $disable,
-        'input':$base-darker,
+        'input':$text-darker,
         'background': $base,
-        'background-lvl2': $base-darker,
-        'background-lvl3':$base-darkest,
+        'background-lvl2': $base-brighter,
+        'background-lvl3':$base-brightest,
         'overlay':$base-overlay,
       );
       @if $theme-name {
@@ -199,10 +199,10 @@ $haf: "&:hover, &:active, &:focus";
           background-color : $base;
         }
         .bg-2--#{$theme-name} {
-          background-color : $base-darker;
+          background-color : $base-brighter;
         }
         .bg-3--#{$theme-name} {
-          background-color : $base-darkest;
+          background-color : $base-brightest;
         }
       }
     }
@@ -235,10 +235,10 @@ $haf: "&:hover, &:active, &:focus";
       'text-labels': $text-brighter,
       'text-links': $text-brighter,
       'border': $disable,
-      'input':$base-darker,
+      'input':$text-darker,
       'background': $base,
-      'background-lvl2': $base-darker,
-      'background-lvl3':$base-darkest,
+      'background-lvl2': $base-brighter,
+      'background-lvl3': $base-brightest,
       'overlay':$base-overlay,
     );
 
@@ -266,10 +266,10 @@ $haf: "&:hover, &:active, &:focus";
       background-color : $base;
     }
     .bg-2 {
-      background-color : $base-darker;
+      background-color : $base-brighter;
     }
     .bg-3 {
-      background-color : $base-darkest;
+      background-color : $base-brightest;
     }
   }
   @include margin-classes;

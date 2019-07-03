@@ -106,7 +106,7 @@
       }
       /* state variants */
       &:disabled {
-        color: map-get($theme-colors, 'color-text');
+        color: map-get($theme-colors, 'text-input');
         background-color: map-get($theme-colors, 'color-disable');
       }
     }
