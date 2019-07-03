@@ -183,17 +183,17 @@ $haf: "&:hover, &:active, &:focus";
         @include contentSwitcherColorsTheme($generated-theme-colors, $theme-name);
         @include spinnerTheme($generated-theme-colors, $theme-name);
         // components not supporting multiple themes
-        @include progressBarTheme($generated-theme-colors);
-        @include tableTheme($generated-theme-colors);
-        @include cardColorsTheme($generated-theme-colors);
-        @include iconColorsTheme($generated-theme-colors);
-        @include toggleColorsTheme($generated-theme-colors);
-        @include inlineTextEditorColorsTheme($generated-theme-colors);
-        @include modalColorsTheme($generated-theme-colors);
-        @include accordionColorsTheme($generated-theme-colors);
-        @include datePickerColorsTheme($generated-theme-colors);
-        @include dragAndDropColorsTheme($generated-theme-colors);
-        @include customDropdownColorsTheme($generated-theme-colors);
+        //@include progressBarTheme($generated-theme-colors);
+        //@include tableTheme($generated-theme-colors);
+        //@include cardColorsTheme($generated-theme-colors);
+        //@include iconColorsTheme($generated-theme-colors);
+        //@include toggleColorsTheme($generated-theme-colors);
+        //@include inlineTextEditorColorsTheme($generated-theme-colors);
+        //@include modalColorsTheme($generated-theme-colors);
+        //@include accordionColorsTheme($generated-theme-colors);
+        //@include datePickerColorsTheme($generated-theme-colors);
+        //@include dragAndDropColorsTheme($generated-theme-colors);
+        //@include customDropdownColorsTheme($generated-theme-colors);
         // components not supporting multiple themes
         .bg-1--#{$theme-name} {
           background-color : $base;
