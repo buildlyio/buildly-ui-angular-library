@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
-import { BaseComponent } from '@libs/freyja-ui/src/lib/shared/base.component';
+import { BaseComponent } from '../shared/base.component';
 
 @Component({
   selector: 'fj-content-switcher',
