@@ -182,17 +182,17 @@ $haf: "&:hover, &:active, &:focus";
         @include radioButtonColorsTheme($generated-theme-colors, $theme-name);
         @include contentSwitcherColorsTheme($generated-theme-colors, $theme-name);
         @include spinnerTheme($generated-theme-colors, $theme-name);
-        //@include progressBarTheme($generated-theme-colors, $theme-name);
-        //@include tableTheme($generated-theme-colors, $theme-name);
-        //@include cardColorsTheme($generated-theme-colors, $theme-name);
-        //@include iconColorsTheme($generated-theme-colors, $theme-name);
-        //@include toggleColorsTheme($generated-theme-colors, $theme-name);
-        //@include inlineTextEditorColorsTheme($generated-theme-colors, $theme-name);
-        //@include modalColorsTheme($generated-theme-colors, $theme-name);
-        //@include accordionColorsTheme($generated-theme-colors, $theme-name);
-        //@include datePickerColorsTheme($generated-theme-colors, $theme-name);
-        //@include dragAndDropColorsTheme($generated-theme-colors, $theme-name);
-        //@include customDropdownColorsTheme($generated-theme-colors, $theme-name);
+        @include progressBarTheme($generated-theme-colors);
+        @include tableTheme($generated-theme-colors);
+        @include cardColorsTheme($generated-theme-colors);
+        @include iconColorsTheme($generated-theme-colors);
+        @include toggleColorsTheme($generated-theme-colors);
+        @include inlineTextEditorColorsTheme($generated-theme-colors);
+        @include modalColorsTheme($generated-theme-colors);
+        @include accordionColorsTheme($generated-theme-colors);
+        @include datePickerColorsTheme($generated-theme-colors);
+        @include dragAndDropColorsTheme($generated-theme-colors);
+        @include customDropdownColorsTheme($generated-theme-colors);
         .bg-1--#{$theme-name} {
           background-color : $base;
         }
