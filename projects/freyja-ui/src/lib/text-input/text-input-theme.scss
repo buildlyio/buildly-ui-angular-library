@@ -2,7 +2,7 @@
   @if $theme-name {
     .fj-input--#{$theme-name}.fj-input {
       input {
-        background-color: map-get($theme-colors, "background");
+        background-color: map-get($theme-colors, "input");
         border: rem-calc(1) solid map-get($theme-colors, "border");
         color: map-get($theme-colors, "text-header");
 
@@ -59,7 +59,7 @@
   } @else {
     .fj-input {
       input {
-        background-color: map-get($theme-colors, "background");
+        background-color: map-get($theme-colors, "input");
         border: rem-calc(1) solid map-get($theme-colors, "border");
         color: map-get($theme-colors, "text-header");
 

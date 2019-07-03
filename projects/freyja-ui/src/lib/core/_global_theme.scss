@@ -67,6 +67,7 @@ $haf: "&:hover, &:active, &:focus";
       $danger-darker: darken($danger, 5%);
 
       $text-brighter: lighten($text, 50%);
+      $text-darker: darken($text, 50%);
 
       $generated-theme-colors: (
         'color-primary':$main,
@@ -83,7 +84,7 @@ $haf: "&:hover, &:active, &:focus";
         'text-labels': $text-brighter,
         'text-links': $text-brighter,
         'border': $disable,
-        'input':$text-darker,
+        'input':$base-darker,
         'background': $base,
         'background-lvl2': $base-brighter,
         'background-lvl3':$base-brightest,
@@ -167,7 +168,7 @@ $haf: "&:hover, &:active, &:focus";
         'text-labels': $text-brighter,
         'text-links': $text-brighter,
         'border': $disable,
-        'input':$text-darker,
+        'input':$base-darker,
         'background': $base,
         'background-lvl2': $base-brighter,
         'background-lvl3':$base-brightest,
@@ -235,7 +236,7 @@ $haf: "&:hover, &:active, &:focus";
       'text-labels': $text-brighter,
       'text-links': $text-brighter,
       'border': $disable,
-      'input':$text-darker,
+      'input':$base-darker,
       'background': $base,
       'background-lvl2': $base-brighter,
       'background-lvl3': $base-brightest,
