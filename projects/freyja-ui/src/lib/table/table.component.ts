@@ -7,7 +7,7 @@ import {TableEmitObject} from './table.model';
 import { FixedRow } from './components/table-row/fixed-row.model';
 import { MatSelect } from '@angular/material';
 import { TableCustomColumnDirective } from './directives/table-custom-column.directive';
-import { BaseComponent } from '@libs/freyja-ui/src/lib/shared/base.component';
+import { BaseComponent } from '../shared/base.component';
 
 @Component({
   selector: 'fj-table',
