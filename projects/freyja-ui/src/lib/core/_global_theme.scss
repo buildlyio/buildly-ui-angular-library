@@ -99,8 +99,8 @@ $haf: "&:hover, &:active, &:focus";
       @include contentSwitcherColorsTheme($generated-theme-colors);
       @include spinnerTheme($generated-theme-colors);
       @include cardColorsTheme($generated-theme-colors);
+      @include tableTheme($generated-theme-colors);
       //@include progressBarTheme($generated-theme-colors);
-      //@include tableTheme($generated-theme-colors);
       //@include iconColorsTheme($generated-theme-colors);
       //@include toggleColorsTheme($generated-theme-colors);
       //@include inlineTextEditorColorsTheme($generated-theme-colors);
@@ -185,7 +185,7 @@ $haf: "&:hover, &:active, &:focus";
         @include spinnerTheme($generated-theme-colors, $theme-name);
         @include cardColorsTheme($generated-theme-colors, $theme-name);
         // components not supporting multiple themes
-        @include tableTheme($generated-theme-colors);
+        @include tableTheme($generated-theme-colors, $theme-name);
         @include iconColorsTheme($generated-theme-colors);
         //@include progressBarTheme($generated-theme-colors);
         //@include toggleColorsTheme($generated-theme-colors);

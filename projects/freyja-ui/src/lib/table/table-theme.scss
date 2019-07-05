@@ -1,84 +1,168 @@
-@mixin tableTheme($theme-colors) {
+@mixin tableTheme($theme-colors, $theme-name: null) {
+  @if $theme-name {
+    .fj-table.fj-table--#{$theme-name} {
+      .table {
+        &__empty-msg {
+          color: map-get($theme-colors, 'input');
+        }
+      }
 
-  .table{
-    &__empty-msg{
-      color: map-get($theme-colors, 'input');
-    }
-  }
+      .fixedrow {
+        &__select {
+          background-color: map-get($theme-colors, 'color-primary-hover-bright');
+        }
+      }
 
-  .fixedrow {
-    &__select {
-      background-color: map-get($theme-colors, 'color-primary-hover-bright');
-    }
-  }
+      .table-row {
+        &:not(.header) {
+          background-color: map-get($theme-colors, 'background');
+        }
+        &__filters-box {
+          background-color: map-get($theme-colors, 'background');
+        }
+        .icon-filters {
+          fill: map-get($theme-colors, 'text-labels');
+          &--active {
+            fill: map-get($theme-colors, 'text');
+          }
+        }
+      }
+      .column {
+        color: map-get($theme-colors, 'text-labels');
+        &--b-right {
+          border-right: 1px solid map-get($theme-colors, 'border');
+        }
+        &--b-left {
+          border-left: 1px solid map-get($theme-colors, 'border');
+        }
+      }
+      /* Filter arrow buttons */
+      .arrow {
+        color: map-get($theme-colors, 'text-links');
+        &--up {
+          border-bottom: 4px solid map-get($theme-colors, 'border');
+          &.active {
+            border-bottom-color: map-get($theme-colors, 'text-labels');
+          }
+        }
+        &--down {
+          border-top: 4px solid map-get($theme-colors, 'border');
+          &.active {
+            border-top-color: map-get($theme-colors, 'text-labels');
+          }
+        }
+      }
 
+      .table-row {
+        &:hover:not(.header) {
+          background-color: map-get($theme-colors, 'color-primary-hover-bright');
+        }
+      }
+      .column {
+        &--b-right {
+          border-right: 1px solid map-get($theme-colors, 'border');
+        }
+        &--b-left {
+          border-left: 1px solid map-get($theme-colors, 'border');
+        }
+        &__text-tpl {
+          color: map-get($theme-colors, 'text-header');
+        }
+      }
 
-
-  .table-row {
-    &:not(.header){
-      background-color: map-get($theme-colors, 'background');
-    }
-    &__filters-box {
-      background-color: map-get($theme-colors, 'background');
-    }
-    .icon-filters {
-      fill: map-get($theme-colors, 'text-labels');
-      &--active {
-        fill: map-get($theme-colors, 'text');
+      .actions {
+        &__btn {
+          &:hover {
+            background-color: map-get($theme-colors, 'border');
+            color: map-get($theme-colors, 'text-body');
+          }
+          &--delete {
+            fill: map-get($theme-colors, 'color-danger');
+          }
+        }
       }
     }
-  }
-  .column{
-    color: map-get($theme-colors, 'text-labels');
-    &--b-right{
-      border-right: 1px solid map-get($theme-colors, 'border');
-    }
-    &--b-left{
-      border-left: 1px solid map-get($theme-colors, 'border');
-    }
-  }
-  /* Filter arrow buttons */
-  .arrow{
-    color: map-get($theme-colors, 'text-links');
-    &--up{
-      border-bottom: 4px solid map-get($theme-colors, 'border');
-      &.active{
-        border-bottom-color: map-get($theme-colors, 'text-labels');
+  } @else {
+    .fj-table  {
+      .table {
+        &__empty-msg {
+          color: map-get($theme-colors, 'input');
+        }
       }
-    }
-    &--down{
-      border-top: 4px solid map-get($theme-colors, 'border');
-      &.active{
-        border-top-color: map-get($theme-colors, 'text-labels');
-      }
-    }
-  }
 
-  .table-row {
-    &:hover:not(.header) {
-      background-color: map-get($theme-colors, 'background-lvl2');
-    }
-  }
-  .column{
-    &--b-right{
-      border-right: 1px solid map-get($theme-colors, 'border');
-    }
-    &--b-left{
-      border-left: 1px solid map-get($theme-colors, 'border');
-    }
-    &__text-tpl{
-      color: map-get($theme-colors, 'text-header');
-    }
-  }
-
-  .actions {
-    &__btn {
-      &:hover {
-        background-color: map-get($theme-colors, 'border');
-        color: map-get($theme-colors, 'text-body');
+      .fixedrow {
+        &__select {
+          background-color: map-get($theme-colors, 'color-primary-hover-bright');
+        }
       }
-      &--delete {
-        fill: map-get($theme-colors, 'color-danger');
+
+      .table-row {
+        &:not(.header) {
+          background-color: map-get($theme-colors, 'background');
+        }
+        &__filters-box {
+          background-color: map-get($theme-colors, 'background');
+        }
+        .icon-filters {
+          fill: map-get($theme-colors, 'text-labels');
+          &--active {
+            fill: map-get($theme-colors, 'text');
+          }
+        }
+      }
+      .column {
+        color: map-get($theme-colors, 'text-labels');
+        &--b-right {
+          border-right: 1px solid map-get($theme-colors, 'border');
+        }
+        &--b-left {
+          border-left: 1px solid map-get($theme-colors, 'border');
+        }
+      }
+      /* Filter arrow buttons */
+      .arrow {
+        color: map-get($theme-colors, 'text-links');
+        &--up {
+          border-bottom: 4px solid map-get($theme-colors, 'border');
+          &.active {
+            border-bottom-color: map-get($theme-colors, 'text-labels');
+          }
+        }
+        &--down {
+          border-top: 4px solid map-get($theme-colors, 'border');
+          &.active {
+            border-top-color: map-get($theme-colors, 'text-labels');
+          }
+        }
+      }
+
+      .table-row {
+        &:hover:not(.header) {
+          background-color: map-get($theme-colors, 'color-primary-hover-bright');
+        }
+      }
+      .column {
+        &--b-right {
+          border-right: 1px solid map-get($theme-colors, 'border');
+        }
+        &--b-left {
+          border-left: 1px solid map-get($theme-colors, 'border');
+        }
+        &__text-tpl {
+          color: map-get($theme-colors, 'text-header');
+        }
+      }
+
+      .actions {
+        &__btn {
+          &:hover {
+            background-color: map-get($theme-colors, 'border');
+            color: map-get($theme-colors, 'text-body');
+          }
+          &--delete {
+            fill: map-get($theme-colors, 'color-danger');
+          }
+        }
       }
     }
   }

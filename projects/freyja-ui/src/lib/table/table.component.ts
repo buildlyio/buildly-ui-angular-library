@@ -7,13 +7,14 @@ import {TableEmitObject} from './table.model';
 import { FixedRow } from './components/table-row/fixed-row.model';
 import { MatSelect } from '@angular/material';
 import { TableCustomColumnDirective } from './directives/table-custom-column.directive';
+import { BaseComponent } from '@libs/freyja-ui/src/lib/shared/base.component';
 
 @Component({
   selector: 'fj-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent implements OnChanges {
+export class TableComponent extends BaseComponent implements OnChanges {
   @Input() rows = [];
   @Input() columns = [];
   @Input() fixedRow: FixedRow;
@@ -57,7 +58,9 @@ export class TableComponent implements OnChanges {
   public sort; // applied sort for the column
   public filters; // applied filters from the column filter box;
 
-  constructor() { }
+  constructor() {
+    super();
+  }
 
   ngOnChanges() {
     this.defineFilterOptions();
@@ -154,5 +157,15 @@ export class TableComponent implements OnChanges {
   onFixedRowSelectionChanged(value) {
     this.fixedRowSelectField.value = this.fixedRow.label;
     this.fixedRowSelectionChanged.emit(value);
+  }
+
+  /**
+   * Add css classes based on inputs like size, shape etc
+   */
+  public generateClassList() {
+    const classes = {
+      ['fj-table--' + this.theme]: this.theme
+    };
+    return classes;
   }
 }

@@ -5,7 +5,7 @@
     [ngClass]="{'column--b-left': column.borderLeft, 'column--b-right': column.borderRight, 'column--activeFilter': toggleFilters && activeFilter === column.prop}"
   >
     <div class="table-row__wrapper">
-      <div class="table-row__label" (click)="toggleSort(column)" [style.color]="activeSort.column === column.prop ? 'black' : ''">
+      <div class="table-row__label" (click)="toggleSort(column)">
         <span class="text-truncate" *ngIf="!column.headerTemplateRef"> {{column.name}}</span>
         <ng-template
           *ngIf="column.headerTemplateRef"

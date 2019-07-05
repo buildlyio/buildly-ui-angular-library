@@ -1,50 +1,57 @@
-<div class="table">
-  <fj-table-head
-    [columns]= "columns"
-    [rows] = "rows"
-    (filterSelected)="applyFilters($event)"
-    (sortActivated)="applySort($event)"
+<div
+  class="fj-table"
+  [ngClass]="generateClassList()"
+>
+   <div
+    class="table"
+  >
+    <fj-table-head
+      [columns]= "columns"
+      [rows] = "rows"
+      (filterSelected)="applyFilters($event)"
+      (sortActivated)="applySort($event)"
 
-  ></fj-table-head>
-  <fj-table-row
-    #tableRow
-    *ngIf="rows?.length; else emptyMsg; "
-    [columns]="columns"
-    [rows]="rows"
-    [filters]="filters"
-    [downloadSpinner]="downloadSpinner"
-    [sort]="sort"
-    [noHover]="noHover"
-    [viewPort]="viewPort"
-    (rowsFiltered)="getFilteredRows($event)"
-    (updateUsersRow)="updateUsers($event)"
-    (selectItem)="selectRow($event)"
-    (submitTime)="timeSubmitted($event)"
-    (delete)="deleteEvent($event)"
-    (activate)="activateEvent($event)"
-    (download)="downloadEvent($event)"
-    (selectionChanged)="onSelectionChanged($event)"
-    (fixedRowSelectionChanged)="onFixedRowSelectionChanged($event)"
-    (switcherChanged)="onSwitcherChanged($event)"
-  ></fj-table-row>
+    ></fj-table-head>
+    <fj-table-row
+      #tableRow
+      *ngIf="rows?.length; else emptyMsg; "
+      [columns]="columns"
+      [rows]="rows"
+      [filters]="filters"
+      [downloadSpinner]="downloadSpinner"
+      [sort]="sort"
+      [noHover]="noHover"
+      [viewPort]="viewPort"
+      (rowsFiltered)="getFilteredRows($event)"
+      (updateUsersRow)="updateUsers($event)"
+      (selectItem)="selectRow($event)"
+      (submitTime)="timeSubmitted($event)"
+      (delete)="deleteEvent($event)"
+      (activate)="activateEvent($event)"
+      (download)="downloadEvent($event)"
+      (selectionChanged)="onSelectionChanged($event)"
+      (fixedRowSelectionChanged)="onFixedRowSelectionChanged($event)"
+      (switcherChanged)="onSwitcherChanged($event)"
+    ></fj-table-row>
 
-  <div *ngIf="fixedRow">
-    <div *ngIf="fixedRow.type === 'string'" class="table-row">
-      <div class="column__text-tpl">{{fixedRow.label}}</div>
+    <div *ngIf="fixedRow">
+      <div *ngIf="fixedRow.type === 'string'" class="table-row">
+        <div class="column__text-tpl">{{fixedRow.label}}</div>
+      </div>
+      <div *ngIf="fixedRow.type === 'select'" class="table-row">
+        <mat-select #fixedRowSelectField
+                    class="fixedrow__select"
+                    [placeholder]="fixedRow.options.length > 1 ? fixedRow?.label : fixedRow?.noOptionsMessage"
+                    (selectionChange)="onFixedRowSelectionChanged($event)"
+        >
+          <mat-option *ngFor="let option of fixedRow.options" [value]="option.value" >
+            {{option.label}}
+          </mat-option>
+        </mat-select>
+      </div>
     </div>
-    <div *ngIf="fixedRow.type === 'select'" class="table-row">
-      <mat-select #fixedRowSelectField
-                  class="fixedrow__select"
-                  [placeholder]="fixedRow.options.length > 1 ? fixedRow?.label : fixedRow?.noOptionsMessage"
-                  (selectionChange)="onFixedRowSelectionChanged($event)"
-      >
-        <mat-option *ngFor="let option of fixedRow.options" [value]="option.value" >
-          {{option.label}}
-        </mat-option>
-      </mat-select>
-    </div>
+    <ng-template #emptyMsg>
+      <p class="table__empty-msg">{{noDataMessage}}</p>
+    </ng-template>
   </div>
-  <ng-template #emptyMsg>
-    <p class="table__empty-msg">{{noDataMessage}}</p>
-  </ng-template>
 </div>
