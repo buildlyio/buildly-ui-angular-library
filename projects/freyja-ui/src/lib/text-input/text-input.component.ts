@@ -118,6 +118,8 @@ export class TextInputComponent extends BaseComponent implements OnChanges {
    */
   onKeyUp(event: Event) {
     event.stopPropagation();
+    this.inputValue = (<HTMLInputElement>event.target).value;
+    console.log(this.inputValue)
     this.keyup.emit(this.inputValue);
   }
 
