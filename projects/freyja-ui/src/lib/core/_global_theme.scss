@@ -68,6 +68,8 @@ $haf: "&:hover, &:active, &:focus";
 
       $text-brighter: lighten($text, 50%);
       $text-darker: darken($text, 50%);
+      $disable-brighter: lighten($disable, 10%);
+
 
       $generated-theme-colors: (
         'color-primary':$main,
@@ -77,6 +79,7 @@ $haf: "&:hover, &:active, &:focus";
         'color-danger' : $danger,
         'color-danger-hover':$danger-darker,
         'color-disable': $disable,
+        'color-disable-bright': $disable-brighter,
         'color-button-text': $color-button-text,
         'text': $text,
         'text-header': $text,
@@ -152,6 +155,7 @@ $haf: "&:hover, &:active, &:focus";
       $danger-darker: darken($danger, 5%);
 
       $text-brighter: lighten($text, 50%);
+      $disable-brighter: lighten($disable, 10%);
 
       $generated-theme-colors: (
         'color-primary':$main,
@@ -161,6 +165,7 @@ $haf: "&:hover, &:active, &:focus";
         'color-danger' : $danger,
         'color-danger-hover':$danger-darker,
         'color-disable': $disable,
+        'color-disable-bright': $disable-brighter,
         'color-button-text': $color-button-text,
         'text': $text,
         'text-header': $text,
@@ -220,6 +225,7 @@ $haf: "&:hover, &:active, &:focus";
     $danger-darker: darken($danger, 5%);
 
     $text-brighter: lighten($text, 50%);
+    $disable-brighter: lighten($disable, 10%);
 
     $generated-theme-colors: (
       'color-primary':$main,
@@ -229,6 +235,7 @@ $haf: "&:hover, &:active, &:focus";
       'color-danger' : $danger,
       'color-danger-hover':$danger-darker,
       'color-disable': $disable,
+      'color-disable-bright': $disable-brighter,
       'color-button-text': $color-button-text,
       'text': $text,
       'text-header': $text,
