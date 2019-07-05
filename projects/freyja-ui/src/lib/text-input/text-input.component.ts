@@ -76,6 +76,10 @@ export class TextInputComponent extends BaseComponent implements OnChanges {
    * Callback for mouseout event
    */
   @Output() mouseout: EventEmitter<any> = new EventEmitter<any>();
+  /**
+   * Callback for mouseout event
+   */
+  @Output() keyup: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
     super();
@@ -106,6 +110,15 @@ export class TextInputComponent extends BaseComponent implements OnChanges {
   onFocus(event: Event) {
     event.stopPropagation();
     this.focus.emit(this.inputValue);
+  }
+
+  /**
+   * triggers on keyup event
+   * @param event HTML onFocus Event
+   */
+  onKeyUp(event: Event) {
+    event.stopPropagation();
+    this.keyup.emit(this.inputValue);
   }
 
   /**
