@@ -43,7 +43,7 @@ export class TableComponent extends BaseComponent implements OnChanges {
   @ViewChild('tableRow') tableRow: TableRowComponent;
   @ViewChild('fixedRowSelectField') fixedRowSelectField: MatSelect;
 
-  private _customColumns;
+  private _customColumns = null;
 
   /**
    * Column templates gathered from `ContentChildren`
@@ -52,7 +52,8 @@ export class TableComponent extends BaseComponent implements OnChanges {
   @ContentChildren(TableCustomColumnDirective)
   set customColumns(val: QueryList<TableCustomColumnDirective>) {
     this._customColumns = val;
-    this.appendCustomColumns(val);
+    this.appendCustomColumns(this._customColumns);
+    console.log('setter called');
   }
 
   public sort; // applied sort for the column
@@ -64,9 +65,8 @@ export class TableComponent extends BaseComponent implements OnChanges {
 
   ngOnChanges() {
     this.defineFilterOptions();
-    if (!this._customColumns) {
-      this.appendCustomColumns(this._customColumns);
-    }
+    this.customColumns = this._customColumns;
+    console.log('on changes called');
   }
 
   /**

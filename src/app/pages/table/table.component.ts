@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { TextHelper } from '@freyjaDemo/app/shared/helpers/text.helper';
 
 @Component({
@@ -6,7 +6,7 @@ import { TextHelper } from '@freyjaDemo/app/shared/helpers/text.helper';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent implements OnInit {
+export class TableComponent implements OnInit, OnChanges {
 
   public tableExampleHTML;
   public tableExampleTS;
@@ -61,6 +61,24 @@ export class TableComponent implements OnInit {
   constructor(
     private textHelper: TextHelper
   ) { }
+
+  ngOnChanges() {
+    this.tableOptions = {
+      columns: [
+        {name: 'First Name', prop: 'first_name', flex: 1, sortable: true, filtering: true},
+        {name: 'Last Name', prop: 'last_name', flex: 1, sortable: true, filtering: true},
+      ]
+    };
+  }
+
+  changeColumns() {
+    this.tableOptions = {
+      columns: [
+        {name: 'First Name', prop: 'first_name', flex: 1, sortable: true, filtering: true},
+        {name: 'Last Name', prop: 'last_name', flex: 1, sortable: true, filtering: true},
+      ]
+    };
+  }
 
   ngOnInit() {
     this.tableExampleTS = this.textHelper.dedent`
