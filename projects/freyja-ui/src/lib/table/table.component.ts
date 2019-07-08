@@ -53,7 +53,6 @@ export class TableComponent extends BaseComponent implements OnChanges {
   set customColumns(val: QueryList<TableCustomColumnDirective>) {
     this._customColumns = val;
     this.appendCustomColumns(this._customColumns);
-    console.log('setter called');
   }
 
   public sort; // applied sort for the column
@@ -66,7 +65,6 @@ export class TableComponent extends BaseComponent implements OnChanges {
   ngOnChanges() {
     this.defineFilterOptions();
     this.customColumns = this._customColumns;
-    console.log('on changes called');
   }
 
   /**

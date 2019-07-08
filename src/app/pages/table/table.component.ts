@@ -71,15 +71,6 @@ export class TableComponent implements OnInit, OnChanges {
     };
   }
 
-  changeColumns() {
-    this.tableOptions = {
-      columns: [
-        {name: 'First Name', prop: 'first_name', flex: 1, sortable: true, filtering: true},
-        {name: 'Last Name', prop: 'last_name', flex: 1, sortable: true, filtering: true},
-      ]
-    };
-  }
-
   ngOnInit() {
     this.tableExampleTS = this.textHelper.dedent`
     rows = [
