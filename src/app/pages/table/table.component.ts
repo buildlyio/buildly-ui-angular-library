@@ -39,7 +39,7 @@ export class TableComponent implements OnInit {
     {first_name: 'Michael', last_name: 'Jackson', address: 'Sunset Boulevard 2', phone: '33456321'},
     {first_name: 'James', last_name: 'Bond', address: 'Bond Street 7', phone: '0070071'}
   ];
-  tableOptions = {
+  tableOptions: any = {
     columns: [
       {name: 'First Name', prop: 'first_name', flex: 1, sortable: true, filtering: true},
       {name: 'Last Name', prop: 'last_name', flex: 1, sortable: true, filtering: true},

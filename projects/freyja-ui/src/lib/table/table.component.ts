@@ -64,6 +64,7 @@ export class TableComponent extends BaseComponent implements OnChanges {
 
   ngOnChanges() {
     this.defineFilterOptions();
+    this.appendCustomColumns(this._customColumns);
   }
 
   /**
