@@ -64,7 +64,7 @@ export class TableComponent extends BaseComponent implements OnChanges {
 
   ngOnChanges() {
     this.defineFilterOptions();
-    this.customColumns = this._customColumns;
+    this.appendCustomColumns(this._customColumns);
   }
 
   /**
@@ -76,7 +76,9 @@ export class TableComponent extends BaseComponent implements OnChanges {
       const customColumnsArr = customColumns.toArray();
       customColumnsArr.forEach(customColumn => {
         customColumn.cellTemplate = 'custom';
-        this.columns.splice(customColumn.index, 0 , customColumn);
+        if (!this.columns.includes(customColumn)) {
+          this.columns.splice(customColumn.index, 0 , customColumn);
+        }
       });
     }
   }
