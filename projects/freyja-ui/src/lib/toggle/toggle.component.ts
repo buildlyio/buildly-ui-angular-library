@@ -43,6 +43,7 @@ export class ToggleComponent extends BaseComponent implements OnInit {
   public generateClassList() {
     const baseCls = 'fj-toggle-switch--';
     const classes = {
+      [baseCls + this.theme]: this.theme,
       [baseCls + this.size]: this.size,
     };
     return classes;

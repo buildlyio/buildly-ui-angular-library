@@ -1,41 +1,83 @@
 
-@mixin toggleColorsTheme($theme-colors) {
-  .fj-toggle-switch {
-    /* hover states for component */
-    #{$haf} {
-      .fj-toggle-switch__indicator {
-        background-color: map-get($theme-colors, 'color-primary-hover-bright');
-        border-color: map-get($theme-colors, 'color-primary');
+@mixin toggleColorsTheme($theme-colors, $theme-name: null) {
+  @if $theme-name {
+    .fj-toggle-switch.fj-toggle-switch--#{$theme-name} {
+      /* hover states for component */
+      #{$haf} {
+        .fj-toggle-switch__indicator {
+          background-color: map-get($theme-colors, 'color-primary-hover-bright');
+          border-color: map-get($theme-colors, 'color-primary');
+        }
       }
-    }
 
-    &__indicator {
-      background: map-get($theme-colors, 'background');
-      border: 2px solid map-get($theme-colors, 'border');
-    }
-
-    &__slider {
-      background-color: map-get($theme-colors, 'background');
-      border-right: 1px solid map-get($theme-colors, 'border');
-    }
-
-    /* checked state */
-    &__input:checked + &__indicator {
-      background-color: map-get($theme-colors, 'color-primary');
-      border-color: map-get($theme-colors, 'color-primary');
+      .fj-toggle-switch__indicator {
+        background: map-get($theme-colors, 'background');
+        border: 2px solid map-get($theme-colors, 'border');
+      }
 
       .fj-toggle-switch__slider {
+        background-color: map-get($theme-colors, 'background');
+        border-right: 1px solid map-get($theme-colors, 'border');
+      }
+
+      /* checked state */
+      .fj-toggle-switch__input:checked + .fj-toggle-switch__indicator {
+        background-color: map-get($theme-colors, 'color-primary');
         border-color: map-get($theme-colors, 'color-primary');
-        #{$haf} {
-          background-color: map-get($theme-colors, 'color-primary-hover-bright');
+
+        .fj-toggle-switch__slider {
+          border-color: map-get($theme-colors, 'color-primary');
+          #{$haf} {
+            background-color: map-get($theme-colors, 'color-primary-hover-bright');
+          }
+        }
+      }
+
+      .fj-toggle-switch__input[disabled] {
+        & + .fj-toggle-switch__indicator {
+          background-color: map-get($theme-colors, 'background');
+          border-color: map-get($theme-colors, 'border');
         }
       }
     }
+  } @else {
+    .fj-toggle-switch {
+      /* hover states for component */
+      #{$haf} {
+        .fj-toggle-switch__indicator {
+          background-color: map-get($theme-colors, 'color-primary-hover-bright');
+          border-color: map-get($theme-colors, 'color-primary');
+        }
+      }
 
-    &__input[disabled] {
-      & + .fj-toggle-switch__indicator {
+      &__indicator {
+        background: map-get($theme-colors, 'background');
+        border: 2px solid map-get($theme-colors, 'border');
+      }
+
+      &__slider {
         background-color: map-get($theme-colors, 'background');
-        border-color: map-get($theme-colors, 'border');
+        border-right: 1px solid map-get($theme-colors, 'border');
+      }
+
+      /* checked state */
+      &__input:checked + &__indicator {
+        background-color: map-get($theme-colors, 'color-primary');
+        border-color: map-get($theme-colors, 'color-primary');
+
+        .fj-toggle-switch__slider {
+          border-color: map-get($theme-colors, 'color-primary');
+          #{$haf} {
+            background-color: map-get($theme-colors, 'color-primary-hover-bright');
+          }
+        }
+      }
+
+      &__input[disabled] {
+        & + .fj-toggle-switch__indicator {
+          background-color: map-get($theme-colors, 'background');
+          border-color: map-get($theme-colors, 'border');
+        }
       }
     }
   }
