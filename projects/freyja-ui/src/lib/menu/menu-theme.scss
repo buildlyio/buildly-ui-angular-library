@@ -1,0 +1,14 @@
+@mixin menuColorsTheme($theme-colors) {
+  .menu {
+    &__content {
+      background-color: map-get($theme-colors, "overlay");
+
+      &__option {
+        &:hover,
+        &:focus {
+          background-color: map-get($theme-colors, "color-primary-hover-bright");
+        }
+      }
+    }
+  }
+}

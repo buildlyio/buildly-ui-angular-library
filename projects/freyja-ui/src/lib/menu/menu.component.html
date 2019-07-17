@@ -1,0 +1,31 @@
+<div class="menu">
+  <div
+    #toggle
+    class="menu__toggle">
+    <ng-content></ng-content>
+    <div
+      class="menu__toggle__overlay"
+      [ngClass]="{
+        'menu__toggle__overlay--disabled': disabled
+      }"
+      (click)="toggleMenu()">
+    </div>
+  </div>
+  <div 
+    class="menu__content"
+    [ngClass]="{
+      'menu__content--hidden': !isOpen,
+      'menu__content--above': position === 'above',
+      'menu__content--below': position === 'below'
+    }">
+    <ul class="menu__content__list">
+      <li
+        tabIndex="0"
+        class="menu__content__option"
+        *ngFor="let option of options; let index = index"
+        (click)="selectOption(option?.value)">
+        {{ option?.label }}
+      </li>
+    </ul>
+  </div>
+</div>
