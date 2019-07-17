@@ -1,0 +1,14 @@
+<fj-demo-content-wrap>
+  <h2>Menu</h2>
+  <h3>Default menu</h3>
+  <fj-menu [options]="options" (optionSelected)="onOptionSelected($event)">
+    <fj-button>…</fj-button>
+  </fj-menu>
+  <pre><code highlight [code]="defaultShowCase"></code></pre>
+
+  <h3>Disabled menu</h3>
+  <fj-menu [options]="options" (optionSelected)="onOptionSelected($event)" [disabled]="true">
+    <fj-button disabled>…</fj-button>
+  </fj-menu>
+  <pre><code highlight [code]="disabledShowCase"></code></pre>
+</fj-demo-content-wrap>

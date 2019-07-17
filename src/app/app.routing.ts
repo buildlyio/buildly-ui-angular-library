@@ -17,6 +17,7 @@ import { SpinnerComponent } from './pages/spinner/spinner.component';
 import { ToggleComponent } from '@freyjaDemo/app/pages/toggle/toggle.component';
 import { DemoNativeDropdownComponent } from './pages/native-dropdown/native-dropdown.component';
 import { DemoCustomDropdownComponent } from '@freyjaDemo/app/pages/custom-dropdown/custom-dropdown.component';
+import { DemoMenuComponent } from './pages/menu/menu.component';
 
 export const appRoutes: Routes = [
   { path: '', component: ButtonComponent },
@@ -38,5 +39,6 @@ export const appRoutes: Routes = [
   { path: 'modal', component: ModalComponent },
   { path: 'toggle', component: ToggleComponent },
   { path: 'native-dropdown', component: DemoNativeDropdownComponent },
-  { path: 'custom-dropdown', component: DemoCustomDropdownComponent }
+  { path: 'custom-dropdown', component: DemoCustomDropdownComponent },
+  { path: 'menu', component: DemoMenuComponent }
 ];

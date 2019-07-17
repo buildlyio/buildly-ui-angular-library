@@ -78,3 +78,6 @@ export * from './lib/card/card.module';
 
 export * from './lib/toggle/toggle.component';
 export * from './lib/toggle/toggle.module';
+
+export * from './lib/menu/menu.component';
+export * from './lib/menu/menu.module';

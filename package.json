@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-freyja": "ng build freyja-ui && npm run bundle-styles",
+    "showcase": "npm run build && npm run start",
     "bundle-styles": "./node_modules/.bin/scss-bundle -c scss-bundle.config.json",
     "compodoc": "./node_modules/.bin/compodoc -p projects/freyja-ui/tsconfig.lib.json"
   },
