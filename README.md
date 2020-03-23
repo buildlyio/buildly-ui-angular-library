@@ -1,6 +1,6 @@
-# Freyja
+# Buildly UI Angular Library
 
-This project contains the source code of the freyja ui component library and it's also a showcase for the different components.
+This project contains the source code of the Buildly UI Angular component library and it's also a showcase for the different components.
 
 ## Build and publish
 
