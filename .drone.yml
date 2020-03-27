@@ -16,18 +16,6 @@ pipeline:
       event: [push, tag]
       status: [success]
 
-  build-docker-image:
-    image: plugins/docker
-    insecure: true
-    registry: registry.tola.io
-    repo: registry.tola.io/humanitec/freyja-demo
-    file: Dockerfile
-    auto_tag: true
-    secrets: [DOCKER_USERNAME, DOCKER_PASSWORD]
-    when:
-      event: [push, tag]
-      status: [success]
-
   notify:
     image: plugins/slack
     channel: drone-ci
