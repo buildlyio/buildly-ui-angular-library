@@ -5,12 +5,12 @@
     "@angular/common": "^7.1.0",
     "@angular/core": "^7.1.0",
     "@angular/platform-browser": "^7.1.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ngx-dropzone-wrapper": "^7.2.1",
     "ngx-mydatepicker": "^2.4.9"
   },
   "dependencies": {
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ngx-dropzone-wrapper": "^7.2.1",
     "ngx-mydatepicker": "^2.4.9",
     "rxjs": "~6.3.3"
