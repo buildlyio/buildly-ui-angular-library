@@ -27,7 +27,7 @@
     "@angular/platform-browser-dynamic": "^7.1.0",
     "@angular/router": "^7.1.0",
     "core-js": "^2.5.7",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "ngx-dropzone-wrapper": "^7.2.1",
     "ngx-highlightjs": "^2.1.4",
     "ngx-mydatepicker": "^2.4.9",
